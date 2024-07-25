@@ -21,7 +21,7 @@ const Footer = () => {
               <Link href="/" className="block hover:text-accent-300 transition-colors">
                 Inici
               </Link>
-              <Link href="/sobre-nosaltres" className="block hover:text-accent-300 transition-colors">
+              <Link href="/about" className="block hover:text-accent-300 transition-colors">
                 Sobre Nosaltres
               </Link>
             </nav>
