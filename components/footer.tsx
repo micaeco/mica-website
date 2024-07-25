@@ -10,16 +10,8 @@ const Footer = () => {
             <h3 className="font-bold mb-4 text-gray-50">Contacte</h3>
             <div className="space-y-2">
               <p>Preguntes generals</p>
-              <a href="mailto:support@mica.eco" className="block font-bold bg-gradient-to-r from-accent-200 via-accent-500 to-accent-900 bg-clip-text text-transparent">
-                support@mica.eco
-              </a>
-              <p>Suport tècnic</p>
               <a href="mailto:info@mica.eco" className="block font-bold bg-gradient-to-r from-accent-200 via-accent-500 to-accent-900 bg-clip-text text-transparent">
                 info@mica.eco
-              </a>
-              <p>Contacte ventes</p>
-              <a href="mailto:sales@mica.eco" className="block font-bold bg-gradient-to-r from-accent-200 via-accent-500 to-accent-900 bg-clip-text text-transparent">
-                sales@mica.eco
               </a>
             </div>
           </div>
