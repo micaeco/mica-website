@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { AlertTriangle } from 'lucide-react';
 
-const HistorySection = () => {
+export default function HistorySection() {
   return (
     <section className="w-full bg-tertiary py-16 px-4 lg:px-0">
       <div className="container mx-auto mb-12">
@@ -47,5 +47,3 @@ const HistorySection = () => {
     </section>
   );
 };
-
-export default HistorySection;
