@@ -35,7 +35,7 @@ export default function HistorySection() {
           <div className="lg:w-1/2 relative mt-8 lg:mt-0">
             <div className="rounded-lg overflow-hidden shadow-xl">
               <Image 
-                src="https://www.totbarcelona.cat/app/uploads/sites/11/2023/03/sequera-scaled.jpg" 
+                src="/images/drought.jpg" 
                 alt="Estalvi d'aigua a Barcelona" 
                 width={1200}
                 height={689}
