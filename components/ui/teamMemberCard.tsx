@@ -21,7 +21,7 @@ const SocialIcon: React.FC<{ platform: SocialLink['platform'] }> = ({ platform }
 
 export default function TeamMemberCard({ src, name, description, socials }: TeamMember) {
   return (
-    <div className="bg-white shadow-lg rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl transform hover:-translate-y-1 h-full flex flex-col">
+    <div className="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       <div className="relative w-full pb-[100%]"> {/* 1:1 aspect ratio */}
         {src ? (
           <Image
@@ -29,28 +29,28 @@ export default function TeamMemberCard({ src, name, description, socials }: Team
             alt={`${name}'s profile picture`}
             layout="fill"
             objectFit="cover"
-            className="absolute top-0 left-0 w-full h-full"
+            className="absolute left-0 top-0 size-full"
           />
         ) : (
-          <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-gray-200">
-            <UserCircle className="w-24 h-24 text-gray-400" />
+          <div className="absolute left-0 top-0 flex size-full items-center justify-center bg-gray-200">
+            <UserCircle className="size-24 text-gray-400" />
           </div>
         )}
       </div>
-      <div className="p-4 flex-grow flex flex-col justify-between">
+      <div className="flex grow flex-col justify-between p-4">
         <div>
-          <h3 className="font-bold text-lg mb-1">{name}</h3>
-          <p className="text-gray-600 text-sm mb-3">{description}</p>
+          <h3 className="mb-1 text-lg font-bold">{name}</h3>
+          <p className="mb-3 text-sm text-gray-600">{description}</p>
         </div>
         {socials && socials.length > 0 && (
-          <div className="flex space-x-3 mt-auto">
+          <div className="mt-auto flex space-x-3">
             {socials.map((social, index) => (
               <a
                 key={index}
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
+                className="text-gray-600 transition-colors duration-300 hover:text-gray-900"
                 aria-label={`${name}'s ${social.platform}`}
               >
                 <SocialIcon platform={social.platform} />

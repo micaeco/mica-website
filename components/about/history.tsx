@@ -4,27 +4,27 @@ import { AlertTriangle } from 'lucide-react';
 
 export default function HistorySection() {
   return (
-    <section className="w-full bg-tertiary py-16 px-4 lg:px-0">
+    <section className="w-full bg-tertiary px-6 py-16 lg:px-0">
       <div className="container mx-auto mb-12">
-        <div className="flex flex-col lg:flex-row items-center">
+        <div className="flex flex-col items-center lg:flex-row">
           <div className="lg:w-1/2 lg:pr-12">
-            <h2 className="text-2xl font-semibold text-primary-500 mb-4">La nostra Història</h2>
-            <h3 className="text-4xl lg:text-5xl font-bold text-primary-600 mb-6 leading-tight">
+            <h2 className="mb-4 text-2xl font-semibold text-primary-500">La nostra Història</h2>
+            <h3 className="mb-6 text-4xl font-bold leading-tight text-primary-600 lg:text-5xl">
               Innovant per combatre la sequera a Barcelona
             </h3>
-            <p className="text-lg mb-6">
+            <p className="mb-6 text-lg">
               L&apos;estiu de 2022, Barcelona va patir una de les pitjors sequeres de la seva història. 
               Mentre la ciutat entrava en <span className="font-semibold text-accent-500">FASE D&apos;ALERTA</span>, 
               un grup d&apos;enginyers locals va tenir una idea revolucionària. 
             </p>
-            <p className="text-lg mb-6">
+            <p className="mb-6 text-lg">
               Així va néixer Mica, 
               amb la missió de transformar com entenem i conservem l&apos;aigua. La nostra tecnologia permet als 
               barcelonins enfrontar-se a cada nova crisi hídrica amb dades precises i eines innovadores.
             </p>
-            <div className="bg-white p-4 rounded-lg shadow-md mb-6">
-              <h4 className="text-lg font-semibold text-primary-500 mb-2 flex items-center">
-                <AlertTriangle className="text-accent-500 w-6 h-6 mr-2" />
+            <div className="mb-6 rounded-lg bg-white p-4 shadow-md">
+              <h4 className="mb-2 flex items-center text-lg font-semibold text-primary-500">
+                <AlertTriangle className="mr-2 size-6 text-accent-500" />
                 Sabies que...?
               </h4>
               <p className="text-primary-500">
@@ -32,8 +32,8 @@ export default function HistorySection() {
               </p>
             </div>
           </div>
-          <div className="lg:w-1/2 relative mt-8 lg:mt-0">
-            <div className="rounded-lg overflow-hidden shadow-xl">
+          <div className="relative mt-8 lg:mt-0 lg:w-1/2">
+            <div className="overflow-hidden rounded-lg shadow-xl">
               <Image 
                 src="/images/drought.jpg" 
                 alt="Estalvi d'aigua a Barcelona" 

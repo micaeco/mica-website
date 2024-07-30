@@ -1,15 +1,20 @@
 import React from 'react';
 
-import Hero from '@/components/heroSection';
-import HowItWorks from '@/components/howItWorksSection';
-import WaveSeparator from '@/components/waveSeparator';
+import Hero from '@/components/home/hero';
+import Problem from '@/components/home/problem';
+import Solution from '@/components/home/solution';
+import TestimonialCarousel from '@/components/home/testimonials';
+import WaveSeparator from '@/components/common/waveSeparator';
 
 const Home = () => {
   return (
-    <main className="flex flex-col items-center justify-center text-primary">      
+    <main className="flex flex-col justify-center text-primary">      
       <Hero />
-      <WaveSeparator topColor="#f9fafb" bottomColor="tertiary-500" />
-      <HowItWorks />
+      <WaveSeparator topColor="white" bottomColor="#d5fff3" />
+      <Problem />
+      <Solution />
+      <WaveSeparator topColor="tertiary" bottomColor="#00f2dd" />
+      <TestimonialCarousel />
     </main>
   );
 };

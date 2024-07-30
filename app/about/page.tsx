@@ -1,12 +1,12 @@
-import OurTeam from '@/components/ourTeamSection'
-import History from '@/components/historySection'
-import WaveSeparator from '@/components/waveSeparator'
+import OurTeam from '@/components/about/ourTeam'
+import History from '@/components/about/history'
+import WaveSeparator from '@/components/common/waveSeparator'
 
 export default function About() {
   return (
     <main className="flex flex-col items-center justify-center bg-gray-50 text-primary">
       <History />
-      <WaveSeparator topColor="#f9fafb" bottomColor="tertiary-500" />
+      <WaveSeparator topColor="tertiary" bottomColor="#f9fafb" />
       <OurTeam />
     </main>
   )

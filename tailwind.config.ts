@@ -66,6 +66,17 @@ const config: Config = {
           800: '#613D03',
           900: '#2C1C01',
         },
+        metallic: {
+          50: "#eeeeee",	
+          100: "#cccccc",
+          200: "#bbbbbb",
+          300: "#aaaaaa",	
+          400: "#777777",    
+        },
+        copper: {
+          50: "#b87333",
+          100: "#cd7f32",
+        }
       },
     },
   },

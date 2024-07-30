@@ -1,0 +1,21 @@
+import React from 'react';
+
+import CtaButton from '@/components/ui/ctaButton';
+
+const CallToAction = () => {
+  return (
+    <section className="bg-gradient-to-b from-primary-300 to-primary  py-20 text-white">
+      <div className="container mx-auto px-4 text-center">
+        <p className="mx-auto mb-8 max-w-2xl text-xl">
+          Uneix-te al Programa Beta de Mica avui i comença a marcar la diferència en el consum d&apos;aigua de casa teva i del planeta.
+        </p>
+        <CtaButton text="Apunta't" href="/register" />
+        <p className="mt-6 text-sm opacity-75">
+          Places limitades. No perdis la teva oportunitat!
+        </p>
+      </div>
+    </section>
+  );
+};
+
+export default CallToAction;

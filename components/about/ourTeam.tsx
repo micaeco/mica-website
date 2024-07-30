@@ -1,4 +1,4 @@
-import TeamMemberCard from '@/components/teamMemberCard'
+import TeamMemberCard from '@/components/ui/teamMemberCard'
 import { TeamMember } from '@/types/types'
 
 const teamMembers: TeamMember[] = [
@@ -37,10 +37,10 @@ const teamMembers: TeamMember[] = [
 
 export default function OurTeam() {
   return (
-    <section className="py-16 mb-12">
+    <section className="mb-12 py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">El nostre equip</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
+        <h2 className="mb-12 text-center text-4xl font-bold text-gray-800">El nostre equip</h2>
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {teamMembers.map((member, index) => (
             <TeamMemberCard key={index} {...member} />
           ))}
