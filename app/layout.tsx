@@ -4,7 +4,6 @@ import "./globals.css";
 
 import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
-import StickyBeta from "@/components/common/stickyBeta";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
