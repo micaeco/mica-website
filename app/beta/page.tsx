@@ -4,7 +4,7 @@ import Benefits from '@/components/beta/benefits';
 import Process from '@/components/beta/process';
 import CallToAction from '@/components/beta/callToAction';
 
-const BetaProgramPage = () => {
+const Beta = () => {
   return (
     <div>
       <Hero />
@@ -15,4 +15,4 @@ const BetaProgramPage = () => {
   );
 };
 
-export default BetaProgramPage;
+export default Beta;
