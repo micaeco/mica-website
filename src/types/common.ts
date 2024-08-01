@@ -12,4 +12,8 @@ export interface ITeamMember {
   socials?: ISocialLink[];
 }
 
-export type ShapeType = 'circle' | 'square';
+export type TShapeType = 'circle' | 'square';
+
+export interface IFormData {
+  [key: string]: string;
+}

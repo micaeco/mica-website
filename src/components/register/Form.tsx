@@ -1,11 +1,12 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { User, Mail, Phone, TrafficCone } from 'lucide-react';
+import { User, Mail, Phone } from 'lucide-react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import InputBox from '@/src/components/ui/InputBox';
+import { api } from '@/src/services/api';
 
 interface FormField {
   icon: React.ElementType;
@@ -78,31 +79,22 @@ export default function RegistrationForm() {
     if (isFormValid && !isSubmitting) {
       setIsSubmitting(true);
       try {
-        const scriptUrl = process.env.NEXT_PUBLIC_GOOGLE_APPS_SCRIPT_URL;
-        if (!scriptUrl) {
-          throw new Error('Google Apps Script URL is not defined');
+        const result = await api.submitForm(formData);
+
+        if (result.result === 'success') {
+          toast.success('Registre enviat correctament!', {
+            position: "bottom-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+          setFormData({});
+        } else {
+          throw new Error(result.message || 'Error desconegut');
         }
-
-        const response = await fetch(scriptUrl, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        });
-
-        toast.success('Registre enviat correctament!', {
-          position: "bottom-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
-
-        setFormData({});
       } catch (error) {
         console.error('Error submitting form:', error);
         toast.error('Hi ha hagut un error en enviar el registre. Si us plau, torna-ho a provar.', {
@@ -160,4 +152,4 @@ export default function RegistrationForm() {
       <ToastContainer />
     </section>
   );
-};
+}
