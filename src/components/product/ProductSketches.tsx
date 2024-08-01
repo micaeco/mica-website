@@ -1,8 +1,8 @@
 import React from 'react';
 import { Droplet, Cpu, Radio } from 'lucide-react';
 
-import ImageCard from '@/src/components/ui/imageCard';
-import TextCard from '@/src/components/ui/textCard';
+import ImageCard from '@/src/components/ui/ImageCard';
+import TextCard from '@/src/components/ui/TextCard';
 
 const FeatureIcon: React.FC<{ icon: React.ReactNode; text: string }> = ({ icon, text }) => (
   <div className="flex items-center space-x-2">

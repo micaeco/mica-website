@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import CtaButton from '@/src/components/ui/ctaButton';
+import CtaButton from '@/src/components/ui/CTAButton';
 
 export default function Hero() {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CtaButton from '@/src/components/ui/ctaButton';
+import CTAButton from '@/src/components/ui/CTAButton';
 
 const CallToAction = () => {
   return (
@@ -9,7 +9,7 @@ const CallToAction = () => {
         <p className="mx-auto mb-8 max-w-2xl text-xl">
           Uneix-te al Programa Beta de MICA avui i comença a marcar la diferència en el consum d&apos;aigua de casa teva i del planeta.
         </p>
-        <CtaButton text="Apunta't" href="/register" />
+        <CTAButton text="Apunta't" href="/register" />
         <p className="mt-6 text-sm opacity-75">
           Places limitades. No perdis la teva oportunitat!
         </p>

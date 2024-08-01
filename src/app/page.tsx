@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Hero from '@/src/components/home/hero';
-import Problem from '@/src/components/home/problem';
-import Solution from '@/src/components/home/solution';
-import TestimonialCarousel from '@/src/components/home/testimonials';
-import WaveSeparator from '@/src/components/common/waveSeparator';
+import Hero from '@/src/components/home/Hero';
+import Problem from '@/src/components/home/Problem';
+import Solution from '@/src/components/home/Solution';
+import TestimonialCarousel from '@/src/components/home/Testimonials';
+import WaveSeparator from '@/src/components/common/WaveSeparator';
 
 const Home = () => {
   return (

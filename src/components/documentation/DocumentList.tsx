@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-import DocumentCard from '@/src/components/ui/documentCard';
+import DocumentCard from '@/src/components/ui/DocumentCard';
 import { Document } from '@/src/types/types';
 
 interface DocumentListProps {

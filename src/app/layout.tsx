@@ -3,8 +3,8 @@ import { Analytics } from '@vercel/analytics/react';
 import { Montserrat } from "next/font/google";
 import "@/src/styles/globals.css";
 
-import Header from "@/src/components/layout/header";
-import Footer from "@/src/components/layout/footer";
+import Header from "@/src/components/layout/Header";
+import Footer from "@/src/components/layout/Footer";
 
 const montserrat = Montserrat({subsets: ['latin'], weight: "400"});
 

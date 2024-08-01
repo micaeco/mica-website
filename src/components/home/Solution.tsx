@@ -4,8 +4,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Droplet, AlertTriangle, TrendingUp } from 'lucide-react';
 
-import CtaButton from '@/src/components/ui/ctaButton';
-import IconCard from '@/src/components/ui/iconCard';
+import CtaButton from '@/src/components/ui/CTAButton';
+import IconCard from '@/src/components/ui/IconCard';
 
 const BenefitCards = [
   {

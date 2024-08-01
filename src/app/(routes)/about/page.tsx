@@ -1,6 +1,6 @@
-import OurTeam from '@/src/components/about/ourTeam'
-import History from '@/src/components/about/history'
-import WaveSeparator from '@/src/components/common/waveSeparator'
+import OurTeam from '@/src/components/about/OurTeam'
+import History from '@/src/components/about/History'
+import WaveSeparator from '@/src/components/common/WaveSeparator'
 
 export default function About() {
   return (

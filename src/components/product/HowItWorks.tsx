@@ -2,29 +2,28 @@
 
 import React, { useState } from 'react';
 
-import ExpandableCard from '@/src/components/ui/expandableCard';
-import CtaButton from '../ui/ctaButton';
+import ExpandableCard from '@/src/components/ui/ExpandableCard';
 
 const benefits = [
   {
     title: "Instal·lació sensor únic",
     description: "Instal·la i calibra un únic sensor en la tuberia d'entrada principal.",
-    imageSrc: "/logos/water-meter.webp",
+    imageSrc: "/icons/water-meter.webp",
   },
   {
     title: "Consum per dispositiu",
     description: "La intel·ligència artificial s'encarrega d'analitzar les dades i categoritzar el consum en diferents events com dutxes, rentadores o aixetes. Això permet identificar quins dispositius consumeixen més aigua.",
-    imageSrc: "/logos/kitchen-tap.webp",
+    imageSrc: "/icons/kitchen-tap.webp",
   },
   {
     title: "Visualització de Dades",
     description: "Mitjançant l'app, podràs visualitzar les dades de consum d'aigua en temps real i històriques. A més a més, s'inclouen gràfiques i un anàlisi detallat dels hàbits de consum.",
-    imageSrc: "/logos/data-analysis.webp",
+    imageSrc: "/icons/data-analysis.webp",
   },
   {
     title: "Pla de Consum",
     description: "Basant-nos en l'anàlisi de les teves dades, generem recomanacions personalitzades per optimitzar el teu ús d'aigua. Això et permetrà estalviar aigua i diners.",
-    imageSrc: "/logos/eco-friendly.webp",
+    imageSrc: "/icons/eco-friendly.webp",
   },
 ];
 

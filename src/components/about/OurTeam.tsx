@@ -1,4 +1,4 @@
-import TeamMemberCard from '@/src/components/ui/teamMemberCard'
+import TeamMemberCard from '@/src/components/ui/TeamMemberCard'
 import { TeamMember } from '@/src/types/types'
 
 const teamMembers: TeamMember[] = [

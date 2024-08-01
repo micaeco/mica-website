@@ -5,7 +5,7 @@ import { User, Mail, Phone, TrafficCone } from 'lucide-react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import InputBox from '@/src/components/ui/inputBox';
+import InputBox from '@/src/components/ui/InputBox';
 
 interface FormField {
   icon: React.ElementType;

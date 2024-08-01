@@ -1,7 +1,5 @@
-import { Droplet, Cpu, Radio } from 'lucide-react'
-
-import HowItWorks from '@/src/components/product/howItWorks'
-import CallToAction from '@/src/components/product/callToAction'
+import HowItWorks from '@/src/components/product/HowItWorks'
+import CallToAction from '@/src/components/product/CallToAction'
 
 export default function Product() {
   return (

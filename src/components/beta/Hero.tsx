@@ -2,7 +2,7 @@ import React from 'react';
 import { GiCargoCrane } from "react-icons/gi";
 import Image from 'next/image';
 
-import CtaButton from '@/src/components/ui/ctaButton';
+import CTAButton from '@/src/components/ui/CTAButton';
 
 const Hero: React.FC = () => {
   return (
@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
             <p className="mb-6 text-gray-300">
               Encara estem en fase de disseny. Tot i així, et pots apuntar des d&apos;avui mateix al nostre programa pilot. Només cal que ens deixis el teu correu electrònic i et mantindrem informat sobre les novetats.
             </p>
-            <CtaButton text="Fes el registre" href="/register" />
+            <CTAButton text="Fes el registre" href="/register" />
           </div>
           <div className="w-full max-w-md">
             <Image

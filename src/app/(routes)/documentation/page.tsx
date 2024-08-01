@@ -2,9 +2,9 @@
 
 import React from 'react';
 
-import DocumentList from '@/src/components/documentation/documentList';
-import SearchBar from '@/src/components/documentation/searchBar';
-import CategoryFilter from '@/src/components/documentation/categoryFilter';
+import DocumentList from '@/src/components/documentation/DocumentList';
+import SearchBar from '@/src/components/documentation/SearchBar';
+import CategoryFilter from '@/src/components/documentation/CategoryFilter';
 import { useDocuments } from '@/src/hooks/useDocuments';
 
 const DocumentationPage: React.FC = () => {

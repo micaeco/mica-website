@@ -3,7 +3,7 @@
 import { notFound } from 'next/navigation'
 import { useDocuments } from '@/src/hooks/useDocuments'
 import Link from 'next/link'
-import MarkdownRenderer from '@/src/components/ui/markdownRenderer';
+import MarkdownRenderer from '@/src/components/ui/MarkdownRenderer';
 import { ArrowLeft, Clock, User, Tag, TrafficCone } from 'lucide-react'
 
 type Props = {
