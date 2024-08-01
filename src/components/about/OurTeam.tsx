@@ -1,7 +1,7 @@
 import TeamMemberCard from '@/src/components/ui/TeamMemberCard'
-import { TeamMember } from '@/src/types/types'
+import { ITeamMember } from '@/src/types'
 
-const teamMembers: TeamMember[] = [
+const teamMembers: ITeamMember[] = [
   {
     src: "/images/jaime.webp",
     name: "Jaime Escobar",

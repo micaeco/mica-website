@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 
-interface ExpandableCardProps {
+interface Props {
   title: string;
   description: string;
   imageSrc?: string;
@@ -9,13 +9,13 @@ interface ExpandableCardProps {
   onToggle: () => void;
 }
 
-const ExpandableCard: React.FC<ExpandableCardProps> = ({
+export default function ExpandableCard({
   title,
   description,
   imageSrc,
   isExpanded,
   onToggle,
-}) => {
+}: Props) {
   const [contentHeight, setContentHeight] = useState<number>(0);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -59,5 +59,3 @@ const ExpandableCard: React.FC<ExpandableCardProps> = ({
     </div>
   );
 };
-
-export default ExpandableCard;

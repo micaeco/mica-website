@@ -8,13 +8,13 @@ import { Menu, X } from 'lucide-react';
 const navItems = [
   { href: "/", label: "Inici" },
   { href: "/product", label: "Com funciona" },
-  { href: "/beta", label: "En vull un!" },
   { href: "/about", label: "Sobre Nosaltres" },
-  { href: "/documentation", label: "Documentació" },
+  { href: "/faqs", label: "FAQs" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contacte" },
 ];
 
-const Header = () => {
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -45,10 +45,10 @@ const Header = () => {
           {/* Register button (desktop) */}
           <div className="hidden xl:block">
             <Link
-              href="/register"
+              href="/beta"
               className="rounded-lg bg-primary px-4 py-2 text-sm text-white transition-all duration-300 hover:bg-primary-700 hover:shadow-md"
             >
-              Registra&apos;t
+              En vull un!
             </Link>
           </div>
 
@@ -88,7 +88,7 @@ const Header = () => {
                 className="rounded-lg bg-primary px-4 py-2 text-center text-sm text-white transition-all duration-300 hover:bg-primary-700 hover:shadow-md"
                 onClick={toggleMenu}
               >
-                Registra&apos;t
+                En vull un!
               </Link>
             </div>
           </div>
@@ -97,5 +97,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;

@@ -55,7 +55,7 @@ const formFields: FormField[] = [
   },
 ];
 
-const RegistrationForm: React.FC = () => {
+export default function RegistrationForm() {
   const [formData, setFormData] = useState<FormData>({});
   const [isFormValid, setIsFormValid] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
@@ -121,7 +121,7 @@ const RegistrationForm: React.FC = () => {
   };
 
   return (
-    <section className="bg-gray-100 py-16">
+    <section className="bg-gray-50 py-16">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-md overflow-hidden rounded-lg bg-white shadow-md">
           <div className="px-6 py-8">
@@ -161,5 +161,3 @@ const RegistrationForm: React.FC = () => {
     </section>
   );
 };
-
-export default RegistrationForm;

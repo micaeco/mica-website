@@ -1,14 +1,7 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import { Components } from 'react-markdown';
+import ReactMarkdown, { Components } from 'react-markdown';
 
-interface DocumentComponentProps {
-  article: {
-    content?: string;
-  };
-}
-
-const MarkdownRenderer: React.FC<DocumentComponentProps> = ({ article }) => {
+export default function MarkdownRenderer({ content }: { content: string }) {
   const components: Components = {
     h1: ({ node, ...props }) => <h1 className="mb-4 text-2xl font-bold" {...props} />,
     h2: ({ node, ...props }) => <h2 className="mb-3 text-xl font-bold" {...props} />,
@@ -26,13 +19,9 @@ const MarkdownRenderer: React.FC<DocumentComponentProps> = ({ article }) => {
 
   return (
     <div className="prose max-w-none px-1">
-      {article.content ? (
-        <ReactMarkdown components={components}>{article.content}</ReactMarkdown>
-      ) : (
-        <p>No hi ha contingut disponible per a aquest article.</p>
-      )}
+      <ReactMarkdown components={components}>
+        {content}  
+      </ReactMarkdown>
     </div>
   );
 };
-
-export default MarkdownRenderer;

@@ -2,12 +2,10 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { ButtonHTMLAttributes } from 'react';
 
-type ButtonVariant = 'accent' | 'transparent';
-
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   text: string;
   href: string;
-  variant?: ButtonVariant;
+  variant?: 'accent' | 'transparent';
   showArrow?: boolean;
 };
 

@@ -7,7 +7,7 @@ import { Droplet, AlertTriangle, TrendingUp } from 'lucide-react';
 import CtaButton from '@/src/components/ui/CTAButton';
 import IconCard from '@/src/components/ui/IconCard';
 
-const BenefitCards = [
+const benefits = [
   {
     icon: Droplet,
     title: "Veure on gastes l'aigua",
@@ -25,7 +25,7 @@ const BenefitCards = [
   },
 ];
 
-const Solution = () => {
+export default function Solution() {
   return (
     <div className="bg-gray-100 py-12">
       <div className="container mx-auto px-4">
@@ -42,7 +42,7 @@ const Solution = () => {
         </motion.div>
 
         <div className="grid gap-8 md:grid-cols-3">
-          {BenefitCards.map((card, index) => (
+          {benefits.map((card, index) => (
             <IconCard
               key={index}
               icon={card.icon}
@@ -61,5 +61,3 @@ const Solution = () => {
     </div>
   );
 };
-
-export default Solution;

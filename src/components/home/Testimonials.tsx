@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const testimonials = [
   {
@@ -26,15 +25,14 @@ export default function TestimonialCarousel() {
   const [current, setCurrent] = useState(0);
 
   const next = () => setCurrent((current + 1) % testimonials.length);
-  const prev = () => setCurrent((current - 1 + testimonials.length) % testimonials.length);
 
   useEffect(() => {
     const timer = setInterval(next, 5000);
     return () => clearInterval(timer);
-  }, [current]);
+  });
 
   return (
-    <section className="bg-gradient-to-b bg-secondary px-6 py-32">
+    <section className="bg-secondary bg-gradient-to-b px-6 py-32">
       <div className="mx-auto max-w-4xl">
         <div className="relative">
           <AnimatePresence mode="wait">

@@ -1,7 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
 
-const Footer = () => {
+const navLinks = [
+  { name: 'Inici', href: '/' },
+  { name: 'Com funciona', href: '/product' },
+  { name: 'Sobre Nosaltres', href: '/about' },
+  { name: 'FAQs', href: '/faqs' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Contacte', href: '/contact' },
+  { name: 'En vull un!', href: '/beta' },
+];
+
+export default function Footer() {
   return (
     <footer className="bg-primary py-4 text-xs text-gray-300">
       <div className="container mx-auto mt-4 p-4">
@@ -23,25 +33,12 @@ const Footer = () => {
             <p className="mb-4 text-xs font-bold text-gray-50">
               Enllaços ràpids
             </p>
-            <nav className="space-y-1">
-              <Link href="/" className="block transition-colors hover:text-accent-300">
-                Inici
-              </Link>
-              <Link href="/product" className="block transition-colors hover:text-accent-300">
-                Com funciona
-              </Link>
-              <Link href="/product" className="block transition-colors hover:text-accent-300">
-                En vull un!
-              </Link>
-              <Link href="/about" className="block transition-colors hover:text-accent-300">
-                Sobre Nosaltres
-              </Link>
-              <Link href="/documentation" className="block transition-colors hover:text-accent-300">
-                Documentació
-              </Link>
-              <Link href="/contact" className="block transition-colors hover:text-accent-300">
-                Contacte
-              </Link>
+            <nav className="flex flex-col space-y-1">
+              {navLinks.map((link) => (
+                <Link key={link.href} href={link.href} className="text-xs hover:text-accent-500">
+                  {link.name}
+                </Link>
+              ))}
             </nav>
           </div>
           <div>
@@ -60,5 +57,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

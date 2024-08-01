@@ -4,29 +4,36 @@ import { Droplet, Cpu, Radio } from 'lucide-react';
 import ImageCard from '@/src/components/ui/ImageCard';
 import TextCard from '@/src/components/ui/TextCard';
 
-const FeatureIcon: React.FC<{ icon: React.ReactNode; text: string }> = ({ icon, text }) => (
-  <div className="flex items-center space-x-2">
-    {icon}
-    <span>{text}</span>
-  </div>
-);
+const features = [
+  {
+    title: "Disseny Compacte",
+    description: "El disseny del producte és elegant i compacte.",
+  },
+  {
+    title: "Modularitat",
+    description: "Fàcil de desmontar, simplificant així la substitució de la bateria i la reparació del sensor.",
+  },
+  {
+    title: "Materials robusts",
+    description: "Disseny reforçat per a entorns difícils i aplicacions exteriors de mesurament de flux d'aigua.",
+  },
+];
+
+type Props = {
+  icon: React.ReactNode;
+  text: string;
+};
+
+function FeatureIcon({ icon, text }: Props) {
+  return(
+    <div className="flex items-center space-x-2">
+      {icon}
+      <span>{text}</span>
+    </div>
+  );
+};
 
 const ProductFeatures: React.FC = () => {
-  const features = [
-    {
-      title: "Disseny Compacte",
-      description: "El disseny del producte és elegant i compacte.",
-    },
-    {
-      title: "Modularitat",
-      description: "Fàcil de desmontar, simplificant així la substitució de la bateria i la reparació del sensor.",
-    },
-    {
-      title: "Materials robusts",
-      description: "Disseny reforçat per a entorns difícils i aplicacions exteriors de mesurament de flux d'aigua.",
-    },
-  ];
-
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="mb-10 text-center text-3xl font-bold">

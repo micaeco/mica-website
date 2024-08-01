@@ -1,16 +1,39 @@
 'use client';
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef } from 'react';
 import { ClipboardCheck, FileQuestion, UserCheck, Cpu } from 'lucide-react';
 
-type StepProps = {
+type Props = {
   icon: React.ElementType;
   title: string;
   description: string;
   isLast?: boolean;
 };
 
-const ProcessStep: React.FC<StepProps> = ({ icon: Icon, title, description, isLast=false }) => {
+const steps: Props[] = [
+  {
+    icon: ClipboardCheck,
+    title: "Registra't.",
+    description: "Completa un formulari amb la teva informació de contacte."
+  },
+  {
+    icon: FileQuestion,
+    title: "Contesta un qüestionari.",
+    description: "T'enviarem un qüestionari per conèixer millor les teves necessitats."
+  },
+  {
+    icon: UserCheck,
+    title: "Procés de selecció.",
+    description: "Seleccionarem els candidats més adequats per a la prova pilot."
+  },
+  {
+    icon: Cpu,
+    title: "T'enviarem un sensor.",
+    description: "Si ets seleccionat, contactarem amb tu per coordinar la instal·lació del sensor.",
+  }
+];
+
+function ProcessStep({ icon: Icon, title, description, isLast=false }: Props) {
   const stepRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -34,32 +57,9 @@ const ProcessStep: React.FC<StepProps> = ({ icon: Icon, title, description, isLa
   );
 };
 
-const Process: React.FC = () => {
-  const steps: StepProps[] = [
-    {
-      icon: ClipboardCheck,
-      title: "Registra't.",
-      description: "Completa un formulari amb la teva informació de contacte."
-    },
-    {
-      icon: FileQuestion,
-      title: "Contesta un qüestionari.",
-      description: "T'enviarem un qüestionari per conèixer millor les teves necessitats."
-    },
-    {
-      icon: UserCheck,
-      title: "Procés de selecció.",
-      description: "Seleccionarem els candidats més adequats per a la prova pilot."
-    },
-    {
-      icon: Cpu,
-      title: "T'enviarem un sensor.",
-      description: "Si ets seleccionat, contactarem amb tu per coordinar la instal·lació del sensor.",
-    }
-  ];
-
+export default function Process() {
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-gray-100 py-20">
+    <section className="bg-gradient-to-b from-gray-50 to-gray-100 py-10">
       <div className="container mx-auto px-4">
         <h3 className="mb-10 text-center font-bold text-primary">
           Passos a seguir
@@ -73,5 +73,3 @@ const Process: React.FC = () => {
     </section>
   );
 };
-
-export default Process;

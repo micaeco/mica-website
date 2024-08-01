@@ -1,4 +1,4 @@
-export function ContactInfo() {
+export default function ContactInfo() {
   return (
     <div className="rounded-lg bg-white p-6 shadow-md">
       <h2 className="mb-4 text-neutral-800">Informació de contacte</h2>

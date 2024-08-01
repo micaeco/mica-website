@@ -1,10 +1,12 @@
 'use client';
 
 import { notFound } from 'next/navigation'
-import { useDocuments } from '@/src/hooks/useDocuments'
+import { useBlogPosts } from '@/src/hooks/useBlogPosts'
 import Link from 'next/link'
-import MarkdownRenderer from '@/src/components/ui/MarkdownRenderer';
+import { usePathname } from 'next/navigation'
 import { ArrowLeft, Clock, User, Tag, TrafficCone } from 'lucide-react'
+
+import MarkdownRenderer from '@/src/components/ui/MarkdownRenderer';
 
 type Props = {
   params: {
@@ -12,23 +14,24 @@ type Props = {
   }
 }
 
-export default function Article({ params }: Props) {  
-  const { documents } = useDocuments();
+export default function Post({ params }: Props) {  
+  const { posts } = useBlogPosts();
+  const path = usePathname();
 
-  const article = documents.find(a => a.slug === params.slug);
+  const post = posts.find(a => a.slug === params.slug);
 
-  if (!article) {
+  if (!post) {
     notFound()
   }
 
-  const relatedDocuments = documents
-    .filter(a => a.category === article.category && a.slug !== article.slug)
+  const relatedPosts = posts
+    .filter(_post => _post.tag === post.tag && _post.slug !== post.slug)
     .slice(0, 2);
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8">
       <Link 
-        href="/documentation" 
+        href={path + "/.."} 
         className="mb-6 inline-flex items-center text-blue-600 hover:text-blue-800"
       >
         <ArrowLeft className="mr-2 size-4" />
@@ -45,33 +48,33 @@ export default function Article({ params }: Props) {
       
       <article className="overflow-hidden rounded-lg bg-white shadow-lg">
         <div className="p-6">
-          <h1 className="mb-4 text-3xl font-bold">{article.title}</h1>
+          <h1 className="mb-4 text-3xl font-bold">{post.title}</h1>
           
           <div className="mb-4 flex items-center text-sm text-gray-600">
             <Clock className="mr-1 size-4" />
-            <span className="mr-4">{article.date || 'Data desconeguda'}</span>
+            <span className="mr-4">{post.date?.toString() || 'Data desconeguda'}</span>
             <User className="mr-1 size-4" />
-            <span className="mr-4">{article.author || 'Autor desconegut'}</span>
+            <span className="mr-4">{post.author || 'Autor desconegut'}</span>
             <Tag className="mr-1 size-4" />
-            <span>{article.category || 'Categoria desconeguda'}</span>
+            <span>{post.tag || 'Categoria desconeguda'}</span>
           </div>
           
-          <MarkdownRenderer article={article} />
+          {post.content ? <MarkdownRenderer content={post.content} /> : <p>No hi ha contingut disponible.</p>}
         </div>
       </article>
 
       <div className="mt-8">
         <h2 className="mb-4 text-2xl font-bold">Documents relacionats</h2>
-        {relatedDocuments.length > 0 ? (
+        {relatedPosts.length > 0 ? (
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            {relatedDocuments.map(relatedArticle => (
+            {relatedPosts.map(relatedPost => (
               <Link 
-                key={relatedArticle.slug} 
-                href={`/documentation/${relatedArticle.slug}`}
+                key={relatedPost.slug} 
+                href={`/documentation/${relatedPost.slug}`}
                 className="block rounded-lg bg-white p-4 shadow transition-shadow hover:shadow-md"
               >
-                <h3 className="mb-2 font-semibold">{relatedArticle.title}</h3>
-                <p className="text-sm text-gray-600">{relatedArticle.summary || 'No hi ha resum disponible.'}</p>
+                <h3 className="mb-2 font-semibold">{relatedPost.title}</h3>
+                <p className="text-sm text-gray-600">{relatedPost.summary || 'No hi ha resum disponible.'}</p>
               </Link>
             ))}
           </div>

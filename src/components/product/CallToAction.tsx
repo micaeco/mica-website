@@ -2,7 +2,7 @@ import React from 'react';
 
 import CtaButton from '@/src/components/ui/CTAButton';
 
-const CallToAction = () => {
+export default function CallToAction() {
   return (
     <section>
       <div className="bg-gray-100 px-4 pb-10 text-center">
@@ -11,5 +11,3 @@ const CallToAction = () => {
     </section>
   );
 };
-
-export default CallToAction;

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Search } from 'lucide-react';
 
-interface SearchBarProps {
+interface Props {
   searchTerm: string;
   setSearchTerm: (term: string) => void;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, setSearchTerm }) => {
+export default function SearchBar({ searchTerm, setSearchTerm }: Props) {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
   };
@@ -31,5 +31,3 @@ const SearchBar: React.FC<SearchBarProps> = ({ searchTerm, setSearchTerm }) => {
     </form>
   );
 };
-
-export default SearchBar;

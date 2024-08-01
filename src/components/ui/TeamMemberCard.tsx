@@ -2,9 +2,9 @@ import React from 'react';
 import Image from 'next/image';
 import { UserCircle } from 'lucide-react';
 
-import { SocialLink, TeamMember } from '@/src/types/types'; 
+import { ITeamMember } from '@/src/types'; 
 
-const SocialIcon: React.FC<{ platform: SocialLink['platform'] }> = ({ platform }) => {
+function SocialIcon({ platform }: { platform: string }) {
   switch (platform) {
     case 'linkedin':
       return <Image src={"/icons/linkedin-icon.svg"} alt="Linkedin" width={20} height={20} />;
@@ -19,7 +19,7 @@ const SocialIcon: React.FC<{ platform: SocialLink['platform'] }> = ({ platform }
   }
 };
 
-export default function TeamMemberCard({ src, name, description, socials }: TeamMember) {
+export default function TeamMemberCard({ src, name, description, socials }: ITeamMember) {
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       <div className="relative w-full pb-[100%]"> {/* 1:1 aspect ratio */}

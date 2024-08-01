@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const WaveSeparator = ({ topColor = "white", bottomColor = "gray-100" }) => {
+export default function WaveSeparator({ topColor = "white", bottomColor = "gray-100" }) {
   return (
     <div className={`bg-${topColor} relative w-full overflow-hidden`}>
       <svg
@@ -14,7 +14,6 @@ const WaveSeparator = ({ topColor = "white", bottomColor = "gray-100" }) => {
         <path
           fill={bottomColor}
           fillOpacity="1"
-          className="wave-animation"
           d="M0,96L48,112C96,128,192,160,288,165.3C384,171,480,149,576,128C672,107,768,85,864,96C960,107,1056,149,1152,154.7C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
         ></path>
       </svg>
@@ -37,5 +36,3 @@ const WaveSeparator = ({ topColor = "white", bottomColor = "gray-100" }) => {
     </div>
   );
 };
-
-export default WaveSeparator;
