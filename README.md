@@ -13,7 +13,7 @@ Note: While `package.json` specifies the Node.js version for the project, you ne
 
 1. Clone the repository:
    ```
-   git clone https://github.com/your-username/mica-website.git
+   git clone https://github.com/micaeco/mica-website.git
    cd mica-website
    ```
 
@@ -119,10 +119,3 @@ These templates help ensure that all necessary information is provided when crea
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-To include the license in the project:
-1. Create a file named `LICENSE` in the root of the repository.
-2. Copy the text of the MIT License into this file.
-3. Update the year and copyright holder in the license text as needed.
-
-You can do this directly through GitHub's web interface or locally and then push the changes to the repository.
