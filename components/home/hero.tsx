@@ -6,17 +6,18 @@ import CtaButton from '@/components/ui/ctaButton';
 
 export default function Hero() {
   return (
-    <section className="relative flex flex-col items-center justify-center bg-white px-6 py-44">
+    <section className="relative flex flex-col items-center justify-center bg-white px-6 py-28">
       <div className="mb-16 w-full max-w-4xl text-center">
-        <h1 className="mb-6 text-4xl font-bold leading-tight text-primary sm:text-5xl md:text-6xl lg:text-7xl">
-          Mica és la nova manera <br className="hidden sm:inline" />
+        <h1 className="mb-6 font-bold leading-tight text-primary">
+          La nova manera <br/>
           d&apos;estalviar aigua.
         </h1>
-        <p className="mx-auto mb-8 max-w-2xl text-lg text-primary/80 sm:text-xl">
-          Rep recomanacions personalitzades per a l&apos;estalvi d&apos;aigua
-          a casa i fes un seguiment precís del teu consum.
+        <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-400 sm:text-xl">
+          Amb MICA pots seguir el teu consum d&apos;aigua, detectar fugues i rebre recomanacions personalitzades per estalviar aigua.
         </p>
-        <CtaButton text="Uneix-te a la beta" href="/beta" />
+        
+        <CtaButton text="Com funciona" href="/product" showArrow={false} variant='transparent'/>  
+        <CtaButton text="Compra el sensor" href="/beta" />
       </div>
     </section>
   );

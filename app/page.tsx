@@ -13,7 +13,7 @@ const Home = () => {
       <WaveSeparator topColor="white" bottomColor="#d5fff3" />
       <Problem />
       <Solution />
-      <WaveSeparator topColor="tertiary" bottomColor="#00f2dd" />
+      <WaveSeparator topColor="gray-100" bottomColor="#00f2dd" />
       <TestimonialCarousel />
     </main>
   );

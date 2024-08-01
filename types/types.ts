@@ -14,4 +14,16 @@ type Shape = {
   shape: 'circle' | 'square';
 }
 
-export type { SocialLink, TeamMember, Shape };
+type DocsCategory = 'FAQs' | 'Guía' | 'Article' | 'Altres';
+
+type Document = {
+  title: string;
+  summary: string;
+  date?: string;
+  author?: string;
+  category?: DocsCategory;
+  content?: string;
+  slug: string;
+}
+
+export type { SocialLink, TeamMember, Shape, DocsCategory, Document };

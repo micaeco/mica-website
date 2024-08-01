@@ -1,59 +1,70 @@
-import React from 'react';
-import { ClipboardList, Cpu, Smartphone, MessageCircle } from 'lucide-react';
+'use client';
 
-type Props = {
+import React, { useRef, useEffect, useState } from 'react';
+import { ClipboardCheck, FileQuestion, UserCheck, Cpu } from 'lucide-react';
+
+type StepProps = {
   icon: React.ElementType;
   title: string;
   description: string;
-  isLast: boolean;
+  isLast?: boolean;
 };
 
-const ProcessStep = ({ icon: Icon, title, description, isLast }: Props) => (
-  <div className="flex items-start">
-    <div className="relative mr-4 flex flex-col items-center">
-      <div className="flex size-12 items-center justify-center rounded-full bg-secondary text-white">
-        <Icon className="size-6" />
-      </div>
-      {!isLast && <div className="absolute left-1/2 top-12 h-full w-0.5 -translate-x-1/2 bg-gray-300" />}
-    </div>
-    <div className="grow pb-8">
-      <h3 className="mb-2 text-xl font-bold">{title}</h3>
-      <p className="text-gray-700">{description}</p>
-    </div>
-  </div>
-);
+const ProcessStep: React.FC<StepProps> = ({ icon: Icon, title, description, isLast=false }) => {
+  const stepRef = useRef<HTMLDivElement>(null);
 
-const Process = () => {
-  const steps = [
+  return (
+    <div ref={stepRef} className="relative flex items-start pb-8">
+      <div className="mr-6 flex flex-col items-center">
+        <div className="flex size-14 items-center justify-center rounded-full bg-secondary text-white shadow-lg transition-transform hover:scale-110">
+          <Icon className="size-7" />
+        </div>
+        {!isLast && (
+          <div 
+            className="absolute left-7 top-14 w-0.5 -translate-x-1/2 bg-gray-300 transition-all duration-300" 
+            style={{ height: `calc(100% - 3.5rem)` }}
+          />
+        )}
+      </div>
+      <div className="grow">
+        <h6 className="mb-2 text-gray-800">{title}</h6>
+        <p className="text-gray-500">{description}</p>
+      </div>
+    </div>
+  );
+};
+
+const Process: React.FC = () => {
+  const steps: StepProps[] = [
     {
-      icon: ClipboardList,
-      title: "Registra't",
+      icon: ClipboardCheck,
+      title: "Registra't.",
       description: "Completa un formulari amb la teva informació de contacte."
     },
     {
+      icon: FileQuestion,
+      title: "Contesta un qüestionari.",
+      description: "T'enviarem un qüestionari per conèixer millor les teves necessitats."
+    },
+    {
+      icon: UserCheck,
+      title: "Procés de selecció.",
+      description: "Seleccionarem els candidats més adequats per a la prova pilot."
+    },
+    {
       icon: Cpu,
-      title: "Rep el sensor",
-      description: "Sigues dels primers en rebre el sensor Mica quan surti."
-    },
-    {
-      icon: Smartphone,
-      title: "Monotoritza",
-      description: "Descobreix els teus patrons de consum amb la nostra app."
-    },
-    {
-      icon: MessageCircle,
-      title: "Comparteix",
-      description: "Dóna'ns el teu feedback i ajuda'ns a millorar el futur de l'estalvi d'aigua."
+      title: "T'enviarem un sensor.",
+      description: "Si ets seleccionat, contactarem amb tu per coordinar la instal·lació del sensor.",
     }
   ];
 
   return (
-    <section className="bg-gray-50 py-16">
+    <section className="bg-gradient-to-b from-gray-50 to-gray-100 py-20">
       <div className="container mx-auto px-4">
-        <h2 className="mb-12 text-center text-3xl font-bold text-primary md:text-4xl md:-translate-x-52">
-          Passos a seguir...
-        </h2>
-        <div className="mx-auto max-w-2xl">
+        <h3 className="mb-10 text-center font-bold text-primary">
+          Passos a seguir
+        </h3>
+        <div className="mx-auto max-w-3xl">
           {steps.map((step, index) => (
             <ProcessStep key={index} {...step} isLast={index === steps.length - 1} />
           ))}

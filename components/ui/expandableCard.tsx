@@ -1,43 +1,63 @@
+import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import { ChevronUp, ChevronDown } from 'lucide-react';
 
-type Props = {
+interface ExpandableCardProps {
   title: string;
   description: string;
-  imageSrc: string;
+  imageSrc?: string;
   isExpanded: boolean;
   onToggle: () => void;
-  noneExpanded: boolean;
 }
 
-export default function ExpandableCard({ title, description, imageSrc , isExpanded, onToggle, noneExpanded }: Props) {
+const ExpandableCard: React.FC<ExpandableCardProps> = ({
+  title,
+  description,
+  imageSrc,
+  isExpanded,
+  onToggle,
+}) => {
+  const [contentHeight, setContentHeight] = useState<number>(0);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setContentHeight(contentRef.current.scrollHeight);
+    }
+  }, [description, isExpanded]);
+
   return (
-    <div className={`relative rounded-lg bg-white shadow-md transition-all duration-300 ease-in-out
-      ${isExpanded ? 'z-10' : 'z-0'} ${noneExpanded ? '' : isExpanded ? '' : 'opacity-70'}`}>
-      <div className="p-6 pb-16">
-        <Image 
-          src={imageSrc} 
-          alt={title} 
-          width={400} 
-          height={400} 
-          className="mb-4 size-20 rounded-md object-cover"
-        />
-        <h3 className="mb-4 text-xl font-semibold">{title}</h3>
+    <div className={`overflow-hidden rounded-lg bg-white shadow-md transition-all duration-300 ease-in-out ${isExpanded ? 'relative z-10' : ''}`}>
+      <div className="p-6">
+        {imageSrc && (
+          <Image
+            src={imageSrc}
+            alt={title}
+            width={130}
+            height={130}
+            className="mb-4"
+          />
+        )}
+        <h3 className="mb-2 text-xl font-semibold">{title}</h3>
+        <div
+          ref={contentRef}
+          style={{
+            maxHeight: isExpanded ? `${contentHeight}px` : '0',
+            opacity: isExpanded ? 1 : 0,
+            transition: 'max-height 0.3s ease-in-out, opacity 0.3s ease-in-out'
+          }}
+          className="overflow-hidden"
+        >
+          <p className="text-sm text-gray-500 ">{description}</p>
+        </div>
       </div>
       <button
         onClick={onToggle}
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-accent p-2 text-primary-300 transition-colors duration-200 hover:text-primary"
-        aria-label={isExpanded ? "Collapse" : "Expand"}
+        className="w-full bg-tertiary p-2 text-sm font-medium text-gray-600 transition-colors duration-200 hover:bg-tertiary-700"
       >
-        {isExpanded ? <ChevronUp size={32} /> : <ChevronDown size={32} />}
+        {isExpanded ? 'Mostra menys' : 'Mostra més'}
       </button>
-      <div
-        className={`absolute inset-x-0 rounded-b-lg bg-white p-6 shadow-lg transition-all duration-300 ease-in-out
-          ${isExpanded ? 'visible opacity-100' : 'invisible opacity-0'}`}
-        style={{ top: '100%' }}
-      >
-        <p className="text-primary">{description}</p>
-      </div>
     </div>
-  )
-}
+  );
+};
+
+export default ExpandableCard;

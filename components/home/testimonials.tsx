@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: "Mica m'ha ajudat a reduir la meva factura d'aigua en un 30%!",
+    quote: "MICA m'ha ajudat a reduir la meva factura d'aigua en un 30%!",
     author: "Maria G.",
     role: "Usuària satisfeta",
   },

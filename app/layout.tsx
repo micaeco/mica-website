@@ -5,10 +5,10 @@ import "./globals.css";
 import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const montserrat = Montserrat({subsets: ['latin'], weight: "400"});
 
 export const metadata: Metadata = {
-  title: "Mica: Monitorització Intel·ligent del Consum d'Aigua",
+  title: "MICA: Monitorització Intel·ligent del Consum d'Aigua",
   description: "Monitorització intel·ligent del consum d'aigua",
 };
 

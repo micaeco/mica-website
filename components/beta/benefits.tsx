@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Zap, TrendingUp, Users, Gift } from 'lucide-react';
 
 type Props = {
@@ -35,22 +38,28 @@ const BetaBenefitsSection = () => {
     {
       icon: Gift,
       title: "Recompenses Exclusives",
-      description: "Accedeix a descomptes i avantatges únics per a beta testers."
+      description: "Accedeix a descomptes i avantatges únics per a Beta Testers."
     }
   ];
 
   return (
-    <section className="bg-gray-50 py-16">
-      <div className="container mx-auto px-4">
-        <h2 className="mb-12 text-center text-3xl font-bold text-primary md:text-4xl">
-          Descobreix les avantatges del Beta Tester
-        </h2>
+    <section className="bg-gray-50 py-20">
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="container mx-auto px-4"
+      >
+        <h3 className="mb-10 text-center font-semibold text-primary">
+          Descobreix les avantatges...
+        </h3>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {benefits.map((benefit, index) => (
             <BenefitCard key={index} {...benefit} />
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

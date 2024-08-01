@@ -8,17 +8,19 @@ export default function HistorySection() {
       <div className="container mx-auto mb-12">
         <div className="flex flex-col items-center lg:flex-row">
           <div className="lg:w-1/2 lg:pr-12">
-            <h2 className="mb-4 text-2xl font-semibold text-primary-500">La nostra Història</h2>
-            <h3 className="mb-6 text-4xl font-bold leading-tight text-primary-600 lg:text-5xl">
-              Innovant per combatre la sequera a Barcelona
+            <h3 className="mb-6 text-4xl font-bold">
+              La nostra història
             </h3>
+            <h2 className="mb-6 text-5xl font-bold leading-tight">
+              Innovant per combatre la sequera a Barcelona
+            </h2>
             <p className="mb-6 text-lg">
               L&apos;estiu de 2022, Barcelona va patir una de les pitjors sequeres de la seva història. 
               Mentre la ciutat entrava en <span className="font-semibold text-accent-500">FASE D&apos;ALERTA</span>, 
               un grup d&apos;enginyers locals va tenir una idea revolucionària. 
             </p>
             <p className="mb-6 text-lg">
-              Així va néixer Mica, 
+              Així va néixer MICA, 
               amb la missió de transformar com entenem i conservem l&apos;aigua. La nostra tecnologia permet als 
               barcelonins enfrontar-se a cada nova crisi hídrica amb dades precises i eines innovadores.
             </p>

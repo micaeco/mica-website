@@ -5,29 +5,29 @@ import { motion } from 'framer-motion';
 import { Droplet, AlertTriangle, TrendingUp } from 'lucide-react';
 
 import CtaButton from '@/components/ui/ctaButton';
+import IconCard from '@/components/ui/iconCard';
 
-type BenefitCardProps = {
-  icon: React.ElementType;
-  title: string;
-  description: string;
-};
-
-const BenefitCard = ({ icon: Icon, title, description }: BenefitCardProps) => (
-  <motion.div 
-    className="flex h-full flex-col items-center justify-between rounded-xl bg-white p-6 text-center shadow-lg transition-all duration-300"
-    whileHover={{ scale: 1.03, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
-  >
-    <div className="mb-4 rounded-full bg-primary/10 p-4">
-      <Icon className="size-10 text-primary" />
-    </div>
-    <h3 className="mb-3 text-2xl font-bold text-primary">{title}</h3>
-    <p className="text-base text-gray-700">{description}</p>
-  </motion.div>
-);
+const BenefitCards = [
+  {
+    icon: Droplet,
+    title: "Veure on gastes l'aigua",
+    description: "Podràs veure el consum diari, setmanal i mensual, així com saber quins aparells són els que més consumeixen."
+  },
+  {
+    icon: AlertTriangle,
+    title: "Detectar fugues",
+    description: "MICA detecta fàcilment les fugues d'aigua i t'alerta per evitar danys importants."
+  },
+  {
+    icon: TrendingUp,
+    title: "Rebre recomanacions de consum",
+    description: "Rebràs recomanacions específiques al teu consum per estalviar aigua i diners."
+  },
+];
 
 const Solution = () => {
   return (
-    <div className="bg-tertiary py-12">
+    <div className="bg-gray-100 py-12">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -36,27 +36,20 @@ const Solution = () => {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <h2 className="mb-4 text-4xl font-extrabold sm:text-5xl">
-            Que podràs fer amb Mica...
+          <h2 className="my-12">
+            Què podràs fer amb MICA...
           </h2>
         </motion.div>
 
         <div className="grid gap-8 md:grid-cols-3">
-          <BenefitCard 
-            icon={Droplet}
-            title="Veure on gasto l'aigua"
-            description="La nostra IA identifica l'aigua que es gasta en dutxes, rentavaixelles, rentadores i més."
-          />
-          <BenefitCard 
-            icon={AlertTriangle}
-            title="Detectar Fugues"
-            description="Mica detecta fàcilment les fugues d'aigua i us alerta per evitar danys importants a la vostra llar."
-          />
-          <BenefitCard 
-            icon={TrendingUp}
-            title="Rebre Recomanacions"
-            description="Rebre recomanacions personalitzades per estalviar aigua i diners."
-          />
+          {BenefitCards.map((card, index) => (
+            <IconCard
+              key={index}
+              icon={card.icon}
+              title={card.title}
+              description={card.description}
+            />
+          ))}
         </div>
 
         <div className="mt-12 flex justify-center">
