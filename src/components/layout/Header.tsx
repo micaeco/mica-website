@@ -30,7 +30,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex xl:items-center xl:space-x-6">
+          <nav className="hidden lg:flex lg:items-center lg:space-x-6">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -43,7 +43,7 @@ export default function Header() {
           </nav>
 
           {/* Register button (desktop) */}
-          <div className="hidden xl:block">
+          <div className="hidden lg:block">
             <Link
               href="/beta"
               className="rounded-lg bg-primary px-4 py-2 text-sm text-white transition-all duration-300 hover:bg-primary-700 hover:shadow-md"
@@ -55,7 +55,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <button
             onClick={toggleMenu}
-            className="z-20 text-gray-500 transition-colors duration-300 hover:text-gray-900 xl:hidden"
+            className="z-20 text-gray-500 transition-colors duration-300 hover:text-gray-900 lg:hidden"
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             <Menu size={24} />
@@ -64,7 +64,7 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="fixed inset-y-0 right-0 z-30 w-64 bg-white p-6 shadow-lg transition-transform duration-300 ease-in-out md:hidden">
+          <div className="fixed inset-y-0 right-0 z-30 w-64 bg-white p-6 shadow-lg transition-transform duration-300 ease-in-out lg:hidden">
             <button
               onClick={toggleMenu}
               className="absolute right-4 top-4 text-gray-500 transition-colors duration-300 hover:text-gray-900"
@@ -96,4 +96,4 @@ export default function Header() {
       </div>
     </header>
   );
-};
+}
