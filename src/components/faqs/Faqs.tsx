@@ -7,7 +7,7 @@ export default function Faqs() {
   const { faqs } = useFaqs();
 
   return (
-    <div className="mx-auto max-w-2xl">
+    <div className="mx-auto px-4 max-w-2xl">
       <h4 className="mb-4 font-bold">Preguntes freqüents</h4>
       <div>
         {faqs.map((faq) => (
