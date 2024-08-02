@@ -4,7 +4,7 @@ export const api = {
   submitForm: async (formData: IFormData) => {
     try {
       console.log('Submitting form data:', formData);
-      
+
       const response = await fetch('/api/submit-form', {
         method: 'POST',
         headers: {

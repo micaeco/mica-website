@@ -2,11 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: []
+    domains: [],
   },
   env: {
     GOOGLE_APPS_SCRIPT_API_KEY: process.env.GOOGLE_APPS_SCRIPT_API_KEY,
   },
-}
+};
 
-export default nextConfig
+export default nextConfig;

@@ -19,9 +19,7 @@ export default function MarkdownRenderer({ content }: { content: string }) {
 
   return (
     <div className="prose max-w-none px-1">
-      <ReactMarkdown components={components}>
-        {content}  
-      </ReactMarkdown>
+      <ReactMarkdown components={components}>{content}</ReactMarkdown>
     </div>
   );
-};
+}

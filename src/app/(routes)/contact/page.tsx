@@ -1,4 +1,4 @@
-import ContactForm from '@/src/components/contact/ContactForm'
+import ContactForm from '@/src/components/contact/ContactForm';
 
 export default function ContactPage() {
   return (
@@ -7,5 +7,5 @@ export default function ContactPage() {
         <ContactForm />
       </div>
     </div>
-  )
+  );
 }

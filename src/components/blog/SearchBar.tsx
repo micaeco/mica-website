@@ -30,4 +30,4 @@ export default function SearchBar({ searchTerm, setSearchTerm }: Props) {
       </div>
     </form>
   );
-};
+}

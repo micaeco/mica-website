@@ -2,27 +2,29 @@ import React from 'react';
 import Image from 'next/image';
 import { UserCircle } from 'lucide-react';
 
-import { ITeamMember } from '@/src/types'; 
+import { ITeamMember } from '@/src/types';
 
 function SocialIcon({ platform }: { platform: string }) {
   switch (platform) {
     case 'linkedin':
-      return <Image src={"/icons/linkedin-icon.svg"} alt="Linkedin" width={20} height={20} />;
+      return <Image src={'/icons/linkedin-icon.svg'} alt="Linkedin" width={20} height={20} />;
     case 'x':
-      return <Image src={"/icons/x-icon.svg"} alt="X" width={20} height={20} />;
+      return <Image src={'/icons/x-icon.svg'} alt="X" width={20} height={20} />;
     case 'github':
-      return <Image src={"/icons/github-icon.svg"} alt="Github" width={20} height={20} />;
+      return <Image src={'/icons/github-icon.svg'} alt="Github" width={20} height={20} />;
     case 'instagram':
-      return <Image src={"/icons/instagram-icon.svg"} alt="Instagram" width={20} height={20} />;
+      return <Image src={'/icons/instagram-icon.svg'} alt="Instagram" width={20} height={20} />;
     default:
       return null;
   }
-};
+}
 
 export default function TeamMemberCard({ src, name, description, socials }: ITeamMember) {
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-      <div className="relative w-full pb-[100%]"> {/* 1:1 aspect ratio */}
+      <div className="relative w-full pb-[100%]">
+        {' '}
+        {/* 1:1 aspect ratio */}
         {src ? (
           <Image
             src={src}

@@ -24,34 +24,34 @@ interface FormData {
 const formFields: FormField[] = [
   {
     icon: User,
-    label: "Nom",
-    type: "text",
-    name: "firstName",
-    placeholder: "El teu nom",
+    label: 'Nom',
+    type: 'text',
+    name: 'firstName',
+    placeholder: 'El teu nom',
     required: true,
   },
   {
     icon: User,
-    label: "Cognoms",
-    type: "text",
-    name: "lastName",
-    placeholder: "Els teus cognoms",
+    label: 'Cognoms',
+    type: 'text',
+    name: 'lastName',
+    placeholder: 'Els teus cognoms',
     required: true,
   },
   {
     icon: Mail,
-    label: "Correu electrònic",
-    type: "email",
-    name: "email",
-    placeholder: "El teu correu electrònic",
+    label: 'Correu electrònic',
+    type: 'email',
+    name: 'email',
+    placeholder: 'El teu correu electrònic',
     required: true,
   },
   {
     icon: Phone,
-    label: "Telèfon (opcional)",
-    type: "tel",
-    name: "phone",
-    placeholder: "El teu número de telèfon",
+    label: 'Telèfon (opcional)',
+    type: 'tel',
+    name: 'phone',
+    placeholder: 'El teu número de telèfon',
     required: false,
   },
 ];
@@ -62,15 +62,17 @@ export default function RegistrationForm() {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   const handleInputChange = (name: string, value: string) => {
-    setFormData(prevData => ({
+    setFormData((prevData) => ({
       ...prevData,
-      [name]: value
+      [name]: value,
     }));
   };
 
   useEffect(() => {
-    const requiredFields = formFields.filter(field => field.required);
-    const areAllRequiredFieldsFilled = requiredFields.every(field => formData[field.name]?.trim());
+    const requiredFields = formFields.filter((field) => field.required);
+    const areAllRequiredFieldsFilled = requiredFields.every((field) =>
+      formData[field.name]?.trim()
+    );
     setIsFormValid(areAllRequiredFieldsFilled);
   }, [formData]);
 
@@ -83,7 +85,7 @@ export default function RegistrationForm() {
 
         if (result.result === 'success') {
           toast.success('Registre enviat correctament!', {
-            position: "bottom-right",
+            position: 'bottom-right',
             autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
@@ -98,7 +100,7 @@ export default function RegistrationForm() {
       } catch (error) {
         console.error('Error submitting form:', error);
         toast.error('Hi ha hagut un error en enviar el registre. Si us plau, torna-ho a provar.', {
-          position: "bottom-right",
+          position: 'bottom-right',
           autoClose: 5000,
           hideProgressBar: false,
           closeOnClick: true,
@@ -142,7 +144,7 @@ export default function RegistrationForm() {
                       : 'cursor-not-allowed bg-gray-400'
                   }`}
                 >
-                  {isSubmitting ? 'Enviant...' : 'Registra\'t'}
+                  {isSubmitting ? 'Enviant...' : "Registra't"}
                 </button>
               </div>
             </form>

@@ -1,38 +1,41 @@
-import TeamMemberCard from '@/src/components/ui/TeamMemberCard'
-import { ITeamMember } from '@/src/types'
+import TeamMemberCard from '@/src/components/ui/TeamMemberCard';
+import { ITeamMember } from '@/src/types';
 
 const teamMembers: ITeamMember[] = [
   {
-    src: "/images/jaime.webp",
-    name: "Jaime Escobar",
-    description: "Enginyer Industrial",
+    src: '/images/jaime.webp',
+    name: 'Jaime Escobar',
+    description: 'Enginyer Industrial',
     socials: [
-      { platform: 'linkedin', url: 'https://www.linkedin.com/in/jaime-escobar-8949a71/' },
+      {
+        platform: 'linkedin',
+        url: 'https://www.linkedin.com/in/jaime-escobar-8949a71/',
+      },
     ],
   },
   {
-    src: "/images/miki.webp",
-    name: "Miquel Escobar",
-    description: "Enginyer de Dades",
+    src: '/images/miki.webp',
+    name: 'Miquel Escobar',
+    description: 'Enginyer de Dades',
     socials: [
-      { platform: 'linkedin', url: 'https://es.linkedin.com/in/miquel-escobar-castells' },
+      {
+        platform: 'linkedin',
+        url: 'https://es.linkedin.com/in/miquel-escobar-castells',
+      },
       { platform: 'github', url: 'https://github.com/miquelescobar' },
     ],
   },
   {
-    src: "",
-    name: "Lucia Chacón",
-    description: "Enginyera Electrónica",
-    socials: [
-      { platform: 'github', url: 'https://github.com/LUciaChHcon' },
-    ],
+    src: '',
+    name: 'Lucia Chacón',
+    description: 'Enginyera Electrónica',
+    socials: [{ platform: 'github', url: 'https://github.com/LUciaChHcon' }],
   },
   {
-    src: "/images/marta.webp",
-    name: "Marta Castells",
-    description: "Enginyera de Disseny Industrial",
-    socials: [
-    ],
+    src: '/images/marta.webp',
+    name: 'Marta Castells',
+    description: 'Enginyera de Disseny Industrial',
+    socials: [],
   },
 ];
 

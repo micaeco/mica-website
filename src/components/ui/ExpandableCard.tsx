@@ -26,24 +26,18 @@ export default function ExpandableCard({
   }, [description, isExpanded]);
 
   return (
-    <div className={`overflow-hidden rounded-lg bg-white shadow-md transition-all duration-300 ease-in-out ${isExpanded ? 'relative z-10' : ''}`}>
+    <div
+      className={`overflow-hidden rounded-lg bg-white shadow-md transition-all duration-300 ease-in-out ${isExpanded ? 'relative z-10' : ''}`}
+    >
       <div className="p-6">
-        {imageSrc && (
-          <Image
-            src={imageSrc}
-            alt={title}
-            width={130}
-            height={130}
-            className="mb-4"
-          />
-        )}
+        {imageSrc && <Image src={imageSrc} alt={title} width={130} height={130} className="mb-4" />}
         <h3 className="mb-2 text-xl font-semibold">{title}</h3>
         <div
           ref={contentRef}
           style={{
             maxHeight: isExpanded ? `${contentHeight}px` : '0',
             opacity: isExpanded ? 1 : 0,
-            transition: 'max-height 0.3s ease-in-out, opacity 0.3s ease-in-out'
+            transition: 'max-height 0.3s ease-in-out, opacity 0.3s ease-in-out',
           }}
           className="overflow-hidden"
         >
@@ -58,4 +52,4 @@ export default function ExpandableCard({
       </button>
     </div>
   );
-};
+}

@@ -1,9 +1,9 @@
-import Form from '@/src/components/register/Form'
+import Form from '@/src/components/register/Form';
 
 export default function Register() {
-  return(
+  return (
     <main>
       <Form />
     </main>
   );
-};
+}

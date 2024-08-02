@@ -6,4 +6,4 @@ export default function FAQs() {
       <Faqs />
     </div>
   );
-};
+}

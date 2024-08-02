@@ -37,4 +37,4 @@ export default function TagFilter({ selectedTag, setSelectedTag }: Props) {
       ))}
     </div>
   );
-};
+}

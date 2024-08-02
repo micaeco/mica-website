@@ -11,17 +11,19 @@ const benefits = [
   {
     icon: Droplet,
     title: "Veure on gastes l'aigua",
-    description: "Podràs veure el consum diari, setmanal i mensual, així com saber quins aparells són els que més consumeixen."
+    description:
+      'Podràs veure el consum diari, setmanal i mensual, així com saber quins aparells són els que més consumeixen.',
   },
   {
     icon: AlertTriangle,
-    title: "Detectar fugues",
-    description: "MICA detecta fàcilment les fugues d'aigua i t'alerta per evitar danys importants."
+    title: 'Detectar fugues',
+    description:
+      "MICA detecta fàcilment les fugues d'aigua i t'alerta per evitar danys importants.",
   },
   {
     icon: TrendingUp,
-    title: "Rebre recomanacions de consum",
-    description: "Rebràs recomanacions específiques al teu consum per estalviar aigua i diners."
+    title: 'Rebre recomanacions de consum',
+    description: 'Rebràs recomanacions específiques al teu consum per estalviar aigua i diners.',
   },
 ];
 
@@ -36,9 +38,7 @@ export default function Solution() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <h2 className="my-12">
-            Què podràs fer amb MICA...
-          </h2>
+          <h2 className="my-12">Què podràs fer amb MICA...</h2>
         </motion.div>
 
         <div className="grid gap-8 md:grid-cols-3">
@@ -53,11 +53,9 @@ export default function Solution() {
         </div>
 
         <div className="mt-12 flex justify-center">
-          <CtaButton 
-            text="Descobreix com funciona" 
-            href="/product" />
+          <CtaButton text="Descobreix com funciona" href="/product" />
         </div>
       </div>
     </div>
   );
-};
+}

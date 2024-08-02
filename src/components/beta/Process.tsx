@@ -14,26 +14,26 @@ const steps: Props[] = [
   {
     icon: ClipboardCheck,
     title: "Registra't.",
-    description: "Completa un formulari amb la teva informació de contacte."
+    description: 'Completa un formulari amb la teva informació de contacte.',
   },
   {
     icon: FileQuestion,
-    title: "Contesta un qüestionari.",
-    description: "T'enviarem un qüestionari per conèixer millor les teves necessitats."
+    title: 'Contesta un qüestionari.',
+    description: "T'enviarem un qüestionari per conèixer millor les teves necessitats.",
   },
   {
     icon: UserCheck,
-    title: "Procés de selecció.",
-    description: "Seleccionarem els candidats més adequats per a la prova pilot."
+    title: 'Procés de selecció.',
+    description: 'Seleccionarem els candidats més adequats per a la prova pilot.',
   },
   {
     icon: Cpu,
     title: "T'enviarem un sensor.",
-    description: "Si ets seleccionat, contactarem amb tu per coordinar la instal·lació del sensor.",
-  }
+    description: 'Si ets seleccionat, contactarem amb tu per coordinar la instal·lació del sensor.',
+  },
 ];
 
-function ProcessStep({ icon: Icon, title, description, isLast=false }: Props) {
+function ProcessStep({ icon: Icon, title, description, isLast = false }: Props) {
   const stepRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -43,9 +43,9 @@ function ProcessStep({ icon: Icon, title, description, isLast=false }: Props) {
           <Icon className="size-7" />
         </div>
         {!isLast && (
-          <div 
-            className="absolute left-7 top-14 w-0.5 -translate-x-1/2 bg-gray-300 transition-all duration-300" 
-            style={{ height: `calc(100% - 3.5rem)` }}
+          <div
+            className="absolute left-7 top-14 w-0.5 -translate-x-1/2 bg-gray-300 transition-all duration-300"
+            style={{ height: 'calc(100% - 3.5rem)' }}
           />
         )}
       </div>
@@ -55,15 +55,13 @@ function ProcessStep({ icon: Icon, title, description, isLast=false }: Props) {
       </div>
     </div>
   );
-};
+}
 
 export default function Process() {
   return (
     <section className="bg-gradient-to-b from-gray-50 to-gray-100 py-10">
       <div className="container mx-auto px-4">
-        <h3 className="mb-10 text-center font-bold text-primary">
-          Passos a seguir
-        </h3>
+        <h3 className="mb-10 text-center font-bold text-primary">Passos a seguir</h3>
         <div className="mx-auto max-w-3xl">
           {steps.map((step, index) => (
             <ProcessStep key={index} {...step} isLast={index === steps.length - 1} />
@@ -72,4 +70,4 @@ export default function Process() {
       </div>
     </section>
   );
-};
+}

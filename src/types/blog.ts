@@ -1,5 +1,5 @@
 export const PostTagList = ['Article', 'Manual', 'Altres'] as const;
-export type TPostTag = typeof PostTagList[number];
+export type TPostTag = (typeof PostTagList)[number];
 
 export interface IPost {
   slug: string;

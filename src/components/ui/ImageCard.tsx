@@ -14,15 +14,10 @@ type Props = {
 
 export default function ImageCard({ imageSrc, width, height, alt, className }: Props) {
   return (
-    <motion.div 
+    <motion.div
       className={`flex flex-col items-center justify-between rounded-xl bg-white p-6 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl ${className}`}
     >
-      <Image
-        src={imageSrc}
-        alt={alt}
-        width={width}
-        height={height}
-      />
+      <Image src={imageSrc} alt={alt} width={width} height={height} />
     </motion.div>
   );
-};
+}

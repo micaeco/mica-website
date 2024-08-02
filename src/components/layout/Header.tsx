@@ -1,17 +1,17 @@
 'use client';
 
-import React, { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
+import React, { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 
 const navItems = [
-  { href: "/", label: "Inici" },
-  { href: "/product", label: "Com funciona" },
-  { href: "/about", label: "Sobre Nosaltres" },
-  { href: "/faqs", label: "FAQs" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contacte" },
+  { href: '/', label: 'Inici' },
+  { href: '/product', label: 'Com funciona' },
+  { href: '/about', label: 'Sobre Nosaltres' },
+  { href: '/faqs', label: 'FAQs' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contact', label: 'Contacte' },
 ];
 
 export default function Header() {
@@ -56,7 +56,7 @@ export default function Header() {
           <button
             onClick={toggleMenu}
             className="z-20 text-gray-500 transition-colors duration-300 hover:text-gray-900 lg:hidden"
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           >
             <Menu size={24} />
           </button>

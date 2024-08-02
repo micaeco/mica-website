@@ -8,9 +8,7 @@ export default function Faqs() {
 
   return (
     <div className="mx-auto max-w-2xl">
-      <h4 className="mb-4 font-bold">
-        Preguntes freqüents
-      </h4>
+      <h4 className="mb-4 font-bold">Preguntes freqüents</h4>
       <div>
         {faqs.map((faq) => (
           <ExpandableQuestion key={faq.slug} question={faq} />
@@ -18,4 +16,4 @@ export default function Faqs() {
       </div>
     </div>
   );
-};
+}

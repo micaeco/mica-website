@@ -9,20 +9,21 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   showArrow?: boolean;
 };
 
-export default function CtaButton({ 
-  className = '', 
-  text, 
-  href, 
-  variant = 'accent', 
+export default function CtaButton({
+  className = '',
+  text,
+  href,
+  variant = 'accent',
   showArrow = true,
-  ...props 
+  ...props
 }: Props) {
-  const baseClasses = "inline-flex items-center rounded-lg px-6 py-3 text-lg font-semibold transition-all";
+  const baseClasses =
+    'inline-flex items-center rounded-lg px-6 py-3 text-lg font-semibold transition-all';
   const variantClasses = {
-    accent: "bg-accent text-white hover:bg-accent/90",
-    transparent: "bg-transparent border border-primary text-primary hover:bg-primary/10"
+    accent: 'bg-accent text-white hover:bg-accent/90',
+    transparent: 'bg-transparent border border-primary text-primary hover:bg-primary/10',
   };
-  
+
   return (
     <Link href={href} passHref>
       <button

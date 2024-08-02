@@ -6,18 +6,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 const testimonials = [
   {
     quote: "MICA m'ha ajudat a reduir la meva factura d'aigua en un 30%!",
-    author: "Maria G.",
-    role: "Usuària satisfeta",
+    author: 'Maria G.',
+    role: 'Usuària satisfeta',
   },
   {
-    quote: "Una eina imprescindible per a qualsevol llar conscient del medi ambient.",
-    author: "Joan P.",
-    role: "Activista ambiental",
+    quote: 'Una eina imprescindible per a qualsevol llar conscient del medi ambient.',
+    author: 'Joan P.',
+    role: 'Activista ambiental',
   },
   {
     quote: "Fàcil d'usar i amb resultats reals. Totalment recomanable!",
-    author: "Laura S.",
-    role: "Propietària de casa",
+    author: 'Laura S.',
+    role: 'Propietària de casa',
   },
 ];
 
@@ -44,7 +44,9 @@ export default function TestimonialCarousel() {
               transition={{ duration: 0.5 }}
               className="text-center"
             >
-              <p className="mb-4 text-2xl italic text-primary">&ldquo;{testimonials[current].quote}&rdquo;</p>
+              <p className="mb-4 text-2xl italic text-primary">
+                &ldquo;{testimonials[current].quote}&rdquo;
+              </p>
               <p className="font-semibold text-primary">{testimonials[current].author}</p>
               <p className="text-sm text-primary/60">{testimonials[current].role}</p>
             </motion.div>

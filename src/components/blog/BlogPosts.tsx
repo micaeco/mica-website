@@ -13,7 +13,7 @@ export default function BlogPosts({ posts }: Props) {
   const [visiblePosts, setVisiblePosts] = useState(4);
 
   const loadMore = () => {
-    setVisiblePosts(prev => Math.min(prev + 4, posts.length));
+    setVisiblePosts((prev) => Math.min(prev + 4, posts.length));
   };
 
   return (
@@ -35,4 +35,4 @@ export default function BlogPosts({ posts }: Props) {
       )}
     </div>
   );
-};
+}

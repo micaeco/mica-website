@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { GiCargoCrane } from "react-icons/gi";
+import { GiCargoCrane } from 'react-icons/gi';
 import CTAButton from '@/src/components/ui/CTAButton';
 
 export default function Hero() {
@@ -11,7 +11,9 @@ export default function Hero() {
             <GiCargoCrane className="mx-auto mb-6 size-16 text-accent 2xl:mx-0" />
             <h3 className="mb-4 font-semibold">Converteix-te en un Beta Tester</h3>
             <p className="mb-6 text-gray-300">
-              Encara estem en fase de disseny. Tot i així, et pots apuntar des d&apos;avui mateix al nostre programa pilot. Només cal que ens deixis el teu correu electrònic i et mantindrem informat sobre les novetats.
+              Encara estem en fase de disseny. Tot i així, et pots apuntar des d&apos;avui mateix al
+              nostre programa pilot. Només cal que ens deixis el teu correu electrònic i et
+              mantindrem informat sobre les novetats.
             </p>
             <CTAButton text="Fes el registre" href="/register" />
           </div>

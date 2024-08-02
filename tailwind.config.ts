@@ -1,17 +1,16 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors: {
         primary: {
@@ -67,16 +66,16 @@ const config: Config = {
           900: '#2C1C01',
         },
         metallic: {
-          50: "#eeeeee",	
-          100: "#cccccc",
-          200: "#bbbbbb",
-          300: "#aaaaaa",	
-          400: "#777777",    
+          50: '#eeeeee',
+          100: '#cccccc',
+          200: '#bbbbbb',
+          300: '#aaaaaa',
+          400: '#777777',
         },
         copper: {
-          50: "#b87333",
-          100: "#cd7f32",
-        }
+          50: '#b87333',
+          100: '#cd7f32',
+        },
       },
     },
   },

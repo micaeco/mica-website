@@ -1,37 +1,37 @@
 'use client';
 
-import { notFound } from 'next/navigation'
-import { useBlogPosts } from '@/src/hooks/useBlogPosts'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { ArrowLeft, Clock, User, Tag, TrafficCone } from 'lucide-react'
+import { notFound } from 'next/navigation';
+import { useBlogPosts } from '@/src/hooks/useBlogPosts';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { ArrowLeft, Clock, User, Tag, TrafficCone } from 'lucide-react';
 
 import MarkdownRenderer from '@/src/components/ui/MarkdownRenderer';
 
 type Props = {
   params: {
-    slug: string
-  }
-}
+    slug: string;
+  };
+};
 
-export default function Post({ params }: Props) {  
+export default function Post({ params }: Props) {
   const { posts } = useBlogPosts();
   const path = usePathname();
 
-  const post = posts.find(a => a.slug === params.slug);
+  const post = posts.find((a) => a.slug === params.slug);
 
   if (!post) {
-    notFound()
+    notFound();
   }
 
   const relatedPosts = posts
-    .filter(_post => _post.tag === post.tag && _post.slug !== post.slug)
+    .filter((_post) => _post.tag === post.tag && _post.slug !== post.slug)
     .slice(0, 2);
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8">
-      <Link 
-        href={path + "/.."} 
+      <Link
+        href={path + '/..'}
         className="mb-6 inline-flex items-center text-blue-600 hover:text-blue-800"
       >
         <ArrowLeft className="mr-2 size-4" />
@@ -43,13 +43,16 @@ export default function Post({ params }: Props) {
           <TrafficCone size={50} />
           <h4> El següent contingut és una prova </h4>
         </div>
-        <p className="mx-auto"> Aquest document ha sigut generat utilitzant ia, pel que el contingut no es confiable. </p>
+        <p className="mx-auto">
+          {' '}
+          Aquest document ha sigut generat utilitzant ia, pel que el contingut no es confiable.{' '}
+        </p>
       </div>
-      
+
       <article className="overflow-hidden rounded-lg bg-white shadow-lg">
         <div className="p-6">
           <h1 className="mb-4 text-3xl font-bold">{post.title}</h1>
-          
+
           <div className="mb-4 flex items-center text-sm text-gray-600">
             <Clock className="mr-1 size-4" />
             <span className="mr-4">{post.date?.toString() || 'Data desconeguda'}</span>
@@ -58,8 +61,12 @@ export default function Post({ params }: Props) {
             <Tag className="mr-1 size-4" />
             <span>{post.tag || 'Categoria desconeguda'}</span>
           </div>
-          
-          {post.content ? <MarkdownRenderer content={post.content} /> : <p>No hi ha contingut disponible.</p>}
+
+          {post.content ? (
+            <MarkdownRenderer content={post.content} />
+          ) : (
+            <p>No hi ha contingut disponible.</p>
+          )}
         </div>
       </article>
 
@@ -67,14 +74,16 @@ export default function Post({ params }: Props) {
         <h2 className="mb-4 text-2xl font-bold">Documents relacionats</h2>
         {relatedPosts.length > 0 ? (
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            {relatedPosts.map(relatedPost => (
-              <Link 
-                key={relatedPost.slug} 
+            {relatedPosts.map((relatedPost) => (
+              <Link
+                key={relatedPost.slug}
                 href={`/documentation/${relatedPost.slug}`}
                 className="block rounded-lg bg-white p-4 shadow transition-shadow hover:shadow-md"
               >
                 <h3 className="mb-2 font-semibold">{relatedPost.title}</h3>
-                <p className="text-sm text-gray-600">{relatedPost.summary || 'No hi ha resum disponible.'}</p>
+                <p className="text-sm text-gray-600">
+                  {relatedPost.summary || 'No hi ha resum disponible.'}
+                </p>
               </Link>
             ))}
           </div>
@@ -83,5 +92,5 @@ export default function Post({ params }: Props) {
         )}
       </div>
     </div>
-  )
+  );
 }

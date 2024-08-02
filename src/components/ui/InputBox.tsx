@@ -11,15 +11,15 @@ interface Props {
   value: string;
 }
 
-export default function InputBox({ 
-  Icon, 
-  label, 
-  type, 
-  name, 
-  placeholder, 
-  required, 
+export default function InputBox({
+  Icon,
+  label,
+  type,
+  name,
+  placeholder,
+  required,
   onChange,
-  value
+  value,
 }: Props) {
   return (
     <div className="mb-4">
@@ -44,4 +44,4 @@ export default function InputBox({
       </div>
     </div>
   );
-};
+}

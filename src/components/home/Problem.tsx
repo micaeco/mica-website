@@ -18,12 +18,15 @@ export default function Problem() {
           className="flex flex-col items-center gap-8 md:flex-row"
         >
           <div className="space-y-6 md:w-1/2">
-            <h2 className="text-2xl font-bold">
-              Sabies que...
-            </h2>
+            <h2 className="text-2xl font-bold">Sabies que...</h2>
             <p className="mt-4">
-              Un estudi afirma que el 72% del consum d&apos;aigua a casa nostra el produeix només 3 electrodomèstics: la dutxa, el vàter i la rentadora.
-              <Link href="https://proyectoaguas.es/que-es-lo-que-mas-consume-agua-en-casa/" className="transition hover:text-blue-500" target="_blank">
+              Un estudi afirma que el 72% del consum d&apos;aigua a casa nostra el produeix només 3
+              electrodomèstics: la dutxa, el vàter i la rentadora.
+              <Link
+                href="https://proyectoaguas.es/que-es-lo-que-mas-consume-agua-en-casa/"
+                className="transition hover:text-blue-500"
+                target="_blank"
+              >
                 <ExternalLink className="ml-2 inline" />
               </Link>
             </p>

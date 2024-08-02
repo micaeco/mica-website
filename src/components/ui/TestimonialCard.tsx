@@ -1,10 +1,10 @@
 import React from 'react';
 
 type Props = {
-  name: string,
-  role: string,
-  quote: string,
-}
+  name: string;
+  role: string;
+  quote: string;
+};
 
 export default function TestimonialCard({ name, role, quote }: Props) {
   return (
@@ -14,4 +14,4 @@ export default function TestimonialCard({ name, role, quote }: Props) {
       <div className="text-sm text-gray-600">{role}</div>
     </div>
   );
-};
+}

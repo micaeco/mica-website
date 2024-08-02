@@ -6,7 +6,7 @@ type Props = {
   post: IPost;
 };
 
-export default function PostCard ({ post }: Props) {
+export default function PostCard({ post }: Props) {
   return (
     <Link href={`/blog/${post.slug}`} className="block h-full">
       <div className="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg">
@@ -18,4 +18,4 @@ export default function PostCard ({ post }: Props) {
       </div>
     </Link>
   );
-};
+}

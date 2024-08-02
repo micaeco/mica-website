@@ -1,5 +1,5 @@
-import HowItWorks from '@/src/components/product/HowItWorks'
-import CallToAction from '@/src/components/product/CallToAction'
+import HowItWorks from '@/src/components/product/HowItWorks';
+import CallToAction from '@/src/components/product/CallToAction';
 
 export default function Product() {
   return (
@@ -7,5 +7,5 @@ export default function Product() {
       <HowItWorks />
       <CallToAction />
     </main>
-  )
+  );
 }

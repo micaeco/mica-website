@@ -6,7 +6,8 @@ import { IPost, TPostTag } from '@/src/types';
 const posts: IPost[] = [
   {
     title: 'Com interpretar les dades del vostre sistema Mica',
-    summary: 'Guia pas a pas per entendre i utilitzar les dades proporcionades pel vostre sistema Mica per estalviar aigua.',
+    summary:
+      'Guia pas a pas per entendre i utilitzar les dades proporcionades pel vostre sistema Mica per estalviar aigua.',
     tag: 'Manual',
     content: `
 Entendre les dades que proporciona el vostre sistema Mica és clau per reduir el consum d'aigua. Aquesta guia us ajudarà a interpretar la informació i a prendre decisions informades sobre el vostre ús d'aigua.
@@ -49,8 +50,9 @@ Recordeu, cada petit canvi compta. Amb Mica, teniu les eines per prendre decisio
     slug: 'com-interpretar-les-dades-del-vostre-sistema-mica',
   },
   {
-    title: 'L\'impacte ambiental de l\'estalvi d\'aigua: Com la tecnologia intel·ligent pot ajudar',
-    summary: 'Exploració en profunditat de com l\'estalvi d\'aigua afecta el medi ambient i com la tecnologia intel·ligent com Mica pot marcar la diferència.',
+    title: "L'impacte ambiental de l'estalvi d'aigua: Com la tecnologia intel·ligent pot ajudar",
+    summary:
+      "Exploració en profunditat de com l'estalvi d'aigua afecta el medi ambient i com la tecnologia intel·ligent com Mica pot marcar la diferència.",
     tag: 'Article',
     content: `
 L'aigua és un recurs preciós i limitat, i el seu ús responsable és crucial per a la sostenibilitat del nostre planeta. A mesura que les poblacions creixen i el canvi climàtic intensifica les sequeres, la conservació de l'aigua s'ha convertit en una prioritat global. En aquest article, explorarem l'impacte ambiental de l'estalvi d'aigua i com la tecnologia intel·ligent, com el sistema Mica, pot jugar un paper crucial en aquest esforç.
@@ -101,9 +103,10 @@ export function useBlogPosts() {
 
   const filteredPosts = useMemo(() => {
     return posts.filter((post) => {
-      const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                            post.summary.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesTag = selectedTag=== 'Tot' || post.tag === selectedTag;
+      const matchesSearch =
+        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.summary.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesTag = selectedTag === 'Tot' || post.tag === selectedTag;
       return matchesSearch && matchesTag;
     });
   }, [searchTerm, selectedTag]);
