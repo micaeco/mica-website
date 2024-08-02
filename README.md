@@ -1,6 +1,6 @@
-# Mica Website
+# MICA Website
 
-This repository contains the source code for Mica's official website.
+This repository contains the source code for MICA's official website.
 
 ## Requirements
 
@@ -85,7 +85,7 @@ Environment variables will be stored in `.env.local` (not committed to the repos
 
 ## Deployment
 
-The website is automatically deployed to Vercel when changes are pushed to the main branch. Only Mica Vercel team members can trigger successful deployments.
+The website is automatically deployed to Vercel when changes are pushed to the main branch. Only MICA Vercel team members can trigger successful deployments.
 
 ## Contributing
 

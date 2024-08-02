@@ -5,7 +5,7 @@ const teamMembers: ITeamMember[] = [
   {
     src: '/images/jaime.webp',
     name: 'Jaime Escobar',
-    description: 'Enginyer Industrial',
+    description: 'Enginyer industrial',
     socials: [
       {
         platform: 'linkedin',
@@ -16,7 +16,7 @@ const teamMembers: ITeamMember[] = [
   {
     src: '/images/miki.webp',
     name: 'Miquel Escobar',
-    description: 'Enginyer de Dades',
+    description: 'Enginyer de dades',
     socials: [
       {
         platform: 'linkedin',
@@ -27,14 +27,14 @@ const teamMembers: ITeamMember[] = [
   },
   {
     src: '',
-    name: 'Lucia Chacón',
-    description: 'Enginyera Electrónica',
+    name: 'Lucía Chacón',
+    description: 'Enginyera electrònica',
     socials: [{ platform: 'github', url: 'https://github.com/LUciaChHcon' }],
   },
   {
     src: '/images/marta.webp',
     name: 'Marta Castells',
-    description: 'Enginyera de Disseny Industrial',
+    description: 'Enginyera de disseny industrial',
     socials: [],
   },
 ];

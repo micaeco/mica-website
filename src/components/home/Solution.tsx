@@ -12,7 +12,7 @@ const benefits = [
     icon: Droplet,
     title: "Veure on gastes l'aigua",
     description:
-      "Podràs veure el consum d'aigua en temps real i històric, així com identificar quins aparells consumeixen més.",
+      "Podràs veure el consum d'aigua en temps real i històric, així com identificar quins dispositius consumeixen més.",
   },
   {
     icon: AlertTriangle,

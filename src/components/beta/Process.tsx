@@ -25,7 +25,7 @@ const steps: Props[] = [
   {
     icon: UserCheck,
     title: 'Procés de selecció.',
-    description: 'Seleccionarem els candidats més adequats per a la prova pilot.',
+    description: 'Seleccionarem els candidats més adequats per al programa beta.',
   },
   {
     icon: Cpu,

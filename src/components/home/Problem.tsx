@@ -21,7 +21,7 @@ export default function Problem() {
             <h2>Sabies que...</h2>
             <p className="mt-4">
               Un estudi afirma que el 72% del consum d&apos;aigua a casa nostra el produeix només 3
-              electrodomèstics: la dutxa, el vàter i la rentadora.
+              dispositius: la dutxa, el vàter i la rentadora.
               <Link
                 href="https://proyectoaguas.es/que-es-lo-que-mas-consume-agua-en-casa/"
                 className="transition hover:text-blue-500"
@@ -32,7 +32,7 @@ export default function Problem() {
             </p>
             <div className="rounded-lg border-l-4 border-primary bg-white p-4 shadow-lg transition hover:scale-105">
               <p className="text-lg font-bold">
-                I tú, saps quins aparells són els que més aigua consumeixen a casa teva?
+                I tu, saps quins dispositius són els que més aigua consumeixen a casa teva?
               </p>
             </div>
           </div>
@@ -43,15 +43,13 @@ export default function Problem() {
             viewport={{ once: true }}
             className="md:w-1/2"
           >
-            <div className="group relative border-accent shadow-lg transition-transform duration-300 ease-in-out hover:scale-105">
-              <Image
-                src="/images/barcelona-beach.jpg"
-                alt="Il·lustració d'una dutxa"
-                width={400}
-                height={400}
-                className="h-auto w-full rounded-lg bg-white object-cover p-2"
-              />
-            </div>
+            <Image
+              src="/images/barcelona-beach.jpg"
+              alt="Il·lustració d'una dutxa"
+              width={400}
+              height={400}
+              className="h-auto w-full rounded-lg bg-white object-cover"
+            />
           </motion.div>
         </motion.div>
       </div>

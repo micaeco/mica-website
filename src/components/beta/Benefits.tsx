@@ -13,23 +13,23 @@ type Props = {
 const benefits = [
   {
     icon: Zap,
-    title: 'Tecnologia Pionera',
+    title: 'Tecnologia pionera',
     description: "Sigues el primer en experimentar la innovació en estalvi d'aigua amb IA.",
   },
   {
     icon: TrendingUp,
-    title: 'Estalvis Immediats',
+    title: 'Estalvis immediats',
     description: "Segueix el teu consum d'aigua des del primer dia.",
   },
   {
     icon: Users,
-    title: 'Impacte Col·lectiu',
+    title: 'Impacte col·lectiu',
     description: "Forma part d'una comunitat compromesa amb la sostenibilitat.",
   },
   {
     icon: Gift,
-    title: 'Descomptes Exclusius',
-    description: 'Accedeix a descomptes i avantatges únics per a Beta Testers.',
+    title: 'Descomptes exclusius',
+    description: 'Accedeix a descomptes i avantatges únics per a membres del programa beta.',
   },
 ];
 
