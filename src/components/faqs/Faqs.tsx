@@ -1,6 +1,6 @@
 'use client';
 
-import Question from '@/src/components/ui/QuestionCard';
+import ExpandableQuestion from '@/src/components/ui/ExpandableQuestion';
 import { useFaqs } from '@/src/hooks/useFaqs';
 
 export default function Faqs() {
@@ -13,7 +13,7 @@ export default function Faqs() {
       </h4>
       <div>
         {faqs.map((faq) => (
-          <Question key={faq.slug} question={faq} />
+          <ExpandableQuestion key={faq.slug} question={faq} />
         ))}
       </div>
     </div>
