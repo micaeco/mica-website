@@ -30,7 +30,7 @@ const benefits = [
 export default function Solution() {
   return (
     <div className="bg-gray-100 py-12">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

@@ -61,7 +61,7 @@ function ProcessStep({ icon: Icon, title, description, isLast = false }: Props) 
 export default function Process() {
   return (
     <section className="bg-gradient-to-b from-gray-50 to-gray-100 py-10">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-8">
         <h3 className="mb-10 text-center font-bold text-primary">Passos a seguir</h3>
         <div className="mx-auto max-w-3xl">
           {steps.map((step, index) => (

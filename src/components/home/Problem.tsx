@@ -8,7 +8,7 @@ import { ExternalLink } from 'lucide-react';
 
 export default function Problem() {
   return (
-    <section className="relative bg-tertiary px-3 py-10 sm:py-12">
+    <section className="relative bg-tertiary px-8 py-10 sm:py-12">
       <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

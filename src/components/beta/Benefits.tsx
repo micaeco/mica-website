@@ -51,7 +51,7 @@ export default function BetaBenefits() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="container mx-auto px-4"
+        className="container mx-auto px-8"
       >
         <h3 className="mb-10 text-center font-semibold text-primary">
           Descobreix les avantatges...

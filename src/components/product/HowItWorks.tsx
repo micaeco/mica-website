@@ -41,7 +41,7 @@ export default function HowItWorks() {
   return (
     <section className="bg-gray-100 py-16 px-8">
       <div className="container mx-auto">
-        <h1 className="text-center font-bold">Com funciona?</h1>
+        <h3 className="text-center font-bold">Com funciona?</h3>
         <p className="py-8 text-gray-500">
           El sensor MICA et permet seguir el consum d'aigua en temps real. El sensor envia les dades
           de consum a una plataforma al núvol que impulsada per intel·ligència artificial, desglossa

@@ -4,7 +4,7 @@ import { GiCargoCrane } from 'react-icons/gi';
 export default function Hero() {
   return (
     <section className="bg-primary py-12 text-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-8">
         <div className="flex flex-col items-center 2xl:flex-row 2xl:justify-between">
           <div className="max-w-xl text-center 2xl:text-left">
             <GiCargoCrane className="mx-auto mb-6 size-16 text-accent 2xl:mx-0" />
