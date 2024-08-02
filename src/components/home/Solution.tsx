@@ -12,13 +12,13 @@ const benefits = [
     icon: Droplet,
     title: "Veure on gastes l'aigua",
     description:
-      'Podràs veure el consum diari, setmanal i mensual, així com saber quins aparells són els que més consumeixen.',
+      "Podràs veure el consum d'aigua en temps real i històric, així com identificar quins aparells consumeixen més.",
   },
   {
     icon: AlertTriangle,
     title: 'Detectar fugues',
     description:
-      "MICA detecta fàcilment les fugues d'aigua i t'alerta per evitar danys importants.",
+      "MICA detecta fàcilment les fugues d'aigua i et notifica amb una alerta per tal d'evitar danys importants.",
   },
   {
     icon: TrendingUp,
@@ -38,7 +38,7 @@ export default function Solution() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <h2 className="my-12">Què podràs fer amb MICA...</h2>
+          <h2>Què podràs fer amb MICA...</h2>
         </motion.div>
 
         <div className="grid gap-8 md:grid-cols-3">

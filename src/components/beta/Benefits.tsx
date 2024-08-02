@@ -28,7 +28,7 @@ const benefits = [
   },
   {
     icon: Gift,
-    title: 'Recompenses Exclusives',
+    title: 'Descomptes Exclusius',
     description: 'Accedeix a descomptes i avantatges únics per a Beta Testers.',
   },
 ];

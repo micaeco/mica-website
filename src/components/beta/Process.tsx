@@ -7,6 +7,7 @@ type Props = {
   icon: React.ElementType;
   title: string;
   description: string;
+  link?: boolean;
   isLast?: boolean;
 };
 

@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { GiCargoCrane } from 'react-icons/gi';
-import CTAButton from '@/src/components/ui/CTAButton';
 
 export default function Hero() {
   return (
@@ -15,7 +14,6 @@ export default function Hero() {
               nostre programa pilot. Només cal que ens deixis el teu correu electrònic i et
               mantindrem informat sobre les novetats.
             </p>
-            <CTAButton text="Fes el registre" href="/register" />
           </div>
           <div className="mt-8 max-w-md 2xl:mt-0">
             <Image

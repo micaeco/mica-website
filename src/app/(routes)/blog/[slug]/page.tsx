@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ArrowLeft, Clock, User, Tag, TrafficCone } from 'lucide-react';
 
-import MarkdownRenderer from '@/src/components/ui/MarkdownRenderer';
+import MarkdownRenderer from '@/src/components/ui/Markdown';
 
 type Props = {
   params: {
