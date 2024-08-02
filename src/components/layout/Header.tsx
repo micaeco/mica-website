@@ -84,7 +84,7 @@ export default function Header() {
                 </Link>
               ))}
               <Link
-                href="/register"
+                href="/beta"
                 className="rounded-lg bg-primary px-4 py-2 text-center text-sm text-white transition-all duration-300 hover:bg-primary-700 hover:shadow-md"
                 onClick={toggleMenu}
               >
