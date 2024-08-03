@@ -13,7 +13,3 @@ export interface ITeamMember {
 }
 
 export type TShapeType = 'circle' | 'square';
-
-export interface IFormData {
-  [key: string]: string;
-}

@@ -2,77 +2,104 @@
 
 import React, { useState, useEffect } from 'react';
 import { User, Mail, Phone } from 'lucide-react';
-import { toast, ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-import InputBox from '@/src/components/ui/InputBox';
 import { api } from '@/src/services/api';
 
-interface FormField {
-  icon: React.ElementType;
-  label: string;
-  type: string;
-  name: string;
-  placeholder: string;
-  required: boolean;
-}
+import { IFormField, IFormData } from '@/src/types';
+import InputBox from '@/src/components/ui/InputBox';
+import SelectBox from '@/src/components/ui/SelectBox';
 
-interface FormData {
-  [key: string]: string;
-}
-
-const formFields: FormField[] = [
+const formFields: IFormField[] = [
   {
+    type: 'input',
     icon: User,
     label: 'Nom',
-    type: 'text',
+    inputType: 'text',
     name: 'firstName',
     placeholder: 'El teu nom',
     required: true,
+    value: '',
+    onChange: () => {},
   },
   {
+    type: 'input',
     icon: User,
     label: 'Cognoms',
-    type: 'text',
+    inputType: 'text',
     name: 'lastName',
     placeholder: 'Els teus cognoms',
     required: true,
+    value: '',
+    onChange: () => {},
   },
   {
+    type: 'input',
     icon: Mail,
     label: 'Correu electrònic',
-    type: 'email',
+    inputType: 'email',
     name: 'email',
     placeholder: 'El teu correu electrònic',
     required: true,
+    value: '',
+    onChange: () => {},
   },
   {
+    type: 'input',
     icon: Phone,
     label: 'Telèfon (opcional)',
-    type: 'tel',
+    inputType: 'tel',
     name: 'phone',
     placeholder: 'El teu número de telèfon',
     required: false,
+    value: '',
+    onChange: () => {},
+  },
+  {
+    type: 'select',
+    label: 'Interès',
+    name: 'interest',
+    required: true,
+    options: [
+      { value: '', label: 'Selecciona una opció' },
+      { value: 'product', label: 'Només tinc interès en el producte final' },
+      { value: 'beta', label: 'Tinc interès en apuntar-me al programa beta' },
+    ],
+    value: '',
+    onChange: () => {},
+  },
+  {
+    type: 'input',
+    label: 'He llegit i accepto la política de privacitat',
+    link: '/privacy-policy',
+    inputType: 'checkbox',
+    name: 'privacyPolicy',
+    required: true,
+    value: false,
+    onChange: () => {},
   },
 ];
 
 export default function RegistrationForm() {
-  const [formData, setFormData] = useState<FormData>({});
+  const [formData, setFormData] = useState<IFormData>({});
   const [isFormValid, setIsFormValid] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
-  const handleInputChange = (name: string, value: string) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+  const handleInputChange = (name: string) => (value: string | boolean) => {
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
   useEffect(() => {
     const requiredFields = formFields.filter((field) => field.required);
-    const areAllRequiredFieldsFilled = requiredFields.every((field) =>
-      formData[field.name]?.trim()
-    );
+    const areAllRequiredFieldsFilled = requiredFields.every((field) => {
+      const value = formData[field.name];
+      if (typeof value === 'boolean') {
+        return value; // For checkboxes, the boolean value itself determines validity
+      } else if (typeof value === 'string') {
+        return value.trim() !== ''; // For string inputs, check if it's not just whitespace
+      }
+      return false; // If the value is undefined or any other type, consider it invalid
+    });
     setIsFormValid(areAllRequiredFieldsFilled);
   }, [formData]);
 
@@ -99,7 +126,15 @@ export default function RegistrationForm() {
         }
       } catch (error) {
         console.error('Error submitting form:', error);
-        toast.error('Hi ha hagut un error en enviar el registre. Si us plau, torna-ho a provar.', {
+        let errorMessage =
+          'Hi ha hagut un error en enviar el registre. Si us plau, torna-ho a provar.';
+
+        // Check if the error is an instance of Error and has a message property
+        if (error instanceof Error) {
+          errorMessage = error.message;
+        }
+
+        toast.error(errorMessage, {
           position: 'bottom-right',
           autoClose: 5000,
           hideProgressBar: false,
@@ -121,19 +156,28 @@ export default function RegistrationForm() {
           <div className="px-6 py-8">
             <h2 className="mb-6 text-center text-2xl font-bold text-primary">Registra&apos;t</h2>
             <form onSubmit={handleSubmit}>
-              {formFields.map((field) => (
-                <InputBox
-                  key={field.name}
-                  Icon={field.icon}
-                  label={field.label}
-                  type={field.type}
-                  name={field.name}
-                  placeholder={field.placeholder}
-                  required={field.required}
-                  onChange={(value) => handleInputChange(field.name, value)}
-                  value={formData[field.name] || ''}
-                />
-              ))}
+              {formFields.map((field) =>
+                field.type === 'select' ? (
+                  <SelectBox
+                    key={field.name}
+                    {...field}
+                    onChange={handleInputChange(field.name)}
+                    value={formData[field.name] || ''}
+                  />
+                ) : (
+                  <InputBox
+                    key={field.name}
+                    {...field}
+                    onChange={handleInputChange(field.name)}
+                    value={
+                      field.inputType === 'checkbox'
+                        ? formData[field.name] || false
+                        : formData[field.name] || ''
+                    }
+                    className={field.inputType === 'checkbox' ? 'mt-12' : ''}
+                  />
+                )
+              )}
               <div className="mt-6">
                 <button
                   type="submit"

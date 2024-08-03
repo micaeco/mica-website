@@ -34,8 +34,11 @@ export async function POST(request: Request) {
     if (!response.ok) {
       console.error('Error response from Google Apps Script:', response.status, responseText);
       return NextResponse.json(
-        { result: 'error', message: 'Error en la resposta del servidor de Google Apps Script' },
-        { status: 500 }
+        {
+          result: 'error',
+          message: `Error en la resposta del servidor de Google Apps Script: ${response.status} ${responseText}`,
+        },
+        { status: response.status }
       );
     }
 
@@ -52,8 +55,14 @@ export async function POST(request: Request) {
     }
   } catch (error) {
     console.error('Error in submit-form route:', error);
+
+    let errorMessage = 'Unknown error';
+    if (error instanceof Error) {
+      errorMessage = error.message;
+    }
+
     return NextResponse.json(
-      { result: 'error', message: 'Error en enviar les dades' },
+      { result: 'error', message: `Error en enviar les dades: ${errorMessage}` },
       { status: 500 }
     );
   }
