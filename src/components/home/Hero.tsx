@@ -10,7 +10,7 @@ export default function Hero() {
           La nova manera <br />
           d&apos;estalviar aigua.
         </h1>
-        <p className="mx-auto mb-8 max-w-2xl text-gray-400">
+        <p className="mx-auto mb-8 max-w-2xl text-gray-500">
           Estem desenvolupant un sensor innovador al que hem anomenat MICA. <br /> Amb MICA pots
           seguir el teu consum d&apos;aigua, detectar fugues i rebre recomanacions personalitzades
           per estalviar aigua.

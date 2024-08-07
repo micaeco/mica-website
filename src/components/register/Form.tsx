@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import { User, Mail, Phone } from 'lucide-react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { api } from '@/src/services/api';
 
 import { IFormField, IFormData } from '@/src/types';
 import InputBox from '@/src/components/ui/InputBox';
@@ -103,51 +102,7 @@ export default function RegistrationForm() {
     setIsFormValid(areAllRequiredFieldsFilled);
   }, [formData]);
 
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
-    if (isFormValid && !isSubmitting) {
-      setIsSubmitting(true);
-      try {
-        const result = await api.submitForm(formData);
-
-        if (result.result === 'success') {
-          toast.success('Registre enviat correctament!', {
-            position: 'bottom-right',
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          });
-          setFormData({});
-        } else {
-          throw new Error(result.message || 'Error desconegut');
-        }
-      } catch (error) {
-        console.error('Error submitting form:', error);
-        let errorMessage =
-          'Hi ha hagut un error en enviar el registre. Si us plau, torna-ho a provar.';
-
-        // Check if the error is an instance of Error and has a message property
-        if (error instanceof Error) {
-          errorMessage = error.message;
-        }
-
-        toast.error(errorMessage, {
-          position: 'bottom-right',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
-      } finally {
-        setIsSubmitting(false);
-      }
-    }
-  };
+  const handleSubmit = async (event: React.FormEvent) => {};
 
   return (
     <section className="bg-gray-50 py-16">

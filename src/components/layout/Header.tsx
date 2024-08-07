@@ -1,99 +1,135 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const navItems = [
+const navLinks = [
   { href: '/', label: 'Inici' },
   { href: '/product', label: 'Com funciona' },
+  { href: '/beta', label: 'En vull un!' },
   { href: '/about', label: 'Sobre Nosaltres' },
   { href: '/faqs', label: 'FAQs' },
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contacte' },
+  { href: '/register', label: "Registra't", isButton: true },
 ];
+
+// Breakpoint in pixels (can be easily changed)
+const MOBILE_BREAKPOINT = 1280; // Corresponds to Tailwind's 'lg' breakpoint
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const checkIsMobile = useCallback(() => {
+    return window.innerWidth < MOBILE_BREAKPOINT;
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(checkIsMobile());
+    };
+
+    // Check on mount and set up listener
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', handleResize);
+  }, [checkIsMobile]);
 
   return (
     <header className="sticky top-0 z-20 bg-white shadow-md transition-shadow duration-300 hover:shadow-lg">
-      <div className="container mx-auto px-4 py-3">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center text-xl font-bold text-primary">
+      <div className="container mx-auto px-6 py-4 sm:px-8">
+        <div className="flex items-center justify-between xl:px-16">
+          <Link href="/" className="z-30 flex items-center text-xl font-bold text-primary">
             <Image src="/logos/logo-dark.svg" alt="Logo" width={35} height={35} className="mr-2" />
             <span>MICA</span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex lg:items-center lg:space-x-6">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-sm text-gray-600 transition-colors duration-300 hover:text-gray-900"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Register button (desktop) */}
-          <div className="hidden lg:block">
-            <Link
-              href="/beta"
-              className="rounded-lg bg-primary px-4 py-2 text-sm text-white transition-all duration-300 hover:bg-primary-700 hover:shadow-md"
-            >
-              En vull un!
-            </Link>
-          </div>
-
-          {/* Mobile menu button */}
-          <button
-            onClick={toggleMenu}
-            className="z-20 text-gray-500 transition-colors duration-300 hover:text-gray-900 lg:hidden"
-            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-          >
-            <Menu size={24} />
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="fixed inset-y-0 right-0 z-30 w-64 bg-white p-6 shadow-lg transition-transform duration-300 ease-in-out lg:hidden">
-            <button
-              onClick={toggleMenu}
-              className="absolute right-4 top-4 text-gray-500 transition-colors duration-300 hover:text-gray-900"
-              aria-label="Close menu"
-            >
-              <X size={24} />
-            </button>
-            <div className="mt-12 flex flex-col space-y-6">
-              {navItems.map((item) => (
+          {!isMobile && (
+            <nav className="flex items-center space-x-6">
+              {navLinks.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm text-gray-600 transition-colors duration-300 hover:text-gray-900"
-                  onClick={toggleMenu}
+                  className={`text-sm ${
+                    item.isButton
+                      ? 'rounded-lg bg-primary px-4 py-2 text-white transition-all duration-300 hover:bg-primary-700 hover:shadow-md'
+                      : 'text-gray-600 transition-colors duration-300 hover:text-gray-900'
+                  }`}
                 >
                   {item.label}
                 </Link>
               ))}
-              <Link
-                href="/beta"
-                className="rounded-lg bg-primary px-4 py-2 text-center text-sm text-white transition-all duration-300 hover:bg-primary-700 hover:shadow-md"
-                onClick={toggleMenu}
-              >
-                En vull un!
-              </Link>
-            </div>
-          </div>
-        )}
+            </nav>
+          )}
+
+          {isMobile && (
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="relative z-30 h-6 w-6 text-gray-500 transition-colors duration-300 hover:text-gray-900"
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            >
+              <AnimatePresence initial={false} mode="wait">
+                {isMenuOpen ? (
+                  <motion.div
+                    key="close"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute inset-0"
+                  >
+                    <X size={24} />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="menu"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute inset-0"
+                  >
+                    <Menu size={24} />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </button>
+          )}
+        </div>
       </div>
+
+      <AnimatePresence>
+        {isMenuOpen && isMobile && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-20 overflow-hidden bg-white"
+          >
+            <div className="flex h-full flex-col p-8 pt-24">
+              <div className="flex flex-col space-y-6">
+                {navLinks.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="text-lg text-gray-600 transition-colors duration-300 hover:text-gray-900"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

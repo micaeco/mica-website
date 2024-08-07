@@ -20,7 +20,7 @@ export default function IconCard({ icon: Icon, title, description }: Props) {
         <Icon className="size-10 text-primary" />
       </div>
       <h3 className="mb-3 text-2xl font-bold text-primary">{title}</h3>
-      <p className="text-base text-gray-700">{description}</p>
+      <p className="text-base text-gray-500">{description}</p>
     </motion.div>
   );
 }

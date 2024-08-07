@@ -19,7 +19,7 @@ export default function Problem() {
         >
           <div className="space-y-6 md:w-1/2">
             <h2>Sabies que...</h2>
-            <p className="mt-4">
+            <p className="mt-4 text-gray-500">
               Un estudi afirma que el 72% del consum d&apos;aigua a casa nostra el produeix només 3
               dispositius: la dutxa, el vàter i la rentadora.
               <Link
