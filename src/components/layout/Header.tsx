@@ -43,8 +43,8 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-20 bg-white shadow-md transition-shadow duration-300 hover:shadow-lg">
-      <div className="container mx-auto px-6 py-4 sm:px-8">
-        <div className="flex items-center justify-between xl:px-16">
+      <div className="container mx-auto py-4 sm:px-8">
+        <div className="flex items-center justify-between px-8">
           <Link href="/" className="z-30 flex items-center text-xl font-bold text-primary">
             <Image src="/logos/logo-dark.svg" alt="Logo" width={35} height={35} className="mr-2" />
             <span>MICA</span>
