@@ -54,7 +54,7 @@ export default function BetaBenefits() {
         className="container mx-auto px-8"
       >
         <h3 className="mb-10 text-center font-semibold text-primary">
-          Descobreix les avantatges...
+          Descobreix els avantatges...
         </h3>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {benefits.map((benefit, index) => (

@@ -44,7 +44,7 @@ export default function Problem() {
             className="md:w-1/2"
           >
             <Image
-              src="/images/barcelona-beach.jpg"
+              src="/images/washing-hands.jpg"
               alt="Il·lustració d'una dutxa"
               width={400}
               height={400}

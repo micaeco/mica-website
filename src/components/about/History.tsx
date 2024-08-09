@@ -4,11 +4,11 @@ import { AlertTriangle } from 'lucide-react';
 
 export default function HistorySection() {
   return (
-    <section className="w-full bg-tertiary 2xl:px-44 px-8 py-16">
-      <div className="flex flex-col items-center 2xl:flex-row 2xl:space-x-8 space-y-4">
+    <section className="w-full bg-tertiary px-8 py-16 2xl:px-44">
+      <div className="flex flex-col items-center space-y-4 2xl:flex-row 2xl:space-x-8">
         <div className="2xl:w-1/2">
-          <h3 className="mb-3 font-bold">La nostra història</h3>
-          <h5 className="mb-3 font-bold">Innovant per combatre la sequera a Barcelona</h5>
+          <h3 className="mb-3 font-bold">La nostra història.</h3>
+          <h5 className="mb-3 font-bold">Innovant per combatre la sequera a Barcelona.</h5>
           <p className="mb-6 text-gray-500">
             L&apos;estiu de 2022, Barcelona va patir una de les pitjors sequeres de la seva
             història. Mentre la ciutat entrava en{' '}
@@ -31,7 +31,7 @@ export default function HistorySection() {
             </p>
           </div>
         </div>
-        <div className="relative 2xl:w-1/2 overflow-hidden rounded-lg shadow-xl">
+        <div className="relative overflow-hidden rounded-lg shadow-xl 2xl:w-1/2">
           <Image
             src="/images/drought.jpg"
             alt="Estalvi d'aigua a Barcelona"

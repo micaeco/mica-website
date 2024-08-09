@@ -46,7 +46,7 @@ export default function Header() {
       <div className="container mx-auto py-4 sm:px-8">
         <div className="flex items-center justify-between px-8">
           <Link href="/" className="z-30 flex items-center text-xl font-bold text-primary">
-            <Image src="/logos/logo-dark.svg" alt="Logo" width={35} height={35} className="mr-2" />
+            <Image src="/logos/logo.webp" alt="Logo" width={35} height={35} className="mr-2" />
             <span>MICA</span>
           </Link>
 

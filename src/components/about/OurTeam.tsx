@@ -1,3 +1,4 @@
+import React from 'react';
 import TeamMemberCard from '@/src/components/ui/TeamMemberCard';
 import { ITeamMember } from '@/src/types';
 
@@ -37,16 +38,36 @@ const teamMembers: ITeamMember[] = [
     description: 'Enginyera de disseny industrial',
     socials: [],
   },
+  {
+    src: '/images/irene.webp',
+    name: 'Irene Escobar',
+    description: 'Marketing i comunicació',
+    socials: [
+      {
+        platform: 'linkedin',
+        url: 'https://uk.linkedin.com/in/irene-escobar-castells',
+      },
+      {
+        platform: 'github',
+        url: 'https://github.com/ireescobar',
+      },
+    ],
+  },
 ];
 
 export default function OurTeam() {
   return (
     <section className="mb-12 py-16">
       <div className="container mx-auto px-4">
-        <h3 className="mb-12 text-center font-bold">El nostre equip</h3>
-        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <h3 className="mb-12 text-center font-bold">El nostre equip.</h3>
+        <div className="flex flex-wrap justify-center gap-8">
           {teamMembers.map((member, index) => (
-            <TeamMemberCard key={index} {...member} />
+            <div
+              key={index}
+              className="w-full max-w-xs sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)]"
+            >
+              <TeamMemberCard {...member} />
+            </div>
           ))}
         </div>
       </div>
