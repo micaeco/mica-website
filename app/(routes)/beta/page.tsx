@@ -6,12 +6,12 @@ import CallToAction from '@/src/components/beta/CallToAction';
 
 const Beta = () => {
   return (
-    <div>
+    <main>
       <Hero />
       <Benefits />
       <Process />
       <CallToAction />
-    </div>
+    </main>
   );
 };
 

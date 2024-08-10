@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
+import Image from 'next/image';
 import { ClipboardCheck, FileQuestion, UserCheck, Cpu } from 'lucide-react';
 
 type Props = {
@@ -60,14 +61,23 @@ function ProcessStep({ icon: Icon, title, description, isLast = false }: Props) 
 
 export default function Process() {
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-gray-100 py-10">
-      <div className="container mx-auto px-8">
-        <h3 className="mb-10 text-center font-bold text-primary">Passos a seguir</h3>
-        <div className="mx-auto max-w-3xl">
+    <section className="bg-white py-16">
+      <div className="mx-auto flex flex-col justify-center 2xl:flex-row">
+        <div className="px-8">
+          <h3 className="justify-left mb-10 flex text-center font-bold text-primary">
+            Passos a seguir
+          </h3>
           {steps.map((step, index) => (
             <ProcessStep key={index} {...step} isLast={index === steps.length - 1} />
           ))}
         </div>
+        <Image
+          className="hidden 2xl:block"
+          src="/images/team.png"
+          alt="Sensor"
+          width={600}
+          height={400}
+        />
       </div>
     </section>
   );

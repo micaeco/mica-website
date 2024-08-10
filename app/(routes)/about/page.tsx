@@ -4,9 +4,9 @@ import WaveSeparator from '@/src/components/common/WaveSeparator';
 
 export default function About() {
   return (
-    <main className="flex flex-col items-center justify-center bg-gray-50 text-primary">
+    <main className="flex flex-col items-center justify-center text-primary">
       <History />
-      <WaveSeparator topColor="tertiary" bottomColor="#f9fafb" />
+      <WaveSeparator topColor="white" bottomColor="#d5fff3" />
       <OurTeam />
     </main>
   );

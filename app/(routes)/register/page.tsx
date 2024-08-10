@@ -69,7 +69,6 @@ const formFields: IInputField[] = [
   },
 ];
 
-/*
 export default function RegistrationForm() {
   const [formData, setFormData] = useState<IFormData>({
     name: '',
@@ -142,8 +141,8 @@ export default function RegistrationForm() {
   };
 
   return (
-    <section className="bg-gray-50 py-8">
-      <div className="container mx-auto px-4">
+    <section className="bg-gray-50 px-8 py-16">
+      <div className="container mx-auto">
         <div className="mx-auto max-w-md overflow-hidden rounded-lg bg-white shadow-md">
           <div className="px-6 py-8">
             <h2 className="mb-6 text-center text-2xl font-bold text-primary">Registra't</h2>
@@ -192,15 +191,5 @@ export default function RegistrationForm() {
       </div>
       <ToastContainer autoClose={4000} closeOnClick pauseOnHover />
     </section>
-  );
-}
-  */
-
-export default function Register() {
-  return (
-    <div className="py-52 text-center">
-      <h3>De moment aquesta secció és buida</h3>
-      <p>Encara hi estem treballant!</p>
-    </div>
   );
 }

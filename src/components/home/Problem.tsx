@@ -4,12 +4,12 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, CircleHelp } from 'lucide-react';
 
 export default function Problem() {
   return (
-    <section className="relative bg-tertiary px-8 py-10 sm:py-12">
-      <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <section className="bg-gray-100 px-8 py-16">
+      <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -17,7 +17,7 @@ export default function Problem() {
           viewport={{ once: true }}
           className="flex flex-col items-center gap-8 md:flex-row"
         >
-          <div className="space-y-6 md:w-1/2">
+          <div className="space-y-6">
             <h2>Sabies que...</h2>
             <p className="mt-4 text-gray-500">
               Un estudi afirma que el 72% del consum d&apos;aigua a casa nostra el produeix només 3
@@ -30,8 +30,9 @@ export default function Problem() {
                 <ExternalLink className="ml-2 inline" />
               </Link>
             </p>
-            <div className="rounded-lg border-l-4 border-primary bg-white p-4 shadow-lg transition hover:scale-105">
-              <p className="text-lg font-bold">
+            <div className="flex flex-row">
+              <CircleHelp size={30} />
+              <p className="ml-2 font-bold">
                 I tu, saps quins dispositius són els que més aigua consumeixen a casa teva?
               </p>
             </div>
@@ -41,15 +42,8 @@ export default function Problem() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="md:w-1/2"
           >
-            <Image
-              src="/images/washing-hands.jpg"
-              alt="Il·lustració d'una dutxa"
-              width={400}
-              height={400}
-              className="h-auto w-full rounded-lg bg-white object-cover"
-            />
+            <Image src="/images/piechart.png" alt="Piechart" width={1100} height={1100} />
           </motion.div>
         </motion.div>
       </div>

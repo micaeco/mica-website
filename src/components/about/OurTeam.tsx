@@ -6,7 +6,7 @@ const teamMembers: ITeamMember[] = [
   {
     src: '/images/jaime.webp',
     name: 'Jaime Escobar',
-    description: 'Enginyer industrial',
+    description: 'Enginyer industrial, MBA',
     socials: [
       {
         platform: 'linkedin',
@@ -53,13 +53,24 @@ const teamMembers: ITeamMember[] = [
       },
     ],
   },
+  {
+    src: '',
+    name: 'Gabriel Escobar',
+    description: 'Enginyer informàtic',
+    socials: [
+      {
+        platform: 'linkedin',
+        url: 'https://www.linkedin.com/in/gabriel-escobar-8949a71/',
+      },
+    ],
+  },
 ];
 
 export default function OurTeam() {
   return (
-    <section className="mb-12 py-16">
+    <section className="w-full bg-tertiary py-16">
       <div className="container mx-auto px-4">
-        <h3 className="mb-12 text-center font-bold">El nostre equip.</h3>
+        <h2 className="mb-12 text-left font-bold">El nostre equip.</h2>
         <div className="flex flex-wrap justify-center gap-8">
           {teamMembers.map((member, index) => (
             <div

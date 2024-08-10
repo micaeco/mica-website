@@ -11,7 +11,7 @@ const faqs: IQuestion[] = [
     title: "Com s'instal·la el sensor?",
     slug: 'com-s-instal-la-el-sensor',
     answer:
-      "El sensor s'instal·larà a la canonada principal d'aigua de casa teva. Un cop superat el programa beta, en cas de comprar el sensor, t'enviarem un fontaner perque s'encarregui de la instal·lació.",
+      "El sensor l'instal·larà un lampista qualificat a l'entrada d'aigua de casa teva, on es troba el comptador. Aquesta instal·lació no tindrà cap impacte en el cabal d'aigua.",
   },
   {
     title: 'Com em puc unir al programa beta?',

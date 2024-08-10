@@ -1,58 +1,15 @@
+// components/Hero.tsx
 'use client';
 
-import React, { useRef, useEffect, useState } from 'react';
+import React from 'react';
+import Video from '@/src/components/ui/Video';
 
 export default function Hero() {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      {
-        threshold: 1.0, // 100% of the video must be visible
-      }
-    );
-
-    observer.observe(video);
-
-    // Check if video is initially fully visible
-    const rect = video.getBoundingClientRect();
-    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-      setIsVisible(true);
-    }
-
-    const handleVisibilityChange = () => {
-      if (document.hidden) {
-        video.pause();
-      } else if (isVisible) {
-        video.play().catch(() => {});
-      }
-    };
-
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-
-    return () => {
-      observer.unobserve(video);
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-    };
-  }, [isVisible]);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    if (isVisible) {
-      video.play().catch(() => {});
-    } else {
-      video.pause();
-    }
-  }, [isVisible]);
+  const subtitles = [
+    { src: '/locales/ca/subtitles.vtt', srcLang: 'ca', label: 'Català' },
+    { src: '/locales/es/subtitles.vtt', srcLang: 'es', label: 'Español' },
+    { src: '/locales/en/subtitles.vtt', srcLang: 'en', label: 'English' },
+  ];
 
   return (
     <section className="relative flex flex-col items-center justify-center bg-white px-8 pb-4 pt-20">
@@ -61,25 +18,24 @@ export default function Hero() {
           La nova manera <br />
           d&apos;estalviar aigua.
         </h1>
-        <p className="mx-auto mb-8 max-w-2xl text-gray-500">
+        <p className="mx-auto max-w-2xl text-gray-500">
           Estem desenvolupant un sensor innovador al que hem anomenat MICA. <br /> Amb MICA pots
           seguir el teu consum d&apos;aigua, detectar fugues i rebre recomanacions personalitzades
           per estalviar aigua.
         </p>
+        <br />
+        <p className="mb-8 italic text-gray-500">
+          Amb el suport de la fundació <span className="font-bold">bit</span>habitat de l'ajuntament
+          de Barcelona
+        </p>
 
-        <div className="relative mx-auto aspect-video w-full max-w-3xl rounded-lg bg-gray-100">
-          <video
-            ref={videoRef}
-            className="absolute inset-0 h-full w-full rounded-lg object-contain shadow-xl"
-            playsInline
-            loop
-            muted
-            poster="/logos/full-logo.svg"
-            controls
-          >
-            <source src="/videos/mica.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+        <div className="mx-auto max-w-3xl">
+          <Video
+            src="/videos/mica.mp4"
+            subtitles={subtitles}
+            defaultSubtitle="ca"
+            autoPlayWhenVisible
+          />
         </div>
       </div>
     </section>
