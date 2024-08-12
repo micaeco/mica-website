@@ -22,7 +22,7 @@ export default function SelectBox({
           name={name}
           required={required}
           className="block w-full appearance-none rounded-md border border-gray-300 bg-white px-3 py-2 pr-8 text-sm shadow-sm focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary"
-          onChange={(e) => onChange(e.target.value)}
+          onChange={(e) => onChange!(e.target.value)}
           value={value as string}
         >
           {options.map((option) => (
