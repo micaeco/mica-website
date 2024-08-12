@@ -24,7 +24,7 @@ export default function InputBox({
           id={name}
           name={name}
           checked={value as boolean}
-          onChange={(e) => onChange(e.target.checked)}
+          onChange={(e) => onChange!(e.target.checked)}
           className="h-4 w-4 rounded border-gray-300 text-secondary focus:ring-secondary"
         />
         {link ? (
@@ -72,7 +72,7 @@ export default function InputBox({
           required={required}
           className="block w-full rounded-md border border-gray-300 bg-white py-2 pl-10 pr-3 leading-5 placeholder:text-gray-500 focus:border-secondary focus:outline-none focus:ring-1 focus:ring-secondary sm:text-sm"
           placeholder={placeholder}
-          onChange={(e) => onChange(e.target.value)}
+          onChange={(e) => onChange!(e.target.value)}
           value={value as string}
         />
       </div>
