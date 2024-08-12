@@ -122,7 +122,8 @@ export default function RegistrationForm() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: `${formData.name} ${formData.surname}`,
+          name: formData.name,
+          surname: formData.surname,
           email: formData.email,
           phone: formData.phone,
           interestInBeta: formData.interestInBeta,
