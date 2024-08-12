@@ -1,31 +1,74 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
+import { useParams } from 'next/navigation';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ClipLoader } from 'react-spinners';
 
-export default function Verify({ params }: { params: { token: string } }) {
-  const [status, setStatus] = useState<'verifying' | 'success' | 'error' | 'already-verified'>(
-    'verifying'
+export default function VerifyPage() {
+  const [verificationStatus, setVerificationStatus] = useState<'loading' | 'success' | 'error'>(
+    'loading'
   );
-  const verificationAttempted = useRef(false);
+  const params = useParams();
+
+  useEffect(() => {
+    const verifyToken = async () => {
+      const token = params.token as string;
+
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/lead/verify/${token}`);
+        const data = await response.json();
+
+        if (response.ok) {
+          setVerificationStatus('success');
+          toast.success(data.message);
+        } else {
+          setVerificationStatus('error');
+          toast.error(data.error);
+        }
+      } catch (error) {
+        setVerificationStatus('error');
+        toast.error('Ha ocorregut un error inesperat. Si us plau, torna-ho a provar més tard.');
+      }
+    };
+
+    verifyToken();
+  }, [params.token]);
 
   return (
-    <div className="mt-12 rounded bg-white p-8 shadow-md">
-      {status === 'verifying' && <p className="text-lg">Verificant el teu correu...</p>}
-      {status === 'success' && (
-        <div>
-          <h1 className="mb-4 text-2xl font-bold text-green-600">Ja pots tancar la finestra!</h1>
-          <p className="text-gray-700">El teu correu electrònic ha estat verificat correctament.</p>
-        </div>
-      )}
-      {status === 'error' && (
-        <div>
-          <h1 className="mb-4 text-2xl font-bold text-red-600">Error de verificació</h1>
-          <p className="text-gray-700">
-            Hi ha hagut un error durant la verificació del correu electrònic. Si us plau, torna a
-            intentar-ho més tard.
+    <div className="flex min-h-screen max-w-md flex-col items-center justify-center bg-gray-50 px-4 py-12 sm:px-6 lg:px-8">
+      <div>
+        <h3 className="mt-6 text-center font-extrabold text-gray-900">Verificació del correu</h3>
+      </div>
+      <div className="mt-8 space-y-6">
+        {verificationStatus === 'loading' && (
+          <div className="text-center">
+            <ClipLoader />
+          </div>
+        )}
+        {verificationStatus === 'success' && (
+          <p className="text-center text-green-600">El teu correu ha estat verificat amb èxit!</p>
+        )}
+        {verificationStatus === 'error' && (
+          <p className="text-center text-red-600">
+            Hi ha hagut un problema en verificar el teu correu. Si us plau, torna-ho a intentar o
+            contacta amb suport.
           </p>
-        </div>
-      )}
+        )}
+      </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 }

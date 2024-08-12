@@ -1,13 +1,13 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { User, Mail, Phone } from 'lucide-react';
-import { ToastContainer, toast } from 'react-toastify';
+import { User, Mail, Phone, Info } from 'lucide-react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { IInputField, IFormData } from '@/src/types';
 import InputBox from '@/src/components/ui/InputBox';
-import PhoneInput from '@/src/components/ui/PhoneInputBox';
-import { validateForm, validateField } from '@/src/lib/validators';
+import { validateForm, validateField } from '@/src/utils/validation';
 
 const formFields: IInputField[] = [
   {
@@ -18,7 +18,6 @@ const formFields: IInputField[] = [
     name: 'name',
     placeholder: 'El teu nom',
     required: true,
-    onChange: () => {},
   },
   {
     type: 'input',
@@ -28,7 +27,6 @@ const formFields: IInputField[] = [
     name: 'surname',
     placeholder: 'Els teus cognoms',
     required: true,
-    onChange: () => {},
   },
   {
     type: 'input',
@@ -38,24 +36,31 @@ const formFields: IInputField[] = [
     name: 'email',
     placeholder: 'El teu correu electrònic',
     required: true,
-    onChange: () => {},
   },
-  /*{
+  {
     type: 'input',
     icon: Phone,
     label: 'Telèfon (opcional)',
     inputType: 'tel',
     name: 'phone',
+    placeholder: 'El teu número de telèfon',
     required: false,
-    onChange: () => {},
-  },*/
+  },
+  {
+    type: 'input',
+    icon: Info,
+    label: 'Com ens has conegut? (opcional)',
+    inputType: 'text',
+    name: 'referralSource',
+    placeholder: 'Ex: xarxes socials, amic, etc.',
+    required: false,
+  },
   {
     type: 'input',
     label: 'Vull formar part del programa beta',
     inputType: 'checkbox',
     name: 'interestInBeta',
     required: false,
-    onChange: () => {},
     className: 'mt-12',
   },
   {
@@ -65,7 +70,6 @@ const formFields: IInputField[] = [
     inputType: 'checkbox',
     name: 'privacyPolicy',
     required: true,
-    onChange: () => {},
   },
 ];
 
@@ -75,30 +79,31 @@ export default function RegistrationForm() {
     surname: '',
     email: '',
     phone: '',
+    referralSource: '',
     interestInBeta: false,
     privacyPolicy: false,
   });
-  const [errors, setErrors] = useState<Partial<Record<keyof IFormData, string | undefined>>>({});
-  const [isFormValid, setIsFormValid] = useState<boolean>(false);
-  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
-  const handleInputChange = (name: keyof IFormData, value: string | boolean) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: name === 'phone' && value === '' ? '' : value,
-    }));
+  const [errors, setErrors] = useState<{
+    [K in keyof IFormData]?: string;
+  }>({});
 
-    const { success, error } = validateField(name, value);
-    setErrors((prevErrors) => ({
-      ...prevErrors,
-      [name]: success ? undefined : error || undefined,
-    }));
-  };
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(false);
 
   useEffect(() => {
     const { success } = validateForm(formData);
     setIsFormValid(success);
   }, [formData]);
+
+  const handleInputChange = (name: keyof IFormData, value: string | boolean) => {
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    const { success, error } = validateField(name, value);
+    setErrors((prev) => ({
+      ...prev,
+      [name]: success ? undefined : (error as string),
+    }));
+  };
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -113,28 +118,42 @@ export default function RegistrationForm() {
     }
 
     try {
-      const result = await fetch('/api/lead/register', {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/lead/register`, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: `${formData.name} ${formData.surname}`,
+          email: formData.email,
+          phone: formData.phone,
+          interestInBeta: formData.interestInBeta,
+          referralSource: formData.referralSource,
+        }),
       });
 
-      const data = await result.json();
+      const data = await response.json();
 
-      if (!result.ok) {
-        toast.error(data.message);
-        throw new Error('Failed to submit the form');
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to submit the form');
       }
 
-      console.log('Form submitted successfully:', formData);
-      toast.success(
-        'Formulari enviat correctament. Revisa el teu correu electrònic per verificar la teva adreça.'
-      );
+      toast.success(data.message, { autoClose: 5000 });
+      setFormData({
+        name: '',
+        surname: '',
+        email: '',
+        phone: '',
+        referralSource: '',
+        interestInBeta: false,
+        privacyPolicy: false,
+      });
     } catch (error) {
-      toast.error('Hi ha hagut un error en enviar el formulari.');
       console.error('Submission error:', error);
+      toast.error(
+        error instanceof Error
+          ? error.message
+          : 'Hi ha hagut un error en enviar el formulari. Si us plau, torna-ho a intentar més tard.',
+        { autoClose: 5000 }
+      );
     }
 
     setIsSubmitting(false);
@@ -147,30 +166,15 @@ export default function RegistrationForm() {
           <div className="px-6 py-8">
             <h2 className="mb-6 text-center text-2xl font-bold text-primary">Registra't</h2>
             <form onSubmit={handleSubmit}>
-              {formFields.map((field) =>
-                field.name === 'phone' ? (
-                  <PhoneInput
-                    key={field.name}
-                    {...field}
-                    required={field.required}
-                    onChange={(value) => handleInputChange(field.name as keyof IFormData, value)}
-                    value={formData[field.name] || ''}
-                    error={errors[field.name]}
-                  />
-                ) : (
-                  <InputBox
-                    key={field.name}
-                    {...field}
-                    onChange={(value) => handleInputChange(field.name as keyof IFormData, value)}
-                    value={
-                      field.inputType === 'checkbox'
-                        ? formData[field.name] || false
-                        : formData[field.name] || ''
-                    }
-                    error={errors[field.name]}
-                  />
-                )
-              )}
+              {formFields.map((field) => (
+                <InputBox
+                  key={field.name}
+                  {...field}
+                  onChange={(value) => handleInputChange(field.name as keyof IFormData, value)}
+                  value={formData[field.name] || (field.inputType === 'checkbox' ? false : '')}
+                  error={errors[field.name]}
+                />
+              ))}
 
               <div className="mt-4">
                 <button
@@ -189,7 +193,18 @@ export default function RegistrationForm() {
           </div>
         </div>
       </div>
-      <ToastContainer autoClose={4000} closeOnClick pauseOnHover />
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </section>
   );
 }

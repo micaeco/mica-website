@@ -6,7 +6,7 @@ interface IBaseFormField {
   link?: string;
   name: string;
   required: boolean;
-  onChange: (value: string | boolean) => void;
+  onChange?: (value: string | boolean) => void;
   value?: string | boolean;
   className?: string;
   error?: string;

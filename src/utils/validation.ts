@@ -2,15 +2,26 @@ import { z } from 'zod';
 import { IFormData } from '@/src/types';
 
 export const formSchema = z.object({
-  name: z.string().min(1, 'Name is required').max(255, 'Name is too long'),
-  surname: z.string().min(1, 'Surname is required').max(255, 'Surname is too long'),
-  email: z.string().email('Invalid email address'),
-  phone: z.string().refine((val) => val === '' || /^\+\d{1,3}\s?\d{9,10}$/.test(val), {
-    message: 'Invalid phone number format',
-  }),
+  name: z.string().min(1, 'El nom és obligatori').max(255, 'El nom és massa llarg'),
+  surname: z.string().min(1, 'El cognom és obligatori').max(255, 'El cognom és massa llarg'),
+  email: z
+    .string()
+    .min(1, 'La direcció de correu és obligatoria')
+    .email('Direcció de correu electrònic no vàlida'),
+  phone: z.string().refine(
+    (val) => {
+      if (val === '') return true;
+      const cleanedNumber = val.replace(/\s/g, '');
+      return /^[6789]\d{8}$/.test(cleanedNumber);
+    },
+    {
+      message: 'Nom de telèfon no vàlid',
+    }
+  ),
   interestInBeta: z.boolean(),
+  referralSource: z.string().max(255, 'La font de referència és massa llarga'),
   privacyPolicy: z.boolean().refine((val) => val === true, {
-    message: 'You must accept the privacy policy',
+    message: "Has d'acceptar la política de privacitat",
   }),
 });
 
