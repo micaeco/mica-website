@@ -54,13 +54,17 @@ const teamMembers: ITeamMember[] = [
     ],
   },
   {
-    src: '',
+    src: '/images/gabi.webp',
     name: 'Gabriel Escobar',
     description: 'Enginyer informàtic',
     socials: [
       {
         platform: 'linkedin',
-        url: 'https://www.linkedin.com/in/gabriel-escobar-8949a71/',
+        url: 'https://www.linkedin.com/in/gabriel-escobar-castells-8b4248268/',
+      },
+      {
+        platform: 'github',
+        url: 'https://github.com/GabrielEscobar04',
       },
     ],
   },

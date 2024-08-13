@@ -20,10 +20,10 @@ export default function Problem() {
           <div className="space-y-6">
             <h2>Sabies que...</h2>
             <p className="mt-4 text-gray-500">
-              Un estudi afirma que el 72% del consum d&apos;aigua a casa nostra el produeix només 3
-              dispositius: la dutxa, el vàter i la rentadora.
+              Un estudi afirma que el 82% del consum d&apos;aigua a casa nostra el produeix només 3
+              dispositius: la dutxa, el vàter i l'aixeta'.
               <Link
-                href="https://proyectoaguas.es/que-es-lo-que-mas-consume-agua-en-casa/"
+                href="https://docs.amb.cat/alfresco/api/-default-/public/alfresco/versions/1/nodes/059eb8bc-f3f0-4cf2-b60d-bbd639344706/content/EAU-AMB%202020_IERMB_Informe_resum.pdf?attachment=false&mimeType=application/pdf&sizeInBytes=996300"
                 className="transition hover:text-blue-500"
                 target="_blank"
               >

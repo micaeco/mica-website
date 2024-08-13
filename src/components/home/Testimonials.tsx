@@ -45,9 +45,9 @@ export default function TestimonialCarousel() {
   }, [current]);
 
   return (
-    <section className="h-96 bg-white px-6 py-32">
+    <section className="bg-white px-6 py-32">
       <div className="mx-auto max-w-4xl">
-        <div className="relative">
+        <div className="relative h-48">
           <AnimatePresence mode="wait">
             <motion.div
               key={current}

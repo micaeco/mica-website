@@ -8,19 +8,19 @@ export default function Hero() {
         <div className="flex flex-col items-center 2xl:flex-row 2xl:justify-between">
           <div className="max-w-xl text-center 2xl:text-left">
             <GiCargoCrane className="mx-auto mb-6 size-16 text-accent 2xl:mx-0" />
-            <h3 className="mb-4 font-semibold">Uneix-te programa beta!</h3>
+            <h3 className="mb-4 font-semibold">Uneix-te al programa beta!</h3>
             <p className="mb-6 text-gray-300">
               Encara estem en fase de disseny. Tot i així, et pots apuntar des d&apos;avui mateix al
               nostre programa beta. Només cal que ens deixis el teu correu electrònic i et
               mantindrem informat sobre les novetats.
             </p>
           </div>
-          <div className="mt-8 max-w-md 2xl:mt-0">
+          <div className="mt-8 2xl:mt-0">
             <Image
-              src="/images/sensor-sketch-no-bg.webp"
+              src="/images/design-process.png"
               alt="MICA Sensor Sketch"
-              width={600}
-              height={600}
+              width={850}
+              height={850}
             />
           </div>
         </div>
