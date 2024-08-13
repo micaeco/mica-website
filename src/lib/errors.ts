@@ -3,7 +3,7 @@ export const ERROR_CODES = {
   TOKEN_REQUIRED: 'TOKEN_REQUIRED',
   TOKEN_EXPIRED: 'TOKEN_EXPIRED',
   TOKEN_INVALID: 'TOKEN_INVALID',
-  USER_REGISTERED: 'USER_REGISTERED',
+  LEAD_ALREADY_REGISTERED: 'LEAD_ALREADY_REGISTERED',
   INTERNAL_ERROR: 'INTERNAL_ERROR',
 } as const;
 
@@ -20,7 +20,7 @@ const errorMessages: Record<ErrorCode, string> = {
   TOKEN_REQUIRED: 'Es requereix un token de verificació.',
   TOKEN_EXPIRED: 'El token de verificació ha caducat.',
   TOKEN_INVALID: 'El token de verificació no és vàlid.',
-  USER_REGISTERED: 'Aquest correu electrònic ja està registrat.',
+  LEAD_ALREADY_REGISTERED: 'Aquest correu electrònic ja està registrat.',
   INTERNAL_ERROR: "S'ha produït un error intern. Si us plau, torna-ho a provar més tard.",
 };
 
