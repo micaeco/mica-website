@@ -25,8 +25,7 @@ export default function Hero() {
         </p>
         <br />
         <p className="mb-8 font-light italic">
-          Amb el suport de la fundació <span className="font-bold">BIT</span> Habitat de
-          l'Ajuntament de Barcelona
+          Amb el suport de la fundació BITHabitat de l'Ajuntament de Barcelona
         </p>
 
         <div className="mx-auto max-w-3xl">
