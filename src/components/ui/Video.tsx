@@ -127,7 +127,7 @@ export default function Video({ src, subtitles, defaultSubtitle, autoPlayWhenVis
           </button>
         ))}
       </div>
-      <video ref={videoRef} src={src} className="w-full" controls muted playsInline>
+      <video ref={videoRef} src={src} className="w-full rounded-lg" controls muted playsInline>
         {subtitles.map((subtitle, index) => (
           <track
             key={index}

@@ -116,7 +116,7 @@ export function useBlogPosts() {
   }, []);
 
   return {
-    posts,
+    blogPosts,
     filteredPosts,
     searchTerm,
     setSearchTerm,

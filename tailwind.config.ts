@@ -7,7 +7,7 @@ const config: Config = {
         /(bg|text)-(gray|red|orange|yellow|green|teal|blue|indigo|purple|pink)-(50|100|200|300|400|500|600|700|800|900)/,
     },
   ],
-  content: ['./src/components/**/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
+  content: ['./src/components/**/*.{js,ts,jsx,tsx,mdx}', './src/app/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
       colors: {

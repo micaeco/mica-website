@@ -8,7 +8,8 @@ export interface ISocialLink {
 export interface ITeamMember {
   src: string;
   name: string;
-  description: string;
+  role: string;
+  studies: string;
   socials?: ISocialLink[];
 }
 

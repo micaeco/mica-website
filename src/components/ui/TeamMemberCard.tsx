@@ -19,7 +19,7 @@ function SocialIcon({ platform }: { platform: string }) {
   }
 }
 
-export default function TeamMemberCard({ src, name, description, socials }: ITeamMember) {
+export default function TeamMemberCard({ src, name, role, studies, socials }: ITeamMember) {
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       <div className="relative w-full pb-[100%]">
@@ -40,9 +40,10 @@ export default function TeamMemberCard({ src, name, description, socials }: ITea
         )}
       </div>
       <div className="flex grow flex-col justify-between p-4">
-        <div>
+        <div className="mb-3">
           <h3 className="mb-1 text-lg font-bold">{name}</h3>
-          <p className="mb-3 text-sm text-gray-600">{description}</p>
+          <p className="text-sm font-light italic">{studies}</p>
+          <p className="text-sm font-light">{role}</p>
         </div>
         {socials && socials.length > 0 && (
           <div className="mt-auto flex space-x-3">
