@@ -53,6 +53,7 @@ const formFields: IInputField[] = [
   {
     type: 'input',
     label: 'Vull formar part del programa beta',
+    link: '/beta',
     inputType: 'checkbox',
     name: 'interestInBeta',
     required: false,

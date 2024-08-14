@@ -4,9 +4,10 @@ import { notFound } from 'next/navigation';
 import { useBlogPosts } from '@/src/hooks/useBlogPosts';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { ArrowLeft, Clock, User, Tag, TrafficCone } from 'lucide-react';
+import { Clock, User, Tag, TrafficCone } from 'lucide-react';
 
 import MarkdownRenderer from '@/src/components/ui/Markdown';
+import GoBack from '@/src/components/ui/GoBack';
 
 type Props = {
   params: {
@@ -30,13 +31,7 @@ export default function Post({ params }: Props) {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8">
-      <Link
-        href={path + '/..'}
-        className="mb-6 inline-flex items-center text-blue-600 hover:text-blue-800"
-      >
-        <ArrowLeft className="mr-2 size-4" />
-        Tornar a Documentació
-      </Link>
+      <GoBack currentPath={path} text={'Tornar a documentació'} />
 
       <div className="mb-2 flex flex-col rounded-lg bg-red-500 p-3 text-white shadow-lg">
         <div className="flex flex-row space-x-3">

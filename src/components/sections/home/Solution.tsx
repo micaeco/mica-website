@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { Droplet, CircleAlert, TrendingUp } from 'lucide-react';
 
 import IconCard from '@/src/components/ui/IconCard';
-import CtaButton from '@/src/components/ui/CTAButton';
+import CtaButton from '@/src/components/ui/Button';
 
 const benefits = [
   {
