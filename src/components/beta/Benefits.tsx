@@ -28,8 +28,9 @@ const benefits = [
   },
   {
     icon: Gift,
-    title: 'Descomptes exclusius',
-    description: 'Accedeix a descomptes i avantatges únics per a membres del programa beta.',
+    title: 'Gratuït',
+    description:
+      'El sensor MICA i la seva instal·lació seràn gratuïts pels membres del programa beta.',
   },
 ];
 

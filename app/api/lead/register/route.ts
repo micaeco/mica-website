@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { registerLead, ERROR_CODES, getErrorMessage, getSuccessMessage } from '@/src/lib/gas';
+import { registerLead, ERROR_CODES, getErrorMessage, getSuccessMessage } from '@/src/services/gas';
 
 export async function POST(request: Request) {
   try {

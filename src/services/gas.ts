@@ -1,4 +1,4 @@
-import { ERROR_CODES, SUCCESS_CODES, getErrorMessage, getSuccessMessage } from './errors';
+import { ERROR_CODES, SUCCESS_CODES, getErrorMessage, getSuccessMessage } from '@/src/constants/errors';
 
 const GOOGLE_APPS_SCRIPT_URL = process.env.GOOGLE_APPS_SCRIPT_URL;
 

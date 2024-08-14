@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { IInputField, IFormData } from '@/src/types';
 import InputBox from '@/src/components/ui/InputBox';
-import { validateForm, validateField } from '@/src/utils/validation';
+import { validateForm, validateField } from '@/src/lib/validation';
 
 const formFields: IInputField[] = [
   {

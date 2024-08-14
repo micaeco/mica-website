@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { verifyLead, ERROR_CODES, getErrorMessage, getSuccessMessage } from '@/src/lib/gas';
+import { verifyLead, ERROR_CODES, getErrorMessage, getSuccessMessage } from '@/src/services/gas';
 
 export async function GET(request: Request, { params }: { params: { token: string } }) {
   try {
