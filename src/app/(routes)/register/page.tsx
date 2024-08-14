@@ -82,7 +82,7 @@ export default function RegistrationForm() {
       <div className="container mx-auto">
         <div className="mx-auto max-w-md overflow-hidden rounded-lg bg-white shadow-md">
           <div className="px-6 py-8">
-            <h2 className="mb-6 text-center text-2xl font-bold text-primary">Registra't</h2>
+            <h3 className="mb-6 text-center font-bold text-primary">Registra't</h3>
             <form onSubmit={handleSubmit}>
               {formFields.map((field) => (
                 <InputBox

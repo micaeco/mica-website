@@ -13,7 +13,7 @@ export default function PostCard({ post }: Props) {
         <div className="grow p-6">
           <span className="mb-2 inline-block text-sm">{post.tag}</span>
           <h4 className="mb-2">{post.title}</h4>
-          <p className="text-gray-600">{post.summary}</p>
+          <p className="font-light">{post.summary}</p>
         </div>
       </div>
     </Link>

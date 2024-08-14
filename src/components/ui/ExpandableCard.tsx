@@ -41,12 +41,12 @@ export default function ExpandableCard({
           }}
           className="overflow-hidden"
         >
-          <p className="text-sm text-gray-500 ">{description}</p>
+          <p className="text-sm font-light">{description}</p>
         </div>
       </div>
       <button
         onClick={onToggle}
-        className="w-full bg-tertiary p-2 text-sm font-medium text-gray-600 transition-colors duration-200 hover:bg-tertiary-700"
+        className="w-full bg-tertiary p-2 text-sm font-light transition-colors duration-200 hover:bg-tertiary-700"
       >
         {isExpanded ? 'Mostra menys' : 'Mostra més'}
       </button>

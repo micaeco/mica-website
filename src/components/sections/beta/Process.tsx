@@ -53,7 +53,7 @@ function ProcessStep({ icon: Icon, title, description, isLast = false }: Props) 
       </div>
       <div className="grow">
         <h6 className="mb-2 text-gray-800">{title}</h6>
-        <p className="text-gray-500">{description}</p>
+        <p className="font-light">{description}</p>
       </div>
     </div>
   );

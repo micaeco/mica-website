@@ -30,7 +30,7 @@ const benefits = [
 
 export default function Solution() {
   return (
-    <div className="bg-gradient-to-b from-secondary to-secondary-50 px-8 py-32">
+    <div className="bg-gradient-to-b from-secondary to-secondary-50 px-8 py-24">
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-12">
           <div className="col-span-12 2xl:col-span-7">
@@ -38,7 +38,7 @@ export default function Solution() {
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="mb-8"
+              className="mb-8 font-bold"
             >
               Què podràs fer amb MICA?
             </motion.h2>

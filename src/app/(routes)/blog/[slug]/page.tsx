@@ -53,7 +53,7 @@ export default function Post({ params }: Props) {
         <div className="p-6">
           <h1 className="mb-4 text-3xl font-bold">{post.title}</h1>
 
-          <div className="mb-4 flex items-center text-sm text-gray-600">
+          <div className="mb-4 flex items-center text-sm font-light">
             <Clock className="mr-1 size-4" />
             <span className="mr-4">{post.date?.toString() || 'Data desconeguda'}</span>
             <User className="mr-1 size-4" />
@@ -71,7 +71,7 @@ export default function Post({ params }: Props) {
       </article>
 
       <div className="mt-8">
-        <h2 className="mb-4 text-2xl font-bold">Documents relacionats</h2>
+        <h5 className="mb-4 font-bold">Documents relacionats</h5>
         {relatedPosts.length > 0 ? (
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             {relatedPosts.map((relatedPost) => (
@@ -81,7 +81,7 @@ export default function Post({ params }: Props) {
                 className="block rounded-lg bg-white p-4 shadow transition-shadow hover:shadow-md"
               >
                 <h3 className="mb-2 font-semibold">{relatedPost.title}</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm font-light">
                   {relatedPost.summary || 'No hi ha resum disponible.'}
                 </p>
               </Link>

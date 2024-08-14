@@ -54,9 +54,7 @@ export default function BetaBenefits() {
         viewport={{ once: true }}
         className="container mx-auto px-8"
       >
-        <h3 className="mb-10 text-center font-semibold text-primary">
-          Descobreix els avantatges...
-        </h3>
+        <h3 className="mb-10 text-center font-bold text-primary">Descobreix els avantatges...</h3>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {benefits.map((benefit, index) => (
             <BenefitCard key={index} {...benefit} />

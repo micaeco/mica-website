@@ -70,7 +70,7 @@ export default function InputBox({
           name={name}
           id={name}
           required={required}
-          className="block w-full rounded-md border border-gray-300 bg-white py-2 pl-10 pr-3 leading-5 placeholder:text-gray-500 focus:border-secondary focus:outline-none focus:ring-1 focus:ring-secondary sm:text-sm"
+          className="block w-full rounded-md border border-gray-300 bg-white py-2 pl-10 pr-3 leading-5 placeholder:font-light focus:border-secondary focus:outline-none focus:ring-1 focus:ring-secondary sm:text-sm"
           placeholder={placeholder}
           onChange={(e) => onChange!(e.target.value)}
           value={value as string}

@@ -59,7 +59,7 @@ export default function Header() {
                   className={`text-sm ${
                     item.isButton
                       ? 'rounded-lg bg-primary px-4 py-2 text-white transition-all duration-300 hover:bg-primary-700 hover:shadow-md'
-                      : 'text-gray-600 transition-colors duration-300 hover:text-gray-900'
+                      : 'font-light transition-colors duration-300 hover:text-gray-900'
                   }`}
                 >
                   {item.label}
@@ -119,7 +119,7 @@ export default function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="text-lg text-gray-600 transition-colors duration-300 hover:text-gray-900"
+                    className="text-lg font-light transition-colors duration-300 hover:text-gray-900"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}

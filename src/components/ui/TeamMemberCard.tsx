@@ -35,7 +35,7 @@ export default function TeamMemberCard({ src, name, role, studies, socials }: IT
           />
         ) : (
           <div className="absolute left-0 top-0 flex size-full items-center justify-center bg-gray-200">
-            <UserCircle className="size-24 text-gray-400" />
+            <UserCircle className="size-24 font-light" />
           </div>
         )}
       </div>
@@ -53,7 +53,7 @@ export default function TeamMemberCard({ src, name, role, studies, socials }: IT
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 transition-colors duration-300 hover:text-gray-900"
+                className="font-light transition-colors duration-300 hover:text-gray-900"
                 aria-label={`${name}'s ${social.platform}`}
               >
                 <SocialIcon platform={social.platform} />

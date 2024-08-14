@@ -25,7 +25,7 @@ export default function ExpandableQuestion({ question }: Props) {
         }`}
       >
         <div className="overflow-hidden">
-          <p className="mt-2 text-sm text-gray-600">{question.answer}</p>
+          <p className="mt-2 text-sm font-light">{question.answer}</p>
         </div>
       </div>
     </div>

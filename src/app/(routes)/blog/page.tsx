@@ -12,7 +12,7 @@ export default function Blog() {
   return (
     <main className="min-h-screen bg-gray-50">
       <div className="container mx-auto flex-grow px-4 py-8">
-        <h1 className="mb-8 text-center text-4xl font-bold">Blog</h1>
+        <h2 className="mb-8 text-center font-bold">Blog</h2>
         <SearchBar
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}

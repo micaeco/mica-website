@@ -18,8 +18,8 @@ export default function Problem() {
           className="flex flex-col items-center gap-8 md:flex-row"
         >
           <div className="space-y-6">
-            <h2>Sabies que...</h2>
-            <p className="mt-4 text-gray-500">
+            <h2 className="font-bold">Sabies que...</h2>
+            <p className="mt-4 font-light">
               Un estudi afirma que el 82% del consum d&apos;aigua a casa nostra el produeix només 3
               dispositius: la dutxa, el vàter i l'aixeta'.
               <Link
