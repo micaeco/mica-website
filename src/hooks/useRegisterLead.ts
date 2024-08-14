@@ -5,19 +5,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import { IFormData } from '@/src/types';
 import { validateForm, validateField } from '@/src/lib/validation';
 
+const STORAGE_KEY = 'formData';
+
 export function useRegisterLeads() {
-  const [formData, setFormData] = useState<IFormData>(() => {
-    const savedData = localStorage.getItem('formData');
-    return savedData ? JSON.parse(savedData) : {
-      name: '',
-      surname: '',
-      email: '',
-      phone: '',
-      referralSource: '',
-      interestInBeta: false,
-      privacyPolicy: false,
-    };
-  });
+  const [formData, setFormData] = useState<IFormData>(getInitialFormData());
   const [errors, setErrors] = useState<{
     [K in keyof IFormData]?: string;
   }>({});
@@ -25,9 +16,16 @@ export function useRegisterLeads() {
   const [isFormValid, setIsFormValid] = useState(false);
 
   useEffect(() => {
+    const savedData = localStorage.getItem(STORAGE_KEY);
+    if (savedData) {
+      setFormData(JSON.parse(savedData));
+    }
+  }, []);
+
+  useEffect(() => {
     const { success } = validateForm(formData);
     setIsFormValid(success);
-    localStorage.setItem('formData', JSON.stringify(formData));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
   }, [formData]);
 
   const handleInputChange = (name: keyof IFormData, value: string | boolean) => {
@@ -81,7 +79,8 @@ export function useRegisterLeads() {
         interestInBeta: false,
         privacyPolicy: false,
       });
-      localStorage.removeItem('formData');
+
+      localStorage.removeItem(STORAGE_KEY);
     } catch (error) {
       console.error('Submission error:', error);
       toast.error(
@@ -96,4 +95,16 @@ export function useRegisterLeads() {
   };
 
   return { formData, errors, isSubmitting, isFormValid, handleInputChange, handleSubmit };
+}
+
+function getInitialFormData(): IFormData {
+  return {
+    name: '',
+    surname: '',
+    email: '',
+    phone: '',
+    referralSource: '',
+    interestInBeta: false,
+    privacyPolicy: false,
+  };
 }
