@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { useRegisterLeads } from '@/src/hooks/useRegisterLead';
+import { useRegisterLeads } from '@/src/hooks/';
 
 import Form from '@/src/components/sections/register/Form';
 

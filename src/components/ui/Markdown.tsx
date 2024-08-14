@@ -7,11 +7,11 @@ type Props = {
 
 export default function MarkdownRenderer({ content }: Props) {
   const components: Components = {
-    h1: ({ node, ...props }) => <h1 className="mb-4 font-bold" {...props} />,
-    h2: ({ node, ...props }) => <h2 className="mb-3 font-bold" {...props} />,
-    h3: ({ node, ...props }) => <h3 className="mb-2 font-bold" {...props} />,
-    h4: ({ node, ...props }) => <h4 className="mb-2 font-bold" {...props} />,
-    h5: ({ node, ...props }) => <h5 className="mb-1 font-bold" {...props} />,
+    h1: ({ node, ...props }) => <h3 className="mb-4 font-bold" {...props} />,
+    h2: ({ node, ...props }) => <h4 className="mb-3 font-bold" {...props} />,
+    h3: ({ node, ...props }) => <h5 className="mb-2 font-bold" {...props} />,
+    h4: ({ node, ...props }) => <h6 className="mb-2 font-bold" {...props} />,
+    h5: ({ node, ...props }) => <h6 className="mb-1 font-bold" {...props} />,
     h6: ({ node, ...props }) => <h6 className="mb-1 font-bold" {...props} />,
     p: ({ node, ...props }) => <p className="mb-4" {...props} />,
     strong: ({ node, ...props }) => <strong className="font-bold" {...props} />,
@@ -21,9 +21,5 @@ export default function MarkdownRenderer({ content }: Props) {
     li: ({ node, ...props }) => <li className="mb-1" {...props} />,
   };
 
-  return (
-    <div className="prose max-w-none px-1">
-      <ReactMarkdown components={components}>{content}</ReactMarkdown>
-    </div>
-  );
+  return <ReactMarkdown components={components}>{content}</ReactMarkdown>;
 }

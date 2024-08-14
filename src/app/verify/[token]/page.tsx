@@ -17,7 +17,7 @@ export default function VerifyPage() {
       const token = params.token as string;
 
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/lead/verify/${token}`);
+        const response = await fetch(`/api/lead/verify/${token}`);
         const data = await response.json();
 
         if (response.ok) {

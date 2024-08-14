@@ -6,14 +6,17 @@ import { IFormData } from '@/src/types';
 import { validateForm, validateField } from '@/src/lib/validation';
 
 export function useRegisterLeads() {
-  const [formData, setFormData] = useState<IFormData>({
-    name: '',
-    surname: '',
-    email: '',
-    phone: '',
-    referralSource: '',
-    interestInBeta: false,
-    privacyPolicy: false,
+  const [formData, setFormData] = useState<IFormData>(() => {
+    const savedData = localStorage.getItem('formData');
+    return savedData ? JSON.parse(savedData) : {
+      name: '',
+      surname: '',
+      email: '',
+      phone: '',
+      referralSource: '',
+      interestInBeta: false,
+      privacyPolicy: false,
+    };
   });
   const [errors, setErrors] = useState<{
     [K in keyof IFormData]?: string;
@@ -24,6 +27,7 @@ export function useRegisterLeads() {
   useEffect(() => {
     const { success } = validateForm(formData);
     setIsFormValid(success);
+    localStorage.setItem('formData', JSON.stringify(formData));
   }, [formData]);
 
   const handleInputChange = (name: keyof IFormData, value: string | boolean) => {
@@ -77,6 +81,7 @@ export function useRegisterLeads() {
         interestInBeta: false,
         privacyPolicy: false,
       });
+      localStorage.removeItem('formData');
     } catch (error) {
       console.error('Submission error:', error);
       toast.error(
