@@ -19,6 +19,7 @@ export default function MarkdownRenderer({ content }: Props) {
     ul: ({ node, ...props }) => <ul className="mb-4 list-inside list-disc" {...props} />,
     ol: ({ node, ...props }) => <ol className="mb-4 list-inside list-decimal" {...props} />,
     li: ({ node, ...props }) => <li className="mb-1" {...props} />,
+    a: ({ node, ...props }) => <a className="text-blue-500 hover:underline" {...props} />,
   };
 
   return <ReactMarkdown components={components}>{content}</ReactMarkdown>;
