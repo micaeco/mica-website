@@ -6,8 +6,7 @@ export interface IPost {
   summary: string;
   content: string;
   author?: string;
-  date?: Date;
-  imageSrc?: string;
+  date?: string;
   tag: TPostTag;
 }
 

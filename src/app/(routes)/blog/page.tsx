@@ -2,12 +2,16 @@
 
 import React from 'react';
 
+import { useBlogPosts } from '@/src/hooks/useBlogPosts';
 import BlogPosts from '@/src/components/sections/blog/BlogPosts';
 import SearchBar from '@/src/components/sections/blog/SearchBar';
-import { useBlogPosts } from '@/src/hooks/useBlogPosts';
+import Loading from '@/src/components/sections/common/Loading';
 
 export default function Blog() {
-  const { filteredPosts, searchTerm, setSearchTerm, selectedTag, setSelectedTag } = useBlogPosts();
+  const { filteredPosts, searchTerm, isLoading, setSearchTerm, selectedTag, setSelectedTag } =
+    useBlogPosts();
+
+  if (isLoading) return <Loading />;
 
   return (
     <main className="min-h-screen bg-gray-50">
@@ -19,7 +23,7 @@ export default function Blog() {
           selectedTag={selectedTag}
           setSelectedTag={setSelectedTag}
         />
-        <BlogPosts posts={filteredPosts} />
+        <BlogPosts posts={filteredPosts!} />
       </div>
     </main>
   );

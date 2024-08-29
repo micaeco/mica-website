@@ -57,7 +57,7 @@ The source directory contains all the application code.
 
   - `/layout`: Components for the overall page structure.
   - `/common`: Shared UI components used across multiple pages.
-  - Feature-specific component folders (e.g., `/products`, `/blog`).
+  - `/sections`: Page-specific sections and components.
 
 - `/hooks`: Custom React hooks for shared stateful logic.
 
@@ -91,33 +91,58 @@ The website is automatically deployed to Vercel when changes are pushed to the m
 
 Please ensure you have the necessary permissions before contributing to this project. Contact the project maintainers for more information.
 
-### Git Workflow
+## Git Workflow
 
-1. Create a new branch for your feature or bug fix:
-
-   ```
-   git checkout -b feature/name-of-the-feature
-   ```
-
-   or
+1. Starting a new task?
 
    ```
-   git checkout -b bugfix/name-of-the-bug
+   git checkout main  # Switch to main branch
+   git pull origin main  # Sync local main with remote
+   git checkout -b feature-branch  # Create and switch to new feature branch
    ```
 
-2. Make your changes and commit them with clear, descriptive commit messages.
-
-3. Push your branch to the remote repository:
+2. Made changes and want to save them?
 
    ```
-   git push -u origin feature/name-of-the-feature
+   git status  # Check which files have changed
+   git add .  # Stage all changes
+   git commit -m "Descriptive message"  # Commit changes
    ```
 
-4. When your feature is complete, create a Pull Request (PR) to merge your branch into `main`.
+3. Ready to push your changes?
 
-5. Wait for code review and address any feedback.
+   ```
+   git push origin feature-branch  # Push your branch to remote
+   ```
 
-6. Once approved, your PR will be merged into the `main` branch.
+4. Feature complete and ready to merge?
+
+   ```
+   git checkout main  # Switch back to main branch
+   git pull origin main  # Sync local main with remote
+   git merge feature-branch  # Merge your feature branch into main
+   git push origin main  # Push updated main to remote
+   ```
+
+5. Done with the feature branch?
+   ```
+   git branch -d feature-branch  # Delete local feature branch
+   git push origin --delete feature-branch  # Delete remote feature branch
+   ```
+
+### Logging Commands
+
+```
+git status  # Check current status of your working directory
+git log  # View commit history
+git log --oneline  # Compact view of commit history
+git log --graph --oneline --all  # Graphical view of branch history
+git branch  # List local branches
+git branch -a  # List all branches (local and remote)
+git diff  # View unstaged changes
+git diff --staged  # View staged changes
+git remote -v  # List remote repositories
+```
 
 ### Issue Templates
 

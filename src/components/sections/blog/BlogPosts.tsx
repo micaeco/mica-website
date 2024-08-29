@@ -33,6 +33,11 @@ export default function BlogPosts({ posts }: Props) {
           </button>
         </div>
       )}
+      {posts.length === 0 && (
+        <div className="mt-8 text-center">
+          <p>No s'han trobat articles. </p>
+        </div>
+      )}
     </div>
   );
 }
