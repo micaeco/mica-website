@@ -81,7 +81,7 @@ This structure is designed to be intuitive and scalable. As the project grows, n
 
 ## Environment Variables
 
-Environment variables will be stored in `.env.local` (not committed to the repository). Contact a team member for the necessary variables when setting up the project locally.
+Environment variables will be stored in `.env` (not committed to the repository). Contact a team member for the necessary variables when setting up the project locally.
 
 ## Deployment
 
