@@ -2,8 +2,8 @@
 
 import { usePathname } from 'next/navigation';
 
-import Latest from '@/src/components/sections/privacy-policy/Latest';
-import GoBack from '@/src/components/ui/GoBack';
+import Latest from '@/src/components/sections/privacy-policy/latest';
+import GoBack from '@/src/components/ui/go-back';
 
 export default function PrivacyPolicy() {
   const path = usePathname();

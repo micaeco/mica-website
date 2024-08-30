@@ -1,5 +1,5 @@
-import Infographic from '@/src/components/sections/product/Infographic';
-import CallToAction from '@/src/components/sections/product/CallToAction';
+import Infographic from '@/src/components/sections/product/infographic';
+import CallToAction from '@/src/components/sections/product/call-to-action';
 
 export default function Product() {
   return (

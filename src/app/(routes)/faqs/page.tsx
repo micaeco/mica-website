@@ -1,4 +1,4 @@
-import Faqs from '@/src/components/sections/faqs/Faqs';
+import Faqs from '@/src/components/sections/faqs/faqs';
 
 export default function FAQs() {
   return (

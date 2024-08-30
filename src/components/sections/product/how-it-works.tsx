@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-import ExpandableCard from '@/src/components/ui/ExpandableCard';
+import ExpandableCard from '@/src/components/ui/expandable-card';
 
 const benefits = [
   {

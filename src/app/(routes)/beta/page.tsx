@@ -1,8 +1,8 @@
 import React from 'react';
-import Hero from '@/src/components/sections/beta/Hero';
-import Benefits from '@/src/components/sections/beta/Benefits';
-import Process from '@/src/components/sections/beta/Process';
-import CallToAction from '@/src/components/sections/beta/CallToAction';
+import Hero from '@/src/components/sections/beta/hero';
+import Benefits from '@/src/components/sections/beta/benefits';
+import Process from '@/src/components/sections/beta/process';
+import CallToAction from '@/src/components/sections/beta/call-to-action';
 
 const Beta = () => {
   return (

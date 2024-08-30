@@ -3,9 +3,9 @@
 import React from 'react';
 
 import { useBlogPosts } from '@/src/hooks/useBlogPosts';
-import BlogPosts from '@/src/components/sections/blog/BlogPosts';
-import SearchBar from '@/src/components/sections/blog/SearchBar';
-import Loading from '@/src/components/sections/common/Loading';
+import BlogPosts from '@/src/components/sections/blog/blog-posts';
+import SearchBar from '@/src/components/sections/blog/search-bar';
+import Loading from '@/src/components/sections/common/loading';
 
 export default function Blog() {
   const { filteredPosts, searchTerm, isLoading, setSearchTerm, selectedTag, setSelectedTag } =

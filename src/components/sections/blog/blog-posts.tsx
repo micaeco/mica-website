@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 
-import PostCard from '@/src/components/ui/PostCard';
+import PostCard from '@/src/components/ui/post-card';
 import { IPost } from '@/src/types';
 
 type Props = {

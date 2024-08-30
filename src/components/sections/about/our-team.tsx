@@ -1,5 +1,5 @@
 import React from 'react';
-import TeamMemberCard from '@/src/components/ui/TeamMemberCard';
+import TeamMemberCard from '@/src/components/ui/team-member-card';
 import { ITeamMember } from '@/src/types';
 
 const teamMembers: ITeamMember[] = [

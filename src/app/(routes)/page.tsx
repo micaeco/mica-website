@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Hero from '@/src/components/sections/home/Hero';
-import Problem from '@/src/components/sections/home/Problem';
-import Solution from '@/src/components/sections/home/Solution';
-import WaveSeparator from '@/src/components/sections/common/WaveSeparator';
-import Testimonials from '@/src/components/sections/home/Testimonials';
+import Hero from '@/src/components/sections/home/hero';
+import Problem from '@/src/components/sections/home/problem';
+import Solution from '@/src/components/sections/home/solution';
+import WaveSeparator from '@/src/components/sections/common/wave-separator';
+import Testimonials from '@/src/components/sections/home/testimonials';
 
 export default function Home() {
   return (

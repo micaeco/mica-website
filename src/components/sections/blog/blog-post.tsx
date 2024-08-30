@@ -1,8 +1,8 @@
 import { Clock, User, Tag } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 
-import MarkdownRenderer from '@/src/components/ui/Markdown';
-import GoBack from '@/src/components/ui/GoBack';
+import MarkdownRenderer from '@/src/components/ui/markdown';
+import GoBack from '@/src/components/ui/go-back';
 import { IPost } from '@/src/types';
 
 type Props = {

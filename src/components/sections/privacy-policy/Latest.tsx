@@ -1,4 +1,4 @@
-import Markdown from '@/src/components/ui/Markdown';
+import Markdown from '@/src/components/ui/markdown';
 
 const privacyPolicy = `
 # Política de Privacidad- Version 0.1 [02/08/2024] 

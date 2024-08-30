@@ -3,7 +3,7 @@
 import React from 'react';
 import { useRegisterLeads } from '@/src/hooks/';
 
-import Form from '@/src/components/sections/register/Form';
+import Form from '@/src/components/sections/register/form';
 
 export default function RegistrationForm() {
   const { formData, errors, isSubmitting, isFormValid, handleSubmit, handleInputChange } =

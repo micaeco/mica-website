@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react';
 
-import Loading from '@/src/components/sections/common/Loading';
-import BlogPost from '@/src/components/sections/blog/BlogPost';
+import Loading from '@/src/components/sections/common/loading';
+import BlogPost from '@/src/components/sections/blog/blog-post';
 import { IPost } from '@/src/types';
 
 type Props = {

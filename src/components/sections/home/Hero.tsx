@@ -2,7 +2,7 @@
 'use client';
 
 import React from 'react';
-import Video from '@/src/components/ui/Video';
+import Video from '@/src/components/ui/video';
 
 export default function Hero() {
   const subtitles = [

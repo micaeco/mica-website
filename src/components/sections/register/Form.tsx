@@ -2,7 +2,7 @@ import { User, Mail, Phone, Info } from 'lucide-react';
 import { ToastContainer } from 'react-toastify';
 
 import { IInputField, IFormData } from '@/src/types';
-import InputBox from '@/src/components/ui/InputBox';
+import InputBox from '@/src/components/ui/input-box';
 
 const formFields: IInputField[] = [
   {

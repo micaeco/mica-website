@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Droplet, CircleAlert, TrendingUp } from 'lucide-react';
 
-import IconCard from '@/src/components/ui/IconCard';
-import CtaButton from '@/src/components/ui/Button';
+import IconCard from '@/src/components/ui/icon-card';
+import CtaButton from '@/src/components/ui/my-button';
 
 const benefits = [
   {

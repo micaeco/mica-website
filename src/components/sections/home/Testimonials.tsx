@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import StarRating from '@/src/components/ui/StarRating';
+import StarRating from '@/src/components/ui/star-rating';
 
 const testimonials = [
   {

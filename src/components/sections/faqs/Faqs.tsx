@@ -1,6 +1,6 @@
 'use client';
 
-import ExpandableQuestion from '@/src/components/ui/ExpandableQuestion';
+import ExpandableQuestion from '@/src/components/ui/expandable-question';
 import { IQuestion } from '@/src/types';
 
 const faqs: IQuestion[] = [
