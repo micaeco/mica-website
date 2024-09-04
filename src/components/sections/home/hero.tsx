@@ -3,6 +3,7 @@
 
 import React from 'react';
 import Video from '@/src/components/ui/video';
+import Button from '../../ui/button';
 
 export default function Hero() {
   const subtitles = [
@@ -24,6 +25,7 @@ export default function Hero() {
           per estalviar aigua.
         </p>
         <br />
+        <Button text="Prova la nostra app." href="https://app.mica.eco" />
         <p className="mb-8 font-light italic">
           Amb el suport de la fundació BITHabitat de l'Ajuntament de Barcelona
         </p>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CtaButton from '@/src/components/ui/my-button';
+import CtaButton from '@/src/components/ui/button';
 
 export default function CallToAction() {
   return (
