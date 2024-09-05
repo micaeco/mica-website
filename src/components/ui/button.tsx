@@ -3,16 +3,14 @@ import { ArrowRight } from 'lucide-react';
 import { ButtonHTMLAttributes } from 'react';
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
-  text: string;
-  href: string;
+  children?: React.ReactNode;
   variant?: 'accent' | 'transparent';
   showArrow?: boolean;
 };
 
-export default function CtaButton({
+export default function Button({
+  children,
   className = '',
-  text,
-  href,
   variant = 'accent',
   showArrow = true,
   ...props
@@ -21,20 +19,18 @@ export default function CtaButton({
     'inline-flex items-center rounded-lg px-6 py-3 text-lg font-semibold transition-all';
   const variantClasses = {
     accent: 'bg-accent text-white hover:bg-accent/90',
-    transparent: 'bg-transparent border border-primary text-primary hover:bg-primary/10',
+    transparent: 'bg-transparent border border-white text-white hover:bg-primary/40',
   };
 
   return (
-    <Link href={href} passHref>
-      <button
-        className={`${baseClasses} ${variantClasses[variant]} ${className} group m-2`}
-        {...props}
-      >
-        {text}
-        {showArrow && (
-          <ArrowRight className="ml-2 size-5 transition duration-300 group-hover:translate-x-1" />
-        )}
-      </button>
-    </Link>
+    <button
+      className={`${baseClasses} ${variantClasses[variant]} ${className} group m-2`}
+      {...props}
+    >
+      {children}
+      {showArrow && (
+        <ArrowRight className="ml-2 size-5 transition duration-300 group-hover:translate-x-1" />
+      )}
+    </button>
   );
 }

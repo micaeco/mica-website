@@ -3,7 +3,6 @@
 
 import React from 'react';
 import Video from '@/src/components/ui/video';
-import Button from '../../ui/button';
 
 export default function Hero() {
   const subtitles = [
@@ -14,21 +13,22 @@ export default function Hero() {
 
   return (
     <section className="relative flex flex-col items-center justify-center bg-white px-8 pb-4 pt-20">
-      <div className="mb-16 w-full max-w-4xl text-center">
-        <h1 className="mb-6 font-bold leading-tight text-primary">
-          La nova manera <br />
-          d&apos;estalviar aigua.
-        </h1>
-        <p className="mx-auto max-w-2xl font-light">
-          Estem desenvolupant un sensor innovador al que hem anomenat MICA. <br /> Amb MICA pots
-          seguir el teu consum d&apos;aigua, detectar fugues i rebre recomanacions personalitzades
-          per estalviar aigua.
-        </p>
-        <br />
-        <Button text="Prova la nostra app." href="https://app.mica.eco" />
-        <p className="mb-8 font-light italic">
-          Amb el suport de la fundació BITHabitat de l'Ajuntament de Barcelona
-        </p>
+      <div className="mb-16 grid w-full max-w-7xl items-center gap-8 text-center 2xl:grid-cols-2 2xl:text-left">
+        <div>
+          <h1 className="mb-6 font-bold leading-tight text-primary">
+            La nova manera <br />
+            d&apos;estalviar aigua.
+          </h1>
+          <p className="mx-auto max-w-2xl font-light">
+            Estem desenvolupant un sensor innovador al que hem anomenat MICA. <br /> Amb MICA pots
+            seguir el teu consum d&apos;aigua, detectar fugues i rebre recomanacions personalitzades
+            per estalviar aigua.
+          </p>
+          <br />
+          <p className="mb-8 text-sm font-light italic">
+            Amb el suport de la fundació BITHabitat de l'Ajuntament de Barcelona
+          </p>
+        </div>
 
         <div className="mx-auto max-w-3xl">
           <Video

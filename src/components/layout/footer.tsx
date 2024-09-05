@@ -9,6 +9,8 @@ const navLinks = [
   { name: 'Blog', href: '/blog' },
   { name: 'Contacte', href: '/contact' },
   { name: 'En vull un!', href: '/beta' },
+  { name: 'Demo app', href: 'https://app.mica.eco', target: '_blank' },
+  { name: "Registra't", href: '/register' },
 ];
 
 export default function Footer() {
@@ -32,7 +34,12 @@ export default function Footer() {
             <p className="mb-4 text-xs font-bold text-gray-50">Enllaços ràpids</p>
             <nav className="flex flex-col space-y-1">
               {navLinks.map((link) => (
-                <Link key={link.href} href={link.href} className="text-xs hover:text-accent-500">
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  target={link.target ? link.target : ''}
+                  className="text-xs hover:text-accent-500"
+                >
                   {link.name}
                 </Link>
               ))}

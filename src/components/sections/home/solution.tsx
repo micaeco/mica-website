@@ -6,7 +6,8 @@ import { motion } from 'framer-motion';
 import { Droplet, CircleAlert, TrendingUp } from 'lucide-react';
 
 import IconCard from '@/src/components/ui/icon-card';
-import CtaButton from '@/src/components/ui/button';
+import Button from '@/src/components/ui/button';
+import Link from 'next/link';
 
 const benefits = [
   {
@@ -80,7 +81,9 @@ export default function Solution() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
         >
-          <CtaButton text="Descobreix com funciona" href="/product" />
+          <Link href="/product">
+            <Button> Descobreix com funciona </Button>
+          </Link>
         </motion.div>
       </div>
     </div>

@@ -14,7 +14,6 @@ const navLinks = [
   { href: '/faqs', label: 'FAQs' },
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contacte' },
-  { href: '/register', label: "Registra't", isButton: true },
 ];
 
 // Breakpoint in pixels (can be easily changed)
@@ -56,15 +55,26 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`text-sm ${
-                    item.isButton
-                      ? 'rounded-lg bg-primary px-4 py-2 text-white transition-all duration-300 hover:bg-primary-700 hover:shadow-md'
-                      : 'font-light transition-colors duration-300 hover:text-gray-900'
-                  }`}
+                  className="'font-light text-sm transition-colors duration-300 hover:text-gray-900"
                 >
                   {item.label}
                 </Link>
               ))}
+              <div className="space-x-4">
+                <Link
+                  href="https://app.mica.eco"
+                  target="_blank"
+                  className="border-input bg-background rounded-lg border-2 px-4 py-2 text-sm transition-all duration-300 hover:bg-primary/20"
+                >
+                  Demo app
+                </Link>
+                <Link
+                  href="/register"
+                  className="border-input rounded-lg border-2 border-primary bg-primary px-4 py-2 text-sm text-white transition-all duration-300 hover:bg-primary-700"
+                >
+                  Registra't
+                </Link>
+              </div>
             </nav>
           )}
 
@@ -74,31 +84,29 @@ export default function Header() {
               className="relative z-30 h-6 w-6 text-gray-500 transition-colors duration-300 hover:text-gray-900"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             >
-              <AnimatePresence initial={false} mode="wait">
-                {isMenuOpen ? (
-                  <motion.div
-                    key="close"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute inset-0"
-                  >
-                    <X size={24} />
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="menu"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute inset-0"
-                  >
-                    <Menu size={24} />
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              {isMenuOpen ? (
+                <motion.div
+                  key="close"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute inset-0"
+                >
+                  <X size={24} />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="menu"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute inset-0"
+                >
+                  <Menu size={24} />
+                </motion.div>
+              )}
             </button>
           )}
         </div>
@@ -125,6 +133,19 @@ export default function Header() {
                     {item.label}
                   </Link>
                 ))}
+                <Link
+                  href="https://app.mica.eco"
+                  target="_blank"
+                  className="text-lg font-light transition-colors duration-300 hover:text-gray-900"
+                >
+                  Demo app
+                </Link>
+                <Link
+                  href="/register"
+                  className="text-lg font-light transition-colors duration-300 hover:text-gray-900"
+                >
+                  Registra't
+                </Link>
               </div>
             </div>
           </motion.div>

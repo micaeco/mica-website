@@ -77,6 +77,7 @@ const config: Config = {
       },
     },
   },
+  future: { hoverOnlyWhenSupported: true },
   plugins: [],
 };
 export default config;
