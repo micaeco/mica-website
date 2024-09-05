@@ -5,7 +5,7 @@ import { ITeamMember } from '@/src/types';
 const teamMembers: ITeamMember[] = [
   {
     src: '/images/jaime.webp',
-    name: 'Jaime Escobar',
+    name: 'Jaime',
     role: 'Direcció i operacions',
     studies: 'Enginyer industrial, MBA',
     socials: [
@@ -17,7 +17,7 @@ const teamMembers: ITeamMember[] = [
   },
   {
     src: '/images/miki.webp',
-    name: 'Miquel Escobar',
+    name: 'Miquel',
     role: 'Responsable de dades i IA',
     studies: 'Enginyer de dades',
     socials: [
@@ -30,22 +30,22 @@ const teamMembers: ITeamMember[] = [
   },
   {
     src: '/images/lucia.webp',
-    name: 'Lucía Chacón',
+    name: 'Lucía',
     role: 'Responsable de hardware',
     studies: 'Enginyera electrònica',
     socials: [{ platform: 'github', url: 'https://github.com/LUciaChHcon' }],
   },
   {
     src: '/images/marta.webp',
-    name: 'Marta Castells',
+    name: 'Marta',
     role: 'Disseny del producte',
     studies: 'Enginyera de disseny industrial',
     socials: [],
   },
   {
     src: '/images/irene.webp',
-    name: 'Irene Escobar',
-    role: 'Marketing i comunicació',
+    name: 'Irene',
+    role: 'Comunicació i marketing',
     studies: 'Física, formadora en tecnologia',
     socials: [
       {
@@ -60,8 +60,8 @@ const teamMembers: ITeamMember[] = [
   },
   {
     src: '/images/gabi.webp',
-    name: 'Gabriel Escobar',
-    role: 'Desenvolupament del software',
+    name: 'Gabriel',
+    role: 'Desenvolupament de software',
     studies: 'Enginyer informàtic',
     socials: [
       {
