@@ -26,7 +26,7 @@ const faqs: IQuestion[] = [
 
 export default function Faqs() {
   return (
-    <div className="mx-auto max-w-2xl px-4">
+    <div className="px-4">
       <h3 className="mb-4 font-bold">Preguntes freqüents</h3>
       <div>
         {faqs.map((faq) => (

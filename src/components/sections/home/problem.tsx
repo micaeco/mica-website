@@ -9,7 +9,7 @@ import { ExternalLink, CircleHelp } from 'lucide-react';
 export default function Problem() {
   return (
     <section className="bg-gray-100 px-8 py-20">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -17,6 +17,14 @@ export default function Problem() {
           viewport={{ once: true }}
           className="flex flex-col items-center gap-8 md:flex-row"
         >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <Image src="/images/piechart.png" alt="Piechart" width={1100} height={1100} />
+          </motion.div>
           <div className="space-y-6">
             <h2 className="font-bold">Sabies que...</h2>
             <p className="mt-4 font-light">
@@ -37,14 +45,6 @@ export default function Problem() {
               </p>
             </div>
           </div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <Image src="/images/piechart.png" alt="Piechart" width={1100} height={1100} />
-          </motion.div>
         </motion.div>
       </div>
     </section>
