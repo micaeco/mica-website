@@ -11,7 +11,7 @@ export default function CallToAction() {
           Uneix-te al programa beta de MICA avui i comença a marcar la diferència en el consum
           d&apos;aigua de casa teva i del planeta.
         </h6>
-        <div>
+        <div className="space-x-3">
           <Link href="https://app.mica.eco" target="_blank">
             <Button variant="transparent" showArrow={false}>
               Demo app

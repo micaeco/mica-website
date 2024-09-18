@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useRef, useState, useEffect } from 'react';
 
 interface Subtitle {
@@ -11,9 +13,16 @@ interface Props {
   subtitles: Subtitle[];
   defaultSubtitle?: string;
   autoPlayWhenVisible?: boolean;
+  className?: string;
 }
 
-export default function Video({ src, subtitles, defaultSubtitle, autoPlayWhenVisible }: Props) {
+export default function Video({
+  src,
+  subtitles,
+  defaultSubtitle,
+  autoPlayWhenVisible,
+  className,
+}: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentSubtitle, setCurrentSubtitle] = useState(defaultSubtitle || 'off');
@@ -101,7 +110,7 @@ export default function Video({ src, subtitles, defaultSubtitle, autoPlayWhenVis
   };
 
   return (
-    <div ref={containerRef} className="relative">
+    <div ref={containerRef} className={`relative ${className}`}>
       <div
         className={`absolute right-4 top-4 z-10 transition-opacity duration-300 ${
           showControls ? 'opacity-100' : 'opacity-0'

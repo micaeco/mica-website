@@ -1,41 +1,49 @@
-// components/Hero.tsx
 'use client';
 
 import React from 'react';
-import Video from '@/src/components/ui/video';
+import Image from 'next/image';
+import Button from '@/src/components/ui/button';
+import Link from 'next/link';
 
 export default function Hero() {
-  const subtitles = [
-    { src: '/locales/ca/subtitles.vtt', srcLang: 'ca', label: 'Català' },
-    { src: '/locales/es/subtitles.vtt', srcLang: 'es', label: 'Español' },
-    { src: '/locales/en/subtitles.vtt', srcLang: 'en', label: 'English' },
-  ];
-
   return (
-    <section className="relative flex flex-col items-center justify-center bg-white px-8 pb-4 pt-20">
-      <div className="mb-16 grid w-full max-w-7xl items-center gap-16 text-center 2xl:grid-cols-8 2xl:text-left">
-        <div className="2xl:col-span-3">
-          <h1 className="mb-6 font-bold leading-tight text-primary">
+    <section className="flex flex-col items-center bg-white px-8 pb-4 pt-20">
+      <div className="relative flex w-full max-w-6xl flex-col gap-16 text-left 2xl:h-[650px]">
+        <div className="absolute right-5 top-4 hidden items-center 2xl:block">
+          <Image
+            src="/images/hero-graphic-desktop.png"
+            alt="Background"
+            width={1050}
+            height={720}
+          />
+        </div>
+        <div className="mx-auto justify-center space-y-4 text-left 2xl:mx-0 2xl:justify-start">
+          <Image
+            src="/images/hero-graphic-mobile.png"
+            alt="Logo"
+            width={475}
+            height={300}
+            className="block 2xl:hidden"
+          />
+          <h1 className="font-bold leading-tight">
             La nova manera <br />
             d&apos;estalviar aigua.
           </h1>
           <p className="font-light">
-            Estem desenvolupant un sensor innovador al que hem anomenat MICA. <br /> Amb MICA pots
-            seguir el teu consum d&apos;aigua, detectar fugues i rebre recomanacions personalitzades
-            per estalviar aigua.
+            Empoderem Barcelona per conservar <br /> aigua amb sensors impulsats per <br />{' '}
+            intel·ligència artificial.
           </p>
-          <br />
-          <p className="text-sm font-light italic">
-            Amb el suport de la fundació BITHabitat de l'Ajuntament de Barcelona
-          </p>
+          <Link href="beta">
+            <Button className="my-10">En vull un!</Button>
+          </Link>
         </div>
-
-        <div className="2xl:col-span-5">
-          <Video
-            src="/videos/mica.mp4"
-            subtitles={subtitles}
-            defaultSubtitle="ca"
-            autoPlayWhenVisible
+        <div className="absolute bottom-0 right-0 space-y-2">
+          <p className="text-sm font-light italic">Amb el suport de</p>
+          <Image
+            src="/logos/bithabitat-logo.png"
+            alt="Ajuntament de Barcelona"
+            width={140}
+            height={30}
           />
         </div>
       </div>
