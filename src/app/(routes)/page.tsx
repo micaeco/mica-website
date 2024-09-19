@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <main className="flex flex-col justify-center text-primary">
       <Hero />
-      <div className="mt-16 flex justify-center px-8 pb-20">
+      <div className="mt-28 flex justify-center px-8 pb-20">
         <Video
           src="/videos/mica.mp4"
           subtitles={subtitles}

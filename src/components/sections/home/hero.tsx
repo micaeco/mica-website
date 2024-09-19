@@ -34,7 +34,7 @@ export default function Hero() {
             intel·ligència artificial.
           </p>
           <Link href="beta">
-            <Button className="mb-4 mt-10">En vull un!</Button>
+            <Button className="mb-6 mt-10">En vull un!</Button>
           </Link>
           <div className="space-y-2">
             <p className="text-sm font-light italic">Amb el suport de</p>
