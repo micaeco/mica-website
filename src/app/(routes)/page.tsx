@@ -17,9 +17,7 @@ export default function Home() {
   return (
     <main className="flex flex-col justify-center text-primary">
       <Hero />
-      <WaveSeparator topColor="white" bottomColor="#f3f4f6" />
-      <Problem />
-      <div className="flex justify-center bg-gray-100 px-8 pb-20">
+      <div className="mt-16 flex justify-center px-8 pb-20">
         <Video
           src="/videos/mica.mp4"
           subtitles={subtitles}
@@ -27,9 +25,12 @@ export default function Home() {
           className="max-w-5xl"
         />
       </div>
-      <WaveSeparator topColor="gray-100" bottomColor="#00f2dd " />
+      <WaveSeparator topColor="white" bottomColor="#00f2dd " />
       <Solution />
+      <WaveSeparator topColor="tertiary" bottomColor="#ffffff" />
+      <Problem />
       <Testimonials />
+      <div className="bg"></div>
     </main>
   );
 }

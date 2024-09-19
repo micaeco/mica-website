@@ -45,7 +45,7 @@ export default function TestimonialCarousel() {
   }, [current]);
 
   return (
-    <section className="bg-white px-6 py-32">
+    <section className="bg-gray-100 px-6 py-32">
       <div className="mx-auto max-w-4xl">
         <div className="relative h-48">
           <AnimatePresence mode="wait">

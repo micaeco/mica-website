@@ -31,7 +31,7 @@ const benefits = [
 
 export default function Solution() {
   return (
-    <div className="bg-gradient-to-b from-secondary to-secondary-50 px-8 py-24">
+    <div className="bg-gradient-to-b from-secondary to-tertiary px-8 py-24">
       <div className="mx-auto max-w-6xl">
         <div className="grid grid-cols-12">
           <div className="col-span-12 2xl:col-span-7">

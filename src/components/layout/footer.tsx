@@ -4,7 +4,7 @@ import Link from 'next/link';
 const navLinks = [
   { name: 'Inici', href: '/' },
   { name: 'Com funciona', href: '/product' },
-  { name: 'Sobre Nosaltres', href: '/about' },
+  { name: 'Qui som?', href: '/about' },
   { name: 'FAQs', href: '/faqs' },
   { name: 'Blog', href: '/blog' },
   { name: 'Contacte', href: '/contact' },

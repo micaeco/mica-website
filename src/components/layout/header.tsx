@@ -10,7 +10,7 @@ const navLinks = [
   { href: '/', label: 'Inici' },
   { href: '/product', label: 'Com funciona' },
   { href: '/beta', label: 'En vull un!' },
-  { href: '/about', label: 'Sobre Nosaltres' },
+  { href: '/about', label: 'Qui som?' },
   { href: '/faqs', label: 'FAQs' },
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contacte' },

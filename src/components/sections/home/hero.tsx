@@ -34,17 +34,17 @@ export default function Hero() {
             intel·ligència artificial.
           </p>
           <Link href="beta">
-            <Button className="my-10">En vull un!</Button>
+            <Button className="mb-4 mt-10">En vull un!</Button>
           </Link>
-        </div>
-        <div className="absolute bottom-0 right-0 space-y-2">
-          <p className="text-sm font-light italic">Amb el suport de</p>
-          <Image
-            src="/logos/bithabitat-logo.png"
-            alt="Ajuntament de Barcelona"
-            width={140}
-            height={30}
-          />
+          <div className="space-y-2">
+            <p className="text-sm font-light italic">Amb el suport de</p>
+            <Image
+              src="/logos/bithabitat-logo.png"
+              alt="Ajuntament de Barcelona"
+              width={200}
+              height={30}
+            />
+          </div>
         </div>
       </div>
     </section>
