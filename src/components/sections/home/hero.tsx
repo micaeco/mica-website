@@ -36,15 +36,6 @@ export default function Hero() {
           <Link href="beta">
             <Button className="mb-6 mt-10">En vull un!</Button>
           </Link>
-          <div className="space-y-2">
-            <p className="text-sm font-light italic">Amb el suport de</p>
-            <Image
-              src="/logos/bithabitat-logo.png"
-              alt="Ajuntament de Barcelona"
-              width={200}
-              height={30}
-            />
-          </div>
         </div>
       </div>
     </section>
