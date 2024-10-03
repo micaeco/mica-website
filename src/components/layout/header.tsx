@@ -41,7 +41,7 @@ export default function Header() {
   }, [checkIsMobile]);
 
   return (
-    <header className="sticky top-0 z-20 bg-white shadow-md transition-shadow duration-300 hover:shadow-lg">
+    <header className="sticky top-0 z-20 border-b border-gray-200 bg-white transition-shadow duration-300 hover:shadow-md">
       <div className="container mx-auto py-4 sm:px-4">
         <div className="flex items-center justify-between px-8">
           <Link href="/" className="z-30 flex items-center text-xl font-bold text-primary">
