@@ -10,6 +10,7 @@ export const ERROR_CODES = {
 export const SUCCESS_CODES = {
   LEAD_REGISTERED: 'LEAD_REGISTERED',
   LEAD_VERIFIED: 'LEAD_VERIFIED',
+  SUBMISSION_SENT: 'SUBMISSION_SENT',
 } as const;
 
 type ErrorCode = keyof typeof ERROR_CODES;
@@ -28,6 +29,7 @@ const successMessages: Record<SuccessCode, string> = {
   LEAD_REGISTERED:
     'Registre completat amb èxit. Si us plau, comprova el teu correu electrònic per a la verificació.',
   LEAD_VERIFIED: 'Correu electrònic verificat amb èxit.',
+  SUBMISSION_SENT: 'Missatge enviat correctament.',
 };
 
 export function getErrorMessage(code: ErrorCode): string {

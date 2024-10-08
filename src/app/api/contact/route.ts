@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { registerLead } from '@/src/services/gas';
+import { contactSubmission } from '@/src/services/gas';
 import { ERROR_CODES, getErrorMessage, getSuccessMessage } from '@/src/constants/errors';
 
 export async function POST(request: Request) {
@@ -14,20 +14,17 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Invalid JSON in request body' }, { status: 400 });
     }
 
-    const { name, surname, email, phone, interestInBeta, referralSource } = body;
+    const { name, email, message } = body;
 
-    if (!name || !surname || !email) {
+    if (!name || !email || !message) {
       return NextResponse.json({ error: getErrorMessage('MISSING_FIELDS') }, { status: 400 });
     }
 
-    const result = await registerLead({
+    const result = await contactSubmission(
       name,
-      surname,
       email,
-      phone,
-      interestInBeta,
-      referralSource,
-    });
+      message,
+    );
 
     if ('error' in result) {
       return NextResponse.json(
@@ -36,7 +33,7 @@ export async function POST(request: Request) {
       );
     }
 
-    return NextResponse.json({ success: true, message: getSuccessMessage('LEAD_REGISTERED') });
+    return NextResponse.json({ success: true, message: getSuccessMessage('SUBMISSION_SENT') });
   } catch (error) {
     return NextResponse.json({ error: getErrorMessage('INTERNAL_ERROR') }, { status: 500 });
   }

@@ -1,20 +1,26 @@
-'use client';
+import { ToastContainer } from 'react-toastify';
 
-import { FormEvent, useState } from 'react';
+type Props = {
+  name: string;
+  setName: (name: string) => void;
+  email: string;
+  setEmail: (email: string) => void;
+  message: string;
+  setMessage: (message: string) => void;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  isSubmitting: boolean;
+};
 
-export default function ContactForm() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', { name, email, message });
-    setName('');
-    setEmail('');
-    setMessage('');
-  };
-
+export default function ContactForm({
+  name,
+  setName,
+  email,
+  setEmail,
+  message,
+  setMessage,
+  handleSubmit,
+  isSubmitting,
+}: Props) {
   return (
     <section className="bg-gray-50 px-8 py-16">
       <div className="container mx-auto max-w-6xl">
@@ -74,12 +80,25 @@ export default function ContactForm() {
           </div>
           <button
             type="submit"
-            className="rounded-md bg-accent px-4 py-2 font-semibold text-white transition-colors hover:bg-accent-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2"
+            className={`rounded-md px-4 py-2 font-semibold text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 ${
+              isSubmitting ? 'cursor-not-allowed bg-gray-400' : 'bg-accent hover:bg-accent-300'
+            }`}
+            disabled={isSubmitting}
           >
-            Enviar
+            {isSubmitting ? 'Enviant...' : 'Envia'}
           </button>
         </form>
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        newestOnTop={false}
+        rtl={false}
+        pauseOnFocusLoss
+        pauseOnHover
+        theme="colored"
+        className="!w-96 !max-w-[90%] !text-xl"
+      />
     </section>
   );
 }

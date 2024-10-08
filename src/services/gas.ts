@@ -1,12 +1,9 @@
-import { ERROR_CODES, SUCCESS_CODES, getErrorMessage, getSuccessMessage } from '@/src/constants/errors';
+const GOOGLE_APPS_SCRIPT_URL_LEADS = process.env.GOOGLE_APPS_SCRIPT_URL_LEADS;
+const GOOGLE_APPS_SCRIPT_URL_CONTACT = process.env.GOOGLE_APPS_SCRIPT_URL_CONTACT;
 
-const GOOGLE_APPS_SCRIPT_URL = process.env.GOOGLE_APPS_SCRIPT_URL;
-
-if (!GOOGLE_APPS_SCRIPT_URL) {
+if (!GOOGLE_APPS_SCRIPT_URL_LEADS) {
   throw new Error('GOOGLE_APPS_SCRIPT_URL is not defined in the environment variables');
 }
-
-export { ERROR_CODES, SUCCESS_CODES, getErrorMessage, getSuccessMessage };
 
 export async function registerLead(leadData: {
   name: string;
@@ -16,7 +13,7 @@ export async function registerLead(leadData: {
   interestInBeta: boolean;
   referralSource: string;
 }) {
-  const response = await fetch(GOOGLE_APPS_SCRIPT_URL as string, {
+  const response = await fetch(GOOGLE_APPS_SCRIPT_URL_LEADS as string, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -33,7 +30,23 @@ export async function registerLead(leadData: {
 }
 
 export async function verifyLead(token: string) {
-  const response = await fetch(`${GOOGLE_APPS_SCRIPT_URL}?token=${token}`);
+  const response = await fetch(`${GOOGLE_APPS_SCRIPT_URL_LEADS}?token=${token}`);
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+  return await response.json();
+}
+
+export async function contactSubmission(name: string, email: string, message: string) {
+  const response = await fetch(GOOGLE_APPS_SCRIPT_URL_CONTACT as string, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ name, email, message }),
+  });
 
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
