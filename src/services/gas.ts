@@ -20,7 +20,6 @@ export async function registerLead(leadData: {
     },
     body: JSON.stringify(leadData),
   });
-  console.log('registerLead', leadData);
 
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);

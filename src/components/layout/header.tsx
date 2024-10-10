@@ -55,7 +55,7 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="'font-light text-sm transition-colors duration-300 hover:text-gray-900"
+                  className="text-sm font-light transition-colors duration-300 hover:text-gray-900"
                 >
                   {item.label}
                 </Link>
@@ -137,12 +137,14 @@ export default function Header() {
                   href="https://app.mica.eco"
                   target="_blank"
                   className="text-lg font-light transition-colors duration-300 hover:text-gray-900"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   Demo app
                 </Link>
                 <Link
                   href="/register"
                   className="text-lg font-light transition-colors duration-300 hover:text-gray-900"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   Registra't
                 </Link>

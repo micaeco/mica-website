@@ -4,9 +4,6 @@ const nextConfig = {
   images: {
     domains: [],
   },
-  env: {
-    GOOGLE_APPS_SCRIPT_API_KEY: process.env.GOOGLE_APPS_SCRIPT_API_KEY,
-  },
 };
 
 export default nextConfig;
