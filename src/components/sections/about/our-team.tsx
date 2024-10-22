@@ -1,6 +1,7 @@
 import React from 'react';
 import TeamMemberCard from '@/src/components/ui/team-member-card';
-import { ITeamMember } from '@/src/types';
+
+import { ITeamMember } from '@/src/types/team';
 
 const teamMembers: ITeamMember[] = [
   {
@@ -78,8 +79,8 @@ const teamMembers: ITeamMember[] = [
 
 export default function OurTeam() {
   return (
-    <section className="w-full bg-tertiary py-16">
-      <div className="container mx-auto px-4">
+    <section className="w-full bg-tertiary px-8 py-16">
+      <div className="mx-auto max-w-7xl">
         <h2 className="mb-12 text-left font-bold">El nostre equip.</h2>
         <div className="flex flex-wrap justify-center gap-8">
           {teamMembers.map((member, index) => (

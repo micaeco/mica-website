@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getBlogPosts } from '@/src/services/github';
+import { getBlogPosts } from '@/src/lib/github';
 import { parseReadme } from '@/src/lib/utils';
 import { IPost, TPostTag } from '@/src/types';
 

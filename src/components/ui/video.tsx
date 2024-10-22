@@ -37,9 +37,7 @@ export default function Video({
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              video.play().catch((error) => {
-                console.error('Autoplay failed:', error);
-              });
+              video.play();
             } else {
               video.pause();
             }

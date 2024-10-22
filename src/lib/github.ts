@@ -25,7 +25,6 @@ class Github {
         throw new Error('Not a file');
       }
     } catch (error) {
-      console.error(`Error fetching file from ${path}:`, error);
       throw error;
     }
   }
@@ -52,7 +51,6 @@ class Github {
         throw new Error('Not a directory');
       }
     } catch (error) {
-      console.error(`Error fetching files from directory ${path}:`, error);
       throw error;
     }
   }

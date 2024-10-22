@@ -1,17 +1,14 @@
 import { NextResponse } from 'next/server';
-import { registerLead } from '@/src/services/gas';
-import { ERROR_CODES, getErrorMessage, getSuccessMessage } from '@/src/constants/errors';
+import { registerLead } from '@/src/lib/gas';
+import { ERROR_MESSAGES, getErrorMessage, getSuccessMessage } from '@/src/lib/errors';
 
 export async function POST(request: Request) {
   try {
-    const bodyText = await request.text();
-
     let body;
     try {
-      body = JSON.parse(bodyText);
+      body = await request.json();
     } catch (parseError) {
-      console.error('Error parsing request body:', parseError);
-      return NextResponse.json({ error: 'Invalid JSON in request body' }, { status: 400 });
+      return NextResponse.json({ error: "Bad request" }, { status: 400 });
     }
 
     const { name, surname, email, phone, interestInBeta, referralSource } = body;
@@ -29,9 +26,9 @@ export async function POST(request: Request) {
       referralSource,
     });
 
-    if ('error' in result) {
+    if (!result.ok) {
       return NextResponse.json(
-        { error: getErrorMessage(result.error as keyof typeof ERROR_CODES) },
+        { error: getErrorMessage(result.error as keyof typeof ERROR_MESSAGES) },
         { status: 400 }
       );
     }

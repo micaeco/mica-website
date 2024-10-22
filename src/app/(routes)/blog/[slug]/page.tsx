@@ -28,7 +28,6 @@ export default function BlogPostContent({ params }: Props) {
         const fetchedPosts = await response.json();
         setPosts(fetchedPosts);
       } catch (e) {
-        console.error('Failed to fetch blog posts:', e);
         setError('Failed to fetch blog posts. Please try again later.');
       } finally {
         setIsLoading(false);

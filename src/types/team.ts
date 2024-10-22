@@ -1,7 +1,5 @@
-export type ISocialPlatform = 'linkedin' | 'x' | 'github' | 'instagram';
-
 export interface ISocialLink {
-  platform: ISocialPlatform;
+  platform: string;
   url: string;
 }
 
@@ -12,5 +10,3 @@ export interface ITeamMember {
   studies: string;
   socials?: ISocialLink[];
 }
-
-export type TShapeType = 'circle' | 'square';

@@ -38,7 +38,6 @@ export function useContactSubmission() {
       setEmail('');
       setMessage('');
     } catch (error: any) {
-      console.error('Submission error:', error);
       toast.error(
         error instanceof Error
           ? error.message

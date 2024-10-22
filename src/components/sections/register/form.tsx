@@ -88,36 +88,34 @@ export default function Form({
 }: Props) {
   return (
     <section className="bg-gray-50 px-8 py-16">
-      <div className="container mx-auto">
-        <div className="mx-auto max-w-md overflow-hidden rounded-lg bg-white shadow-md">
-          <div className="px-6 py-8">
-            <h3 className="mb-6 text-center font-bold text-primary">Registra't</h3>
-            <form onSubmit={handleSubmit}>
-              {formFields.map((field) => (
-                <InputBox
-                  key={field.name}
-                  {...field}
-                  onChange={(value) => handleInputChange(field.name as keyof IFormData, value)}
-                  value={formData[field.name] || (field.inputType === 'checkbox' ? false : '')}
-                  error={errors[field.name]}
-                />
-              ))}
+      <div className="mx-auto max-w-md overflow-hidden rounded-lg bg-white shadow-md">
+        <div className="px-6 py-8">
+          <h3 className="mb-6 text-center font-bold text-primary">Registra't</h3>
+          <form onSubmit={handleSubmit}>
+            {formFields.map((field) => (
+              <InputBox
+                key={field.name}
+                {...field}
+                onChange={(value) => handleInputChange(field.name as keyof IFormData, value)}
+                value={formData[field.name] || (field.inputType === 'checkbox' ? false : '')}
+                error={errors[field.name]}
+              />
+            ))}
 
-              <div className="mt-4">
-                <button
-                  type="submit"
-                  disabled={!isFormValid || isSubmitting}
-                  className={`flex w-full justify-center rounded-md border px-4 py-2 text-white shadow-sm ${
-                    isFormValid && !isSubmitting
-                      ? 'bg-secondary hover:bg-secondary-700'
-                      : 'cursor-not-allowed bg-gray-400'
-                  }`}
-                >
-                  {isSubmitting ? 'Enviant...' : "Registra't"}
-                </button>
-              </div>
-            </form>
-          </div>
+            <div className="mt-4">
+              <button
+                type="submit"
+                disabled={!isFormValid || isSubmitting}
+                className={`flex w-full justify-center rounded-md border px-4 py-2 text-white shadow-sm ${
+                  isFormValid && !isSubmitting
+                    ? 'bg-secondary hover:bg-secondary-700'
+                    : 'cursor-not-allowed bg-gray-400'
+                }`}
+              >
+                {isSubmitting ? 'Enviant...' : "Registra't"}
+              </button>
+            </div>
+          </form>
         </div>
       </div>
       <ToastContainer

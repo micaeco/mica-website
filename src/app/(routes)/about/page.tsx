@@ -5,7 +5,7 @@ import Timeline from '@/src/components/sections/about/timeline';
 
 export default function About() {
   return (
-    <main className="flex flex-col items-center justify-center text-primary">
+    <main className="flex flex-col items-center justify-center">
       <History />
       <Timeline />
       <WaveSeparator topColor="white" bottomColor="#d5fff3" />

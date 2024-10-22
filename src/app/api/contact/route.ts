@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import { contactSubmission } from '@/src/services/gas';
-import { ERROR_CODES, getErrorMessage, getSuccessMessage } from '@/src/constants/errors';
+import { contactSubmission } from '@/src/lib/gas';
+import { ERROR_MESSAGES, getErrorMessage, getSuccessMessage } from '@/src/lib/errors';
 
 export async function POST(request: Request) {
   try {
@@ -10,7 +10,6 @@ export async function POST(request: Request) {
     try {
       body = JSON.parse(bodyText);
     } catch (parseError) {
-      console.error('Error parsing request body:', parseError);
       return NextResponse.json({ error: 'Invalid JSON in request body' }, { status: 400 });
     }
 
@@ -28,7 +27,7 @@ export async function POST(request: Request) {
 
     if ('error' in result) {
       return NextResponse.json(
-        { error: getErrorMessage(result.error as keyof typeof ERROR_CODES) },
+        { error: getErrorMessage(result.error as keyof typeof ERROR_MESSAGES) },
         { status: 400 }
       );
     }

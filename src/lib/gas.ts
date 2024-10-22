@@ -21,10 +21,6 @@ export async function registerLead(leadData: {
     body: JSON.stringify(leadData),
   });
 
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
-  }
-
   return await response.json();
 }
 

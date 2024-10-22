@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import { verifyLead } from '@/src/services/gas';
-import { ERROR_CODES, getErrorMessage, getSuccessMessage } from '@/src/constants/errors';
+import { verifyLead } from '@/src/lib/gas';
+import { ERROR_MESSAGES, getErrorMessage, getSuccessMessage } from '@/src/lib/errors';
 
 export async function GET(request: Request, { params }: { params: { token: string } }) {
   try {
@@ -14,14 +14,13 @@ export async function GET(request: Request, { params }: { params: { token: strin
 
     if ('error' in result) {
       return NextResponse.json(
-        { error: getErrorMessage(result.error as keyof typeof ERROR_CODES) },
+        { error: getErrorMessage(result.error as keyof typeof ERROR_MESSAGES) },
         { status: 400 }
       );
     }
 
     return NextResponse.json({ success: true, message: getSuccessMessage('LEAD_VERIFIED') });
   } catch (error) {
-    console.error('Error verifying lead:', error);
     return NextResponse.json({ error: getErrorMessage('INTERNAL_ERROR') }, { status: 500 });
   }
 }

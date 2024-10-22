@@ -19,7 +19,6 @@ export function useBlogPosts() {
         const data = await response.json();
         setBlogPosts(data);
       } catch (e) {
-        console.error('Failed to fetch blog posts:', e);
         setError('Failed to fetch blog posts. Please try again later.');
       } finally {
         setIsLoading(false);

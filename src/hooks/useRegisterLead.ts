@@ -82,7 +82,6 @@ export function useRegisterLeads() {
 
       localStorage.removeItem(STORAGE_KEY);
     } catch (error) {
-      console.error('Submission error:', error);
       toast.error(
         error instanceof Error
           ? error.message
