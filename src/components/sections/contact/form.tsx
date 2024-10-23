@@ -1,4 +1,5 @@
 import { ToastContainer } from 'react-toastify';
+import { useTranslations } from 'next-intl';
 
 type Props = {
   name: string;
@@ -21,38 +22,56 @@ export default function ContactForm({
   handleSubmit,
   isSubmitting,
 }: Props) {
+  const t = useTranslations('contact');
+  const common = useTranslations('common');
+
   return (
     <section className="bg-gray-50 px-8 py-16">
-      <div className="container mx-auto max-w-6xl">
-        <h3 className="mb-4 font-bold">Estem buscant:</h3>
+      <div className="container mx-auto max-w-4xl">
+        <h3 className="mb-4 font-bold">{t('title')}</h3>
         <ul className="mb-16 space-y-4">
-          {[
-            { title: 'Beta testers', description: 'per ajudar-nos a desenvolupar i millorar MICA' },
-            { title: 'Lampistes experimentats', description: 'per a la instal·lació de sensors' },
-            { title: 'Socis estratègics', description: 'que comparteixin la nostra visió' },
-          ].map((item, index) => (
-            <li key={index} className="flex items-start">
-              <span className="mr-2 text-primary">•</span>
-              <span>
-                <strong className="text-primary">{item.title}</strong> {item.description}
-              </span>
-            </li>
-          ))}
+          <li>
+            <p>
+              -{' '}
+              {t.rich('testers', {
+                strong: (chunks) => <strong>{chunks}</strong>,
+              })}
+            </p>
+          </li>
+          <li>
+            <p>
+              -{' '}
+              {t.rich('technicians', {
+                strong: (chunks) => <strong>{chunks}</strong>,
+              })}
+            </p>
+          </li>
+          <li>
+            <p>
+              -{' '}
+              {t.rich('partners', {
+                strong: (chunks) => <strong>{chunks}</strong>,
+              })}
+            </p>
+          </li>
         </ul>
-        <h3 className="mb-6 font-bold">T&apos;hi apuntes?</h3>
-        <form onSubmit={handleSubmit} className="space-y-6 rounded-lg bg-white p-8 shadow-md">
+        <h3 className="mb-6 font-bold">{t('cta')}</h3>
+        <form onSubmit={handleSubmit} className="space-y-6">
           {[
-            { id: 'name', label: 'Nom', type: 'text', value: name, onChange: setName },
+            { id: 'name', label: common('name'), type: 'text', value: name, onChange: setName },
             {
               id: 'email',
-              label: 'Correu electrònic',
+              label: common('email'),
               type: 'email',
               value: email,
               onChange: setEmail,
             },
           ].map((field) => (
             <div key={field.id}>
-              <label htmlFor={field.id} className="mb-2 block text-gray-700">
+              <label
+                htmlFor={field.id}
+                className="mb-2 block text-gray-700 first-letter:capitalize"
+              >
                 {field.label}
               </label>
               <input
@@ -66,8 +85,8 @@ export default function ContactForm({
             </div>
           ))}
           <div>
-            <label htmlFor="message" className="mb-2 block text-gray-700">
-              Missatge
+            <label htmlFor="message" className="mb-2 block text-gray-700 first-letter:capitalize">
+              {common('message')}
             </label>
             <textarea
               id="message"
@@ -80,24 +99,22 @@ export default function ContactForm({
           </div>
           <button
             type="submit"
-            className={`rounded-md px-4 py-2 font-semibold text-white transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 ${
+            className={`rounded-md px-4 py-2 font-semibold text-white transition-colors first-letter:capitalize focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 ${
               isSubmitting ? 'cursor-not-allowed bg-gray-400' : 'bg-accent hover:bg-accent-300'
             }`}
             disabled={isSubmitting}
           >
-            {isSubmitting ? 'Enviant...' : 'Envia'}
+            {isSubmitting ? common('sending') + '...' : common('send')}
           </button>
         </form>
       </div>
       <ToastContainer
         position="top-center"
         autoClose={5000}
-        newestOnTop={false}
-        rtl={false}
         pauseOnFocusLoss
         pauseOnHover
         theme="colored"
-        className="!w-96 !max-w-[90%] !text-xl"
+        className="!text-xl"
       />
     </section>
   );

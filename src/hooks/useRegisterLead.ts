@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useTranslations } from 'next-intl';
 
-import { IFormData } from '@/src/types';
-import { validateForm, validateField } from '@/src/lib/validation';
+import { IFormData } from '@/types';
 
 const STORAGE_KEY = 'formData';
 
 export function useRegisterLeads() {
   const [formData, setFormData] = useState<IFormData>(getInitialFormData());
-  const [errors, setErrors] = useState<{
-    [K in keyof IFormData]?: string;
-  }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isFormValid, setIsFormValid] = useState(false);
+
+  const success = useTranslations('success');
+  const errors = useTranslations('errors');
 
   useEffect(() => {
     const savedData = localStorage.getItem(STORAGE_KEY);
@@ -23,31 +22,22 @@ export function useRegisterLeads() {
   }, []);
 
   useEffect(() => {
-    const { success } = validateForm(formData);
-    setIsFormValid(success);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+    const hasValue = Object.values(formData).some(value =>
+      typeof value === 'string' ? value.trim() !== '' : value === true
+    );
+
+    if (hasValue) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+    }
   }, [formData]);
 
   const handleInputChange = (name: keyof IFormData, value: string | boolean) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
-    const { success, error } = validateField(name, value);
-    setErrors((prev) => ({
-      ...prev,
-      [name]: success ? undefined : (error as string),
-    }));
   };
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     setIsSubmitting(true);
-
-    const { success, errors: validationErrors } = validateForm(formData);
-
-    if (!success) {
-      setErrors(validationErrors || {});
-      setIsSubmitting(false);
-      return;
-    }
 
     try {
       const response = await fetch(`/api/lead/register`, {
@@ -66,34 +56,24 @@ export function useRegisterLeads() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to submit the form');
+        toast.error(errors(data.error) || errors('DEFAULT'), { autoClose: 5000 });
+        return;
       }
 
-      toast.success(data.message, { autoClose: 5000 });
-      setFormData({
-        name: '',
-        surname: '',
-        email: '',
-        phone: '',
-        referralSource: '',
-        interestInBeta: false,
-        privacyPolicy: false,
-      });
-
+      toast.success(success(data.message), { autoClose: 5000 });
       localStorage.removeItem(STORAGE_KEY);
+      setFormData(getInitialFormData());
     } catch (error) {
       toast.error(
-        error instanceof Error
-          ? error.message
-          : 'Hi ha hagut un error en enviar el formulari. Si us plau, torna-ho a intentar més tard.',
+        errors((error as Error).message) || errors('DEFAULT'),
         { autoClose: 5000 }
       );
+    } finally {
+      setIsSubmitting(false);
     }
-
-    setIsSubmitting(false);
   };
 
-  return { formData, errors, isSubmitting, isFormValid, handleInputChange, handleSubmit };
+  return { formData, isSubmitting, handleInputChange, handleSubmit };
 }
 
 function getInitialFormData(): IFormData {

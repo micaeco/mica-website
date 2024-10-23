@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChevronDownIcon } from 'lucide-react';
-import { ISelectField } from '@/src/types/form';
+import { ISelectField } from '@/types/form';
 
 export default function SelectBox({
   label,

@@ -1,0 +1,328 @@
+{
+  "common": {
+    "search": "search",
+    "no-content-available": "no content available",
+    "no-articles-found": "no articles found",
+    "unknown-date": "unknown date",
+    "unknown-author": "unknown author",
+    "unknown-tag": "unknown category",
+    "go-back": "go back",
+    "contact": "contact",
+    "general-questions": "general questions",
+    "quick-links": "quick links",
+    "location": "location",
+    "spain": "Spain",
+    "all-rights-reserved": "All rights reserved",
+    "privacy-policy": "Privacy Policy",
+    "email": "email",
+    "phone": "phone",
+    "address": "address",
+    "name": "name",
+    "message": "message",
+    "send": "send",
+    "sending": "sending",
+    "optional": "optional",
+    "register": "register",
+    "blog": "blog",
+    "load": "load",
+    "more": "more"
+  },
+  "errors": {
+    "DEFAULT": "An error has occurred. Please try again later.",
+    "MISSING_FIELDS": "Required fields are missing.",
+    "INVALID_EMAIL": "The email is not valid.",
+    "INVALID_PHONE": "The phone number is not valid.",
+    "ALREADY_REGISTERED": "This email is already registered.",
+    "VERIFICATION_REQUIRED": "A verification token is required.",
+    "VERIFICATION_EXPIRED": "The verification token has expired.",
+    "VERIFICATION_INVALID": "The verification token is not valid.",
+    "POSTS_NOT_FOUND": "No posts found.",
+    "POST_NOT_FOUND": "Requested post not found.",
+    "INTERNAL_ERROR": "An internal error has occurred. Please try again later."
+  },
+  "success": {
+    "CONTACT_FORM_SENT": "Contact form sent successfully.",
+    "LEAD_REGISTERED": "Registration completed successfully. Please check your email for verification.",
+    "LEAD_VERIFIED": "Verification completed successfully."
+  },
+  "navLinks": {
+    "home": "Home",
+    "product": "How it works",
+    "beta": "I want one!",
+    "about": "Who are we?",
+    "faqs": "FAQs",
+    "blog": "Blog"
+  },
+  "navCta": {
+    "contact": "Contact",
+    "demo": "Demo app",
+    "register": "Register"
+  },
+  "hero": {
+    "title": {
+      "line1": "The new way",
+      "line2": "to save water."
+    },
+    "text": {
+      "line1": "Empowering Barcelona to conserve water",
+      "line2": "with sensors powered by",
+      "line3": "artificial intelligence."
+    },
+    "cta": "I want one!"
+  },
+  "solution": {
+    "title": "What can you do with MICA?",
+    "benefits": {
+      "benefit1": {
+        "title": "Discover where you use water",
+        "text": "You can see water consumption in real-time and historically, as well as identify which devices consume the most."
+      },
+      "benefit2": {
+        "title": "Detect leaks",
+        "text": "MICA easily detects water leaks and notifies you with an alert to prevent significant damage."
+      },
+      "benefit3": {
+        "title": "Receive recommendations",
+        "text": "You'll receive specific recommendations for your consumption to save water and money."
+      }
+    },
+    "cta": "Discover how it works"
+  },
+  "problem": {
+    "title": "Did you know...",
+    "text": "A study states that 82% of water consumption in our homes is produced by only 3 devices: the shower, toilet, and faucet.",
+    "info": "Do you know which devices consume the most water in your home?"
+  },
+  "testimonials": [
+    {
+      "quote": "MICA has helped me better understand my consumption habits",
+      "author": "Irene",
+      "role": "MICA Member",
+      "rating": "5"
+    },
+    {
+      "quote": "I realized that before hot water reaches the shower, more than 10 liters of water are wasted. Now we save this water in a bucket to reuse it.",
+      "author": "Jaime",
+      "role": "MICA Member",
+      "rating": "4.5"
+    },
+    {
+      "quote": "We don't realize how many times we use the toilet.",
+      "author": "Ana",
+      "role": "MICA Ana-lyst",
+      "rating": "4"
+    },
+    {
+      "quote": "My father says my showers use 4 times more water than his. I'm not sure if this app is for me.",
+      "author": "Gabi",
+      "role": "MICA Member",
+      "rating": "3.5"
+    }
+  ],
+  "product": {
+    "cta": "I want one!"
+  },
+  "beta": {
+    "hero": {
+      "title": "Join the beta program!",
+      "text": "We're still in the design phase. However, you can sign up today for our beta program to have the chance to be selected and get the sensor and installation for free. Just leave us your email and we'll keep you informed about updates."
+    },
+    "benefits": {
+      "title": "Discover the advantages...",
+      "benefits": {
+        "benefit1": {
+          "title": "Pioneer technology",
+          "text": "Be the first to experience innovation in water saving with AI."
+        },
+        "benefit2": {
+          "title": "Immediate savings",
+          "text": "Track your water consumption from day one."
+        },
+        "benefit3": {
+          "title": "Collective impact",
+          "text": "Be part of a community committed to sustainability."
+        },
+        "benefit4": {
+          "title": "Free",
+          "text": "The MICA sensor and its installation will be free for beta program members."
+        }
+      }
+    },
+    "process": {
+      "title": "Steps to follow:",
+      "steps": {
+        "step1": {
+          "title": "Register.",
+          "text": "Complete a form with your contact information."
+        },
+        "step2": {
+          "title": "Answer a questionnaire.",
+          "text": "We'll send you a questionnaire to better understand your needs."
+        },
+        "step3": {
+          "title": "Selection process.",
+          "text": "We'll select the most suitable candidates for the beta program."
+        },
+        "step4": {
+          "title": "We'll send you a sensor.",
+          "text": "If selected, we'll contact you to coordinate the sensor installation."
+        }
+      }
+    },
+    "cta": {
+      "text": "Join MICA's beta program today and start making a difference in your home's water consumption and the planet.",
+      "cta1": "Demo app",
+      "cta2": "Register",
+      "note": "The number of subsidized sensors for this phase is limited. Don't miss your opportunity!"
+    }
+  },
+  "history": {
+    "title": "Our story.",
+    "subtitle": "Innovating to combat drought in Barcelona.",
+    "paragraph1": "In the summer of 2022, Barcelona suffered one of the worst droughts in its history. While the city entered alert phase, a group of local engineers had a revolutionary idea.",
+    "paragraph2": "That's how MICA was born, with the mission to transform how we understand and conserve water. Our technology allows Barcelona residents to face each new water crisis with precise data and innovative tools."
+  },
+  "our-team": {
+    "title": "Our team.",
+    "members": {
+      "jaime": {
+        "role": "Management and operations",
+        "studies": "Industrial Engineer, MBA"
+      },
+      "miquel": {
+        "role": "Data and AI Lead",
+        "studies": "Data Engineer"
+      },
+      "lucia": {
+        "role": "Hardware Lead",
+        "studies": "Electronic Engineer"
+      },
+      "marta": {
+        "role": "Product Design",
+        "studies": "Industrial Design Engineer"
+      },
+      "irene": {
+        "role": "Communication and marketing",
+        "studies": "Physics, Technology Trainer"
+      },
+      "gabriel": {
+        "role": "Software Development",
+        "studies": "Computer Engineer"
+      }
+    }
+  },
+  "howItWorks": {
+    "steps": [
+      {
+        "title": "A single sensor at the water inlet captures precise data",
+        "text": "The sensor is easily and quickly installed at the home's water inlet pipe. Powered by long-lasting batteries, it captures precise water flow data and sends it to the cloud in real-time using Internet of Things (IoT) technologies."
+      },
+      {
+        "title": "An AI platform breaks down consumption by device",
+        "text": "A cloud-based data platform powered by artificial intelligence algorithms breaks down consumption by device, generates personalized recommendations, and can detect leaks. This is achieved through sensor calibration and analysis of statistical consumption behaviors."
+      },
+      {
+        "title": "An application visualizes data and creates a sustainable consumption plan",
+        "text": "Through a web and mobile application, the user monitors their detailed consumption data, compares against other users or recommended limits, receives personalized recommendations, and can provide feedback to the AI algorithm. This allows them to optimize their water consumption and adopt more sustainable practices."
+      }
+    ],
+    "cta": "I want one!"
+  },
+  "timeline": {
+    "step1": {
+      "title": "Idea",
+      "items": [
+        "· Barcelona enters drought alert phase",
+        "· The idea of innovative technology that allows Barcelona residents to face the water crisis is born"
+      ]
+    },
+    "step2": {
+      "title": "Design",
+      "items": [
+        "· Definition of strategic business and operational plan",
+        "· Completion of technical hardware and software designs"
+      ]
+    },
+    "step3": {
+      "title": "Development",
+      "items": [
+        "· Development of hardware, software, and data platform",
+        "· Implementation of the first version of web and mobile application"
+      ]
+    },
+    "step4": {
+      "title": "Pilot test",
+      "items": [
+        "· Installation of devices in a sample of homes in Barcelona",
+        "· Technology validation with users and training of artificial intelligence algorithms",
+        "· Implementation of necessary changes"
+      ]
+    },
+    "step5": {
+      "title": "Launch and expansion",
+      "items": ["· Platform deployment to market", "· Continuous system performance evaluations"]
+    }
+  },
+  "faqs": {
+    "title": "Frequently Asked Questions",
+    "questions": [
+      {
+        "question": "How can I contact you?",
+        "answer": "You can contact us through the contact form or by sending an email to info@mica.eco."
+      },
+      {
+        "question": "How is the sensor installed?",
+        "answer": "The sensor will be installed by a qualified plumber at your home's water inlet, where the meter is located. This installation will have no impact on water flow."
+      },
+      {
+        "question": "How can I join the beta program?",
+        "answer": "By answering the registration form, which is on the 'I want one' page. Once we receive your application, if you pass our selection process, we will contact you."
+      }
+    ]
+  },
+  "blog": {
+    "tags": {
+      "article": "article",
+      "manual": "manual",
+      "others": "others",
+      "all": "all"
+    }
+  },
+  "contact": {
+    "title": "We are looking for:",
+    "testers": "<strong>Beta testers</strong> to help us develop and improve MICA",
+    "technicians": "<strong>Experienced plumbers</strong> for sensor installation",
+    "partners": "<strong>Strategic partners</strong> who share our vision",
+    "cta": "Want to join?"
+  },
+  "register": {
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      "surname": {
+        "label": "Surname",
+        "placeholder": "Your surname"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Your email"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "Your phone"
+      },
+      "referralSource": {
+        "label": "How did you hear about us?",
+        "placeholder": "Ex: social media, friend, etc."
+      },
+      "interestInBeta": {
+        "label": "I want to be part of the beta program"
+      },
+      "privacyPolicy": {
+        "label": "I have read and accept the privacy policy"
+      }
+    }
+  }
+}

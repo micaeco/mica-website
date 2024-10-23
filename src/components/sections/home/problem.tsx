@@ -1,12 +1,16 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
+import NextLink from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ExternalLink, CircleHelp } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export default function Problem() {
+  const t = useTranslations('problem');
+
   return (
     <section className="bg-white px-8 py-20">
       <div className="mx-auto max-w-7xl">
@@ -26,23 +30,20 @@ export default function Problem() {
             <Image src="/images/piechart.png" alt="Piechart" width={1100} height={1100} />
           </motion.div>
           <div className="space-y-6">
-            <h2 className="font-bold">Sabies que...</h2>
+            <h2 className="font-bold">{t('title')}</h2>
             <p className="mt-4 font-light">
-              Un estudi afirma que el 82% del consum d&apos;aigua a casa nostra el produeix només 3
-              dispositius: la dutxa, el vàter i l'aixeta'.
-              <Link
+              {t('text')}{' '}
+              <NextLink
                 href="https://docs.amb.cat/alfresco/api/-default-/public/alfresco/versions/1/nodes/059eb8bc-f3f0-4cf2-b60d-bbd639344706/content/EAU-AMB%202020_IERMB_Informe_resum.pdf?attachment=false&mimeType=application/pdf&sizeInBytes=996300"
                 className="transition hover:text-blue-500"
                 target="_blank"
               >
                 <ExternalLink className="ml-2 inline" />
-              </Link>
+              </NextLink>
             </p>
-            <div className="flex flex-row">
+            <div className="flex flex-row items-center">
               <CircleHelp size={30} />
-              <p className="ml-2 font-bold">
-                I tu, saps quins dispositius són els que més aigua consumeixen a casa teva?
-              </p>
+              <p className="ml-2 font-bold">{t('info')}</p>
             </div>
           </div>
         </motion.div>

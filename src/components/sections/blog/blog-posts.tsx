@@ -1,9 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
-import PostCard from '@/src/components/ui/post-card';
-import { IPost } from '@/src/types';
+import PostCard from '@/components/ui/post-card';
+import { IPost } from '@/types';
 
 type Props = {
   posts: IPost[];
@@ -11,6 +12,8 @@ type Props = {
 
 export default function BlogPosts({ posts }: Props) {
   const [visiblePosts, setVisiblePosts] = useState(4);
+
+  const common = useTranslations('common');
 
   const loadMore = () => {
     setVisiblePosts((prev) => Math.min(prev + 4, posts.length));
@@ -35,7 +38,7 @@ export default function BlogPosts({ posts }: Props) {
       )}
       {posts.length === 0 && (
         <div className="mt-8 text-center">
-          <p>No s'han trobat articles. </p>
+          <p className="first-letter:capitalize">{common('no-articles-found')}</p>
         </div>
       )}
     </div>

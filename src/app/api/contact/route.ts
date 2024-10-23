@@ -1,39 +1,51 @@
 import { NextResponse } from 'next/server';
-import { contactSubmission } from '@/src/lib/gas';
-import { ERROR_MESSAGES, getErrorMessage, getSuccessMessage } from '@/src/lib/errors';
+import { contactSubmission } from '@/lib/gas';
 
 export async function POST(request: Request) {
   try {
-    const bodyText = await request.text();
-
     let body;
     try {
-      body = JSON.parse(bodyText);
+      body = await request.json();
     } catch (parseError) {
-      return NextResponse.json({ error: 'Invalid JSON in request body' }, { status: 400 });
+      return NextResponse.json(
+        { error: 'MISSING_FIELDS' },
+        { status: 400 }
+      );
     }
 
     const { name, email, message } = body;
 
     if (!name || !email || !message) {
-      return NextResponse.json({ error: getErrorMessage('MISSING_FIELDS') }, { status: 400 });
-    }
-
-    const result = await contactSubmission(
-      name,
-      email,
-      message,
-    );
-
-    if ('error' in result) {
       return NextResponse.json(
-        { error: getErrorMessage(result.error as keyof typeof ERROR_MESSAGES) },
+        { error: 'MISSING_FIELDS' },
         { status: 400 }
       );
     }
 
-    return NextResponse.json({ success: true, message: getSuccessMessage('SUBMISSION_SENT') });
+    const response = await contactSubmission(name, email, message);
+    const data = await response.json();
+
+    if (data.error) {
+      let status;
+      switch (data.error) {
+        case 'MISSING_FIELDS':
+        case 'INVALID_EMAIL':
+          status = 400;
+          break;
+        default:
+          status = 500;
+      }
+      return NextResponse.json({ error: data.error }, { status });
+    }
+
+    return NextResponse.json(
+      { message: 'CONTACT_FORM_SENT' },
+      { status: 200 }
+    );
   } catch (error) {
-    return NextResponse.json({ error: getErrorMessage('INTERNAL_ERROR') }, { status: 500 });
+    return NextResponse.json(
+      { error: 'INTERNAL_ERROR' },
+      { status: 500 }
+    );
   }
 }

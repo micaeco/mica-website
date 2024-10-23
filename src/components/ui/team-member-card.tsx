@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { UserCircle } from 'lucide-react';
 
-import { ITeamMember } from '@/src/types';
+import { ITeamMember } from '@/types';
 
 function SocialIcon({ platform }: { platform: string }) {
   switch (platform) {
@@ -23,8 +23,6 @@ export default function TeamMemberCard({ src, name, role, studies, socials }: IT
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-lg bg-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
       <div className="relative w-full pb-[100%]">
-        {' '}
-        {/* 1:1 aspect ratio */}
         {src ? (
           <Image
             src={src}

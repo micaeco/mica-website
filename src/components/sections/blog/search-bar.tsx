@@ -2,9 +2,9 @@
 
 import React from 'react';
 
-import SearchBar from '@/src/components/ui/search-box';
-import TagFilter from '@/src/components/ui/tags-filter';
-import { TPostTag } from '@/src/types';
+import SearchBar from '@/components/ui/search-box';
+import TagFilter from '@/components/ui/tags-filter';
+import { TPostTag } from '@/types';
 
 type Props = {
   searchTerm: string;

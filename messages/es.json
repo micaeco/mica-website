@@ -1,0 +1,332 @@
+{
+  "common": {
+    "search": "buscar",
+    "no-content-available": "contenido no disponible",
+    "no-articles-found": "no se han encontrado artículos",
+    "unknown-date": "fecha desconocida",
+    "unknown-author": "autor desconocido",
+    "unknown-tag": "categoría desconocida",
+    "go-back": "volver atrás",
+    "contact": "contacto",
+    "general-questions": "preguntas generales",
+    "quick-links": "enlaces rápidos",
+    "location": "ubicación",
+    "spain": "España",
+    "all-rights-reserved": "Todos los derechos reservados",
+    "privacy-policy": "Política de privacidad",
+    "email": "correo electrónico",
+    "phone": "teléfono",
+    "address": "dirección",
+    "name": "nombre",
+    "message": "mensaje",
+    "send": "enviar",
+    "sending": "enviando",
+    "optional": "opcional",
+    "register": "regístrate",
+    "blog": "blog",
+    "load": "cargar",
+    "more": "más"
+  },
+  "errors": {
+    "DEFAULT": "Se ha producido un error. Por favor, inténtalo de nuevo más tarde.",
+    "MISSING_FIELDS": "Faltan campos obligatorios.",
+    "INVALID_EMAIL": "El correo electrónico no es válido.",
+    "INVALID_PHONE": "El teléfono no es válido.",
+    "ALREADY_REGISTERED": "Este correo electrónico ya está registrado.",
+    "VERIFICATION_REQUIRED": "Se requiere un token de verificación.",
+    "VERIFICATION_EXPIRED": "El token de verificación ha caducado.",
+    "VERIFICATION_INVALID": "El token de verificación no es válido.",
+    "POSTS_NOT_FOUND": "No se han encontrado entradas.",
+    "POST_NOT_FOUND": "No se ha encontrado la entrada solicitada.",
+    "INTERNAL_ERROR": "Se ha producido un error interno. Por favor, inténtalo de nuevo más tarde."
+  },
+  "success": {
+    "CONTACT_FORM_SENT": "Formulario de contacto enviado correctamente.",
+    "LEAD_REGISTERED": "Registro completado con éxito. Por favor, comprueba tu correo electrónico para la verificación.",
+    "LEAD_VERIFIED": "Verificación completada con éxito."
+  },
+  "navLinks": {
+    "home": "Inicio",
+    "product": "Cómo funciona",
+    "beta": "¡Quiero uno!",
+    "about": "¿Quiénes somos?",
+    "faqs": "FAQs",
+    "blog": "Blog"
+  },
+  "navCta": {
+    "contact": "Contacto",
+    "demo": "Demo app",
+    "register": "Regístrate"
+  },
+
+  "hero": {
+    "title": {
+      "line1": "La nueva forma",
+      "line2": "de ahorrar agua."
+    },
+    "text": {
+      "line1": "Empoderamos Barcelona para conservar agua",
+      "line2": "con sensores impulsados por",
+      "line3": "inteligencia artificial."
+    },
+    "cta": "¡Quiero uno!"
+  },
+  "solution": {
+    "title": "¿Qué podrás hacer con MICA?",
+    "benefits": {
+      "benefit1": {
+        "title": "Descubrir dónde gastas el agua",
+        "text": "Podrás ver el consumo de agua en tiempo real e histórico, así como identificar qué dispositivos consumen más."
+      },
+      "benefit2": {
+        "title": "Detectar fugas",
+        "text": "MICA detecta fácilmente las fugas de agua y te notifica con una alerta para evitar daños importantes."
+      },
+      "benefit3": {
+        "title": "Recibir recomendaciones",
+        "text": "Recibirás recomendaciones específicas para tu consumo para ahorrar agua y dinero."
+      }
+    },
+    "cta": "Descubre cómo funciona"
+  },
+  "problem": {
+    "title": "¿Sabías que...",
+    "text": "Un estudio afirma que el 82% del consumo de agua en nuestros hogares lo producen solo 3 dispositivos: la ducha, el inodoro y el grifo.",
+    "info": "¿Y tú, sabes qué dispositivos son los que más agua consumen en tu casa?"
+  },
+  "testimonials": [
+    {
+      "quote": "MICA me ha ayudado a entender mejor mis hábitos de consumo",
+      "author": "Irene",
+      "role": "Miembro de MICA",
+      "rating": "5"
+    },
+    {
+      "quote": "Me di cuenta de que antes de que llegue el agua caliente a la ducha, se gastan más de 10 litros de agua. Ahora guardamos esta agua en un cubo para reutilizarla.",
+      "author": "Jaime",
+      "role": "Miembro de MICA",
+      "rating": "4.5"
+    },
+    {
+      "quote": "No nos damos cuenta de la cantidad de veces que usamos el inodoro.",
+      "author": "Ana",
+      "role": "Ana-lista de MICA",
+      "rating": "4"
+    },
+    {
+      "quote": "Mi padre dice que mis duchas gastan 4 veces más agua que las suyas. No sé si esta aplicación es para mí.",
+      "author": "Gabi",
+      "role": "Miembro de MICA",
+      "rating": "3.5"
+    }
+  ],
+  "product": {
+    "cta": "¡Quiero uno!"
+  },
+  "beta": {
+    "hero": {
+      "title": "¡Únete al programa beta!",
+      "text": "Todavía estamos en fase de diseño. Sin embargo, puedes apuntarte hoy mismo a nuestro programa beta para tener la oportunidad de ser seleccionado y obtener el sensor y la instalación de forma gratuita. Solo tienes que dejarnos tu correo electrónico y te mantendremos informado sobre las novedades."
+    },
+    "benefits": {
+      "title": "Descubre las ventajas...",
+      "benefits": {
+        "benefit1": {
+          "title": "Tecnología pionera",
+          "text": "Sé el primero en experimentar la innovación en ahorro de agua con IA."
+        },
+        "benefit2": {
+          "title": "Ahorros inmediatos",
+          "text": "Sigue tu consumo de agua desde el primer día."
+        },
+        "benefit3": {
+          "title": "Impacto colectivo",
+          "text": "Forma parte de una comunidad comprometida con la sostenibilidad."
+        },
+        "benefit4": {
+          "title": "Gratuito",
+          "text": "El sensor MICA y su instalación serán gratuitos para los miembros del programa beta."
+        }
+      }
+    },
+    "process": {
+      "title": "Pasos a seguir:",
+      "steps": {
+        "step1": {
+          "title": "Regístrate.",
+          "text": "Completa un formulario con tu información de contacto."
+        },
+        "step2": {
+          "title": "Contesta un cuestionario.",
+          "text": "Te enviaremos un cuestionario para conocer mejor tus necesidades."
+        },
+        "step3": {
+          "title": "Proceso de selección.",
+          "text": "Seleccionaremos los candidatos más adecuados para el programa beta."
+        },
+        "step4": {
+          "title": "Te enviaremos un sensor.",
+          "text": "Si eres seleccionado, contactaremos contigo para coordinar la instalación del sensor."
+        }
+      }
+    },
+    "cta": {
+      "text": "Únete al programa beta de MICA hoy y empieza a marcar la diferencia en el consumo de agua de tu hogar y del planeta.",
+      "cta1": "Demo app",
+      "cta2": "Regístrate",
+      "note": "El número de sensores subvencionados para esta fase es limitado. ¡No pierdas tu oportunidad!"
+    }
+  },
+  "history": {
+    "title": "Nuestra historia.",
+    "subtitle": "Innovando para combatir la sequía en Barcelona.",
+    "paragraph1": "En el verano de 2022, Barcelona sufrió una de las peores sequías de su historia. Mientras la ciudad entraba en fase de alerta, un grupo de ingenieros locales tuvo una idea revolucionaria.",
+    "paragraph2": "Así nació MICA, con la misión de transformar cómo entendemos y conservamos el agua. Nuestra tecnología permite a los barceloneses enfrentarse a cada nueva crisis hídrica con datos precisos y herramientas innovadoras."
+  },
+  "our-team": {
+    "title": "Nuestro equipo.",
+    "members": {
+      "jaime": {
+        "role": "Dirección y operaciones",
+        "studies": "Ingeniero industrial, MBA"
+      },
+      "miquel": {
+        "role": "Responsable de datos e IA",
+        "studies": "Ingeniero de datos"
+      },
+      "lucia": {
+        "role": "Responsable de hardware",
+        "studies": "Ingeniera electrónica"
+      },
+      "marta": {
+        "role": "Diseño del producto",
+        "studies": "Ingeniera de diseño industrial"
+      },
+      "irene": {
+        "role": "Comunicación y marketing",
+        "studies": "Física, formadora en tecnología"
+      },
+      "gabriel": {
+        "role": "Desarrollo de software",
+        "studies": "Ingeniero informático"
+      }
+    }
+  },
+  "howItWorks": {
+    "steps": [
+      {
+        "title": "Un único sensor en la entrada de agua captura datos precisos",
+        "text": "El sensor se instala fácil y rápidamente en la tubería de entrada de agua del hogar. Alimentado por baterías de larga duración, captura datos precisos del caudal de agua y los envía a la nube en tiempo real mediante tecnologías Internet of Things (IoT)."
+      },
+      {
+        "title": "Una plataforma de IA desglosa el consumo por dispositivo",
+        "text": "Una plataforma de datos en la nube impulsada por algoritmos de inteligencia artificial, desglosa el consumo por dispositivo, genera recomendaciones personalizadas y puede detectar fugas. Esto se logra mediante la calibración del sensor y un análisis de comportamientos de consumo estadísticos."
+      },
+      {
+        "title": "Una aplicación visualiza datos y crea un plan de consumo sostenible",
+        "text": "A través de una aplicación web y móvil, el usuario monitoriza sus datos detallados de consumo, se compara con otros usuarios o los límites recomendados, recibe recomendaciones personalizadas y puede retroalimentar el algoritmo de IA. Esto le permite optimizar su consumo de agua y adoptar prácticas más sostenibles."
+      }
+    ],
+    "cta": "¡Quiero uno!"
+  },
+  "timeline": {
+    "step1": {
+      "title": "Idea",
+      "items": [
+        "· Barcelona entra en fase de alerta por sequía",
+        "· Nace la idea de una tecnología innovadora que permita a los barceloneses enfrentarse a la crisis hídrica"
+      ]
+    },
+    "step2": {
+      "title": "Diseño",
+      "items": [
+        "· Definición del plan estratégico de negocio y operativo",
+        "· Finalización de los diseños técnicos del hardware y software"
+      ]
+    },
+    "step3": {
+      "title": "Desarrollo",
+      "items": [
+        "· Desarrollo del hardware, software y la plataforma de datos",
+        "· Implementación de la primera versión de la aplicación web y móvil"
+      ]
+    },
+    "step4": {
+      "title": "Prueba piloto",
+      "items": [
+        "· Instalación de los dispositivos en una muestra de viviendas en Barcelona",
+        "· Validación de la tecnología con los usuarios y entrenamiento de los algoritmos de inteligencia artificial",
+        "· Implementación de los cambios necesarios"
+      ]
+    },
+    "step5": {
+      "title": "Lanzamiento y expansión",
+      "items": [
+        "· Despliegue de la plataforma al mercado",
+        "· Evaluaciones continuas del funcionamiento del sistema"
+      ]
+    }
+  },
+  "faqs": {
+    "title": "Preguntas frecuentes",
+    "questions": [
+      {
+        "question": "¿Cómo puedo contactar con vosotros?",
+        "answer": "Puedes contactar con nosotros a través del formulario de contacto o enviando un correo a info@mica.eco."
+      },
+      {
+        "question": "¿Cómo se instala el sensor?",
+        "answer": "El sensor lo instalará un fontanero cualificado en la entrada de agua de tu casa, donde se encuentra el contador. Esta instalación no tendrá ningún impacto en el caudal de agua."
+      },
+      {
+        "question": "¿Cómo puedo unirme al programa beta?",
+        "answer": "Contestando al formulario de registro, que está en la página 'Quiero uno'. Una vez recibamos tu solicitud, si pasas nuestro proceso de selección, nos pondremos en contacto contigo."
+      }
+    ]
+  },
+  "blog": {
+    "tags": {
+      "article": "artículo",
+      "manual": "manual",
+      "others": "otros",
+      "all": "todo"
+    }
+  },
+  "contact": {
+    "title": "Estamos buscando:",
+    "testers": "<strong>Beta testers</strong> para ayudarnos a desarrollar y mejorar MICA",
+    "technicians": "<strong>Fontaneros experimentados</strong> para la instalación de sensores",
+    "partners": "<strong>Socios estratégicos</strong> que compartan nuestra visión",
+    "cta": "¿Te apuntas?"
+  },
+  "register": {
+    "form": {
+      "name": {
+        "label": "Nombre",
+        "placeholder": "Tu nombre"
+      },
+      "surname": {
+        "label": "Apellidos",
+        "placeholder": "Tus apellidos"
+      },
+      "email": {
+        "label": "Correo electrónico",
+        "placeholder": "Tu correo electrónico"
+      },
+      "phone": {
+        "label": "Teléfono",
+        "placeholder": "Tu teléfono"
+      },
+      "referralSource": {
+        "label": "¿Cómo nos has conocido?",
+        "placeholder": "Ej: redes sociales, amigo, etc."
+      },
+      "interestInBeta": {
+        "label": "Quiero formar parte del programa beta"
+      },
+      "privacyPolicy": {
+        "label": "He leído y acepto la política de privacidad"
+      }
+    }
+  }
+}

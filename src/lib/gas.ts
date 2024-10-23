@@ -21,7 +21,7 @@ export async function registerLead(leadData: {
     body: JSON.stringify(leadData),
   });
 
-  return await response.json();
+  return await response;
 }
 
 export async function verifyLead(token: string) {
@@ -31,7 +31,7 @@ export async function verifyLead(token: string) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
 
-  return await response.json();
+  return await response;
 }
 
 export async function contactSubmission(name: string, email: string, message: string) {
@@ -47,5 +47,5 @@ export async function contactSubmission(name: string, email: string, message: st
     throw new Error(`HTTP error! status: ${response.status}`);
   }
 
-  return await response.json();
+  return await response;
 }

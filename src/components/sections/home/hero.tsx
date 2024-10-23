@@ -2,10 +2,13 @@
 
 import React from 'react';
 import Image from 'next/image';
-import Button from '@/src/components/ui/button';
-import Link from 'next/link';
+import Button from '@/components/ui/button';
+import { Link } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
 
 export default function Hero() {
+  const t = useTranslations('hero');
+
   return (
     <section className="flex flex-col items-center bg-white px-8 pb-4 pt-20">
       <div className="relative flex w-full max-w-6xl flex-col gap-16 text-left 2xl:h-[650px]">
@@ -26,15 +29,14 @@ export default function Hero() {
             className="block 2xl:hidden"
           />
           <h1 className="font-bold leading-tight">
-            La nova manera <br />
-            d&apos;estalviar aigua.
+            {t('title.line1')} <br />
+            {t('title.line2')}
           </h1>
           <p className="font-light">
-            Empoderem Barcelona per conservar <br /> aigua amb sensors impulsats per <br />{' '}
-            intel·ligència artificial.
+            {t('text.line1')} <br /> {t('text.line2')} <br /> {t('text.line3')}
           </p>
           <Link href="beta">
-            <Button className="mb-6 mt-10">En vull un!</Button>
+            <Button className="mb-6 mt-10">{t('cta')}</Button>
           </Link>
         </div>
       </div>

@@ -3,13 +3,14 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
-import { IQuestion } from '@/src/types';
+import { IQuestion } from '@/types';
 
 type Props = {
-  question: IQuestion;
+  question: string;
+  answer: string;
 };
 
-export default function ExpandableQuestion({ question }: Props) {
+export default function ExpandableQuestion({ question, answer }: Props) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -18,7 +19,7 @@ export default function ExpandableQuestion({ question }: Props) {
         className="flex w-full items-center justify-between text-left"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="font-medium">{question.title}</span>
+        <span className="font-medium">{question}</span>
         {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
       </button>
       <div
@@ -27,7 +28,7 @@ export default function ExpandableQuestion({ question }: Props) {
         }`}
       >
         <div className="overflow-hidden">
-          <p className="mt-2 text-sm font-light">{question.answer}</p>
+          <p className="mt-2 text-sm font-light">{answer}</p>
         </div>
       </div>
     </div>

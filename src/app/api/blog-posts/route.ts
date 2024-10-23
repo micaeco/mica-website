@@ -1,35 +1,52 @@
 import { NextResponse } from 'next/server';
-import { getBlogPosts } from '@/src/lib/github';
-import { parseReadme } from '@/src/lib/utils';
-import { IPost, TPostTag } from '@/src/types';
+import { getBlogPosts } from '@/lib/github';
+import { parseReadme } from '@/lib/utils';
+import { IPost, TPostTag } from '@/types';
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export async function GET() {
   try {
     const rawPosts = await getBlogPosts();
 
+    if (!rawPosts) {
+      return NextResponse.json(
+        { error: 'POSTS_NOT_FOUND' },
+        { status: 404 }
+      );
+    }
+
     const posts: IPost[] = Object.entries(rawPosts).map(([filename, content]) => {
       const { metadata, content: postContent } = parseReadme(content);
 
-      const title = metadata.title || filename.replace(/\.md$/, '');
-      const summary = metadata.summary || '';
-      const tag = (metadata.tag as TPostTag) || 'Altres';
-      const date = metadata.date || new Date().toISOString();
-
-      const post: IPost = {
+      return {
+        lang: (metadata.lang || 'ca').toLowerCase(),
         slug: filename.replace(/\.md$/, ''),
-        title,
-        summary,
-        tag,
-        date,
+        title: metadata.title || filename.replace(/\.md$/, ''),
+        summary: metadata.summary || '',
+        tag: (metadata.tag?.toLowerCase() as TPostTag) || 'others',
+        date: metadata.date || new Date().toISOString(),
         content: postContent,
       };
-      return post;
     });
 
     posts.sort((a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime());
 
-    return NextResponse.json(posts);
+    return NextResponse.json(
+      { posts: posts },
+      {
+        status: 200,
+        headers: {
+          'Cache-Control': 'no-store, max-age=0',
+        }
+      }
+    );
   } catch (error) {
-    return NextResponse.json({ error: 'Failed to fetch blog posts' }, { status: 500 });
+    console.error('Blog posts error:', error);
+    return NextResponse.json(
+      { error: 'INTERNAL_ERROR' },
+      { status: 500 }
+    );
   }
 }

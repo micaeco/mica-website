@@ -1,20 +1,21 @@
-import Link from 'next/link';
+'use client';
+
+import { Link, usePathname } from '@/i18n/routing';
 import { ArrowLeft } from 'lucide-react';
 
 type Props = {
-  currentPath: string;
-  desiredPath?: string;
   text: string;
 };
 
-export default function GoBack({ currentPath, desiredPath = '/..', text }: Props) {
+export default function GoBack({ text }: Props) {
+  const pathname = usePathname();
+  const pathWithoutLocale = pathname.substring(pathname.indexOf('/'));
+  const href = pathWithoutLocale + '/..';
+
   return (
-    <Link
-      href={currentPath + desiredPath}
-      className="mb-6 inline-flex items-center text-blue-600 hover:text-blue-800"
-    >
+    <Link href={href} className="mb-6 inline-flex items-center text-blue-600 hover:text-blue-800">
       <ArrowLeft className="mr-2 size-4" />
-      {text}
+      <span className="first-letter:capitalize">{text}</span>
     </Link>
   );
 }

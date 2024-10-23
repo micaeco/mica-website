@@ -6,17 +6,28 @@ class Github {
   private repo: string;
 
   constructor(owner: string, repo: string) {
-    this.octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
+    this.octokit = new Octokit({
+      auth: process.env.GITHUB_TOKEN,
+      request: {
+        // Disable caching in Octokit
+        cache: 'no-store'
+      }
+    });
     this.owner = owner;
     this.repo = repo;
   }
 
   async getFile(path: string): Promise<string> {
     try {
+      // Add ref parameter to get the latest commit
       const response = await this.octokit.repos.getContent({
         owner: this.owner,
         repo: this.repo,
         path,
+        ref: 'main', // or 'master' depending on your default branch
+        headers: {
+          'If-None-Match': '', // Bypass GitHub's caching
+        }
       });
 
       if ('content' in response.data) {
@@ -35,6 +46,10 @@ class Github {
         owner: this.owner,
         repo: this.repo,
         path,
+        ref: 'main', // or 'master' depending on your default branch
+        headers: {
+          'If-None-Match': '', // Bypass GitHub's caching
+        }
       });
 
       if (Array.isArray(response.data)) {

@@ -3,33 +3,18 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Droplet, CircleAlert, TrendingUp } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
-import IconCard from '@/src/components/ui/icon-card';
-import Button from '@/src/components/ui/button';
-import Link from 'next/link';
-
-const benefits = [
-  {
-    icon: Droplet,
-    title: "Descobrir on gastes l'aigua",
-    description:
-      "Podràs veure el consum d'aigua en temps real i històric, així com identificar quins dispositius consumeixen més.",
-  },
-  {
-    icon: CircleAlert,
-    title: 'Detectar fugues',
-    description:
-      "MICA detecta fàcilment les fugues d'aigua i et notifica amb una alerta per tal d'evitar danys importants.",
-  },
-  {
-    icon: TrendingUp,
-    title: 'Rebre recomanacions',
-    description: 'Rebràs recomanacions específiques al teu consum per estalviar aigua i diners.',
-  },
-];
+import IconCard from '@/components/ui/icon-card';
+import Button from '@/components/ui/button';
+import { Link } from '@/i18n/routing';
+import { getSolutionBenefits } from '@/lib/constants';
 
 export default function Solution() {
+  const t = useTranslations('solution');
+  const tBenefits = useTranslations('solution.benefits');
+  const benefits = getSolutionBenefits(tBenefits);
+
   return (
     <div className="bg-gradient-to-b from-secondary to-tertiary px-8 py-24">
       <div className="mx-auto max-w-6xl">
@@ -41,7 +26,7 @@ export default function Solution() {
               transition={{ duration: 0.5 }}
               className="mb-8 font-bold"
             >
-              Què podràs fer amb MICA?
+              {t('title')}
             </motion.h2>
 
             <div className="mb-8 grid grid-cols-1 gap-8 lg:grid-cols-3">
@@ -82,7 +67,7 @@ export default function Solution() {
           transition={{ duration: 0.5, delay: 0.8 }}
         >
           <Link href="/product">
-            <Button> Descobreix com funciona </Button>
+            <Button> {t('cta')} </Button>
           </Link>
         </motion.div>
       </div>

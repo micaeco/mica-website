@@ -1,6 +1,5 @@
 export interface IQuestion {
-  title: string;
-  slug: string;
+  question: string;
   answer: string;
   lastUpdated?: Date;
 }

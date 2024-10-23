@@ -4,8 +4,8 @@ export interface ISocialLink {
 }
 
 export interface ITeamMember {
-  src: string;
   name: string;
+  src?: string;
   role: string;
   studies: string;
   socials?: ISocialLink[];

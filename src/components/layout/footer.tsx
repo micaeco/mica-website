@@ -1,27 +1,25 @@
 import React from 'react';
-import Link from 'next/link';
-
-const navLinks = [
-  { name: 'Inici', href: '/' },
-  { name: 'Com funciona', href: '/product' },
-  { name: 'Qui som?', href: '/about' },
-  { name: 'FAQs', href: '/faqs' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Contacte', href: '/contact' },
-  { name: 'En vull un!', href: '/beta' },
-  { name: 'Demo app', href: 'https://app.mica.eco', target: '_blank' },
-  { name: "Registra't", href: '/register' },
-];
+import { Link } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
+import { getNavCta, getNavLinks } from '@/lib/constants';
+import { isExternalLink } from '@/lib/utils';
 
 export default function Footer() {
+  const common = useTranslations('common');
+  const t = useTranslations();
+
+  const navItems = [...getNavLinks(t), ...getNavCta(t)];
+
   return (
     <footer className="bg-primary py-4 text-xs text-gray-300">
       <div className="container mx-auto mt-4 p-4">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           <div>
-            <p className="mb-4 text-xs font-bold text-gray-50">Contacte</p>
+            <p className="mb-4 text-xs font-bold text-gray-50 first-letter:capitalize">
+              {common('contact')}
+            </p>
             <div className="space-y-2">
-              <p className="text-xs">Preguntes generals</p>
+              <p className="text-xs first-letter:capitalize">{common('general-questions')}</p>
               <a
                 href="mailto:info@mica.eco"
                 className="block bg-gradient-to-r from-accent-200 via-accent-500 to-accent-900 bg-clip-text font-bold text-transparent"
@@ -31,28 +29,32 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <p className="mb-4 text-xs font-bold text-gray-50">Enllaços ràpids</p>
+            <p className="mb-4 text-xs font-bold text-gray-50 first-letter:capitalize">
+              {common('quick-links')}
+            </p>
             <nav className="flex flex-col space-y-1">
-              {navLinks.map((link) => (
+              {navItems.map((item) => (
                 <Link
-                  key={link.href}
-                  href={link.href}
-                  target={link.target ? link.target : ''}
+                  key={item.href}
+                  href={item.href}
+                  target={isExternalLink(item.href) ? '_blank' : '_self'}
                   className="text-xs hover:text-accent-500"
                 >
-                  {link.name}
+                  {item.label}
                 </Link>
               ))}
             </nav>
           </div>
           <div>
-            <p className="mb-4 text-xs font-bold text-gray-50">Ubicació</p>
-            <p className="text-xs">Barcelona, Espanya</p>
+            <p className="mb-4 text-xs font-bold text-gray-50 first-letter:capitalize">
+              {common('location')}
+            </p>
+            <p className="text-xs">Barcelona, {common('spain')}</p>
           </div>
         </div>
         <div className="mt-8 border-t border-gray-200 pt-8 text-center">
           <p className="text-xs">
-            &copy; {new Date().getFullYear()} MICA. Tots els drets reservats.
+            &copy; {new Date().getFullYear()} MICA. {common('all-rights-reserved')}
           </p>
         </div>
       </div>

@@ -1,26 +1,38 @@
 import { NextResponse } from 'next/server';
-import { verifyLead } from '@/src/lib/gas';
-import { ERROR_MESSAGES, getErrorMessage, getSuccessMessage } from '@/src/lib/errors';
+import { verifyLead } from '@/lib/gas';
 
 export async function GET(request: Request, { params }: { params: { token: string } }) {
   try {
     const { token } = params;
 
     if (!token) {
-      return NextResponse.json({ error: getErrorMessage('TOKEN_REQUIRED') }, { status: 400 });
+      return NextResponse.json({ error: 'VERIFICATION_REQUIRED' }, { status: 401 });
     }
 
-    const result = await verifyLead(token);
+    const response = await verifyLead(token);
+    const data = await response.json();
 
-    if ('error' in result) {
-      return NextResponse.json(
-        { error: getErrorMessage(result.error as keyof typeof ERROR_MESSAGES) },
-        { status: 400 }
-      );
+    if (data.error) {
+      let status;
+      switch (data.error) {
+        case 'VERIFICATION_REQUIRED':
+          status = 401;
+          break;
+        case 'VERIFICATION_EXPIRED':
+        case 'VERIFICATION_INVALID':
+          status = 403;
+          break;
+        case 'ALREADY_REGISTERED':
+          status = 409;
+          break;
+        default:
+          status = 500;
+      }
+      return NextResponse.json({ error: data.error }, { status });
     }
 
-    return NextResponse.json({ success: true, message: getSuccessMessage('LEAD_VERIFIED') });
+    return NextResponse.json({ message: data.message }, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ error: getErrorMessage('INTERNAL_ERROR') }, { status: 500 });
+    return NextResponse.json({ error: 'INTERNAL_ERROR' }, { status: 500 });
   }
 }

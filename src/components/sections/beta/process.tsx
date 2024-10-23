@@ -2,38 +2,16 @@
 
 import React, { useRef } from 'react';
 import Image from 'next/image';
-import { ClipboardCheck, FileQuestion, UserCheck, Cpu } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+
+import { getBetaSteps } from '@/lib/constants';
 
 type Props = {
   icon: React.ElementType;
   title: string;
   description: string;
-  link?: boolean;
   isLast?: boolean;
 };
-
-const steps: Props[] = [
-  {
-    icon: ClipboardCheck,
-    title: "Registra't.",
-    description: 'Completa un formulari amb la teva informació de contacte.',
-  },
-  {
-    icon: FileQuestion,
-    title: 'Contesta un qüestionari.',
-    description: "T'enviarem un qüestionari per conèixer millor les teves necessitats.",
-  },
-  {
-    icon: UserCheck,
-    title: 'Procés de selecció.',
-    description: 'Seleccionarem els candidats més adequats per al programa beta.',
-  },
-  {
-    icon: Cpu,
-    title: "T'enviarem un sensor.",
-    description: 'Si ets seleccionat, contactarem amb tu per coordinar la instal·lació del sensor.',
-  },
-];
 
 function ProcessStep({ icon: Icon, title, description, isLast = false }: Props) {
   const stepRef = useRef<HTMLDivElement>(null);
@@ -60,12 +38,16 @@ function ProcessStep({ icon: Icon, title, description, isLast = false }: Props) 
 }
 
 export default function Process() {
+  const t = useTranslations('beta.process');
+  const tSteps = useTranslations('beta.process.steps');
+  const steps = getBetaSteps(tSteps);
+
   return (
     <section className="bg-white py-16">
       <div className="mx-auto flex flex-col justify-center 2xl:flex-row">
         <div className="px-8">
           <h3 className="justify-left mb-10 flex text-center font-bold text-primary">
-            Passos a seguir
+            {t('title')}
           </h3>
           {steps.map((step, index) => (
             <ProcessStep key={index} {...step} isLast={index === steps.length - 1} />

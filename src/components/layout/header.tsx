@@ -2,36 +2,27 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
-const navLinks = [
-  { href: '/', label: 'Inici' },
-  { href: '/product', label: 'Com funciona' },
-  { href: '/beta', label: 'En vull un!' },
-  { href: '/about', label: 'Qui som?' },
-  { href: '/faqs', label: 'FAQs' },
-  { href: '/blog', label: 'Blog' },
-];
+import LanguageSwitcher from '@/components/layout/language-switcher';
+import { getNavLinks, getNavCta } from '@/lib/constants';
+import { isExternalLink } from '@/lib/utils';
 
-const navCta = [
-  { href: '/contact', label: "Contacta'ns" },
-  { href: 'https://app.mica.eco', label: 'Demo app' },
-  { href: '/register', label: "Registra't" },
-];
-
-const isExternalLink = (href: string) => {
-  return href.startsWith('http://') || href.startsWith('https://') || href.startsWith('//');
-};
-
-const MOBILE_BREAKPOINT = 1280; // Corresponds to Tailwind's 'lg' breakpoint
+const MOBILE_BREAKPOINT = 1340; // Corresponds to Tailwind's 'lg' breakpoint
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(true);
   const pathname = usePathname();
+
+  const t = useTranslations();
+
+  const navLinks = getNavLinks(t);
+  const navCta = getNavCta(t);
 
   const checkIsMobile = useCallback(() => {
     return window.innerWidth < MOBILE_BREAKPOINT;
@@ -79,13 +70,13 @@ export default function Header() {
         </Link>
 
         {!isMobile ? (
-          <nav className="flex items-center space-x-6">
+          <nav className="flex items-center space-x-4">
             <div className="flex items-center space-x-6">
               {navLinks.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`flex items-center border-b-2 border-transparent text-sm font-light transition-colors duration-300 hover:border-zinc-300 ${item.href === pathname ? 'border-zinc-500' : ''}`}
+                  className={`flex items-center border-b-2 border-transparent text-sm font-light transition-colors duration-300 hover:border-zinc-300 ${pathname.replace(/\/[^/]*\/|\/[^/]*$/, '/') == item.href ? 'border-zinc-500' : ''}`}
                 >
                   {item.label}
                 </Link>
@@ -103,6 +94,7 @@ export default function Header() {
                 </Link>
               ))}
             </div>
+            <LanguageSwitcher />
           </nav>
         ) : (
           <button
@@ -125,7 +117,7 @@ export default function Header() {
             className="fixed inset-0 overflow-y-auto bg-white"
             style={{ top: 'var(--header-height, 60px)' }}
           >
-            <div className="flex min-h-full flex-col space-y-6 p-8 text-lg">
+            <div className="flex min-h-full flex-col justify-between space-y-6 p-8 text-lg">
               <div className="flex flex-col items-start justify-start space-y-6">
                 {[...navLinks, ...navCta].map((item) => (
                   <Link
@@ -133,11 +125,14 @@ export default function Header() {
                     href={item.href}
                     target={isExternalLink(item.href) ? '_blank' : '_self'}
                     onClick={() => setIsMenuOpen(false)}
-                    className={`flex items-center border-b-2 border-transparent font-light transition-colors duration-300 hover:border-zinc-300 ${item.href === pathname ? 'border-zinc-500' : ''}`}
+                    className={`flex items-center border-b-2 border-transparent font-light transition-colors duration-300 hover:border-zinc-300 ${pathname.replace(/\/[^/]*\/|\/[^/]*$/, '/') == item.href ? 'border-zinc-500' : ''}`}
                   >
                     {item.label}
                   </Link>
                 ))}
+              </div>
+              <div className="flex justify-end">
+                <LanguageSwitcher className="text-lg" />
               </div>
             </div>
           </motion.div>

@@ -1,7 +1,7 @@
 import React from 'react';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 
-import { IInputField } from '@/src/types';
+import { IInputField } from '@/types';
 
 export default function InputBox({
   icon: Icon,
@@ -26,6 +26,7 @@ export default function InputBox({
           checked={value as boolean}
           onChange={(e) => onChange!(e.target.checked)}
           className="h-4 w-4 rounded border-gray-300 text-secondary focus:ring-secondary"
+          required={required}
         />
         {link ? (
           <label htmlFor={name} className="ml-2 block text-sm font-medium text-gray-700">

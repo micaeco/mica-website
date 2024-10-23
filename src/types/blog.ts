@@ -1,6 +1,7 @@
-export type TPostTag = 'Article' | 'Manual' | 'Altres' | 'Tot';
+export type TPostTag = 'article' | 'manual' | 'others' | 'all';
 
 export interface IPost {
+  lang: string;
   slug: string;
   title: string;
   summary: string;

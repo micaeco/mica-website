@@ -1,41 +1,61 @@
 import { useState, useEffect, useMemo } from 'react';
-import { IPost, TPostTag } from '@/src/types';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useTranslations } from 'next-intl';
+import { useLocale } from "next-intl";
+
+import { IPost, TPostTag } from '@/types';
 
 export function useBlogPosts() {
-  const [blogPosts, setBlogPosts] = useState<IPost[]>([]);
-  const [error, setError] = useState<string | null>(null);
+  const [posts, setPosts] = useState<IPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedTag, setSelectedTag] = useState<TPostTag>('Tot');
+  const [selectedTag, setSelectedTag] = useState<TPostTag>('all');
+
+  const locale = useLocale();
+  const errors = useTranslations("errors");
 
   useEffect(() => {
     const fetchPosts = async () => {
-      setIsLoading(true);
       try {
         const response = await fetch('/api/blog-posts');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
         const data = await response.json();
-        setBlogPosts(data);
-      } catch (e) {
-        setError('Failed to fetch blog posts. Please try again later.');
+
+        if (!response.ok) {
+          toast.error(errors(data.error) || errors('DEFAULT'), { autoClose: 5000 });
+          return;
+        }
+
+        setPosts(data.posts);
+      } catch (error) {
+        toast.error(errors('DEFAULT'), { autoClose: 5000 });
       } finally {
         setIsLoading(false);
       }
     };
 
     fetchPosts();
-  }, []);
+  }, [errors]);
 
-  const filteredPosts: IPost[] = useMemo(() => {
-    return blogPosts.filter((post) => {
-      const matchesSearchTerm = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  const filteredPosts = useMemo(() => {
+    return posts.filter((post) => {
+      const matchesSearchTerm =
+        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         post.content.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesTag = selectedTag === 'Tot' || post.tag === selectedTag;
-      return matchesSearchTerm && matchesTag;
-    });
-  }, [searchTerm, selectedTag, blogPosts]);
+      const matchesTag = selectedTag === 'all' || post.tag === selectedTag;
+      const matchesLang = post.lang === locale;
 
-  return { blogPosts, filteredPosts, error, isLoading, searchTerm, setSearchTerm, selectedTag, setSelectedTag };
+      return matchesSearchTerm && matchesTag && matchesLang;
+    });
+  }, [searchTerm, selectedTag, posts, locale]);
+
+  return {
+    posts,
+    filteredPosts,
+    isLoading,
+    searchTerm,
+    setSearchTerm,
+    selectedTag,
+    setSelectedTag
+  };
 }

@@ -1,20 +1,16 @@
 import { useState, FormEvent } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-const STORAGE_KEY = 'formData';
-
-interface IFormData {
-  name: string;
-  email: string;
-  message: string;
-}
+import { useTranslations } from 'next-intl';
 
 export function useContactSubmission() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+
+  const success = useTranslations("success");
+  const errors = useTranslations("errors");
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -27,26 +23,22 @@ export function useContactSubmission() {
         body: JSON.stringify({ name, email, message }),
       });
 
-      const result = await response.json();
+      const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.error || 'Failed to submit the form');
+        toast.error(errors(data.error) || errors('DEFAULT'), { autoClose: 5000 });
+        return;
       }
 
-      toast.success(result.message, { autoClose: 5000 });
+      toast.success(success(data.message), { autoClose: 5000 });
       setName('');
       setEmail('');
       setMessage('');
-    } catch (error: any) {
-      toast.error(
-        error instanceof Error
-          ? error.message
-          : 'Hi ha hagut un error en enviar el formulari. Si us plau, torna-ho a intentar més tard.',
-        { autoClose: 5000 }
-      );
+    } catch (error) {
+      toast.error(errors('DEFAULT'), { autoClose: 5000 });
+    } finally {
+      setIsSubmitting(false);
     }
-
-    setIsSubmitting(false);
   };
 
   return {
@@ -57,7 +49,6 @@ export function useContactSubmission() {
     message,
     setMessage,
     isSubmitting,
-    setIsSubmitting,
     handleSubmit,
   };
 }

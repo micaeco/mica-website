@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { IFormData } from '@/src/types';
+import { IFormData } from '@/types';
 
 export const formSchema = z.object({
   name: z.string().min(1, 'El nom és obligatori').max(255, 'El nom és massa llarg'),

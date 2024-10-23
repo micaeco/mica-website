@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
-import { registerLead } from '@/src/lib/gas';
-import { ERROR_MESSAGES, getErrorMessage, getSuccessMessage } from '@/src/lib/errors';
+import { registerLead } from '@/lib/gas';
 
 export async function POST(request: Request) {
   try {
@@ -8,16 +7,16 @@ export async function POST(request: Request) {
     try {
       body = await request.json();
     } catch (parseError) {
-      return NextResponse.json({ error: "Bad request" }, { status: 400 });
+      return NextResponse.json({ error: "INTERNAL_ERROR" }, { status: 400 });
     }
 
     const { name, surname, email, phone, interestInBeta, referralSource } = body;
 
     if (!name || !surname || !email) {
-      return NextResponse.json({ error: getErrorMessage('MISSING_FIELDS') }, { status: 400 });
+      return NextResponse.json({ error: 'MISSING_FIELDS' }, { status: 400 });
     }
 
-    const result = await registerLead({
+    const response = await registerLead({
       name,
       surname,
       email,
@@ -26,15 +25,34 @@ export async function POST(request: Request) {
       referralSource,
     });
 
-    if (!result.ok) {
-      return NextResponse.json(
-        { error: getErrorMessage(result.error as keyof typeof ERROR_MESSAGES) },
-        { status: 400 }
-      );
+    const data = await response.json();
+
+    if (data.error) {
+      let status;
+      switch (data.error) {
+        case 'MISSING_FIELDS':
+        case 'INVALID_EMAIL':
+        case 'INVALID_PHONE':
+          status = 400;
+          break;
+        case 'ALREADY_REGISTERED':
+          status = 409;
+          break;
+        case 'VERIFICATION_REQUIRED':
+          status = 401;
+          break;
+        case 'VERIFICATION_EXPIRED':
+        case 'VERIFICATION_INVALID':
+          status = 403;
+          break;
+        default:
+          status = 500;
+      }
+      return NextResponse.json({ error: data.error }, { status });
     }
 
-    return NextResponse.json({ success: true, message: getSuccessMessage('LEAD_REGISTERED') });
+    return NextResponse.json({ message: data.message }, { status: 200 });
   } catch (error) {
-    return NextResponse.json({ error: getErrorMessage('INTERNAL_ERROR') }, { status: 500 });
+    return NextResponse.json({ error: "INTERNAL_ERROR" }, { status: 500 });
   }
 }

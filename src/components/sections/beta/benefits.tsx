@@ -2,37 +2,14 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Zap, TrendingUp, Users, Gift } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { getBetaBenefits } from '@/lib/constants';
 
 type Props = {
   icon: React.ElementType;
   title: string;
   description: string;
 };
-
-const benefits = [
-  {
-    icon: Zap,
-    title: 'Tecnologia pionera',
-    description: "Sigues el primer en experimentar la innovació en estalvi d'aigua amb IA.",
-  },
-  {
-    icon: TrendingUp,
-    title: 'Estalvis immediats',
-    description: "Segueix el teu consum d'aigua des del primer dia.",
-  },
-  {
-    icon: Users,
-    title: 'Impacte col·lectiu',
-    description: "Forma part d'una comunitat compromesa amb la sostenibilitat.",
-  },
-  {
-    icon: Gift,
-    title: 'Gratuït',
-    description:
-      'El sensor MICA i la seva instal·lació seràn gratuïts pels membres del programa beta.',
-  },
-];
 
 function BenefitCard({ icon: Icon, title, description }: Props) {
   return (
@@ -45,6 +22,10 @@ function BenefitCard({ icon: Icon, title, description }: Props) {
 }
 
 export default function BetaBenefits() {
+  const t = useTranslations('beta.benefits');
+  const tBenefits = useTranslations('beta.benefits.benefits');
+  const benefits = getBetaBenefits(tBenefits);
+
   return (
     <section className="bg-gray-50 py-20">
       <motion.div
@@ -54,7 +35,7 @@ export default function BetaBenefits() {
         viewport={{ once: true }}
         className="container mx-auto px-8"
       >
-        <h3 className="mb-10 text-center font-bold text-primary">Descobreix els avantatges...</h3>
+        <h3 className="mb-10 text-center font-bold text-primary">{t('title')}</h3>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {benefits.map((benefit, index) => (
             <BenefitCard key={index} {...benefit} />
