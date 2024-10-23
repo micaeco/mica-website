@@ -32,18 +32,18 @@ export default function HowItWorks() {
   const stepConfigs = [
     {
       icon: ChevronsRight,
-      image: 'howItWorks-sensor.png',
+      image: 'howItWorks-sensor.webp',
       containerClass: 'col-span-full sm:col-span-5 py-8',
     },
     {
       icon: Database,
-      image: 'howItWorks-cloud.png',
+      image: 'howItWorks-cloud.webp',
       containerClass: 'col-span-full sm:col-start-7 sm:col-end-11',
       isReversed: true,
     },
     {
       icon: TrendingUp,
-      image: 'howItWorks-app.png',
+      image: 'howItWorks-app.webp',
       containerClass: 'col-span-full sm:col-span-5',
     },
   ];
@@ -53,7 +53,7 @@ export default function HowItWorks() {
       <div className="relative">
         <div className="hidden xl:block">
           <Image
-            src="/images/howitworks-desktop.png"
+            src="/images/howitworks-desktop.webp"
             alt="HowItWorks"
             className="w-full"
             width={3000}

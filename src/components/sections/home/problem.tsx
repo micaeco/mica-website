@@ -27,7 +27,7 @@ export default function Problem() {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <Image src="/images/piechart.png" alt="Piechart" width={1100} height={1100} />
+            <Image src="/images/piechart.webp" alt="Piechart" width={1100} height={1100} />
           </motion.div>
           <div className="space-y-6">
             <h2 className="font-bold">{t('title')}</h2>

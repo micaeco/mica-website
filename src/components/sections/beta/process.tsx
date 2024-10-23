@@ -44,22 +44,26 @@ export default function Process() {
 
   return (
     <section className="bg-white py-16">
-      <div className="mx-auto flex flex-col justify-center 2xl:flex-row">
-        <div className="px-8">
-          <h3 className="justify-left mb-10 flex text-center font-bold text-primary">
-            {t('title')}
-          </h3>
-          {steps.map((step, index) => (
-            <ProcessStep key={index} {...step} isLast={index === steps.length - 1} />
-          ))}
+      <div className="mx-auto max-w-7xl">
+        <div className="grid justify-center 2xl:grid-cols-10">
+          <div className="col-span-6 px-8">
+            <h3 className="justify-left mb-10 flex text-center font-bold text-primary">
+              {t('title')}
+            </h3>
+            {steps.map((step, index) => (
+              <ProcessStep key={index} {...step} isLast={index === steps.length - 1} />
+            ))}
+          </div>
+          <div className="col-span-4">
+            <Image
+              className="hidden 2xl:block"
+              src="/images/team.webp"
+              alt="Team"
+              width={3000}
+              height={3000}
+            />
+          </div>
         </div>
-        <Image
-          className="hidden 2xl:block"
-          src="/images/team.png"
-          alt="Sensor"
-          width={600}
-          height={400}
-        />
       </div>
     </section>
   );

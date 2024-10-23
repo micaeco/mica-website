@@ -50,7 +50,7 @@ export default function Solution() {
               transition={{ duration: 0.5 }}
             >
               <Image
-                src="/images/app-mockup-no-bg-2.png"
+                src="/images/app-mockup-no-bg.webp"
                 alt="Hand holding phone with MICA app"
                 width={550}
                 height={1100}
