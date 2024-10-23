@@ -53,7 +53,7 @@ export default function HowItWorks() {
       <div className="relative">
         <div className="hidden xl:block">
           <Image
-            src="/images/howitworks-desktop.webp"
+            src="/images/howItWorks-desktop.webp"
             alt="HowItWorks"
             className="w-full"
             width={3000}
