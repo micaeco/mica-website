@@ -17,7 +17,9 @@ import {
   Settings,
   Wrench,
   CheckCircle,
-  Maximize
+  Maximize,
+  ChevronsRight,
+  Database
 } from 'lucide-react';
 
 import { IInputField } from '@/types';
@@ -255,7 +257,12 @@ export function getRegisterFormFields(t: (key: string) => string, common: (key: 
       name: 'referralSource',
       placeholder: t('referralSource.placeholder'),
       required: false,
-    },
+    }
+  ];
+}
+
+export function getRegisterFormCheckboxes(t: (key: string) => string): IInputField[] {
+  return [
     {
       type: 'input',
       label: t('interestInBeta.label'),
@@ -263,7 +270,6 @@ export function getRegisterFormFields(t: (key: string) => string, common: (key: 
       inputType: 'checkbox',
       name: 'interestInBeta',
       required: false,
-      className: 'mt-12',
     },
     {
       type: 'input',
@@ -289,22 +295,22 @@ export function getTimelineItems(t: {
     step2: {
       date: 'JUN 24',
       icon: Settings,
-      color: 'bg-tertiary'
+      color: 'bg-brand-tertiary'
     },
     step3: {
       date: 'OCT 24',
       icon: Wrench,
-      color: 'bg-secondary'
+      color: 'bg-brand-secondary'
     },
     step4: {
       date: 'ABR 25',
       icon: CheckCircle,
-      color: 'bg-primary'
+      color: 'bg-brand-primary'
     },
     step5: {
       date: 'OCT 25',
       icon: Maximize,
-      color: 'bg-accent'
+      color: 'bg-brand-accent'
     }
   };
 
@@ -326,4 +332,31 @@ export function getTimelineItems(t: {
       color: config.color,
     };
   });
+}
+
+export function getHowItWorksSteps(t: (key: string) => string) {
+  return [
+    {
+      icon: ChevronsRight,
+      title: t('step1.title'),
+      text: t('step1.text'),
+      image: 'howItWorks-sensor.webp',
+      containerClass: 'col-span-full sm:col-span-5 py-8',
+    },
+    {
+      icon: Database,
+      title: t('step2.title'),
+      text: t('step2.text'),
+      image: 'howItWorks-cloud.webp',
+      containerClass: 'col-span-full sm:col-start-7 sm:col-end-11',
+      isReversed: true,
+    },
+    {
+      icon: TrendingUp,
+      title: t('step3.title'),
+      text: t('step3.text'),
+      image: 'howItWorks-app.webp',
+      containerClass: 'col-span-full sm:col-span-5',
+    },
+  ];
 }

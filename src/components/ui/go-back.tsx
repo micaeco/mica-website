@@ -15,7 +15,7 @@ export default function GoBack({ text }: Props) {
   return (
     <Link href={href} className="mb-6 inline-flex items-center text-blue-600 hover:text-blue-800">
       <ArrowLeft className="mr-2 size-4" />
-      <span className="first-letter:capitalize">{text}</span>
+      <span className="capitalize">{text}</span>
     </Link>
   );
 }

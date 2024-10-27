@@ -1,4 +1,4 @@
-import Faqs from '@/components/sections/faqs/faqs';
+import Faqs from '@/app/[locale]/(routes)/faqs/components/faqs';
 
 export default function FAQs() {
   return (

@@ -2,33 +2,28 @@
 
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
-import { toast, ToastContainer } from 'react-toastify';
-import { ClipLoader } from 'react-spinners';
+import { useTranslations } from 'next-intl';
+import { CheckCircle, XCircle, Loader2 } from 'lucide-react';
 
-export default function VerifyPage() {
+export default function Verify() {
   const [verificationStatus, setVerificationStatus] = useState<'loading' | 'success' | 'error'>(
     'loading'
   );
   const params = useParams();
+  const t = useTranslations('verification');
 
   useEffect(() => {
     const verifyToken = async () => {
       const token = params.token as string;
-
       try {
         const response = await fetch(`/api/lead/verify/${token}`);
-        const data = await response.json();
-
         if (response.ok) {
           setVerificationStatus('success');
-          toast.success(data.message);
         } else {
           setVerificationStatus('error');
-          toast.error(data.error);
         }
       } catch (error) {
         setVerificationStatus('error');
-        toast.error('Ha ocorregut un error inesperat. Si us plau, torna-ho a provar més tard.');
       }
     };
 
@@ -36,38 +31,28 @@ export default function VerifyPage() {
   }, [params.token]);
 
   return (
-    <div className="flex min-h-screen max-w-md flex-col items-center justify-center bg-gray-50 px-4 py-12 sm:px-6 lg:px-8">
-      <div>
-        <h3 className="mt-6 text-center font-extrabold text-gray-900">Verificació del correu</h3>
-      </div>
-      <div className="mt-8 space-y-6">
+    <div className="flex min-h-screen flex-col items-center justify-center">
+      <h2 className="text-xl font-semibold text-gray-900">{t('title')}</h2>
+
+      <div className="mt-8 flex flex-col items-center justify-center space-y-4">
         {verificationStatus === 'loading' && (
-          <div className="text-center">
-            <ClipLoader />
+          <Loader2 className="h-16 w-16 animate-spin text-blue-500" />
+        )}
+
+        {verificationStatus === 'success' && (
+          <div>
+            <CheckCircle className="mx-auto h-16 w-16 text-green-500" />
+            <p className="mt-4 text-green-600">{t('success')}</p>
           </div>
         )}
-        {verificationStatus === 'success' && (
-          <p className="text-center text-green-600">El teu correu ha estat verificat amb èxit!</p>
-        )}
+
         {verificationStatus === 'error' && (
-          <p className="text-center text-red-600">
-            Hi ha hagut un problema en verificar el teu correu. Si us plau, torna-ho a intentar o
-            contacta amb suport.
-          </p>
+          <div>
+            <XCircle className="mx-auto h-16 w-16 text-red-500" />
+            <p className="mt-4 text-red-600">{t('error')}</p>
+          </div>
         )}
       </div>
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-      />
     </div>
   );
 }

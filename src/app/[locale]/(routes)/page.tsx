@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Hero from '@/components/sections/home/hero';
-import Problem from '@/components/sections/home/problem';
-import Solution from '@/components/sections/home/solution';
-import WaveSeparator from '@/components/sections/common/wave-separator';
-import Testimonials from '@/components/sections/home/testimonials';
+import Hero from '@/app/[locale]/(routes)/components/hero';
+import Problem from '@/app/[locale]/(routes)/components/problem';
+import Solution from '@/app/[locale]/(routes)/components/solution';
+import WaveSeparator from '@/components/wave-separator';
+import Testimonials from '@/app/[locale]/(routes)/components/testimonials';
 import Video from '@/components/ui/video';
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="flex flex-col justify-center text-primary">
+    <main className="text-brand-primary flex flex-col justify-center">
       <Hero />
       <div className="mt-28 flex justify-center px-8 pb-20">
         <Video
@@ -27,7 +27,7 @@ export default function Home() {
       </div>
       <WaveSeparator topColor="white" bottomColor="#00f2dd " />
       <Solution />
-      <WaveSeparator topColor="tertiary" bottomColor="#ffffff" />
+      <WaveSeparator topColor="brand-tertiary" bottomColor="#ffffff" />
       <Problem />
       <Testimonials />
       <div className="bg"></div>

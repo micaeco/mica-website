@@ -12,6 +12,7 @@ export async function registerLead(leadData: {
   phone: string;
   interestInBeta: boolean;
   referralSource: string;
+  locale: string;
 }) {
   const response = await fetch(GOOGLE_APPS_SCRIPT_URL_LEADS as string, {
     method: 'POST',

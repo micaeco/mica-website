@@ -1,6 +1,7 @@
 {
   "common": {
     "search": "buscar",
+    "no-socials": "sin referencias",
     "no-content-available": "contenido no disponible",
     "no-articles-found": "no se han encontrado artículos",
     "unknown-date": "fecha desconocida",
@@ -25,7 +26,8 @@
     "register": "regístrate",
     "blog": "blog",
     "load": "cargar",
-    "more": "más"
+    "more": "más",
+    "verification": "verificación"
   },
   "errors": {
     "DEFAULT": "Se ha producido un error. Por favor, inténtalo de nuevo más tarde.",
@@ -213,20 +215,20 @@
     }
   },
   "howItWorks": {
-    "steps": [
-      {
+    "steps": {
+      "step1": {
         "title": "Un único sensor en la entrada de agua captura datos precisos",
         "text": "El sensor se instala fácil y rápidamente en la tubería de entrada de agua del hogar. Alimentado por baterías de larga duración, captura datos precisos del caudal de agua y los envía a la nube en tiempo real mediante tecnologías Internet of Things (IoT)."
       },
-      {
+      "step2": {
         "title": "Una plataforma de IA desglosa el consumo por dispositivo",
         "text": "Una plataforma de datos en la nube impulsada por algoritmos de inteligencia artificial, desglosa el consumo por dispositivo, genera recomendaciones personalizadas y puede detectar fugas. Esto se logra mediante la calibración del sensor y un análisis de comportamientos de consumo estadísticos."
       },
-      {
+      "step3": {
         "title": "Una aplicación visualiza datos y crea un plan de consumo sostenible",
         "text": "A través de una aplicación web y móvil, el usuario monitoriza sus datos detallados de consumo, se compara con otros usuarios o los límites recomendados, recibe recomendaciones personalizadas y puede retroalimentar el algoritmo de IA. Esto le permite optimizar su consumo de agua y adoptar prácticas más sostenibles."
       }
-    ],
+    },
     "cta": "¡Quiero uno!"
   },
   "timeline": {
@@ -300,6 +302,8 @@
     "cta": "¿Te apuntas?"
   },
   "register": {
+    "title": "Regístrate",
+    "description": "Para formar parte del programa beta de MICA, por favor, completa el siguiente formulario.",
     "form": {
       "name": {
         "label": "Nombre",
@@ -328,5 +332,10 @@
         "label": "He leído y acepto la política de privacidad"
       }
     }
+  },
+  "verification": {
+    "title": "Verificación del correo",
+    "success": "Tu correo ha sido verificado con éxito.",
+    "error": "Ha ocurrido un error al verificar tu correo. Por favor, inténtalo de nuevo más tarde."
   }
 }

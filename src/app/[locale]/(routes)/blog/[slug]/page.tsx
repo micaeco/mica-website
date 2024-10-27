@@ -3,8 +3,8 @@
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 
-import Loading from '@/components/sections/common/loading';
-import BlogPost from '@/components/sections/blog/blog-post';
+import Loading from '@/components/loading';
+import BlogPost from './components/blog-post';
 import { IPost } from '@/types';
 import GoBack from '@/components/ui/go-back';
 

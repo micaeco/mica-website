@@ -3,14 +3,14 @@
 import React from 'react';
 import { useRegisterLeads } from '@/hooks/';
 
-import Form from '@/components/sections/register/form';
+import RegisterForm from './components/form';
 
 export default function RegistrationForm() {
   const { formData, isSubmitting, handleSubmit, handleInputChange } = useRegisterLeads();
 
   return (
     <main>
-      <Form
+      <RegisterForm
         formData={formData}
         isSubmitting={isSubmitting}
         handleSubmit={handleSubmit}

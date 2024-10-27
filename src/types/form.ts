@@ -1,4 +1,5 @@
 import { LucideIcon } from 'lucide-react';
+import { ReactNode } from 'react';
 
 // Common properties
 interface IBaseFormField {
@@ -14,6 +15,7 @@ interface IBaseFormField {
 
 // Input-specific properties
 export interface IInputField extends IBaseFormField {
+  description?: string;
   type: 'input';
   icon?: LucideIcon;
   inputType: 'text' | 'email' | 'password' | 'number' | 'tel' | 'url' | 'date' | 'checkbox';

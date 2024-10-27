@@ -1,4 +1,4 @@
-import HowItWorks from '@/components/sections/product/howItWorks';
+import HowItWorks from './components/howItWorks';
 
 export default function Product() {
   return (

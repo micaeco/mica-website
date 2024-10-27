@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 
-import Latest from '@/components/sections/privacy-policy/latest';
+import Latest from '@/app/[locale]/(routes)/privacy-policy/components/latest';
 import GoBack from '@/components/ui/go-back';
 
 export default function PrivacyPolicy() {

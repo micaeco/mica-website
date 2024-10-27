@@ -1,6 +1,7 @@
 {
   "common": {
     "search": "buscar",
+    "no-socials": "sense referències",
     "no-content-available": "contingut no disponible",
     "no-articles-found": "no s'han trobat articles",
     "unknown-date": "data desconeguda",
@@ -25,7 +26,8 @@
     "register": "registra't",
     "blog": "blog",
     "load": "carregar",
-    "more": "més"
+    "more": "més",
+    "verification": "verificació"
   },
   "errors": {
     "DEFAULT": "S'ha produït un error. Si us plau, torna-ho a provar més tard.",
@@ -217,20 +219,20 @@
     }
   },
   "howItWorks": {
-    "steps": [
-      {
+    "steps": {
+      "step1": {
         "title": "Un únic sensor a l'entrada d'aigua captura dades precises",
         "text": "El sensor s'instal·la fàcil i ràpidament a la canonada d'entrada d'aigua de la llar. Alimentat per bateries de llarga duració, captura dades precises del cabal de l'aigua i les envia al núvol en temps real mitjançant tecnologies Internet of Things (IoT)."
       },
-      {
+      "step2": {
         "title": "Una plataforma d'IA desglossa el consum per dispositiu",
         "text": "Una plataforma de dades al núvol impulsada per algorismes d'intel·ligència artificial, desglossa el consum per dispositiu, genera recomanacions personalitzades i pot detectar fugues. Això s'aconsegueix mitjançant la cal·libració del sensor i un anàlisi de comportaments de consum estadístics."
       },
-      {
+      "step3": {
         "title": "Un aplicatiu visualitza dades i crea un pla de consum sostenible",
         "text": "A través d'un aplicatiu web i mòbil, l'usuari monitoritza les seves dades detallades de consum, es compara contra altres usuaris o els límits recomanats, rep recomanacions personalitzades i pot retroalimentar l'algoritme d'IA. Això li permet optimitzar el seu consum d'aigua i adoptar pràctiques més sostenibles."
       }
-    ],
+    },
     "cta": "En vull un!"
   },
   "timeline": {
@@ -304,6 +306,8 @@
     "cta": "T'hi apuntes?"
   },
   "register": {
+    "title": "Registra't",
+    "description": "Emplena el següent formulari per formar part del programa beta.",
     "form": {
       "name": {
         "label": "Nom",
@@ -332,5 +336,10 @@
         "label": "He llegit i accepto la política de privacitat"
       }
     }
+  },
+  "verification": {
+    "title": "Verificació del correu",
+    "success": "El teu correu ha estat verificat amb èxit!",
+    "error": "Hi ha hagut un problema en verificar el teu correu. Si us plau, torna-ho a intentar o contacta amb suport."
   }
 }

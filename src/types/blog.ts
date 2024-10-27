@@ -1,4 +1,5 @@
-export type TPostTag = 'article' | 'manual' | 'others' | 'all';
+export const PostTags = ['all', 'article', 'manual', 'others'] as const;
+export type TPostTag = typeof PostTags[number];
 
 export interface IPost {
   lang: string;

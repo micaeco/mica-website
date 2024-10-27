@@ -1,6 +1,7 @@
 {
   "common": {
     "search": "search",
+    "no-socials": "no references",
     "no-content-available": "no content available",
     "no-articles-found": "no articles found",
     "unknown-date": "unknown date",
@@ -25,7 +26,8 @@
     "register": "register",
     "blog": "blog",
     "load": "load",
-    "more": "more"
+    "more": "more",
+    "verification": "verification"
   },
   "errors": {
     "DEFAULT": "An error has occurred. Please try again later.",
@@ -212,20 +214,20 @@
     }
   },
   "howItWorks": {
-    "steps": [
-      {
+    "steps": {
+      "step1": {
         "title": "A single sensor at the water inlet captures precise data",
         "text": "The sensor is easily and quickly installed at the home's water inlet pipe. Powered by long-lasting batteries, it captures precise water flow data and sends it to the cloud in real-time using Internet of Things (IoT) technologies."
       },
-      {
+      "step2": {
         "title": "An AI platform breaks down consumption by device",
         "text": "A cloud-based data platform powered by artificial intelligence algorithms breaks down consumption by device, generates personalized recommendations, and can detect leaks. This is achieved through sensor calibration and analysis of statistical consumption behaviors."
       },
-      {
+      "step3": {
         "title": "An application visualizes data and creates a sustainable consumption plan",
         "text": "Through a web and mobile application, the user monitors their detailed consumption data, compares against other users or recommended limits, receives personalized recommendations, and can provide feedback to the AI algorithm. This allows them to optimize their water consumption and adopt more sustainable practices."
       }
-    ],
+    },
     "cta": "I want one!"
   },
   "timeline": {
@@ -296,6 +298,8 @@
     "cta": "Want to join?"
   },
   "register": {
+    "title": "Register",
+    "description": "In order to join the beta program, please fill out the form below.",
     "form": {
       "name": {
         "label": "Name",
@@ -324,5 +328,10 @@
         "label": "I have read and accept the privacy policy"
       }
     }
+  },
+  "verification": {
+    "title": "Email verification",
+    "success": "Your email has been verified successfully.",
+    "error": "An error occurred while verifying your email. Please try again later."
   }
 }

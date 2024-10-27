@@ -10,7 +10,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "INTERNAL_ERROR" }, { status: 400 });
     }
 
-    const { name, surname, email, phone, interestInBeta, referralSource } = body;
+    const { name, surname, email, phone, interestInBeta, referralSource, locale } = body;
 
     if (!name || !surname || !email) {
       return NextResponse.json({ error: 'MISSING_FIELDS' }, { status: 400 });
@@ -23,6 +23,7 @@ export async function POST(request: Request) {
       phone,
       interestInBeta,
       referralSource,
+      locale
     });
 
     const data = await response.json();

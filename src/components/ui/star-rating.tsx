@@ -10,7 +10,7 @@ export default function StarRating({ rating }: { rating: number }) {
             className="absolute inset-0 overflow-hidden"
             style={{ width: `${Math.max(0, Math.min(100, (rating - star + 1) * 100))}%` }}
           >
-            <Star className="text-accent" size={24} />
+            <Star className="text-brand-accent" size={24} />
           </div>
         </div>
       ))}

@@ -1,7 +1,7 @@
 'use client';
 
-import ContactForm from '@/components/sections/contact/form';
-import { useContactSubmission } from '@/hooks/useContactSubmission';
+import ContactForm from '@/app/[locale]/(routes)/contact/components/form';
+import { useContactSubmission } from '@/hooks/use-contact-submission';
 
 export default function Contact() {
   const { name, setName, email, setEmail, message, setMessage, handleSubmit, isSubmitting } =
