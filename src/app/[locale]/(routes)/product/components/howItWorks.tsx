@@ -33,46 +33,45 @@ export default function HowItWorks() {
   const steps = getHowItWorksSteps(tSteps);
 
   return (
-    <section className="mx-auto flex max-w-6xl flex-col px-8">
-      <div className="relative">
-        <div className="hidden xl:block">
-          <Image
-            src="/images/howItWorks-desktop.webp"
-            alt="HowItWorks"
-            className="w-full"
-            width={3000}
-            height={3000}
-          />
-        </div>
-
-        <div className="flex flex-col space-y-16 xl:absolute xl:inset-0">
-          {steps.map((step, index) => (
-            <div
-              key={index}
-              className={`grid h-1/3 grid-cols-10 items-center ${step.isReversed ? 'text-right' : ''}`}
-            >
-              {step.isReversed && (
-                <div className="col-span-6 hidden sm:block xl:hidden">
-                  <Image src={`/images/${step.image}`} alt="AI cloud" width={1024} height={1024} />
-                </div>
-              )}
-              <div
-                className={`flex flex-col items-${step.isReversed ? 'end' : 'start'} gap-4 ${step.containerClass} ${step.isReversed ? 'xl:flex-row-reverse' : 'xl:flex-row'} xl:items-center`}
-              >
-                <StepIcon number={index + 1} icon={step.icon} />
-                <StepContent title={steps[index].title} text={steps[index].text} />
-              </div>
-              {!step.isReversed && (
-                <div className="col-span-5 hidden sm:block xl:hidden">
-                  <Image src={`/images/${step.image}`} alt="AI cloud" width={1024} height={1024} />
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+    <section className="relative mx-auto flex max-w-6xl flex-col px-8">
+      <div className="absolute inset-0 hidden xl:block">
+        <Image
+          src="/images/howItWorks-desktop.webp"
+          alt="HowItWorks"
+          className="w-full"
+          width={3000}
+          height={3000}
+          priority
+        />
       </div>
 
-      <div className="flex justify-center py-16">
+      <div className="relative flex flex-col space-y-28 py-10">
+        {steps.map((step, index) => (
+          <div
+            key={index}
+            className={`grid grid-cols-10 items-center ${step.isReversed ? 'text-right' : ''}`}
+          >
+            {step.isReversed && (
+              <div className="col-span-6 hidden sm:block xl:hidden">
+                <Image src={`/images/${step.image}`} alt="AI cloud" width={1024} height={1024} />
+              </div>
+            )}
+            <div
+              className={`flex flex-col items-${step.isReversed ? 'end' : 'start'} gap-4 ${step.containerClass} ${step.isReversed ? 'col-span-full sm:col-start-7 sm:col-end-11 xl:flex-row-reverse' : 'sm:col-span-5 xl:flex-row'} xl:items-center`}
+            >
+              <StepIcon number={index + 1} icon={step.icon} />
+              <StepContent title={steps[index].title} text={steps[index].text} />
+            </div>
+            {!step.isReversed && (
+              <div className="col-span-5 hidden sm:block xl:hidden">
+                <Image src={`/images/${step.image}`} alt="AI cloud" width={1024} height={1024} />
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <div className="relative flex justify-center py-16">
         <Button className="w-fit">
           <Link href="/beta">{t('cta')}</Link>
         </Button>
