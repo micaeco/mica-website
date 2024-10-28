@@ -15,8 +15,8 @@ export default function Faqs() {
     <div className="px-4">
       <h3 className="mb-4 font-bold">{t('title')}</h3>
       <Accordion type="single" collapsible>
-        {faqs.map((faq, key) => (
-          <AccordionItem value={key.toString()}>
+        {faqs.map((faq, index) => (
+          <AccordionItem key={index} value={`item-${index}`}>
             <AccordionTrigger>{faq.question}</AccordionTrigger>
             <AccordionContent>{faq.answer}</AccordionContent>
           </AccordionItem>

@@ -15,6 +15,7 @@ export default function BlogPosts({ posts }: Props) {
   const [visiblePosts, setVisiblePosts] = useState(4);
 
   const common = useTranslations('common');
+  const tTags = useTranslations('blog.tags');
 
   const loadMore = () => {
     setVisiblePosts((prev) => Math.min(prev + 4, posts.length));
@@ -27,7 +28,9 @@ export default function BlogPosts({ posts }: Props) {
           <Card key={post.slug} className="shadow-sm transition-shadow hover:shadow-lg">
             <Link href={`/blog/${post.slug}`}>
               <CardHeader>
-                <CardDescription className="first-letter:capitalize">{post.tag}</CardDescription>
+                <CardDescription className="first-letter:capitalize">
+                  {tTags(post.tag)}
+                </CardDescription>
                 <CardTitle className="font-semibold">{post.title}</CardTitle>
               </CardHeader>
               <CardContent>{post.summary}</CardContent>

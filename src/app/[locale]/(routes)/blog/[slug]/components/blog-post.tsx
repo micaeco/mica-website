@@ -12,33 +12,37 @@ type Props = {
 
 export default function Post({ post }: Props) {
   const common = useTranslations('common');
+  const tTags = useTranslations('blog.tags');
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8">
+    <article className="mx-auto max-w-3xl px-4 py-8">
       <GoBack text={common('go-back')} />
 
-      <article>
-        <h3 className="mb-4 font-bold">{post.title}</h3>
-
-        <div className="mb-4 flex items-center text-sm font-light">
-          <Clock className="mr-1 size-4" />
-          <span className="mr-4">{post.date?.toString() || common('unknown-date')}</span>
-          <User className="mr-1 size-4" />
-          <span className="mr-4 first-letter:capitalize">
-            {post.author || common('unknown-author')}
-          </span>
-          <Tag className="mr-1 size-4" />
-          <span className="mr-4 capitalize">{post.tag || common('unknown-tag')}</span>
-          <Book className="mr-1 size-4" />
-          <span className="capitalize">{languageMap[post.lang]}</span>
+      <h3 className="font-bold">{post.title}</h3>
+      <div className="mb-8 flex flex-wrap items-center gap-4 text-sm font-light">
+        <div className="flex gap-1">
+          <Clock size={15} />
+          {post.date?.toString() || common('unknown-date')}
         </div>
+        <div className="flex gap-1 capitalize">
+          <User size={15} />
+          {post.author || common('unknown-author')}
+        </div>
+        <div className="flex gap-1 capitalize">
+          <Tag size={15} />
+          {tTags(post.tag) || common('unknown-tag')}
+        </div>
+        <div className="flex gap-1 capitalize">
+          <Book size={15} />
+          {languageMap[post.lang]}
+        </div>
+      </div>
 
-        {post.content ? (
-          <MarkdownRenderer content={post.content} />
-        ) : (
-          <p className="capitalize">{common('no-content-available')}</p>
-        )}
-      </article>
-    </div>
+      {post.content ? (
+        <MarkdownRenderer content={post.content} />
+      ) : (
+        <p className="capitalize">{common('no-content-available')}</p>
+      )}
+    </article>
   );
 }

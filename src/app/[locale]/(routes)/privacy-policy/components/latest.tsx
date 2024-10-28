@@ -1,3 +1,8 @@
+'use client';
+
+import { useTranslations } from 'next-intl';
+
+import GoBack from '@/components/ui/go-back';
 import Markdown from '@/components/ui/markdown';
 
 const privacyPolicy = `
@@ -60,5 +65,12 @@ Para cualquier consulta o preocupación sobre esta política de privacidad, los 
 `;
 
 export default function Latest() {
-  return <Markdown content={privacyPolicy} />;
+  const common = useTranslations('common');
+
+  return (
+    <section className="mx-auto max-w-7xl px-8 py-8">
+      <Markdown content={privacyPolicy} />
+      <GoBack text={common('go-back')} link="/register" />
+    </section>
+  );
 }

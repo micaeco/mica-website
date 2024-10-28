@@ -42,7 +42,7 @@ export default function RegisterForm({
   }, [formData]);
 
   return (
-    <section className="bg-gray-50 py-8">
+    <section className="bg-gray-50 px-4 py-8">
       <div className="mx-auto max-w-md rounded-lg bg-white shadow-md">
         <Card>
           <CardHeader>

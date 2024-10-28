@@ -5,15 +5,19 @@ import { ArrowLeft } from 'lucide-react';
 
 type Props = {
   text: string;
+  link?: string;
 };
 
-export default function GoBack({ text }: Props) {
+export default function GoBack({ text, link }: Props) {
   const pathname = usePathname();
   const pathWithoutLocale = pathname.substring(pathname.indexOf('/'));
   const href = pathWithoutLocale + '/..';
 
   return (
-    <Link href={href} className="mb-6 inline-flex items-center text-blue-600 hover:text-blue-800">
+    <Link
+      href={link ? link : href}
+      className="mb-6 inline-flex items-center text-blue-600 hover:text-blue-800"
+    >
       <ArrowLeft className="mr-2 size-4" />
       <span className="capitalize">{text}</span>
     </Link>

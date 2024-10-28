@@ -13,7 +13,7 @@ import { Button } from '@/components/ui/button';
 import { getNavLinks, getNavCta } from '@/lib/constants';
 import { cn, isExternalLink } from '@/lib/utils';
 
-const MOBILE_BREAKPOINT = 1340; // Corresponds to Tailwind's 'lg' breakpoint
+const MOBILE_BREAKPOINT = 1400;
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

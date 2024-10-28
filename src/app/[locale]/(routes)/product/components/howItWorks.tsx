@@ -72,7 +72,7 @@ export default function HowItWorks() {
       </div>
 
       <div className="relative flex justify-center py-16">
-        <Button className="w-fit">
+        <Button className="w-fit" size="lg">
           <Link href="/beta">{t('cta')}</Link>
         </Button>
       </div>
