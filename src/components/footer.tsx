@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
+
 import { getNavCta, getNavLinks } from '@/lib/constants';
 import { isExternalLink } from '@/lib/utils';
 
@@ -20,7 +21,7 @@ export default function Footer() {
               <p className="text-xs capitalize">{common('general-questions')}</p>
               <a
                 href="mailto:info@mica.eco"
-                className="from-brand-accent/50 to-brand-accent bg-gradient-to-br bg-clip-text font-bold text-transparent"
+                className="bg-gradient-to-br from-brand-accent/50 to-brand-accent bg-clip-text font-bold text-transparent"
               >
                 info@mica.eco
               </a>
@@ -36,7 +37,7 @@ export default function Footer() {
                   key={item.href}
                   href={item.href}
                   target={isExternalLink(item.href) ? '_blank' : '_self'}
-                  className="hover:text-brand-accent text-xs transition-colors"
+                  className="text-xs transition-colors hover:text-brand-accent"
                 >
                   {item.label}
                 </Link>

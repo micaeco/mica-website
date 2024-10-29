@@ -45,14 +45,14 @@ export default function HowItWorks() {
         />
       </div>
 
-      <div className="relative flex flex-col space-y-28 py-10">
+      <div className="relative flex flex-col space-y-16 py-10 sm:space-y-28">
         {steps.map((step, index) => (
           <div
             key={index}
-            className={`grid grid-cols-10 items-center ${step.isReversed ? 'text-right' : ''}`}
+            className={`flex items-center sm:grid sm:grid-cols-10 ${step.isReversed ? 'flex-col-reverse text-right' : 'flex-col'}`}
           >
             {step.isReversed && (
-              <div className="col-span-6 hidden sm:block xl:hidden">
+              <div className="block sm:col-span-6 xl:hidden">
                 <Image src={`/images/${step.image}`} alt="AI cloud" width={1024} height={1024} />
               </div>
             )}
@@ -63,7 +63,7 @@ export default function HowItWorks() {
               <StepContent title={steps[index].title} text={steps[index].text} />
             </div>
             {!step.isReversed && (
-              <div className="col-span-5 hidden sm:block xl:hidden">
+              <div className="block sm:col-span-5 xl:hidden">
                 <Image src={`/images/${step.image}`} alt="AI cloud" width={1024} height={1024} />
               </div>
             )}
