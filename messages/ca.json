@@ -66,15 +66,9 @@
     "register": "Registra't"
   },
   "hero": {
-    "title": {
-      "line1": "La nova manera",
-      "line2": "d'estalviar aigua."
-    },
-    "text": {
-      "line1": "Empoderem Barcelona per conservar aigua",
-      "line2": "amb sensors impulsats per",
-      "line3": "intel·ligència artificial."
-    },
+    "title": "La nova manera d'estalviar aigua.",
+    "text": "Empoderem Barcelona per conservar aigua amb sensors impulsats per intel·ligència artificial.",
+    "with-the-support": "Amb el suport de:",
     "cta": "En vull un!"
   },
   "solution": {

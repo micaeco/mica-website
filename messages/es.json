@@ -62,15 +62,9 @@
   },
 
   "hero": {
-    "title": {
-      "line1": "La nueva forma",
-      "line2": "de ahorrar agua."
-    },
-    "text": {
-      "line1": "Empoderamos Barcelona para conservar agua",
-      "line2": "con sensores impulsados por",
-      "line3": "inteligencia artificial."
-    },
+    "title": "La nueva forma de ahorrar agua.",
+    "text": "Empoderamos Barcelona para conservar agua con sensores impulsados por inteligencia artificial.",
+    "with-the-support": "Con el apoyo de:",
     "cta": "¡Quiero uno!"
   },
   "solution": {
