@@ -75,7 +75,7 @@ Static assets that are served directly to the client.
 
 ### Root Directory
 
-The root directory contains configuration files for various tools and build processes.
+The root directory contains configuration files for various tools and processes.
 
 This structure is designed to be intuitive and scalable. As the project grows, new feature-specific folders can be added under the appropriate directories without needing to modify the overall structure.
 
