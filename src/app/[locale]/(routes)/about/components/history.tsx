@@ -6,7 +6,7 @@ export default function HistorySection() {
   const t = useTranslations('history');
 
   return (
-    <section className="px-8 py-16">
+    <section className="bg-white px-8 py-16">
       <div className="mx-auto grid max-w-6xl items-center xl:grid-cols-10">
         <div className="col-span-6 flex flex-col">
           <h2 className="font-bold">{t('title')}</h2>

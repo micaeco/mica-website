@@ -22,7 +22,7 @@ export default function BlogPosts({ posts }: Props) {
   };
 
   return (
-    <div className="container mx-auto min-h-screen">
+    <div className="container mx-auto">
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         {posts.slice(0, visiblePosts).map((post) => (
           <Card key={post.slug} className="shadow-sm transition-shadow hover:shadow-lg">

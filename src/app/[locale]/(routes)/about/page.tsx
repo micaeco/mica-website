@@ -5,7 +5,7 @@ import WaveSeparator from '@/components/wave-separator';
 
 export default function About() {
   return (
-    <main className="flex flex-col items-center justify-center">
+    <main>
       <History />
       <Timeline />
       <WaveSeparator topColor="white" bottomColor="#d5fff3" />

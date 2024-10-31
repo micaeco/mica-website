@@ -8,6 +8,7 @@ import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/i18n/routing';
 import { getSolutionBenefits } from '@/lib/constants';
+import { ArrowRightIcon } from 'lucide-react';
 
 export default function Solution() {
   const t = useTranslations('solution');
@@ -70,7 +71,10 @@ export default function Solution() {
           transition={{ duration: 0.5, delay: 0.8 }}
         >
           <Link href="/product">
-            <Button size="lg"> {t('cta')} </Button>
+            <Button size="lg" variant="expandIcon" Icon={ArrowRightIcon} iconPlacement="right">
+              {' '}
+              {t('cta')}{' '}
+            </Button>
           </Link>
         </motion.div>
       </div>

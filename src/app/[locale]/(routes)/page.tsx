@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main className="flex flex-col justify-center text-brand-primary">
       <Hero />
-      <WaveSeparator topColor="white" bottomColor="#00f2dd " />
+      <WaveSeparator topColor="white" bottomColor="#00f2dd" />
       <Solution />
       <WaveSeparator topColor="brand-tertiary" bottomColor="#ffffff" />
       <Problem />

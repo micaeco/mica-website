@@ -59,8 +59,8 @@ export default function Process() {
               className="hidden 2xl:block"
               src="/images/team.webp"
               alt="Team"
-              width={3000}
-              height={3000}
+              width={2000}
+              height={2000}
             />
           </div>
         </div>

@@ -12,7 +12,7 @@ export default function Faqs() {
   const faqs = t.raw('questions') as Array<{ question: string; answer: string }>;
 
   return (
-    <div className="px-4">
+    <section>
       <h3 className="mb-4 font-bold">{t('title')}</h3>
       <Accordion type="single" collapsible>
         {faqs.map((faq, index) => (
@@ -22,6 +22,6 @@ export default function Faqs() {
           </AccordionItem>
         ))}
       </Accordion>
-    </div>
+    </section>
   );
 }

@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 import Video from '@/components/ui/video';
+import { ArrowRightIcon } from 'lucide-react';
 
 export default function Hero() {
   const t = useTranslations('hero');
@@ -38,7 +39,13 @@ export default function Hero() {
           <h1 className="max-w-[500px] text-pretty font-bold leading-tight">{t('title')}</h1>
           <p className="max-w-[400px] text-pretty font-light">{t('text')}</p>
           <Link href="beta">
-            <Button className="mb-4 mt-10 2xl:mb-24" size="lg">
+            <Button
+              className="mb-4 mt-10 2xl:mb-24"
+              variant="expandIcon"
+              Icon={ArrowRightIcon}
+              iconPlacement="right"
+              size="lg"
+            >
               {t('cta')}
             </Button>
           </Link>
