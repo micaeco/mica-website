@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url>
+<loc>http://localhost:3000</loc>
+<xhtml:link rel="alternate" hreflang="ca" href="http://localhost:3000/ca" />
+<xhtml:link rel="alternate" hreflang="es" href="http://localhost:3000/es" />
+<xhtml:link rel="alternate" hreflang="en" href="http://localhost:3000/en" />
+<lastmod>2024-11-01T23:14:12.075Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>http://localhost:3000/about</loc>
+<xhtml:link rel="alternate" hreflang="ca" href="http://localhost:3000/ca/about" />
+<xhtml:link rel="alternate" hreflang="es" href="http://localhost:3000/es/about" />
+<xhtml:link rel="alternate" hreflang="en" href="http://localhost:3000/en/about" />
+<lastmod>2024-11-01T23:14:12.076Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>http://localhost:3000/beta</loc>
+<xhtml:link rel="alternate" hreflang="ca" href="http://localhost:3000/ca/beta" />
+<xhtml:link rel="alternate" hreflang="es" href="http://localhost:3000/es/beta" />
+<xhtml:link rel="alternate" hreflang="en" href="http://localhost:3000/en/beta" />
+<lastmod>2024-11-01T23:14:12.076Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>http://localhost:3000/contact</loc>
+<xhtml:link rel="alternate" hreflang="ca" href="http://localhost:3000/ca/contact" />
+<xhtml:link rel="alternate" hreflang="es" href="http://localhost:3000/es/contact" />
+<xhtml:link rel="alternate" hreflang="en" href="http://localhost:3000/en/contact" />
+<lastmod>2024-11-01T23:14:12.076Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>http://localhost:3000/faqs</loc>
+<xhtml:link rel="alternate" hreflang="ca" href="http://localhost:3000/ca/faqs" />
+<xhtml:link rel="alternate" hreflang="es" href="http://localhost:3000/es/faqs" />
+<xhtml:link rel="alternate" hreflang="en" href="http://localhost:3000/en/faqs" />
+<lastmod>2024-11-01T23:14:12.076Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>http://localhost:3000/product</loc>
+<xhtml:link rel="alternate" hreflang="ca" href="http://localhost:3000/ca/product" />
+<xhtml:link rel="alternate" hreflang="es" href="http://localhost:3000/es/product" />
+<xhtml:link rel="alternate" hreflang="en" href="http://localhost:3000/en/product" />
+<lastmod>2024-11-01T23:14:12.076Z</lastmod>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>http://localhost:3000/blog/aireadores-de-grifos</loc>
+<xhtml:link rel="alternate" hreflang="ca" href="http://localhost:3000/ca/blog/aireadores-de-grifos" />
+<xhtml:link rel="alternate" hreflang="es" href="http://localhost:3000/es/blog/aireadores-de-grifos" />
+<xhtml:link rel="alternate" hreflang="en" href="http://localhost:3000/en/blog/aireadores-de-grifos" />
+<lastmod>2024-11-01T23:14:12.076Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>http://localhost:3000/blog/regulador-presion-neutro</loc>
+<xhtml:link rel="alternate" hreflang="ca" href="http://localhost:3000/ca/blog/regulador-presion-neutro" />
+<xhtml:link rel="alternate" hreflang="es" href="http://localhost:3000/es/blog/regulador-presion-neutro" />
+<xhtml:link rel="alternate" hreflang="en" href="http://localhost:3000/en/blog/regulador-presion-neutro" />
+<lastmod>2024-11-01T23:14:12.076Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+<url>
+<loc>http://localhost:3000/blog/tecnologias-de-ahorro-agua</loc>
+<xhtml:link rel="alternate" hreflang="ca" href="http://localhost:3000/ca/blog/tecnologias-de-ahorro-agua" />
+<xhtml:link rel="alternate" hreflang="es" href="http://localhost:3000/es/blog/tecnologias-de-ahorro-agua" />
+<xhtml:link rel="alternate" hreflang="en" href="http://localhost:3000/en/blog/tecnologias-de-ahorro-agua" />
+<lastmod>2024-11-01T23:14:12.076Z</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+</urlset>

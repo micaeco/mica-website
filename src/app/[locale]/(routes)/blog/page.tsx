@@ -1,32 +1,17 @@
-'use client';
+import { Metadata } from 'next';
+import { getMessages } from 'next-intl/server';
 
-import React from 'react';
-import { useTranslations } from 'next-intl';
+import Blog from './components/blog';
 
-import { useBlogPosts } from '@/hooks/use-blog-posts';
-import BlogPosts from './components/blog-posts';
-import SearchBar from './components/search-bar';
-import Loading from '@/components/loading';
+export async function generateMetadata(): Promise<Metadata> {
+  const messages = await getMessages();
+  const navLinks = messages.navLinks as { blog: string };
 
-export default function Blog() {
-  const { filteredPosts, searchTerm, isLoading, setSearchTerm, selectedTag, setSelectedTag } =
-    useBlogPosts();
-  const common = useTranslations('common');
+  return {
+    title: navLinks.blog,
+  };
+}
 
-  if (isLoading) return <Loading />;
-
-  return (
-    <main className="bg-gray-50 px-4 py-16">
-      <div className="container mx-auto max-w-7xl">
-        <h2 className="mb-8 text-center font-bold capitalize">{common('blog')}</h2>
-        <SearchBar
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
-          selectedTag={selectedTag}
-          setSelectedTag={setSelectedTag}
-        />
-        <BlogPosts posts={filteredPosts} />
-      </div>
-    </main>
-  );
+export default function BlogPage() {
+  return <Blog />;
 }

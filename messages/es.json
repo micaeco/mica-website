@@ -1,4 +1,15 @@
 {
+  "metadata": {
+    "title": "MICA - Monitorización Inteligente del Agua",
+    "description": "Monitoriza y optimiza tu consumo de agua con seguimiento en tiempo real y análisis inteligente. Ahorra agua y reduce costes con el sistema de monitorización MICA.",
+    "keywords": [
+      "monitorización inteligente agua",
+      "análisis consumo agua",
+      "seguimiento uso agua",
+      "contador inteligente agua",
+      "sistema eficiencia agua"
+    ]
+  },
   "common": {
     "search": "buscar",
     "no-socials": "sin referencias",
@@ -53,14 +64,14 @@
     "beta": "¡Quiero uno!",
     "about": "¿Quiénes somos?",
     "faqs": "FAQs",
-    "blog": "Blog"
+    "blog": "Blog",
+    "privacy-policy": "Política de privacidad"
   },
   "navCta": {
     "contact": "Contacto",
     "demo": "Demo app",
     "register": "Regístrate"
   },
-
   "hero": {
     "title": "La nueva forma de ahorrar agua.",
     "text": "Empoderamos Barcelona para conservar agua con sensores impulsados por inteligencia artificial.",

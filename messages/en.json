@@ -1,4 +1,15 @@
 {
+  "metadata": {
+    "title": "MICA - Smart Water Monitoring",
+    "description": "Monitor and optimize your water consumption with real-time tracking and smart analytics. Save water and reduce costs with MICA's intelligent monitoring system.",
+    "keywords": [
+      "smart water monitoring",
+      "water consumption analytics",
+      "water usage tracking",
+      "smart water meter",
+      "water efficiency system"
+    ]
+  },
   "common": {
     "search": "search",
     "no-socials": "no references",
@@ -53,7 +64,8 @@
     "beta": "I want one!",
     "about": "Who are we?",
     "faqs": "FAQs",
-    "blog": "Blog"
+    "blog": "Blog",
+    "privacy-policy": "Privacy Policy"
   },
   "navCta": {
     "contact": "Contact",

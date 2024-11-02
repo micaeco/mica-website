@@ -1,24 +1,17 @@
-'use client';
+import { Metadata } from 'next';
+import { getMessages } from 'next-intl/server';
 
-import ContactForm from '@/app/[locale]/(routes)/contact/components/form';
-import { useContactSubmission } from '@/hooks/use-contact-submission';
+import Contact from './components/contact';
 
-export default function Contact() {
-  const { name, setName, email, setEmail, message, setMessage, handleSubmit, isSubmitting } =
-    useContactSubmission();
+export async function generateMetadata(): Promise<Metadata> {
+  const messages = await getMessages();
+  const navCta = messages.navCta as { contact: string };
 
-  return (
-    <main>
-      <ContactForm
-        name={name}
-        setName={setName}
-        email={email}
-        setEmail={setEmail}
-        message={message}
-        setMessage={setMessage}
-        handleSubmit={handleSubmit}
-        isSubmitting={isSubmitting}
-      />
-    </main>
-  );
+  return {
+    title: navCta.contact,
+  };
+}
+
+export default function ContactPage() {
+  return <Contact />;
 }

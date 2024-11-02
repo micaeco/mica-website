@@ -1,10 +1,21 @@
 import React from 'react';
+import { Metadata } from 'next';
+import { getMessages } from 'next-intl/server';
 
-import Hero from '@/app/[locale]/(routes)/components/hero';
-import Problem from '@/app/[locale]/(routes)/components/problem';
-import Solution from '@/app/[locale]/(routes)/components/solution';
+import Hero from './components/hero';
+import Problem from './components/problem';
+import Solution from './components/solution';
+import Testimonials from './components/testimonials';
 import WaveSeparator from '@/components/wave-separator';
-import Testimonials from '@/app/[locale]/(routes)/components/testimonials';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const messages = await getMessages();
+  const navLinks = messages.navLinks as { home: string };
+
+  return {
+    title: navLinks.home,
+  };
+}
 
 export default function Home() {
   return (

@@ -9,13 +9,43 @@ import './globals.css';
 
 const montserrat = Montserrat({ subsets: ['latin'], weight: '400' });
 
-export const metadata: Metadata = {
-  title: "MICA | Monitorització Intel·ligent del Consum d'Aigua",
-  description: "Monitorització intel·ligent del consum d'aigua",
-  icons: {
-    icon: '/logos/logo.webp',
-  },
-};
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  try {
+    const messages = await getMessages();
+    const metadata = messages.metadata as unknown as {
+      title: string;
+      description: string;
+      keywords: string[];
+    };
+
+    return {
+      metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
+      title: {
+        default: metadata.title,
+        template: '%s - MICA',
+      },
+      description: metadata.description,
+      keywords: metadata.keywords,
+      openGraph: {
+        title: metadata.title,
+        description: metadata.description,
+        locale,
+        type: 'website',
+      },
+      alternates: {
+        canonical: `/${locale}`,
+        languages: Object.fromEntries(routing.locales.map((loc) => [loc, `/${loc}`])),
+      },
+    };
+  } catch (error) {
+    console.error('Error loading metadata:', error);
+    notFound();
+  }
+}
 
 export default async function RootLayout({
   children,

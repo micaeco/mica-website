@@ -1,3 +1,5 @@
+'use client';
+
 import { ToastContainer } from 'react-toastify';
 import { Link } from '@/i18n/routing';
 import { Loader2 } from 'lucide-react';
@@ -8,23 +10,14 @@ import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardContent, CardTitle, CardFooter } from '@/components/ui/card';
+import { Label } from '@/components/ui/label';
 import { IFormData } from '@/types';
 import { getRegisterFormCheckboxes, getRegisterFormFields } from '@/lib/constants';
-import { Label } from '@/components/ui/label';
+import { useRegisterLeads } from '@/hooks';
 
-type Props = {
-  handleSubmit: (event: React.FormEvent) => void;
-  handleInputChange: (name: keyof IFormData, value: string | boolean) => void;
-  formData: IFormData;
-  isSubmitting: boolean;
-};
+export default function RegisterForm() {
+  const { formData, isSubmitting, handleSubmit, handleInputChange } = useRegisterLeads();
 
-export default function RegisterForm({
-  handleSubmit: onSubmit,
-  handleInputChange,
-  formData,
-  isSubmitting,
-}: Props) {
   const [isValid, setIsValid] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -50,7 +43,7 @@ export default function RegisterForm({
           </CardHeader>
 
           <CardContent>
-            <form ref={formRef} onSubmit={onSubmit} className="space-y-4">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
               {formFields.map((field) => (
                 <div key={field.name} className="space-y-2">
                   <Label>

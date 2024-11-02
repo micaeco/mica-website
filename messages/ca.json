@@ -1,4 +1,15 @@
 {
+  "metadata": {
+    "title": "MICA - Monitorització Intel·ligent d'Aigua",
+    "description": "Monitoritza i optimitza el teu consum d'aigua amb seguiment en temps real i anàlisi intel·ligent. Estalvia aigua i redueix costos amb el sistema de monitorització MICA.",
+    "keywords": [
+      "monitorització intel·ligent aigua",
+      "anàlisi consum aigua",
+      "seguiment ús aigua",
+      "comptador intel·ligent aigua",
+      "sistema eficiència aigua"
+    ]
+  },
   "common": {
     "search": "buscar",
     "no-socials": "sense referències",
@@ -58,7 +69,8 @@
     "beta": "En vull un!",
     "about": "Qui som?",
     "faqs": "FAQs",
-    "blog": "Blog"
+    "blog": "Blog",
+    "privacy-policy": "Política de privacitat"
   },
   "navCta": {
     "contact": "Contacte",
