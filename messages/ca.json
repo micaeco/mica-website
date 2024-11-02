@@ -78,7 +78,7 @@
     "register": "Registra't"
   },
   "hero": {
-    "title": "La nova manera d'estalviar aigua.",
+    "title": "La nova manera d'estalviar aigua",
     "text": "Empoderem Barcelona per conservar aigua amb sensors impulsats per intel·ligència artificial.",
     "with-the-support": "Amb el suport de:",
     "cta": "En vull un!"
@@ -162,22 +162,22 @@
       }
     },
     "process": {
-      "title": "Passos a seguir:",
+      "title": "Passos a seguir",
       "steps": {
         "step1": {
-          "title": "Registra't.",
+          "title": "Registra't",
           "text": "Completa un formulari amb la teva informació de contacte."
         },
         "step2": {
-          "title": "Contesta un qüestionari.",
+          "title": "Contesta un qüestionari",
           "text": "T'enviarem un qüestionari per conèixer millor les teves necessitats."
         },
         "step3": {
-          "title": "Procés de selecció.",
+          "title": "Procés de selecció",
           "text": "Seleccionarem els candidats més adequats per al programa beta."
         },
         "step4": {
-          "title": "T'enviarem un sensor.",
+          "title": "T'enviarem un sensor",
           "text": "Si ets seleccionat, contactarem amb tu per coordinar la instal·lació del sensor."
         }
       }
@@ -190,13 +190,13 @@
     }
   },
   "history": {
-    "title": "La nostra història.",
+    "title": "La nostra història",
     "subtitle": "Innovant per combatre la sequera a Barcelona.",
     "paragraph1": "L'estiu de 2022, Barcelona va patir una de les pitjors sequeres de la seva història. Mentre la ciutat entrava en fase d'alerta, un grup d'enginyers locals va tenir una idea revolucionària.",
     "paragraph2": "Així va néixer MICA, amb la missió de transformar com entenem i conservem l'aigua. La nostra tecnologia permet als barcelonins enfrontar-se a cada nova crisi hídrica amb dades precises i eines innovadores."
   },
   "our-team": {
-    "title": "El nostre equip.",
+    "title": "El nostre equip",
     "members": {
       "jaime": {
         "role": "Direcció i operacions",
@@ -305,7 +305,7 @@
     }
   },
   "contact": {
-    "title": "Estem buscant:",
+    "title": "Estem buscant",
     "testers": "<strong>Beta testers</strong> per ajudar-nos a desenvolupar i millorar MICA",
     "technicians": "<strong>Lampistes experimentats</strong> per a la instal·lació de sensors",
     "partners": "<strong>Socis estratègics</strong> que comparteixin la nostra visió",

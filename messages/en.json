@@ -73,7 +73,7 @@
     "register": "Register"
   },
   "hero": {
-    "title": "The new way to save water.",
+    "title": "The new way to save water",
     "text": "Empowering Barcelona to conserve water with sensors powered by artificial intelligence.",
     "with-the-support": "With the support of:",
     "cta": "I want one!"
@@ -157,22 +157,22 @@
       }
     },
     "process": {
-      "title": "Steps to follow:",
+      "title": "Steps to follow",
       "steps": {
         "step1": {
-          "title": "Register.",
+          "title": "Register",
           "text": "Complete a form with your contact information."
         },
         "step2": {
-          "title": "Answer a questionnaire.",
+          "title": "Answer a questionnaire",
           "text": "We'll send you a questionnaire to better understand your needs."
         },
         "step3": {
-          "title": "Selection process.",
+          "title": "Selection process",
           "text": "We'll select the most suitable candidates for the beta program."
         },
         "step4": {
-          "title": "We'll send you a sensor.",
+          "title": "We'll send you a sensor",
           "text": "If selected, we'll contact you to coordinate the sensor installation."
         }
       }
@@ -185,13 +185,13 @@
     }
   },
   "history": {
-    "title": "Our story.",
+    "title": "Our story",
     "subtitle": "Innovating to combat drought in Barcelona.",
     "paragraph1": "In the summer of 2022, Barcelona suffered one of the worst droughts in its history. While the city entered alert phase, a group of local engineers had a revolutionary idea.",
     "paragraph2": "That's how MICA was born, with the mission to transform how we understand and conserve water. Our technology allows Barcelona residents to face each new water crisis with precise data and innovative tools."
   },
   "our-team": {
-    "title": "Our team.",
+    "title": "Our team",
     "members": {
       "jaime": {
         "role": "Management and operations",
