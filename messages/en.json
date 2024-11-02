@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "title": "MICA - Smart Water Monitoring",
-    "description": "Monitor and optimize your water consumption with real-time tracking and smart analytics. Save water and reduce costs with MICA's intelligent monitoring system.",
+    "title": "MICA - Intelligent Water Monitoring",
+    "description": "Monitor and optimize your water consumption with real-time tracking and intelligent analysis. Save water and reduce costs with the MICA monitoring system.",
     "keywords": [
-      "smart water monitoring",
-      "water consumption analytics",
+      "intelligent water monitoring",
+      "water consumption analysis",
       "water usage tracking",
       "smart water meter",
       "water efficiency system"
@@ -13,7 +13,7 @@
   "common": {
     "search": "search",
     "no-socials": "no references",
-    "no-content-available": "no content available",
+    "no-content-available": "content not available",
     "no-articles-found": "no articles found",
     "unknown-date": "unknown date",
     "unknown-author": "unknown author",
@@ -50,7 +50,7 @@
     "VERIFICATION_EXPIRED": "The verification token has expired.",
     "VERIFICATION_INVALID": "The verification token is not valid.",
     "POSTS_NOT_FOUND": "No posts found.",
-    "POST_NOT_FOUND": "Requested post not found.",
+    "POST_NOT_FOUND": "The requested post was not found.",
     "INTERNAL_ERROR": "An internal error has occurred. Please try again later."
   },
   "success": {
@@ -72,65 +72,90 @@
     "demo": "Demo app",
     "register": "Register"
   },
-  "hero": {
-    "title": "The new way to save water",
-    "text": "Empowering Barcelona to conserve water with sensors powered by artificial intelligence.",
-    "with-the-support": "With the support of:",
-    "cta": "I want one!"
-  },
-  "solution": {
-    "title": "What can you do with MICA?",
-    "benefits": {
-      "benefit1": {
-        "title": "Discover where you use water",
-        "text": "You can see water consumption in real-time and historically, as well as identify which devices consume the most."
+  "home": {
+    "title": "Save Water Intelligently",
+    "description": "Discover how to save water with MICA, the intelligent monitoring system that helps you reduce consumption and detect leaks in real-time. Sustainability for Barcelona.",
+    "hero": {
+      "title": "The new way to save water",
+      "text": "We empower Barcelona to conserve water with artificial intelligence-powered sensors.",
+      "with-the-support": "With the support of:",
+      "cta": "I want one!"
+    },
+    "solution": {
+      "title": "What can you do with MICA?",
+      "benefits": {
+        "benefit1": {
+          "title": "Discover where you use water",
+          "text": "You can see real-time and historical water consumption, as well as identify which devices consume the most."
+        },
+        "benefit2": {
+          "title": "Detect leaks",
+          "text": "MICA easily detects water leaks and notifies you with an alert to prevent significant damage."
+        },
+        "benefit3": {
+          "title": "Receive recommendations",
+          "text": "You'll receive specific recommendations for your consumption to save water and money."
+        }
       },
-      "benefit2": {
-        "title": "Detect leaks",
-        "text": "MICA easily detects water leaks and notifies you with an alert to prevent significant damage."
+      "cta": "Discover how it works"
+    },
+    "problem": {
+      "title": "Did you know...",
+      "text": "A study states that 82% of water consumption in our homes comes from just 3 devices: the shower, toilet, and faucet.",
+      "info": "Do you know which devices consume the most water in your home?"
+    },
+    "testimonials": [
+      {
+        "quote": "MICA has helped me better understand my consumption habits",
+        "author": "Irene",
+        "role": "MICA Member",
+        "rating": "5"
       },
-      "benefit3": {
-        "title": "Receive recommendations",
-        "text": "You'll receive specific recommendations for your consumption to save water and money."
+      {
+        "quote": "I realized that before hot water reaches the shower, more than 10 liters of water are wasted. Now we store this water in a bucket to reuse it.",
+        "author": "Jaime",
+        "role": "MICA Member",
+        "rating": "4.5"
+      },
+      {
+        "quote": "We don't realize how many times we use the toilet.",
+        "author": "Ana",
+        "role": "MICA Ana-lyst",
+        "rating": "4"
+      },
+      {
+        "quote": "My father says my showers use 4 times more water than his. I'm not sure if this app is for me.",
+        "author": "Gabi",
+        "role": "MICA Member",
+        "rating": "3.5"
       }
-    },
-    "cta": "Discover how it works"
+    ]
   },
-  "problem": {
-    "title": "Did you know...",
-    "text": "A study states that 82% of water consumption in our homes is produced by only 3 devices: the shower, toilet, and faucet.",
-    "info": "Do you know which devices consume the most water in your home?"
-  },
-  "testimonials": [
-    {
-      "quote": "MICA has helped me better understand my consumption habits",
-      "author": "Irene",
-      "role": "MICA Member",
-      "rating": "5"
-    },
-    {
-      "quote": "I realized that before hot water reaches the shower, more than 10 liters of water are wasted. Now we save this water in a bucket to reuse it.",
-      "author": "Jaime",
-      "role": "MICA Member",
-      "rating": "4.5"
-    },
-    {
-      "quote": "We don't realize how many times we use the toilet.",
-      "author": "Ana",
-      "role": "MICA Ana-lyst",
-      "rating": "4"
-    },
-    {
-      "quote": "My father says my showers use 4 times more water than his. I'm not sure if this app is for me.",
-      "author": "Gabi",
-      "role": "MICA Member",
-      "rating": "3.5"
-    }
-  ],
   "product": {
+    "title": "Water Monitoring System",
+    "description": "Explore the technology behind MICA: an IoT sensor and AI that analyzes your water consumption, detects leaks, and provides detailed reports to optimize water usage.",
+    "howItWorks": {
+      "steps": {
+        "step1": {
+          "title": "A single sensor at the water inlet captures precise data",
+          "text": "The sensor is easily and quickly installed on the home's water inlet pipe. Powered by long-lasting batteries, it captures precise water flow data and sends it to the cloud in real-time using Internet of Things (IoT) technologies."
+        },
+        "step2": {
+          "title": "An AI platform breaks down consumption by device",
+          "text": "A cloud-based data platform powered by artificial intelligence algorithms breaks down consumption by device, generates personalized recommendations, and can detect leaks. This is achieved through sensor calibration and analysis of statistical consumption behaviors."
+        },
+        "step3": {
+          "title": "An application visualizes data and creates a sustainable consumption plan",
+          "text": "Through a web and mobile application, users monitor their detailed consumption data, compare against other users or recommended limits, receive personalized recommendations, and can provide feedback to the AI algorithm. This allows them to optimize their water consumption and adopt more sustainable practices."
+        }
+      },
+      "cta": "I want one!"
+    },
     "cta": "I want one!"
   },
   "beta": {
+    "title": "Beta Program for Water Saving",
+    "description": "Be among the first to try MICA! Register for our beta program and get a free smart sensor to control and optimize your water consumption.",
     "hero": {
       "title": "Join the beta program!",
       "text": "We're still in the design phase. However, you can sign up today for our beta program to have the chance to be selected and get the sensor and installation for free. Just leave us your email and we'll keep you informed about updates."
@@ -139,15 +164,15 @@
       "title": "Discover the advantages...",
       "benefits": {
         "benefit1": {
-          "title": "Pioneer technology",
+          "title": "Pioneer Technology",
           "text": "Be the first to experience innovation in water saving with AI."
         },
         "benefit2": {
-          "title": "Immediate savings",
+          "title": "Immediate Savings",
           "text": "Track your water consumption from day one."
         },
         "benefit3": {
-          "title": "Collective impact",
+          "title": "Collective Impact",
           "text": "Be part of a community committed to sustainability."
         },
         "benefit4": {
@@ -178,97 +203,84 @@
       }
     },
     "cta": {
-      "text": "Join MICA's beta program today and start making a difference in your home's water consumption and the planet.",
+      "text": "Join MICA's beta program today and start making a difference in your home's and the planet's water consumption.",
       "cta1": "Demo app",
       "cta2": "Register",
       "note": "The number of subsidized sensors for this phase is limited. Don't miss your opportunity!"
     }
   },
-  "history": {
-    "title": "Our story",
-    "subtitle": "Innovating to combat drought in Barcelona.",
-    "paragraph1": "In the summer of 2022, Barcelona suffered one of the worst droughts in its history. While the city entered alert phase, a group of local engineers had a revolutionary idea.",
-    "paragraph2": "That's how MICA was born, with the mission to transform how we understand and conserve water. Our technology allows Barcelona residents to face each new water crisis with precise data and innovative tools."
-  },
-  "our-team": {
-    "title": "Our team",
-    "members": {
-      "jaime": {
-        "role": "Management and operations",
-        "studies": "Industrial Engineer, MBA"
-      },
-      "miquel": {
-        "role": "Data and AI Lead",
-        "studies": "Data Engineer"
-      },
-      "lucia": {
-        "role": "Hardware Lead",
-        "studies": "Electronic Engineer"
-      },
-      "marta": {
-        "role": "Product Design",
-        "studies": "Industrial Design Engineer"
-      },
-      "irene": {
-        "role": "Communication and marketing",
-        "studies": "Physics, Technology Trainer"
-      },
-      "gabriel": {
-        "role": "Software Development",
-        "studies": "Computer Engineer"
+  "about": {
+    "title": "Innovation in Water Saving",
+    "description": "Meet the team behind MICA and our mission to combat drought in Barcelona through innovative technology and intelligent solutions for water saving.",
+    "history": {
+      "title": "Our history",
+      "subtitle": "Innovating to combat drought in Barcelona.",
+      "paragraph1": "In the summer of 2022, Barcelona suffered one of the worst droughts in its history. While the city entered alert phase, a group of local engineers had a revolutionary idea.",
+      "paragraph2": "Thus MICA was born, with the mission of transforming how we understand and conserve water. Our technology allows Barcelona residents to face each new water crisis with precise data and innovative tools."
+    },
+    "our-team": {
+      "title": "Our team",
+      "members": {
+        "jaime": {
+          "role": "Direction and operations",
+          "studies": "Industrial Engineer, MBA"
+        },
+        "miquel": {
+          "role": "Data and AI Manager",
+          "studies": "Data Engineer"
+        },
+        "lucia": {
+          "role": "Hardware Manager",
+          "studies": "Electronic Engineer"
+        },
+        "marta": {
+          "role": "Product Design",
+          "studies": "Industrial Design Engineer"
+        },
+        "irene": {
+          "role": "Communication and marketing",
+          "studies": "Physicist, Technology Trainer"
+        },
+        "gabriel": {
+          "role": "Software Development",
+          "studies": "Computer Engineer"
+        }
       }
-    }
-  },
-  "howItWorks": {
-    "steps": {
+    },
+    "timeline": {
       "step1": {
-        "title": "A single sensor at the water inlet captures precise data",
-        "text": "The sensor is easily and quickly installed at the home's water inlet pipe. Powered by long-lasting batteries, it captures precise water flow data and sends it to the cloud in real-time using Internet of Things (IoT) technologies."
+        "title": "Idea",
+        "items": [
+          "· Barcelona enters drought alert phase",
+          "· Birth of the idea for innovative technology allowing Barcelona residents to face the water crisis"
+        ]
       },
       "step2": {
-        "title": "An AI platform breaks down consumption by device",
-        "text": "A cloud-based data platform powered by artificial intelligence algorithms breaks down consumption by device, generates personalized recommendations, and can detect leaks. This is achieved through sensor calibration and analysis of statistical consumption behaviors."
+        "title": "Design",
+        "items": [
+          "· Definition of strategic business and operational plan",
+          "· Completion of technical hardware and software designs"
+        ]
       },
       "step3": {
-        "title": "An application visualizes data and creates a sustainable consumption plan",
-        "text": "Through a web and mobile application, the user monitors their detailed consumption data, compares against other users or recommended limits, receives personalized recommendations, and can provide feedback to the AI algorithm. This allows them to optimize their water consumption and adopt more sustainable practices."
+        "title": "Development",
+        "items": [
+          "· Development of hardware, software, and data platform",
+          "· Implementation of the first version of web and mobile application"
+        ]
+      },
+      "step4": {
+        "title": "Pilot test",
+        "items": [
+          "· Installation of devices in a sample of homes in Barcelona",
+          "· Technology validation with users and training of artificial intelligence algorithms",
+          "· Implementation of necessary changes"
+        ]
+      },
+      "step5": {
+        "title": "Launch and expansion",
+        "items": ["· Platform deployment to market", "· Continuous system performance evaluations"]
       }
-    },
-    "cta": "I want one!"
-  },
-  "timeline": {
-    "step1": {
-      "title": "Idea",
-      "items": [
-        "· Barcelona enters drought alert phase",
-        "· The idea of innovative technology that allows Barcelona residents to face the water crisis is born"
-      ]
-    },
-    "step2": {
-      "title": "Design",
-      "items": [
-        "· Definition of strategic business and operational plan",
-        "· Completion of technical hardware and software designs"
-      ]
-    },
-    "step3": {
-      "title": "Development",
-      "items": [
-        "· Development of hardware, software, and data platform",
-        "· Implementation of the first version of web and mobile application"
-      ]
-    },
-    "step4": {
-      "title": "Pilot test",
-      "items": [
-        "· Installation of devices in a sample of homes in Barcelona",
-        "· Technology validation with users and training of artificial intelligence algorithms",
-        "· Implementation of necessary changes"
-      ]
-    },
-    "step5": {
-      "title": "Launch and expansion",
-      "items": ["· Platform deployment to market", "· Continuous system performance evaluations"]
     }
   },
   "faqs": {
@@ -297,7 +309,7 @@
     }
   },
   "contact": {
-    "title": "We are looking for:",
+    "title": "We are looking for",
     "testers": "<strong>Beta testers</strong> to help us develop and improve MICA",
     "technicians": "<strong>Experienced plumbers</strong> for sensor installation",
     "partners": "<strong>Strategic partners</strong> who share our vision",
@@ -305,7 +317,7 @@
   },
   "register": {
     "title": "Register",
-    "description": "In order to join the beta program, please fill out the form below.",
+    "description": "Fill out the following form to be part of the beta program.",
     "form": {
       "name": {
         "label": "Name",
@@ -337,7 +349,7 @@
   },
   "verification": {
     "title": "Email verification",
-    "success": "Your email has been verified successfully.",
-    "error": "An error occurred while verifying your email. Please try again later."
+    "success": "Your email has been successfully verified!",
+    "error": "There was a problem verifying your email. Please try again or contact support."
   }
 }

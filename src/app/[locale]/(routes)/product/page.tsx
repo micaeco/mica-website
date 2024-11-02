@@ -5,10 +5,11 @@ import HowItWorks from './components/howItWorks';
 
 export async function generateMetadata(): Promise<Metadata> {
   const messages = await getMessages();
-  const navLinks = messages.navLinks as { product: string };
+  const product = messages.product as { title: string; description: string };
 
   return {
-    title: navLinks.product,
+    title: product.title,
+    description: product.description,
   };
 }
 

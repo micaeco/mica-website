@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 export default function HistorySection() {
-  const t = useTranslations('history');
+  const t = useTranslations('about.history');
 
   return (
     <section className="bg-white px-8 py-16">

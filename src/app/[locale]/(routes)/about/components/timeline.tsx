@@ -1,9 +1,10 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import { getTimelineItems } from '@/lib/constants';
+import { cn } from '@/lib/utils';
 
 export default function Timeline() {
-  const t = useTranslations('timeline');
+  const t = useTranslations('about.timeline');
   const timelineItems = getTimelineItems(t);
 
   return (
@@ -15,7 +16,10 @@ export default function Timeline() {
               <div className="max-w-8 text-right text-sm font-light">{item.date}</div>
               <div className={`h-full min-w-4 rounded-full ${item.color}`} />
               <div
-                className={`z-10 flex min-h-10 min-w-10 items-center justify-center rounded-full ${item.color}`}
+                className={cn(
+                  'z-10 flex min-h-10 min-w-10 items-center justify-center rounded-full',
+                  item.color
+                )}
               >
                 {React.createElement(item.icon, { className: 'h-7 w-7 text-white' })}
               </div>

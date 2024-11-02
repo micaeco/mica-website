@@ -10,7 +10,7 @@ export default function TestimonialCarousel() {
   const [current, setCurrent] = useState(0);
 
   const t = useTranslations();
-  const testimonials = t.raw('testimonials');
+  const testimonials = t.raw('home.testimonials');
 
   const next = () => setCurrent((current + 1) % testimonials.length);
 

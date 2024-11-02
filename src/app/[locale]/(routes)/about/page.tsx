@@ -8,10 +8,11 @@ import WaveSeparator from '@/components/wave-separator';
 
 export async function generateMetadata(): Promise<Metadata> {
   const messages = await getMessages();
-  const navLinks = messages.navLinks as { about: string };
+  const about = messages.about as { title: string; description: string };
 
   return {
-    title: navLinks.about,
+    title: about.title,
+    description: about.description,
   };
 }
 

@@ -27,8 +27,8 @@ const StepContent = ({ title, text }: { title: string; text: string }) => (
 );
 
 export default function HowItWorks() {
-  const t = useTranslations('howItWorks');
-  const tSteps = useTranslations('howItWorks.steps');
+  const t = useTranslations('product.howItWorks');
+  const tSteps = useTranslations('product.howItWorks.steps');
 
   const steps = getHowItWorksSteps(tSteps);
 

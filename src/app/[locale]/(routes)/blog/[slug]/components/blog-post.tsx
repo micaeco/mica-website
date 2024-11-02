@@ -67,19 +67,19 @@ export default function BlogPostPage({ params }: Props) {
 
       <h3 className="font-bold">{post.title}</h3>
       <div className="mb-8 flex flex-wrap items-center gap-4 text-sm font-light">
-        <div className="flex gap-1">
+        <div className="flex items-center gap-1">
           <Clock size={15} />
           {post.date?.toString() || common('unknown-date')}
         </div>
-        <div className="flex gap-1 capitalize">
+        <div className="flex items-center gap-1 capitalize">
           <User size={15} />
           {post.author || common('unknown-author')}
         </div>
-        <div className="flex gap-1 capitalize">
+        <div className="flex items-center gap-1 capitalize">
           <Tag size={15} />
           {tTags(post.tag) || common('unknown-tag')}
         </div>
-        <div className="flex gap-1 capitalize">
+        <div className="flex items-center gap-1 capitalize">
           <Book size={15} />
           {languageMap[post.lang]}
         </div>

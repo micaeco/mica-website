@@ -77,65 +77,90 @@
     "demo": "Demo app",
     "register": "Registra't"
   },
-  "hero": {
-    "title": "La nova manera d'estalviar aigua",
-    "text": "Empoderem Barcelona per conservar aigua amb sensors impulsats per intel·ligència artificial.",
-    "with-the-support": "Amb el suport de:",
-    "cta": "En vull un!"
-  },
-  "solution": {
-    "title": "Què podràs fer amb MICA?",
-    "benefits": {
-      "benefit1": {
-        "title": "Descobrir on gastes l'aigua",
-        "text": "Podràs veure el consum d'aigua en temps real i històric, així com identificar quins dispositius consumeixen més."
+  "home": {
+    "title": "Estalvia Aigua Intel·ligentment",
+    "description": "Descobreix com estalviar aigua amb MICA, el sistema de monitorització intel·ligent que t'ajuda a reduir el consum i detectar fugues en temps real. Sostenibilitat per Barcelona.",
+    "hero": {
+      "title": "La nova manera d'estalviar aigua",
+      "text": "Empoderem Barcelona per conservar aigua amb sensors impulsats per intel·ligència artificial.",
+      "with-the-support": "Amb el suport de:",
+      "cta": "En vull un!"
+    },
+    "solution": {
+      "title": "Què podràs fer amb MICA?",
+      "benefits": {
+        "benefit1": {
+          "title": "Descobrir on gastes l'aigua",
+          "text": "Podràs veure el consum d'aigua en temps real i històric, així com identificar quins dispositius consumeixen més."
+        },
+        "benefit2": {
+          "title": "Detectar fugues",
+          "text": "MICA detecta fàcilment les fugues d'aigua i et notifica amb una alerta per tal d'evitar danys importants."
+        },
+        "benefit3": {
+          "title": "Rebre recomanacions",
+          "text": "Rebràs recomanacions específiques al teu consum per estalviar aigua i diners."
+        }
       },
-      "benefit2": {
-        "title": "Detectar fugues",
-        "text": "MICA detecta fàcilment les fugues d'aigua i et notifica amb una alerta per tal d'evitar danys importants."
+      "cta": "Descobreix com funciona"
+    },
+    "problem": {
+      "title": "Sabies que...",
+      "text": "Un estudi afirma que el 82% del consum d'aigua a casa nostra el produeix només 3 dispositius: la dutxa, el vàter i l'aixeta'.",
+      "info": "I tu, saps quins dispositius són els que més aigua consumeixen a casa teva?"
+    },
+    "testimonials": [
+      {
+        "quote": "MICA m'ha ajudat a entendre millor els meus hàbits de consum",
+        "author": "Irene",
+        "role": "Membre de MICA",
+        "rating": "5"
       },
-      "benefit3": {
-        "title": "Rebre recomanacions",
-        "text": "Rebràs recomanacions específiques al teu consum per estalviar aigua i diners."
+      {
+        "quote": "Em vaig adonar que abans que arribi l'aigua calenta a la dutxa, es gasten més de 10 litres d'aigua. Ara guardem aquesta aigua en un cubell per reaprofitar-la.",
+        "author": "Jaime",
+        "role": "Membre de MICA",
+        "rating": "4.5"
+      },
+      {
+        "quote": "No ens adonem de la quantitat de vegades que fem servir el vàter.",
+        "author": "Ana",
+        "role": "Ana-lista de MICA",
+        "rating": "4"
+      },
+      {
+        "quote": "El meu pare diu que les meves dutxes gasten 4 vegades més aigua que les seves. No sé si aquesta aplicació és per a mi.",
+        "author": "Gabi",
+        "role": "Membre de MICA",
+        "rating": "3.5"
       }
-    },
-    "cta": "Descobreix com funciona"
+    ]
   },
-  "problem": {
-    "title": "Sabies que...",
-    "text": "Un estudi afirma que el 82% del consum d'aigua a casa nostra el produeix només 3 dispositius: la dutxa, el vàter i l'aixeta'.",
-    "info": "I tu, saps quins dispositius són els que més aigua consumeixen a casa teva?"
-  },
-  "testimonials": [
-    {
-      "quote": "MICA m'ha ajudat a entendre millor els meus hàbits de consum",
-      "author": "Irene",
-      "role": "Membre de MICA",
-      "rating": "5"
-    },
-    {
-      "quote": "Em vaig adonar que abans que arribi l'aigua calenta a la dutxa, es gasten més de 10 litres d'aigua. Ara guardem aquesta aigua en un cubell per reaprofitar-la.",
-      "author": "Jaime",
-      "role": "Membre de MICA",
-      "rating": "4.5"
-    },
-    {
-      "quote": "No ens adonem de la quantitat de vegades que fem servir el vàter.",
-      "author": "Ana",
-      "role": "Ana-lista de MICA",
-      "rating": "4"
-    },
-    {
-      "quote": "El meu pare diu que les meves dutxes gasten 4 vegades més aigua que les seves. No sé si aquesta aplicació és per a mi.",
-      "author": "Gabi",
-      "role": "Membre de MICA",
-      "rating": "3.5"
-    }
-  ],
   "product": {
+    "title": "Sistema de Monitorització d'Aigua",
+    "description": "Explorem la tecnologia darrere MICA: un sensor IoT i IA que analitza el teu consum d'aigua, detecta fugues i proporciona informes detallats per optimitzar l'ús d'aigua.",
+    "howItWorks": {
+      "steps": {
+        "step1": {
+          "title": "Un únic sensor a l'entrada d'aigua captura dades precises",
+          "text": "El sensor s'instal·la fàcil i ràpidament a la canonada d'entrada d'aigua de la llar. Alimentat per bateries de llarga duració, captura dades precises del cabal de l'aigua i les envia al núvol en temps real mitjançant tecnologies Internet of Things (IoT)."
+        },
+        "step2": {
+          "title": "Una plataforma d'IA desglossa el consum per dispositiu",
+          "text": "Una plataforma de dades al núvol impulsada per algorismes d'intel·ligència artificial, desglossa el consum per dispositiu, genera recomanacions personalitzades i pot detectar fugues. Això s'aconsegueix mitjançant la cal·libració del sensor i un anàlisi de comportaments de consum estadístics."
+        },
+        "step3": {
+          "title": "Un aplicatiu visualitza dades i crea un pla de consum sostenible",
+          "text": "A través d'un aplicatiu web i mòbil, l'usuari monitoritza les seves dades detallades de consum, es compara contra altres usuaris o els límits recomanats, rep recomanacions personalitzades i pot retroalimentar l'algoritme d'IA. Això li permet optimitzar el seu consum d'aigua i adoptar pràctiques més sostenibles."
+        }
+      },
+      "cta": "En vull un!"
+    },
     "cta": "En vull un!"
   },
   "beta": {
+    "title": "Programa Beta per Estalviar Aigua",
+    "description": "Sigues dels primers en provar MICA! Registra't al nostre programa beta i aconsegueix un sensor intel·ligent gratuït per controlar i optimitzar el teu consum d'aigua.",
     "hero": {
       "title": "Uneix-te al programa beta!",
       "text": "Encara estem en fase de disseny. Tot i així, et pots apuntar des d'avui mateix al nostre programa beta per tenir l'opció de ser seleccionat i obtenir el sensor i la instal·lació de forma gratuïta. Només cal que ens deixis el teu correu electrònic i et mantindrem informat sobre les novetats."
@@ -189,94 +214,81 @@
       "note": "El número de sensors subvencionats per aquesta fase son limitats. No perdis la teva oportunitat!"
     }
   },
-  "history": {
-    "title": "La nostra història",
-    "subtitle": "Innovant per combatre la sequera a Barcelona.",
-    "paragraph1": "L'estiu de 2022, Barcelona va patir una de les pitjors sequeres de la seva història. Mentre la ciutat entrava en fase d'alerta, un grup d'enginyers locals va tenir una idea revolucionària.",
-    "paragraph2": "Així va néixer MICA, amb la missió de transformar com entenem i conservem l'aigua. La nostra tecnologia permet als barcelonins enfrontar-se a cada nova crisi hídrica amb dades precises i eines innovadores."
-  },
-  "our-team": {
-    "title": "El nostre equip",
-    "members": {
-      "jaime": {
-        "role": "Direcció i operacions",
-        "studies": "Enginyer industrial, MBA"
-      },
-      "miquel": {
-        "role": "Responsable de dades i IA",
-        "studies": "Enginyer de dades"
-      },
-      "lucia": {
-        "role": "Responsable de hardware",
-        "studies": "Enginyera electrònica"
-      },
-      "marta": {
-        "role": "Disseny del producte",
-        "studies": "Enginyera de disseny industrial"
-      },
-      "irene": {
-        "role": "Comunicació i marketing",
-        "studies": "Física, formadora en tecnologia"
-      },
-      "gabriel": {
-        "role": "Desenvolupament de software",
-        "studies": "Enginyer informàtic"
+  "about": {
+    "title": "Innovació en Estalvi d'Aigua",
+    "description": "Coneix l'equip darrere MICA i la nostra missió per combatre la sequera a Barcelona mitjançant tecnologia innovadora i solucions intel·ligents per l'estalvi d'aigua.",
+    "history": {
+      "title": "La nostra història",
+      "subtitle": "Innovant per combatre la sequera a Barcelona.",
+      "paragraph1": "L'estiu de 2022, Barcelona va patir una de les pitjors sequeres de la seva història. Mentre la ciutat entrava en fase d'alerta, un grup d'enginyers locals va tenir una idea revolucionària.",
+      "paragraph2": "Així va néixer MICA, amb la missió de transformar com entenem i conservem l'aigua. La nostra tecnologia permet als barcelonins enfrontar-se a cada nova crisi hídrica amb dades precises i eines innovadores."
+    },
+    "our-team": {
+      "title": "El nostre equip",
+      "members": {
+        "jaime": {
+          "role": "Direcció i operacions",
+          "studies": "Enginyer industrial, MBA"
+        },
+        "miquel": {
+          "role": "Responsable de dades i IA",
+          "studies": "Enginyer de dades"
+        },
+        "lucia": {
+          "role": "Responsable de hardware",
+          "studies": "Enginyera electrònica"
+        },
+        "marta": {
+          "role": "Disseny del producte",
+          "studies": "Enginyera de disseny industrial"
+        },
+        "irene": {
+          "role": "Comunicació i marketing",
+          "studies": "Física, formadora en tecnologia"
+        },
+        "gabriel": {
+          "role": "Desenvolupament de software",
+          "studies": "Enginyer informàtic"
+        }
       }
-    }
-  },
-  "howItWorks": {
-    "steps": {
+    },
+    "timeline": {
       "step1": {
-        "title": "Un únic sensor a l'entrada d'aigua captura dades precises",
-        "text": "El sensor s'instal·la fàcil i ràpidament a la canonada d'entrada d'aigua de la llar. Alimentat per bateries de llarga duració, captura dades precises del cabal de l'aigua i les envia al núvol en temps real mitjançant tecnologies Internet of Things (IoT)."
+        "title": "Idea",
+        "items": [
+          "· Barcelona entra en fase d'alerta per sequera",
+          "· Neix la idea d'una tecnologia innovadora que permeti als barcelonins enfrontar-se a la crisi hídrica"
+        ]
       },
       "step2": {
-        "title": "Una plataforma d'IA desglossa el consum per dispositiu",
-        "text": "Una plataforma de dades al núvol impulsada per algorismes d'intel·ligència artificial, desglossa el consum per dispositiu, genera recomanacions personalitzades i pot detectar fugues. Això s'aconsegueix mitjançant la cal·libració del sensor i un anàlisi de comportaments de consum estadístics."
+        "title": "Disseny",
+        "items": [
+          "· Definició del pla estratègic de negoci i operatiu",
+          "· Finalització dels dissenys tècnics del hardware i software"
+        ]
       },
       "step3": {
-        "title": "Un aplicatiu visualitza dades i crea un pla de consum sostenible",
-        "text": "A través d'un aplicatiu web i mòbil, l'usuari monitoritza les seves dades detallades de consum, es compara contra altres usuaris o els límits recomanats, rep recomanacions personalitzades i pot retroalimentar l'algoritme d'IA. Això li permet optimitzar el seu consum d'aigua i adoptar pràctiques més sostenibles."
+        "title": "Desenvolupament",
+        "items": [
+          "· Desenvolupament del hardware, software i la plataforma de dades",
+          "· Implementació de la primera versió de l'aplicatiu web i mòbil"
+        ]
+      },
+      "step4": {
+        "title": "Prova pilot",
+        "items": [
+          "· Instal·lació dels dispositius en una mostra de vivendes a Barcelona",
+          "· Validació de la tecnologia amb els usuaris i entrenament dels algoritmes d'intel·ligència artificial",
+          "· Implementació dels canvis necessaris"
+        ]
+      },
+      "step5": {
+        "title": "Llançament i expansió",
+        "items": [
+          "· Desplegament de la plataforma al mercat",
+          "· Evaluacions continues del funcionament del sistema"
+        ]
       }
-    },
-    "cta": "En vull un!"
-  },
-  "timeline": {
-    "step1": {
-      "title": "Idea",
-      "items": [
-        "· Barcelona entra en fase d'alerta per sequera",
-        "· Neix la idea d'una tecnologia innovadora que permeti als barcelonins enfrontar-se a la crisi hídrica"
-      ]
-    },
-    "step2": {
-      "title": "Disseny",
-      "items": [
-        "· Definició del pla estratègic de negoci i operatiu",
-        "· Finalització dels dissenys tècnics del hardware i software"
-      ]
-    },
-    "step3": {
-      "title": "Desenvolupament",
-      "items": [
-        "· Desenvolupament del hardware, software i la plataforma de dades",
-        "· Implementació de la primera versió de l'aplicatiu web i mòbil"
-      ]
-    },
-    "step4": {
-      "title": "Prova pilot",
-      "items": [
-        "· Instal·lació dels dispositius en una mostra de vivendes a Barcelona",
-        "· Validació de la tecnologia amb els usuaris i entrenament dels algoritmes d'intel·ligència artificial",
-        "· Implementació dels canvis necessaris"
-      ]
-    },
-    "step5": {
-      "title": "Llançament i expansió",
-      "items": [
-        "· Desplegament de la plataforma al mercat",
-        "· Evaluacions continues del funcionament del sistema"
-      ]
     }
   },
   "faqs": {

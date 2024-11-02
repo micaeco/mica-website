@@ -11,8 +11,8 @@ import { getSolutionBenefits } from '@/lib/constants';
 import { ArrowRightIcon } from 'lucide-react';
 
 export default function Solution() {
-  const t = useTranslations('solution');
-  const tBenefits = useTranslations('solution.benefits');
+  const t = useTranslations('home.solution');
+  const tBenefits = useTranslations('home.solution.benefits');
   const benefits = getSolutionBenefits(tBenefits);
 
   return (

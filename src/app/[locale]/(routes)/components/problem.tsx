@@ -8,7 +8,7 @@ import { ExternalLink, CircleHelp } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 export default function Problem() {
-  const t = useTranslations('problem');
+  const t = useTranslations('home.problem');
 
   return (
     <section className="bg-white px-8 py-20">

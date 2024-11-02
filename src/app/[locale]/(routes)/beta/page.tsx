@@ -9,10 +9,11 @@ import CallToAction from './components/call-to-action';
 
 export async function generateMetadata(): Promise<Metadata> {
   const messages = await getMessages();
-  const navLinks = messages.navLinks as { beta: string };
+  const beta = messages.beta as { title: string; description: string };
 
   return {
-    title: navLinks.beta,
+    title: beta.title,
+    description: beta.description,
   };
 }
 
