@@ -34,7 +34,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     return {
       url: `${baseUrl}/blog/${slug}`,
-      lastModified: metadata.date,
+      lastModified: new Date(...(metadata.date.split('/').reverse().map(Number) as [number, number, number])).toISOString() || new Date(),
       alternates: {
         languages: locales.reduce((acc, lang) => ({
           ...acc,
