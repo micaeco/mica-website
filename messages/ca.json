@@ -88,19 +88,19 @@
       "cta": "En vull un!"
     },
     "solution": {
-      "title": "Què podràs fer amb MICA?",
+      "title": "Comença a estalviar amb MICA",
       "benefits": {
         "benefit1": {
           "title": "Descobrir com gastes l'aigua",
-          "text": "Podràs veure el consum d'aigua en temps real i històric, així com identificar quins dispositius consumeixen més."
+          "text": "Constrola el consum d'aigua en temps real, identifica quins dispositius consumeixen més, i compara't amb la mitjana o amb els límits recomanats."
         },
         "benefit2": {
           "title": "Detectar fugues",
-          "text": "MICA detecta fàcilment les fugues d'aigua i et notifica amb una alerta per tal d'evitar danys importants."
+          "text": "MICA detecta automàticament les fugues d'aigua i et notifica amb una alerta per tal d'evitar danys importants i sorpreses a la factura."
         },
         "benefit3": {
           "title": "Rebre recomanacions",
-          "text": "Rebràs recomanacions específiques al teu consum per estalviar aigua i diners."
+          "text": "Rebràs recomanacions personalitzades i fàcils d'accionar per estalviar aigua i diners."
         }
       },
       "cta": "Descobreix com funciona"
@@ -144,15 +144,15 @@
       "steps": {
         "step1": {
           "title": "Un únic sensor a l'entrada d'aigua captura dades precises",
-          "text": "El sensor s'instal·la fàcil i ràpidament a la canonada d'entrada d'aigua de la llar. Alimentat per bateries de llarga duració, captura dades precises del cabal de l'aigua i les envia al núvol en temps real mitjançant tecnologies Internet of Things (IoT)."
+          "text": "El sensor s'instal·la fàcil i ràpidament al comptador d’aigua de la llar. Alimentat per bateries de llarga duració, captura dades precises del cabal de l'aigua i les envia al núvol en temps real mitjançant tecnologies Internet of Things (IoT)."
         },
         "step2": {
-          "title": "Una plataforma d'IA desglossa el consum per dispositiu",
-          "text": "Una plataforma de dades al núvol impulsada per algorismes d'intel·ligència artificial, desglossa el consum per dispositiu, genera recomanacions personalitzades i pot detectar fugues. Això s'aconsegueix mitjançant la cal·libració del sensor i un anàlisi de comportaments de consum estadístics."
+          "title": "Algoritmes d’IA desglossen el consum per dispositiu",
+          "text": "Una plataforma de dades al núvol impulsada per algorismes d'intel·ligència artificial, desglossa el consum per dispositiu, genera recomanacions personalitzades i detecta fugues. Això s'aconsegueix mitjançant el calibratge del sensor i un anàlisi de comportaments de consum estadístics."
         },
         "step3": {
-          "title": "Un aplicatiu visualitza dades i crea un pla de consum sostenible",
-          "text": "A través d'un aplicatiu web i mòbil, l'usuari monitoritza les seves dades detallades de consum, es compara contra altres usuaris o els límits recomanats, rep recomanacions personalitzades i pot retroalimentar l'algoritme d'IA. Això li permet optimitzar el seu consum d'aigua i adoptar pràctiques més sostenibles."
+          "title": "La nostra aplicació visualitza dades i crea un pla de consum sostenible",
+          "text": "A través del seu mòbil, l’usuari monitoritza les seves dades de consum per dispositiu, rep consells personalitzats i alertes sobre fugues, visualitza l’estalvi, guanya incentius i es compara amb la mitjana o els límits recomanats. També pot retroalimentar l’algoritme d’IA. Això li permet optimitzar el seu consum d’aigua i adoptar pràctiques més sostenibles."
         }
       },
       "cta": "En vull un!"
@@ -171,7 +171,7 @@
       "benefits": {
         "benefit1": {
           "title": "Tecnologia pionera",
-          "text": "Sigues el primer en experimentar la innovació en estalvi d'aigua amb IA."
+          "text": "Converteix-te en co-creador d'una solució innovadora d'estalvi d'aigua impulsada per IA."
         },
         "benefit2": {
           "title": "Estalvis immediats",
@@ -182,13 +182,13 @@
           "text": "Forma part d'una comunitat compromesa amb la sostenibilitat."
         },
         "benefit4": {
-          "title": "Gratuït",
-          "text": "El sensor MICA i la seva instal·lació seràn gratuïts pels membres del programa beta."
+          "title": "Oferta Exclusiva",
+          "text": "Aconsegueix el sensor i la instal·lació de manera gratuïta – només pagaràs una petita subscripció anual."
         }
       }
     },
     "process": {
-      "title": "Passos a seguir",
+      "title": "Com pots unir-te al programa beta?",
       "steps": {
         "step1": {
           "title": "Registra't",
@@ -196,14 +196,14 @@
         },
         "step2": {
           "title": "Contesta un qüestionari",
-          "text": "T'enviarem un qüestionari per conèixer millor les teves necessitats."
+          "text": "Quan estiguem a punt, t'enviarem un qüestionari per conèixer-te millor."
         },
         "step3": {
           "title": "Procés de selecció",
           "text": "Seleccionarem els candidats més adequats per al programa beta."
         },
         "step4": {
-          "title": "T'enviarem un sensor",
+          "title": "Comença a estalviar amb MICA",
           "text": "Si ets seleccionat, contactarem amb tu per coordinar la instal·lació del sensor."
         }
       }
@@ -212,7 +212,7 @@
       "text": "Uneix-te al programa beta de MICA avui i comença a marcar la diferència en el consum d'aigua de casa teva i del planeta.",
       "cta1": "Demo app",
       "cta2": "Registra't",
-      "note": "El número de sensors subvencionats per aquesta fase son limitats. No perdis la teva oportunitat!"
+      "note": "Tenim un número de places limitades per al programa beta. No perdis la teva oportunitat!"
     }
   },
   "about": {
@@ -228,28 +228,28 @@
       "title": "El nostre equip",
       "members": {
         "jaime": {
-          "role": "Direcció i operacions",
-          "studies": "Enginyer industrial, MBA"
+          "role": "Direcció i Operacions",
+          "studies": "Enginyer Industrial i MBA"
         },
         "miquel": {
-          "role": "Responsable de dades i IA",
-          "studies": "Enginyer de dades"
+          "role": "Responsable de Dades i IA",
+          "studies": "Enginyer de Dades"
         },
         "lucia": {
-          "role": "Responsable de hardware",
-          "studies": "Enginyera electrònica"
+          "role": "Responsable de Hardware",
+          "studies": "Enginyera Electrònica"
         },
         "marta": {
-          "role": "Disseny del producte",
-          "studies": "Enginyera de disseny industrial"
+          "role": "Disseny del Producte",
+          "studies": "Enginyera de Disseny Industrial"
         },
         "irene": {
-          "role": "Comunicació i marketing",
-          "studies": "Física, formadora en tecnologia"
+          "role": "Experiència de l'Usuari i Màrqueting",
+          "studies": "Física i Manager de Formació en Dades i IA"
         },
         "gabriel": {
-          "role": "Desenvolupament de software",
-          "studies": "Enginyer informàtic"
+          "role": "Desenvolupament de Software",
+          "studies": "Enginyer Informàtic"
         }
       }
     },
@@ -301,12 +301,44 @@
       },
       {
         "question": "Com s'instal·la el sensor?",
-        "answer": "El sensor l'instal·larà un lampista qualificat a l'entrada d'aigua de casa teva, on es troba el comptador. Aquesta instal·lació no tindrà cap impacte en el cabal d'aigua."
+        "answer": "Un lampista qualificat instal·larà el sensor al comptador d'aigua de casa teva. També hi haurà l'opció d'instal·lar-lo tu mateix si així ho prefereixes, mitjançant les nostres instruccions detallades. El sensor i la instal·lació no tindran cap impacte en el cabal d'aigua."
       },
       {
-        "question": "Com em puc unir al programa beta?",
-        "answer": "Contestant al formulari de registre, que és a la pàgina 'En vull un'. Un cop rebem la teva sol·licitud, si passes el nostre procés de selecció, ens posarem en contacte amb tu."
-      }
+        "question": "Com puc unir-me al programa beta?",
+        "answer": "Omple el formulari de registre que es troba a la pàgina 'En vull un'. Ens mantindrem en contacte amb tu per correu electrònic, i, un cop estiguem a punt, t'enviarem un qüestionari per completar la teva sol·licitud."
+      },
+      {
+        "question": "Què passa si hi ha un problema amb el sensor?",
+        "answer": "Si sorgeix algun problema, el nostre equip de suport multicanal estarà disponible per ajudar-te, i, si és necessari, un tècnic podrà acudir per resoldre’l."
+      },
+      {
+        "question": "Com es protegeixen les meves dades?",
+        "answer": "Només recollim les dades estrictament necessàries, i seguim estrictes protocols de protecció de dades, assegurant que tota la teva informació s’emmagatzemi de manera segura i només s’utilitzi per al funcionament de MICA. "
+      },
+      {
+        "question": "Podré participar en el desenvolupament de MICA durant el programa beta?",
+        "answer": "Sí, valorarem molt els comentaris dels nostres usuaris beta i fomentarem la seva participació activa mitjançant workshops, entrevistes a usuaris i enquestes. Els usuaris beta formaran part de la nostra comunitat de Slack per mantenir-nos connectats fàcilment."
+    },
+    {
+        "question": "Puc involucrar-me d'altres maneres a més de convertir-me en usuari beta?",
+        "answer": "Sí, estem buscant socis estratègics que ens ajudin a créixer i escalar, així com a lampistes associats per a la instal·lació dels sensors. També estem interessats a donar suport a estudiants amb els seus projectes de recerca si volen fer-ho amb nosaltres."
+    },
+    {
+        "question": "Quins sistemes suporta l'aplicació MICA?",
+        "answer": "L'aplicació estarà disponible tant per a dispositius Apple com Android."
+    },
+    {
+        "question": "El sensor MICA està certificat?",
+        "answer": "Encara estem en la fase de disseny, però estem treballant amb proveïdors certificats per a tots els components que componen el nostre sensor i gateway. La sostenibilitat és una prioritat per a nosaltres."
+    },
+    {
+        "question": "Quin és el preu de MICA?",
+        "answer": "Som una organització sense ànim de lucre, així que mantindrem els preus al mínim necessari per cobrir els costos de producció, distribució, instal·lació i manteniment. Encara estem en fase de disseny, però aviat anunciarem els preus; esperem que siguin al voltant de ~100 euros per al sensor i la instal·lació, i una subscripció anual d'uns ~10 euros a l'any."
+    },
+    {
+        "question": "Com esteu finançant el desenvolupament de MICA i el programa beta?",
+        "answer": "Hem obtingut suport i finançament de l'Ajuntament de Barcelona per completar el nostre programa beta el 2025 a través d'una convocatòria de projectes urbans innovadors (BIT Habitat)."
+    }
     ]
   },
   "blog": {
