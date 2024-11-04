@@ -83,19 +83,18 @@
       "cta": "I want one!"
     },
     "solution": {
-      "title": "What can you do with MICA?",
+      "title": "Start saving with MICA",
       "benefits": {
         "benefit1": {
           "title": "Discover how you use water",
-          "text": "You can see real-time and historical water consumption, as well as identify which devices consume the most."
-        },
+          "text": "Monitor real-time water consumption, identify which devices consume the most, and compare yourself against the average or recommended limits."
         "benefit2": {
           "title": "Detect leaks",
-          "text": "MICA easily detects water leaks and notifies you with an alert to prevent significant damage."
+          "text": "MICA automatically detects water leaks and notifies you with an alert to prevent significant damage and water bill surprises."
         },
         "benefit3": {
           "title": "Receive recommendations",
-          "text": "You'll receive specific recommendations for your consumption to save water and money."
+          "text": "You'll receive personalized, actionable recommendations to save water and money."
         }
       },
       "cta": "Discover how it works"
@@ -138,16 +137,16 @@
     "howItWorks": {
       "steps": {
         "step1": {
-          "title": "A single sensor at the water inlet captures precise data",
+          "title": "A single-point sensor at the water meter captures precise data",
           "text": "The sensor is easily and quickly installed on the home's water inlet pipe. Powered by long-lasting batteries, it captures precise water flow data and sends it to the cloud in real-time using Internet of Things (IoT) technologies."
         },
         "step2": {
-          "title": "An AI platform breaks down consumption by device",
-          "text": "A cloud-based data platform powered by artificial intelligence algorithms breaks down consumption by device, generates personalized recommendations, and can detect leaks. This is achieved through sensor calibration and analysis of statistical consumption behaviors."
+          "title": "AI algorithms break down consumption by device",
+          "text": "A cloud-based data platform powered by artificial intelligence algorithms breaks down consumption by device, generates personalized recommendations, and detects leaks. This is achieved through sensor calibration and the analysis of statistical consumption behaviors."
         },
         "step3": {
-          "title": "An application visualizes data and creates a sustainable consumption plan",
-          "text": "Through a web and mobile application, users monitor their detailed consumption data, compare against other users or recommended limits, receive personalized recommendations, and can provide feedback to the AI algorithm. This allows them to optimize their water consumption and adopt more sustainable practices."
+          "title": "Our app displays data and creates a sustainable consumption plan",
+          "text": "Through their smartphone, ehe user monitors their consumption data by device, receives personalised tips and leak alerts, views savings, earns incentives, and compares their usage with the average or the recommended limits. They can also provide feedback to the AI algorithm. This helps them optimise their water consumption and adopt more sustainable practices."
         }
       },
       "cta": "I want one!"
@@ -166,24 +165,24 @@
       "benefits": {
         "benefit1": {
           "title": "Pioneer Technology",
-          "text": "Be the first to experience innovation in water saving with AI."
+          "text": "Join us in co-creating an innovative, AI-powered solution for water conservation."
         },
         "benefit2": {
           "title": "Immediate Savings",
-          "text": "Track your water consumption from day one."
+          "text": "Track your water consumption and receive personalized recommendations from day one."
         },
         "benefit3": {
           "title": "Collective Impact",
           "text": "Be part of a community committed to sustainability."
         },
         "benefit4": {
-          "title": "Free",
-          "text": "The MICA sensor and its installation will be free for beta program members."
+          "title": "Exclusive Offer",
+          "text": "Get the sensor and its installation free of charge – you'll only pay a small annual subscription."
         }
       }
     },
     "process": {
-      "title": "Steps to follow",
+      "title": "How can you join the beta program?",
       "steps": {
         "step1": {
           "title": "Register",
@@ -191,14 +190,14 @@
         },
         "step2": {
           "title": "Answer a questionnaire",
-          "text": "We'll send you a questionnaire to better understand your needs."
+          "text": "When we're ready, we'll send you a questionnaire to get to know you better."
         },
         "step3": {
           "title": "Selection process",
           "text": "We'll select the most suitable candidates for the beta program."
         },
         "step4": {
-          "title": "We'll send you a sensor",
+          "title": "Start saving with MICA",
           "text": "If selected, we'll contact you to coordinate the sensor installation."
         }
       }
@@ -207,7 +206,7 @@
       "text": "Join MICA's beta program today and start making a difference in your home's and the planet's water consumption.",
       "cta1": "Demo app",
       "cta2": "Register",
-      "note": "The number of subsidized sensors for this phase is limited. Don't miss your opportunity!"
+      "note": "We have a limited number of slots for beta users. Don't miss your opportunity!"
     }
   },
   "about": {
@@ -224,7 +223,7 @@
       "members": {
         "jaime": {
           "role": "Direction and operations",
-          "studies": "Industrial Engineer, MBA"
+          "studies": "Industrial Engineer and MBA"
         },
         "miquel": {
           "role": "Data and AI Manager",
@@ -239,8 +238,8 @@
           "studies": "Industrial Design Engineer"
         },
         "irene": {
-          "role": "Communication and marketing",
-          "studies": "Physicist, Technology Trainer"
+          "role": "User Experience and Marketing",
+          "studies": "Physicist and Learning Manager in Data & AI"
         },
         "gabriel": {
           "role": "Software Development",
@@ -289,16 +288,48 @@
     "questions": [
       {
         "question": "How can I contact you?",
-        "answer": "You can contact us through the contact form or by sending an email to info@mica.eco."
-      },
-      {
+        "answer": "You can contact us via the contact form or by sending an email to info@mica.eco."
+    },
+    {
         "question": "How is the sensor installed?",
-        "answer": "The sensor will be installed by a qualified plumber at your home's water inlet, where the meter is located. This installation will have no impact on water flow."
-      },
-      {
+        "answer": "A qualified plumber will install the sensor on your home’s water meter. There is also a self-installation option with detailed instructions if you prefer. The sensor and installation will not impact water flow."
+    },
+    {
         "question": "How can I join the beta program?",
-        "answer": "By answering the registration form, which is on the 'I want one' page. Once we receive your application, if you pass our selection process, we will contact you."
-      }
+        "answer": "Fill out the registration form on the 'I want one' page. We'll stay in touch with you via email, and once we’re ready, we’ll send you a questionnaire to complete your application."
+    },
+    {
+        "question": "What happens if there is an issue with the sensor?",
+        "answer": "If any issue arises, our multi-channel support team will be available to assist you, and a technician can be sent if necessary to resolve it."
+    },
+    {
+        "question": "How is my data protected?",
+        "answer": "We only collect strictly necessary data, and we follow strict data protection protocols, ensuring that all your information is securely stored and only used for the operation of MICA."
+    },
+      {
+        "question": "Will I be able to participate in the development of MICA during the beta program?",
+        "answer": "Yes, we will greatly value the feedback from our beta users and will encourage active participation through focus groups, user interviews, and surveys. Beta users will be part of our Slack community so we can stay connected easily."
+    },
+    {
+        "question": "Can I get involved in ways other than becoming a beta user?",
+        "answer": "Yes, we are looking for strategic partners to help us grow and scale, as well as associated plumbers for the installation of sensors. We are also keen to support students with their research projects if they wish to do them with us."
+    },
+    {
+        "question": "What systems does the MICA app support?",
+        "answer": "The app will be available on both Apple and Android devices."
+    },
+    {
+        "question": "Is the sensor certified?",
+        "answer": "We are still in the design phase, but we are working with certified providers for all the components that make up our sensor and gateway. Sustainability is top of mind for us."
+    },
+    {
+        "question": "What’s the price of MICA?",
+        "answer": "We are a non-profit organization, so we will keep prices to the minimum necessary to cover production, distribution, installation, and maintenance costs. We are still in the design phase, but we will announce prices soon; we expect they will be ~100 euros for the sensor and its installation, as well as an annual subscription of ~10 euros/year."
+    },
+    {
+        "question": "How are you financing the development of MICA and the beta program?",
+        "answer": "We’ve gained support and funding from the Barcelona City Council to complete our beta program in 2025 through a call for innovative urban projects (BIT Habitat)."
+    }
     ]
   },
   "blog": {
