@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 
@@ -27,6 +28,20 @@ export default function BlogPosts({ posts }: Props) {
         {posts.slice(0, visiblePosts).map((post) => (
           <Card key={post.slug} className="shadow-sm transition-shadow hover:shadow-lg">
             <Link href={`/blog/${post.slug}`}>
+              {post.cover ? (
+                <div className="relative aspect-video w-full overflow-hidden">
+                  <Image
+                    src={post.cover}
+                    alt={post.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={false}
+                  />
+                </div>
+              ) : (
+                <div className="aspect-video"></div>
+              )}
               <CardHeader>
                 <CardDescription className="first-letter:capitalize">
                   {tTags(post.tag)}

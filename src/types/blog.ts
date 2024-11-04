@@ -6,6 +6,7 @@ export interface IPost {
   slug: string;
   title: string;
   summary: string;
+  cover: string;
   content: string;
   author?: string;
   date?: string;

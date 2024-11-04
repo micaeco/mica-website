@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactMarkdown, { Components } from 'react-markdown';
+import Image from 'next/image';
 
 type Props = {
   content: string;
@@ -20,6 +21,17 @@ export default function MarkdownRenderer({ content }: Props) {
     ol: ({ node, ...props }) => <ol className="mb-4 list-inside list-decimal" {...props} />,
     li: ({ node, ...props }) => <li className="mb-1" {...props} />,
     a: ({ node, ...props }) => <a className="text-blue-500 hover:underline" {...props} />,
+    img: ({ src, alt }) => (
+      <div className="relative aspect-video w-full overflow-hidden rounded-md">
+        <Image
+          src={src || ''}
+          alt={alt || ''}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 800px"
+        />
+      </div>
+    ),
   };
 
   return <ReactMarkdown components={components}>{content}</ReactMarkdown>;

@@ -24,6 +24,7 @@ export async function GET() {
         lang: (metadata.lang || 'ca').toLowerCase(),
         slug: filename.replace(/\.md$/, ''),
         title: metadata.title || filename.replace(/\.md$/, ''),
+        cover: metadata.cover || '',
         summary: metadata.summary || '',
         tag: (metadata.tag?.toLowerCase() as TPostTag) || 'others',
         date: metadata.date || new Date().toISOString(),

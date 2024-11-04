@@ -12,6 +12,7 @@
   },
   "common": {
     "search": "search",
+    "no-image": "no image",
     "no-socials": "no references",
     "no-content-available": "content not available",
     "no-articles-found": "no articles found",

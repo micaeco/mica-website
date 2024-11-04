@@ -12,6 +12,7 @@
   },
   "common": {
     "search": "buscar",
+    "no-image": "sense imatge",
     "no-socials": "sense referències",
     "no-content-available": "contingut no disponible",
     "no-articles-found": "no s'han trobat articles",
