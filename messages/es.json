@@ -91,19 +91,19 @@
       "title": "Empieza a ahorrar con MICA",
       "benefits": {
         "benefit1": {
-          "title": "Descubrir cómo consumes agua",
+          "title": "Descubre cómo consumes agua",
           "text": "Controla el consumo de agua en tiempo real, identifica qué dispositivos consumen más y compárate con la media o con los límites recomendados."
         },
         "benefit2": {
-          "title": "Detectar fugas",
-          "text": "MICA detecta automáticamente las fugas de agua y te notifica con una alerta para evitar daños importantes y sorpresas en la factura."
+          "title": "Detecta fugas al momento",
+          "text": "MICA detecta automáticamente cualquier fuga de agua y te notifica con una alerta para evitar daños importantes y sorpresas en la factura."
         },
         "benefit3": {
-          "title": "Recibir recomendaciones",
-          "text": "Recibirás recomendaciones personalizadas y fáciles de accionar que te ayudarán a ahorrar agua y dinero."
+          "title": "Recibe recomendaciones",
+          "text": "Recibe recomendaciones personalizadas y fáciles de accionar que te ayudarán a ahorrar agua y dinero."
         }
       },
-      "cta": "Descubre cómo funciona"
+      "cta": "Cómo funciona?"
     },
     "problem": {
       "title": "¿Sabías que...",
@@ -151,7 +151,7 @@
           "text": "Una plataforma de datos en la nube impulsada por algoritmos de inteligencia artificial desglosa el consumo por dispositivo, genera recomendaciones personalizadas y detecta fugas. Esto se logra mediante la calibración del sensor y un análisis de comportamientos de consumo estadísticos."
         },
         "step3": {
-          "title": "Nuestra aplicación visualiza datos y crea un plan de consumo sostenible",
+          "title": "Nuestra aplicación visualiza tu consumo y crea un plan personalizado",
           "text": "A través de su móvil, el usuario monitoriza sus datos de consumo por dispositivo, recibe consejos personalizados y alertas sobre fugas, visualiza el ahorro, gana incentivos y se compara con la media o los límites recomendados. También puede retroalimentar el algoritmo de IA. Esto le permite optimizar su consumo de agua y adoptar prácticas más sostenibles."
         }
       },
@@ -188,14 +188,14 @@
       }
     },
     "process": {
-      "title": "¿Cómo puedes unirte al programa beta?",
+      "title": "¿Cómo puedes unirte al programa?",
       "steps": {
         "step1": {
           "title": "Regístrate",
           "text": "Completa un formulario con tu información de contacto."
         },
         "step2": {
-          "title": "Responde un cuestionario",
+          "title": "Rellena un cuestionario",
           "text": "Cuando lo tengamos todo listo, te enviaremos un cuestionario para conocerte mejor."
         },
         "step3": {
@@ -209,10 +209,10 @@
       }
     },
     "cta": {
-      "text": "Únete al programa beta de MICA hoy y comienza a marcar la diferencia en el consumo de agua de tu hogar y del planeta.",
+      "text": "Únete al programa beta de MICA hoy y empieza a marcar la diferencia en el consumo de agua de tu hogar y de la ciudad.",
       "cta1": "Demo app",
       "cta2": "Regístrate",
-      "note": "Tenemos un número de plazas limitadas para el programa beta. ¡No pierdas tu oportunidad!"
+      "note": "Tenemos plazas limitadas para el programa beta. ¡No pierdas tu oportunidad!"
     }
   },
   "about": {
@@ -304,16 +304,32 @@
         "answer": "Un fontanero cualificado instalará el sensor en el medidor de agua de tu hogar. También tienes la opción de instalarlo tú mismo con nuestras instrucciones detalladas. El sensor y la instalación no afectarán el flujo de agua."
     },
     {
-        "question": "¿Cómo puedo unirme al programa beta?",
-        "answer": "Llena el formulario de registro que se encuentra en la página 'Quiero uno'. Nos mantendremos en contacto contigo por correo electrónico y, una vez listos, te enviaremos un cuestionario para completar tu solicitud."
-    },
-    {
         "question": "¿Qué ocurre si hay un problema con el sensor?",
         "answer": "Si surge algún problema, nuestro equipo de soporte multicanal estará disponible para ayudarte, y si es necesario, un técnico podrá acudir a resolverlo."
     },
     {
         "question": "¿Cómo se protege mi información?",
         "answer": "Solo recopilamos los datos estrictamente necesarios, y seguimos estrictos protocolos de protección de datos, asegurando que toda tu información se almacene de manera segura y solo se utilice para el funcionamiento de MICA."
+    },
+       {
+        "question": "¿Con qué sistemas operativos es compatible la app de MICA?",
+        "answer": "La aplicación estará disponible tanto en dispositivos Apple como Android."
+    },
+    {
+        "question": "¿El sensor está certificado?",
+        "answer": "Todavía estamos en la fase de diseño, pero estamos trabajando con proveedores certificados para todos los componentes que conforman nuestro sensor y puerta de enlace. La sostenibilidad es una prioridad para nosotros: seleccionamos cuidadosamente materiales con un mínimo impacto ambiental y consideramos la durabilidad y el fácil reciclaje de los componentes al final de su vida útil."
+    },
+    {
+        "question": "¿Cuál es el precio de MICA?",
+        "answer": "Somos una organización sin ánimo de lucro, por lo que mantendremos los precios al mínimo necesario para cubrir los costos de producción, distribución, instalación y mantenimiento. Aún estamos en fase de diseño, pero anunciaremos los precios pronto; esperamos que estén en torno a los ~100 euros por el sensor y la instalación. y una suscripción anual de ~10 euros al año. Los usuarios que participen en el programa beta obtendrán el sensor y la instalación de forma gratuita, y solo pagarán la suscripción anual."
+    },
+    {
+        "question": "¿Cómo estáis financiando el desarrollo de MICA y el programa beta?",
+        "answer": "Hemos recibido apoyo y financiación del Ayuntamiento de Barcelona para completar nuestro programa beta en 2025 a través de la convocatoria BIT Habitat para proyectos urbanos innovadores."
+    },
+       {
+        "question": "¿Cómo puedo unirme al programa beta?",
+        "answer": "Llena el formulario de registro que se encuentra en la página 'Quiero uno'. Nos mantendremos en contacto contigo por correo electrónico y, una vez listos, te enviaremos un cuestionario para completar tu solicitud."
     },
       {
         "question": "¿Podré participar en el desarrollo de MICA durante el programa beta?",
@@ -322,22 +338,6 @@
     {
         "question": "¿Puedo involucrarme de otras maneras además de convertirme en un usuario beta?",
         "answer": "Sí, estamos buscando socios estratégicos para ayudarnos a crecer y escalar, así como fontaneros asociados para la instalación de sensores. También estamos interesados en apoyar a estudiantes con sus proyectos de investigación si desean hacerlo con nosotros."
-    },
-    {
-        "question": "¿Qué sistemas soporta la aplicación MICA?",
-        "answer": "La aplicación estará disponible tanto en dispositivos Apple como Android."
-    },
-    {
-        "question": "¿El sensor está certificado?",
-        "answer": "Todavía estamos en la fase de diseño, pero estamos trabajando con proveedores certificados para todos los componentes que conforman nuestro sensor y puerta de enlace. La sostenibilidad es una prioridad para nosotros."
-    },
-    {
-        "question": "¿Cuál es el precio de MICA?",
-        "answer": "Somos una organización sin ánimo de lucro, por lo que mantendremos los precios al mínimo necesario para cubrir los costos de producción, distribución, instalación y mantenimiento. Aún estamos en fase de diseño, pero anunciaremos los precios pronto; esperamos que estén en torno a los ~100 euros por el sensor y la instalación. y una suscripción anual de ~10 euros al año."
-    },
-    {
-        "question": "¿Cómo están financiando el desarrollo de MICA y el programa beta?",
-        "answer": "Hemos recibido apoyo y financiación del Ayuntamiento de Barcelona para completar nuestro programa beta en 2025 a través de una convocatoria para proyectos urbanos innovadores (BIT Habitat)."
     }
     ]
   },

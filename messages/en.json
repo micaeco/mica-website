@@ -90,15 +90,15 @@
           "text": "Monitor real-time water consumption, identify which devices consume the most, and compare yourself against the average or recommended limits."
         },
         "benefit2": {
-          "title": "Detect leaks",
-          "text": "MICA automatically detects water leaks and notifies you with an alert to prevent significant damage and water bill surprises."
+          "title": "Detect leaks instantly",
+          "text": "MICA automatically detects any water leaks and notifies you with an alert to prevent significant damage and water bill surprises."
         },
         "benefit3": {
           "title": "Receive recommendations",
-          "text": "You'll receive personalized, actionable recommendations to save water and money."
+          "text": "Receive personalized, actionable recommendations in real time to save water and money."
         }
       },
-      "cta": "Discover how it works"
+      "cta": "How does it work?"
     },
     "problem": {
       "title": "Did you know...",
@@ -146,7 +146,7 @@
           "text": "A cloud-based data platform powered by artificial intelligence algorithms breaks down consumption by device, generates personalized recommendations, and detects leaks. This is achieved through sensor calibration and the analysis of statistical consumption behaviors."
         },
         "step3": {
-          "title": "Our app displays data and creates a sustainable consumption plan",
+          "title": "Our app displays your usage data and creates a personalized plan",
           "text": "Through their smartphone, ehe user monitors their consumption data by device, receives personalised tips and leak alerts, views savings, earns incentives, and compares their usage with the average or the recommended limits. They can also provide feedback to the AI algorithm. This helps them optimise their water consumption and adopt more sustainable practices."
         }
       },
@@ -190,7 +190,7 @@
           "text": "Complete a form with your contact information."
         },
         "step2": {
-          "title": "Answer a questionnaire",
+          "title": "Fill out a questionnaire",
           "text": "When we're ready, we'll send you a questionnaire to get to know you better."
         },
         "step3": {
@@ -204,7 +204,7 @@
       }
     },
     "cta": {
-      "text": "Join MICA's beta program today and start making a difference in your home's and the planet's water consumption.",
+      "text": "Join MICA's beta program today and start making a difference in your home's and the city's water consumption.",
       "cta1": "Demo app",
       "cta2": "Register",
       "note": "We have a limited number of slots for beta users. Don't miss your opportunity!"
@@ -216,7 +216,7 @@
     "history": {
       "title": "Our history",
       "subtitle": "Innovating to combat drought in Barcelona.",
-      "paragraph1": "In the summer of 2022, Barcelona suffered one of the worst droughts in its history. While the city entered alert phase, a group of local engineers had a revolutionary idea.",
+      "paragraph1": "In the summer of 2022, Barcelona suffered one of the worst droughts in its history. While the city entered drought alert status, a group of local engineers had a revolutionary idea.",
       "paragraph2": "Thus MICA was born, with the mission of transforming how we understand and conserve water. Our technology allows Barcelona residents to face each new water crisis with precise data and innovative tools."
     },
     "our-team": {
@@ -280,7 +280,7 @@
       },
       "step5": {
         "title": "Launch and expansion",
-        "items": ["· Platform deployment to market", "· Continuous system performance evaluations"]
+        "items": ["· Platform deployment", "· Continuous system evaluations"]
       }
     }
   },
@@ -296,16 +296,32 @@
         "answer": "A qualified plumber will install the sensor on your home’s water meter. There is also a self-installation option with detailed instructions if you prefer. The sensor and installation will not impact water flow."
       },
       {
-        "question": "How can I join the beta program?",
-        "answer": "Fill out the registration form on the 'I want one' page. We'll stay in touch with you via email, and once we’re ready, we’ll send you a questionnaire to complete your application."
-      },
-      {
         "question": "What happens if there is an issue with the sensor?",
         "answer": "If any issue arises, our multi-channel support team will be available to assist you, and a technician can be sent if necessary to resolve it."
       },
       {
         "question": "How is my data protected?",
         "answer": "We only collect strictly necessary data, and we follow strict data protection protocols, ensuring that all your information is securely stored and only used for the operation of MICA."
+      },
+       {
+        "question": "What systems does the MICA app support?",
+        "answer": "The app will be available on both Apple and Android devices."
+      },
+      {
+        "question": "Is the sensor certified?",
+        "answer": "We are still in the design phase, but we are working with certified providers for all the components that make up our sensor and gateway. Sustainability is top of mind for us: we carefully select materials with minimal environmental impact and plan to design components for durability and easy recycling at end of life."
+      },
+      {
+        "question": "What’s the price of MICA?",
+        "answer": "We are a non-profit organization, so we will keep prices to the minimum necessary to cover production, distribution, installation, and maintenance costs. We are still in the design phase, but we will announce prices soon; we expect they will be ~100 euros for the sensor and its installation, as well as an annual subscription of ~10 euros/year. Beta users will receive the sensor and installation for free, and will only pay the annual subscription."
+      },
+      {
+        "question": "How are you financing the development of MICA and the beta program?",
+        "answer": "We’ve gained support and funding from the Barcelona City Council to complete our beta program in 2025 through BIT Habitat's call for innovative urban projects."
+      },
+       {
+        "question": "How can I join the beta program?",
+        "answer": "Fill out the registration form on the 'I want one' page. We'll stay in touch with you via email, and once we’re ready, we’ll send you a questionnaire to complete your application."
       },
       {
         "question": "Will I be able to participate in the development of MICA during the beta program?",
@@ -314,22 +330,6 @@
       {
         "question": "Can I get involved in ways other than becoming a beta user?",
         "answer": "Yes, we are looking for strategic partners to help us grow and scale, as well as associated plumbers for the installation of sensors. We are also keen to support students with their research projects if they wish to do them with us."
-      },
-      {
-        "question": "What systems does the MICA app support?",
-        "answer": "The app will be available on both Apple and Android devices."
-      },
-      {
-        "question": "Is the sensor certified?",
-        "answer": "We are still in the design phase, but we are working with certified providers for all the components that make up our sensor and gateway. Sustainability is top of mind for us."
-      },
-      {
-        "question": "What’s the price of MICA?",
-        "answer": "We are a non-profit organization, so we will keep prices to the minimum necessary to cover production, distribution, installation, and maintenance costs. We are still in the design phase, but we will announce prices soon; we expect they will be ~100 euros for the sensor and its installation, as well as an annual subscription of ~10 euros/year."
-      },
-      {
-        "question": "How are you financing the development of MICA and the beta program?",
-        "answer": "We’ve gained support and funding from the Barcelona City Council to complete our beta program in 2025 through a call for innovative urban projects (BIT Habitat)."
       }
     ]
   },

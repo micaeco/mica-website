@@ -88,22 +88,22 @@
       "cta": "En vull un!"
     },
     "solution": {
-      "title": "Comença a estalviar amb MICA",
+      "title": "Vols estalviar amb MICA?",
       "benefits": {
         "benefit1": {
-          "title": "Descobrir com gastes l'aigua",
+          "title": "Descobreix com gastes l'aigua",
           "text": "Constrola el consum d'aigua en temps real, identifica quins dispositius consumeixen més, i compara't amb la mitjana o amb els límits recomanats."
         },
         "benefit2": {
-          "title": "Detectar fugues",
-          "text": "MICA detecta automàticament les fugues d'aigua i et notifica amb una alerta per tal d'evitar danys importants i sorpreses a la factura."
+          "title": "Detecta fugues al moment",
+          "text": "MICA detecta automàticament qualsevol fuga d'aigua i et notifica amb una alerta per tal d'evitar danys importants i sorpreses a la factura."
         },
         "benefit3": {
-          "title": "Rebre recomanacions",
-          "text": "Rebràs recomanacions personalitzades i fàcils d'accionar per estalviar aigua i diners."
+          "title": "Rep recomanacions",
+          "text": "Rep recomanacions personalitzades i fàcils d'accionar per estalviar aigua i diners."
         }
       },
-      "cta": "Descobreix com funciona"
+      "cta": "Com funciona?"
     },
     "problem": {
       "title": "Sabies que...",
@@ -148,10 +148,10 @@
         },
         "step2": {
           "title": "Algoritmes d’IA desglossen el consum per dispositiu",
-          "text": "Una plataforma de dades al núvol impulsada per algorismes d'intel·ligència artificial, desglossa el consum per dispositiu, genera recomanacions personalitzades i detecta fugues. Això s'aconsegueix mitjançant el calibratge del sensor i un anàlisi de comportaments de consum estadístics."
+          "text": "Una plataforma de dades al núvol impulsada per algoritmes d'intel·ligència artificial, desglossa el consum per dispositiu, genera recomanacions personalitzades i detecta fugues. Això s'aconsegueix mitjançant el calibratge del sensor i un anàlisi de comportaments de consum estadístics."
         },
         "step3": {
-          "title": "La nostra aplicació visualitza dades i crea un pla de consum sostenible",
+          "title": "La nostra aplicació visualitza el teu consum i crea un pla personalitzat",
           "text": "A través del seu mòbil, l’usuari monitoritza les seves dades de consum per dispositiu, rep consells personalitzats i alertes sobre fugues, visualitza l’estalvi, guanya incentius i es compara amb la mitjana o els límits recomanats. També pot retroalimentar l’algoritme d’IA. Això li permet optimitzar el seu consum d’aigua i adoptar pràctiques més sostenibles."
         }
       },
@@ -188,14 +188,14 @@
       }
     },
     "process": {
-      "title": "Com pots unir-te al programa beta?",
+      "title": "Què has de fer per unir-te al programa?",
       "steps": {
         "step1": {
           "title": "Registra't",
           "text": "Completa un formulari amb la teva informació de contacte."
         },
         "step2": {
-          "title": "Contesta un qüestionari",
+          "title": "Emplena un qüestionari",
           "text": "Quan estiguem a punt, t'enviarem un qüestionari per conèixer-te millor."
         },
         "step3": {
@@ -209,10 +209,10 @@
       }
     },
     "cta": {
-      "text": "Uneix-te al programa beta de MICA avui i comença a marcar la diferència en el consum d'aigua de casa teva i del planeta.",
+      "text": "Uneix-te al programa beta de MICA avui i comença a marcar la diferència en el consum d'aigua de casa teva i de la ciutat.",
       "cta1": "Demo app",
       "cta2": "Registra't",
-      "note": "Tenim un número de places limitades per al programa beta. No perdis la teva oportunitat!"
+      "note": "Tenim places limitades per al programa beta. No perdis la teva oportunitat!"
     }
   },
   "about": {
@@ -287,7 +287,7 @@
         "title": "Llançament i expansió",
         "items": [
           "· Desplegament de la plataforma al mercat",
-          "· Evaluacions continues del funcionament del sistema"
+          "· Evaluacions contínues del funcionament del sistema"
         ]
       }
     }
@@ -304,16 +304,32 @@
         "answer": "Un lampista qualificat instal·larà el sensor al comptador d'aigua de casa teva. També hi haurà l'opció d'instal·lar-lo tu mateix si així ho prefereixes, mitjançant les nostres instruccions detallades. El sensor i la instal·lació no tindran cap impacte en el cabal d'aigua."
       },
       {
-        "question": "Com puc unir-me al programa beta?",
-        "answer": "Omple el formulari de registre que es troba a la pàgina 'En vull un'. Ens mantindrem en contacte amb tu per correu electrònic, i, un cop estiguem a punt, t'enviarem un qüestionari per completar la teva sol·licitud."
-      },
-      {
         "question": "Què passa si hi ha un problema amb el sensor?",
         "answer": "Si sorgeix algun problema, el nostre equip de suport multicanal estarà disponible per ajudar-te, i, si és necessari, un tècnic podrà acudir per resoldre’l."
       },
+       {
+        "question": "Amb quins sistemes operatius és compatible l'app de MICA?",
+        "answer": "L'aplicació estarà disponible tant per a dispositius Apple com Android."
+    },
+    {
+        "question": "El sensor MICA està certificat?",
+        "answer": "Encara estem en la fase de disseny, però estem treballant amb proveïdors certificats per a tots els components que componen el nostre sensor i gateway. La sostenibilitat és una prioritat per a nosaltres: seleccionem materials amb un mínim impacte ambiental i considerem la durabilitat i el reciclatge dels components al final de la seva vida útil."
+    },
+    {
+        "question": "Quin és el preu de MICA?",
+        "answer": "Som una organització sense ànim de lucre, així que mantindrem els preus al mínim necessari per cobrir els costos de producció, distribució, instal·lació i manteniment. Encara estem en fase de disseny, però aviat anunciarem els preus; esperem que siguin al voltant de ~100 euros per al sensor, i una subscripció anual d'uns ~10 euros a l'any. Els usuaris que participin en el progrma beta aconseguiran el sensor i la instal·lació de manera gratuïta, i només pagaran la subscripció anual."
+    },
+    {
+        "question": "Com esteu finançant el desenvolupament de MICA i el programa beta?",
+        "answer": "Hem obtingut suport i finançament de l'Ajuntament de Barcelona per completar el nostre programa beta el 2025 a través de la convocatòria de BIT Habitat per a projectes urbans innovadors."
+    },
       {
         "question": "Com es protegeixen les meves dades?",
         "answer": "Només recollim les dades estrictament necessàries, i seguim estrictes protocols de protecció de dades, assegurant que tota la teva informació s’emmagatzemi de manera segura i només s’utilitzi per al funcionament de MICA. "
+      },
+   {
+        "question": "Com puc unir-me al programa beta?",
+        "answer": "Omple el formulari de registre que es troba a la pàgina 'En vull un'. Ens mantindrem en contacte amb tu per correu electrònic, i, un cop estiguem a punt, t'enviarem un qüestionari per completar la teva sol·licitud."
       },
       {
         "question": "Podré participar en el desenvolupament de MICA durant el programa beta?",
@@ -322,22 +338,6 @@
     {
         "question": "Puc involucrar-me d'altres maneres a més de convertir-me en usuari beta?",
         "answer": "Sí, estem buscant socis estratègics que ens ajudin a créixer i escalar, així com a lampistes associats per a la instal·lació dels sensors. També estem interessats a donar suport a estudiants amb els seus projectes de recerca si volen fer-ho amb nosaltres."
-    },
-    {
-        "question": "Quins sistemes suporta l'aplicació MICA?",
-        "answer": "L'aplicació estarà disponible tant per a dispositius Apple com Android."
-    },
-    {
-        "question": "El sensor MICA està certificat?",
-        "answer": "Encara estem en la fase de disseny, però estem treballant amb proveïdors certificats per a tots els components que componen el nostre sensor i gateway. La sostenibilitat és una prioritat per a nosaltres."
-    },
-    {
-        "question": "Quin és el preu de MICA?",
-        "answer": "Som una organització sense ànim de lucre, així que mantindrem els preus al mínim necessari per cobrir els costos de producció, distribució, instal·lació i manteniment. Encara estem en fase de disseny, però aviat anunciarem els preus; esperem que siguin al voltant de ~100 euros per al sensor i la instal·lació, i una subscripció anual d'uns ~10 euros a l'any."
-    },
-    {
-        "question": "Com esteu finançant el desenvolupament de MICA i el programa beta?",
-        "answer": "Hem obtingut suport i finançament de l'Ajuntament de Barcelona per completar el nostre programa beta el 2025 a través d'una convocatòria de projectes urbans innovadors (BIT Habitat)."
     }
     ]
   },
