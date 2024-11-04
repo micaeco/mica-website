@@ -50,8 +50,15 @@ export default function Hero() {
                 {t('cta')}
               </Button>
             </Link>
-            <p className="text-sm font-light">{t('with-the-support')}</p>
-            <Image src={'/logos/bithabitat.png'} alt={'Logo bithabitat'} width={160} height={160} />
+            <div className="space-y-2">
+              <p className="text-xs font-light">{t('with-the-support')}</p>
+              <Image
+                src={'/logos/bithabitat.png'}
+                alt={'Logo bithabitat'}
+                width={140}
+                height={140}
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@ import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '@/comp
 import { getTeamMembers } from '@/lib/constants';
 
 export default function OurTeam() {
-  const t = useTranslations('about.history');
+  const t = useTranslations('about.our-team');
   const tMembers = useTranslations('about.our-team.members');
 
   const teamMembers = getTeamMembers(tMembers);

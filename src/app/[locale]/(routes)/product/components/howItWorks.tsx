@@ -21,7 +21,7 @@ const StepIcon = ({ number, icon: Icon }: { number: number; icon: LucideIcon }) 
 
 const StepContent = ({ title, text }: { title: string; text: string }) => (
   <div className="flex-1">
-    <h5 className="mb-2 font-bold">{title}</h5>
+    <h5 className="mb-2 font-extrabold">{title}</h5>
     <p>{text}</p>
   </div>
 );
