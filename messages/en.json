@@ -88,6 +88,7 @@
         "benefit1": {
           "title": "Discover how you use water",
           "text": "Monitor real-time water consumption, identify which devices consume the most, and compare yourself against the average or recommended limits."
+        },
         "benefit2": {
           "title": "Detect leaks",
           "text": "MICA automatically detects water leaks and notifies you with an alert to prevent significant damage and water bill surprises."
@@ -289,47 +290,47 @@
       {
         "question": "How can I contact you?",
         "answer": "You can contact us via the contact form or by sending an email to info@mica.eco."
-    },
-    {
+      },
+      {
         "question": "How is the sensor installed?",
         "answer": "A qualified plumber will install the sensor on your home’s water meter. There is also a self-installation option with detailed instructions if you prefer. The sensor and installation will not impact water flow."
-    },
-    {
+      },
+      {
         "question": "How can I join the beta program?",
         "answer": "Fill out the registration form on the 'I want one' page. We'll stay in touch with you via email, and once we’re ready, we’ll send you a questionnaire to complete your application."
-    },
-    {
+      },
+      {
         "question": "What happens if there is an issue with the sensor?",
         "answer": "If any issue arises, our multi-channel support team will be available to assist you, and a technician can be sent if necessary to resolve it."
-    },
-    {
+      },
+      {
         "question": "How is my data protected?",
         "answer": "We only collect strictly necessary data, and we follow strict data protection protocols, ensuring that all your information is securely stored and only used for the operation of MICA."
-    },
+      },
       {
         "question": "Will I be able to participate in the development of MICA during the beta program?",
         "answer": "Yes, we will greatly value the feedback from our beta users and will encourage active participation through focus groups, user interviews, and surveys. Beta users will be part of our Slack community so we can stay connected easily."
-    },
-    {
+      },
+      {
         "question": "Can I get involved in ways other than becoming a beta user?",
         "answer": "Yes, we are looking for strategic partners to help us grow and scale, as well as associated plumbers for the installation of sensors. We are also keen to support students with their research projects if they wish to do them with us."
-    },
-    {
+      },
+      {
         "question": "What systems does the MICA app support?",
         "answer": "The app will be available on both Apple and Android devices."
-    },
-    {
+      },
+      {
         "question": "Is the sensor certified?",
         "answer": "We are still in the design phase, but we are working with certified providers for all the components that make up our sensor and gateway. Sustainability is top of mind for us."
-    },
-    {
+      },
+      {
         "question": "What’s the price of MICA?",
         "answer": "We are a non-profit organization, so we will keep prices to the minimum necessary to cover production, distribution, installation, and maintenance costs. We are still in the design phase, but we will announce prices soon; we expect they will be ~100 euros for the sensor and its installation, as well as an annual subscription of ~10 euros/year."
-    },
-    {
+      },
+      {
         "question": "How are you financing the development of MICA and the beta program?",
         "answer": "We’ve gained support and funding from the Barcelona City Council to complete our beta program in 2025 through a call for innovative urban projects (BIT Habitat)."
-    }
+      }
     ]
   },
   "blog": {
