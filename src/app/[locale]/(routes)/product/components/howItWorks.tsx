@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
-import { ArrowRightIcon, LucideIcon } from 'lucide-react';
+import { LucideIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { Button } from '@/components/ui/button';
@@ -72,15 +72,11 @@ export default function HowItWorks() {
       </div>
 
       <div className="relative flex justify-center py-16">
-        <Button
-          variant="expandIcon"
-          Icon={ArrowRightIcon}
-          iconPlacement="right"
-          className="w-fit"
-          size="lg"
-        >
-          <Link href="/beta">{t('cta')}</Link>
-        </Button>
+        <Link href="/beta">
+          <Button className="w-fit" size="lg">
+            {t('cta')}
+          </Button>
+        </Link>
       </div>
     </section>
   );

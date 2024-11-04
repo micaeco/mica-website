@@ -28,6 +28,7 @@ export async function GET() {
         summary: metadata.summary || '',
         tag: (metadata.tag?.toLowerCase() as TPostTag) || 'others',
         date: metadata.date || new Date().toISOString(),
+        author: metadata.author || '',
         content: postContent,
       };
     });

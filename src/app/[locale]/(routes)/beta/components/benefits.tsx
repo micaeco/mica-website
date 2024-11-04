@@ -23,8 +23,8 @@ export default function BetaBenefits() {
       >
         <h3 className="mb-10 text-center font-bold text-brand-primary">{t('title')}</h3>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {benefits.map((benefit) => (
-            <Card className="shadow-sm transition-shadow hover:shadow-lg">
+          {benefits.map((benefit, index) => (
+            <Card key={index} className="shadow-sm transition-shadow hover:shadow-lg">
               <CardHeader>
                 <benefit.icon className="mb-4 size-12 text-brand-accent" />
                 <CardTitle>{benefit.title}</CardTitle>
