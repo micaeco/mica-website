@@ -88,19 +88,19 @@
       "cta": "¡Quiero uno!"
     },
     "solution": {
-      "title": "¿Qué podrás hacer con MICA?",
+      "title": "Empieza a ahorrar con MICA",
       "benefits": {
         "benefit1": {
           "title": "Descubrir cómo consumes agua",
-          "text": "Podrás ver el consumo de agua en tiempo real e histórico, así como identificar qué dispositivos consumen más."
+          "text": "Controla el consumo de agua en tiempo real, identifica qué dispositivos consumen más y compárate con la media o con los límites recomendados."
         },
         "benefit2": {
           "title": "Detectar fugas",
-          "text": "MICA detecta fácilmente las fugas de agua y te notifica con una alerta para evitar daños importantes."
+          "text": "MICA detecta automáticamente las fugas de agua y te notifica con una alerta para evitar daños importantes y sorpresas en la factura."
         },
         "benefit3": {
           "title": "Recibir recomendaciones",
-          "text": "Recibirás recomendaciones específicas para tu consumo que te ayudarán a ahorrar agua y dinero."
+          "text": "Recibirás recomendaciones personalizadas y fáciles de accionar que te ayudarán a ahorrar agua y dinero."
         }
       },
       "cta": "Descubre cómo funciona"
@@ -147,12 +147,12 @@
           "text": "El sensor se instala de forma fácil y rápida en la tubería de entrada de agua de la casa. Alimentado por baterías de larga duración, captura datos precisos del caudal de agua y los envía a la nube en tiempo real mediante tecnologías de Internet de las Cosas (IoT)."
         },
         "step2": {
-          "title": "Una plataforma de IA desglosa el consumo por dispositivo",
-          "text": "Una plataforma de datos en la nube impulsada por algoritmos de inteligencia artificial desglosa el consumo por dispositivo, genera recomendaciones personalizadas y puede detectar fugas. Esto se logra mediante la calibración del sensor y un análisis de comportamientos de consumo estadísticos."
+          "title": "Algortimos de IA desglosan el consumo por dispositivo",
+          "text": "Una plataforma de datos en la nube impulsada por algoritmos de inteligencia artificial desglosa el consumo por dispositivo, genera recomendaciones personalizadas y detecta fugas. Esto se logra mediante la calibración del sensor y un análisis de comportamientos de consumo estadísticos."
         },
         "step3": {
-          "title": "Una aplicación visualiza datos y crea un plan de consumo sostenible",
-          "text": "A través de una aplicación web y móvil, el usuario monitorea sus datos detallados de consumo, se compara con otros usuarios o los límites recomendados, recibe recomendaciones personalizadas y puede retroalimentar el algoritmo de IA. Esto le permite optimizar su consumo de agua y adoptar prácticas más sostenibles."
+          "title": "Nuestra aplicación visualiza datos y crea un plan de consumo sostenible",
+          "text": "A través de su móvil, el usuario monitoriza sus datos de consumo por dispositivo, recibe consejos personalizados y alertas sobre fugas, visualiza el ahorro, gana incentivos y se compara con la media o los límites recomendados. También puede retroalimentar el algoritmo de IA. Esto le permite optimizar su consumo de agua y adoptar prácticas más sostenibles."
         }
       },
       "cta": "¡Quiero uno!"
@@ -171,24 +171,24 @@
       "benefits": {
         "benefit1": {
           "title": "Tecnología pionera",
-          "text": "Sé el primero en experimentar la innovación en ahorro de agua con IA."
+          "text": "Conviértete en co-creador de una solución innovadora de ahorro de agua impulsada por IA."
         },
         "benefit2": {
           "title": "Ahorros inmediatos",
-          "text": "Sigue tu consumo de agua desde el primer día."
+          "text": "Controla tu consumo de agua y recibe recomendaciones para ahorrar desde el primer día."
         },
         "benefit3": {
           "title": "Impacto colectivo",
           "text": "Forma parte de una comunidad comprometida con la sostenibilidad."
         },
         "benefit4": {
-          "title": "Gratis",
-          "text": "El sensor MICA y su instalación serán gratuitos para los miembros del programa beta."
+          "title": "Oferta Exclusiva",
+          "text": "Consigue el sensor y la instalación de forma gratuita -solo pagarás una pequeña suscripción anual."
         }
       }
     },
     "process": {
-      "title": "Pasos a seguir",
+      "title": "¿Cómo puedes unirte al programa beta?",
       "steps": {
         "step1": {
           "title": "Regístrate",
@@ -196,14 +196,14 @@
         },
         "step2": {
           "title": "Responde un cuestionario",
-          "text": "Te enviaremos un cuestionario para conocer mejor tus necesidades."
+          "text": "Cuando lo tengamos todo listo, te enviaremos un cuestionario para conocerte mejor."
         },
         "step3": {
           "title": "Proceso de selección",
           "text": "Seleccionaremos a los candidatos más adecuados para el programa beta."
         },
         "step4": {
-          "title": "Te enviaremos un sensor",
+          "title": "Empieza a ahorrar con MICA",
           "text": "Si eres seleccionado, nos pondremos en contacto contigo para coordinar la instalación del sensor."
         }
       }
@@ -212,7 +212,7 @@
       "text": "Únete al programa beta de MICA hoy y comienza a marcar la diferencia en el consumo de agua de tu hogar y del planeta.",
       "cta1": "Demo app",
       "cta2": "Regístrate",
-      "note": "El número de sensores subvencionados para esta fase es limitado. ¡No pierdas tu oportunidad!"
+      "note": "Tenemos un número de plazas limitadas para el programa beta. ¡No pierdas tu oportunidad!"
     }
   },
   "about": {
@@ -228,28 +228,28 @@
       "title": "Nuestro equipo",
       "members": {
         "jaime": {
-          "role": "Dirección y operaciones",
-          "studies": "Ingeniero industrial, MBA"
+          "role": "Dirección y Operaciones",
+          "studies": "Ingeniero Industrial y MBA"
         },
         "miquel": {
-          "role": "Responsable de datos e IA",
-          "studies": "Ingeniero de datos"
+          "role": "Responsable de Datos e IA",
+          "studies": "Ingeniero de Datos"
         },
         "lucia": {
-          "role": "Responsable de hardware",
-          "studies": "Ingeniera electrónica"
+          "role": "Responsable de Hardware",
+          "studies": "Ingeniera Electrónica"
         },
         "marta": {
-          "role": "Diseño del producto",
-          "studies": "Ingeniera de diseño industrial"
+          "role": "Diseño del Producto",
+          "studies": "Ingeniera de Diseño Industrial"
         },
         "irene": {
-          "role": "Comunicación y marketing",
-          "studies": "Física, formadora en tecnología"
+          "role": "Experiencia del Usuario y Marketing",
+          "studies": "Física y Manager de Formación en Datos e IA"
         },
         "gabriel": {
           "role": "Desarrollo de software",
-          "studies": "Ingeniero informático"
+          "studies": "Ingeniero Informático"
         }
       }
     },
@@ -296,17 +296,49 @@
     "title": "Preguntas frecuentes",
     "questions": [
       {
-        "question": "¿Cómo puedo contactar con vosotros?",
-        "answer": "Puedes contactar con nosotros a través del formulario de contacto o enviando un correo a info@mica.eco."
-      },
-      {
+        "question": "¿Cómo puedo contactarlos?",
+        "answer": "Puedes contactarnos a través del formulario de contacto o enviando un correo a info@mica.eco."
+    },
+    {
         "question": "¿Cómo se instala el sensor?",
-        "answer": "El sensor lo instalará un fontanero cualificado en la entrada de agua de tu casa, donde se encuentra el contador. Esta instalación no tendrá ningún impacto en el caudal de agua."
-      },
-      {
+        "answer": "Un fontanero cualificado instalará el sensor en el medidor de agua de tu hogar. También tienes la opción de instalarlo tú mismo con nuestras instrucciones detalladas. El sensor y la instalación no afectarán el flujo de agua."
+    },
+    {
         "question": "¿Cómo puedo unirme al programa beta?",
-        "answer": "Contestando al formulario de registro, que está en la página 'Quiero uno'. Una vez recibamos tu solicitud, si pasas nuestro proceso de selección, nos pondremos en contacto contigo."
-      }
+        "answer": "Llena el formulario de registro que se encuentra en la página 'Quiero uno'. Nos mantendremos en contacto contigo por correo electrónico y, una vez listos, te enviaremos un cuestionario para completar tu solicitud."
+    },
+    {
+        "question": "¿Qué ocurre si hay un problema con el sensor?",
+        "answer": "Si surge algún problema, nuestro equipo de soporte multicanal estará disponible para ayudarte, y si es necesario, un técnico podrá acudir a resolverlo."
+    },
+    {
+        "question": "¿Cómo se protege mi información?",
+        "answer": "Solo recopilamos los datos estrictamente necesarios, y seguimos estrictos protocolos de protección de datos, asegurando que toda tu información se almacene de manera segura y solo se utilice para el funcionamiento de MICA."
+    },
+      {
+        "question": "¿Podré participar en el desarrollo de MICA durante el programa beta?",
+        "answer": "Sí, valoraremos mucho la retroalimentación de nuestros usuarios beta y fomentaremos la participación activa a través de workshops, entrevistas a usuarios y encuestas. Los usuarios beta formarán parte de nuestra comunidad en Slack para que podamos estar conectados fácilmente."
+    },
+    {
+        "question": "¿Puedo involucrarme de otras maneras además de convertirme en un usuario beta?",
+        "answer": "Sí, estamos buscando socios estratégicos para ayudarnos a crecer y escalar, así como fontaneros asociados para la instalación de sensores. También estamos interesados en apoyar a estudiantes con sus proyectos de investigación si desean hacerlo con nosotros."
+    },
+    {
+        "question": "¿Qué sistemas soporta la aplicación MICA?",
+        "answer": "La aplicación estará disponible tanto en dispositivos Apple como Android."
+    },
+    {
+        "question": "¿El sensor está certificado?",
+        "answer": "Todavía estamos en la fase de diseño, pero estamos trabajando con proveedores certificados para todos los componentes que conforman nuestro sensor y puerta de enlace. La sostenibilidad es una prioridad para nosotros."
+    },
+    {
+        "question": "¿Cuál es el precio de MICA?",
+        "answer": "Somos una organización sin ánimo de lucro, por lo que mantendremos los precios al mínimo necesario para cubrir los costos de producción, distribución, instalación y mantenimiento. Aún estamos en fase de diseño, pero anunciaremos los precios pronto; esperamos que estén en torno a los ~100 euros por el sensor y la instalación. y una suscripción anual de ~10 euros al año."
+    },
+    {
+        "question": "¿Cómo están financiando el desarrollo de MICA y el programa beta?",
+        "answer": "Hemos recibido apoyo y financiación del Ayuntamiento de Barcelona para completar nuestro programa beta en 2025 a través de una convocatoria para proyectos urbanos innovadores (BIT Habitat)."
+    }
     ]
   },
   "blog": {
