@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function FAQs() {
   return (
-    <main className="mx-auto max-w-2xl px-4 py-32">
+    <main className="mx-auto max-w-2xl px-4 py-16">
       <Faqs />
     </main>
   );
