@@ -92,7 +92,7 @@
       "benefits": {
         "benefit1": {
           "title": "Descobreix com gastes l'aigua",
-          "text": "Constrola el consum d'aigua en temps real, identifica quins dispositius consumeixen més, i compara't amb la mitjana o amb els límits recomanats."
+          "text": "Controla el consum d'aigua en temps real, identifica quins dispositius consumeixen més, i compara't amb la mitjana o amb els límits recomanats."
         },
         "benefit2": {
           "title": "Detecta fugues al moment",
@@ -175,14 +175,14 @@
         },
         "benefit2": {
           "title": "Estalvis immediats",
-          "text": "Segueix el teu consum d'aigua des del primer dia."
+          "text": "Controla el teu consum d'aigua i rep recomanacions per estalviar des del primer dia."
         },
         "benefit3": {
           "title": "Impacte col·lectiu",
           "text": "Forma part d'una comunitat compromesa amb la sostenibilitat."
         },
         "benefit4": {
-          "title": "Oferta Exclusiva",
+          "title": "Oferta exclusiva",
           "text": "Aconsegueix el sensor i la instal·lació de manera gratuïta – només pagaràs una petita subscripció anual."
         }
       }
@@ -212,7 +212,7 @@
       "text": "Uneix-te al programa beta de MICA avui i comença a marcar la diferència en el consum d'aigua de casa teva i de la ciutat.",
       "cta1": "Demo app",
       "cta2": "Registra't",
-      "note": "Tenim places limitades per al programa beta. No perdis la teva oportunitat!"
+      "note": "Tenim places limitades. No perdis la teva oportunitat!"
     }
   },
   "about": {
