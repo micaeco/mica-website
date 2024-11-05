@@ -100,7 +100,7 @@
         },
         "benefit3": {
           "title": "Rep recomanacions",
-          "text": "Rep recomanacions personalitzades i fàcils d'accionar per estalviar aigua i diners."
+          "text": "Obtén consells personalitzats i fàcils d'accionar quan més els necessites per estalviar aigua i diners."
         }
       },
       "cta": "Com funciona?"
@@ -164,7 +164,7 @@
     "description": "Sigues dels primers en provar MICA! Registra't al nostre programa beta i aconsegueix un sensor intel·ligent gratuït per controlar i optimitzar el teu consum d'aigua.",
     "hero": {
       "title": "Uneix-te al programa beta!",
-      "text": "Encara estem en fase de disseny. Tot i així, et pots apuntar des d'avui mateix al nostre programa beta per tenir l'opció de ser seleccionat i obtenir el sensor i la instal·lació de forma gratuïta. Només cal que ens deixis el teu correu electrònic i et mantindrem informat sobre les novetats."
+      "text": "Estem en plena fase de desenvolupament, i, amb el suport de l’Ajuntament de Barcelona, estem treballant intensament per convertir MICA en una realitat. Apunta't avui mateix per obtenir el sensor i la instal·lació de forma gratuïta i ser el primer en provar el sistema. Només cal que ens deixis el teu correu electrònic i et mantindrem informat."
     },
     "benefits": {
       "title": "Descobreix els avantatges...",
@@ -183,7 +183,7 @@
         },
         "benefit4": {
           "title": "Oferta exclusiva",
-          "text": "Aconsegueix el sensor i la instal·lació de manera gratuïta – només pagaràs una petita subscripció anual."
+          "text": "Aconsegueix el sensor i la instal·lació de manera gratuïta – només pagaràs una petita subscripció anual. Places limitades"
         }
       }
     },
@@ -212,7 +212,7 @@
       "text": "Uneix-te al programa beta de MICA avui i comença a marcar la diferència en el consum d'aigua de casa teva i de la ciutat.",
       "cta1": "Demo app",
       "cta2": "Registra't",
-      "note": "Tenim places limitades. No perdis la teva oportunitat!"
+      "note": "Els primers 50 usuaris beta aconseguiran el sensor i la instal·lació gratuïts. No perdis la teva oportunitat!"
     }
   },
   "about": {
@@ -287,7 +287,7 @@
         "title": "Llançament i expansió",
         "items": [
           "· Desplegament de la plataforma al mercat",
-          "· Evaluacions contínues del funcionament del sistema"
+          "· Avaluacions contínues del funcionament del sistema"
         ]
       }
     }
@@ -305,7 +305,7 @@
       },
       {
         "question": "Què passa si hi ha un problema amb el sensor?",
-        "answer": "Si sorgeix algun problema, el nostre equip de suport multicanal estarà disponible per ajudar-te, i, si és necessari, un tècnic podrà acudir per resoldre’l."
+        "answer": "El nostre sistema passarà tests rigorosos per garantir una experiència fluida i fiable als nostres usuaris. Tanmateix, si sorgís algun problema, el nostre equip de suport multicanal estarà disponible per ajudar-te, i un tècnic podrà acudir, si cal, per resoldre’l."
       },
        {
         "question": "Amb quins sistemes operatius és compatible l'app de MICA?",
@@ -313,15 +313,23 @@
     },
     {
         "question": "El sensor MICA està certificat?",
-        "answer": "Encara estem en la fase de disseny, però estem treballant amb proveïdors certificats per a tots els components que componen el nostre sensor i gateway. La sostenibilitat és una prioritat per a nosaltres: seleccionem materials amb un mínim impacte ambiental i considerem la durabilitat i el reciclatge dels components al final de la seva vida útil."
+        "answer": "Encara estem en la fase de desenvolupament, però estem treballant amb proveïdors certificats per a tots els components que componen el nostre sensor i gateway. La sostenibilitat és una prioritat per a nosaltres: seleccionem materials amb un mínim impacte ambiental i considerem la durabilitat i el reciclatge dels components al final de la seva vida útil."
     },
     {
         "question": "Quin és el preu de MICA?",
-        "answer": "Som una organització sense ànim de lucre, així que mantindrem els preus al mínim necessari per cobrir els costos de producció, distribució, instal·lació i manteniment. Encara estem en fase de disseny, però aviat anunciarem els preus; esperem que siguin al voltant de ~100 euros per al sensor, i una subscripció anual d'uns ~10 euros a l'any. Els usuaris que participin en el progrma beta aconseguiran el sensor i la instal·lació de manera gratuïta, i només pagaran la subscripció anual."
+        "answer": "Som una organització sense ànim de lucre, així que mantindrem els preus al mínim necessari per cobrir els costos de producció, distribució, instal·lació i manteniment. Encara estem en fase de desenvolupament, però aviat anunciarem els preus; esperem que siguin al voltant de ~100 euros per al sensor, i una subscripció anual d'uns ~10 euros a l'any. Els primers 50 usuaris que participin en el progrma beta aconseguiran el sensor i la instal·lació de manera gratuïta, i només pagaran la subscripció anual."
     },
     {
-        "question": "Com esteu finançant el desenvolupament de MICA i el programa beta?",
+        "question": "Com esteu finançant el desenvolupament de MICA?",
         "answer": "Hem obtingut suport i finançament de l'Ajuntament de Barcelona per completar el nostre programa beta el 2025 a través de la convocatòria de BIT Habitat per a projectes urbans innovadors."
+    },
+      {
+        "question": "Quan estarà disponible el sistema?",
+        "answer": "Esperem llançar el programa beta al juny de 2025 i desplegar el sistema a tota Barcelona al novembre de 2025."
+    },
+        {
+        "question": "Podran diversos usuaris d’una mateixa llar accedir a l’app?",
+        "answer": "Sí, l’administrador de la llar podrà convidar altres usuaris a unir-se a la llar a l’app perquè també puguin controlar el consum d’aigua, rebre alertes i consells, i comparar el seu consum amb la mitjana o els límits recomanats."
     },
       {
         "question": "Com es protegeixen les meves dades?",
@@ -329,15 +337,15 @@
       },
    {
         "question": "Com puc unir-me al programa beta?",
-        "answer": "Omple el formulari de registre que es troba a la pàgina 'En vull un'. Ens mantindrem en contacte amb tu per correu electrònic, i, un cop estiguem a punt, t'enviarem un qüestionari per completar la teva sol·licitud."
+        "answer": "Omple el formulari de registre que trobaràs a la pàgina 'En vull un'. Ens mantindrem en contacte amb tu per correu electrònic, i, un cop estiguem a punt, t'enviarem un qüestionari perquè completis la teva sol·licitud."
       },
       {
         "question": "Podré participar en el desenvolupament de MICA durant el programa beta?",
-        "answer": "Sí, valorarem molt els comentaris dels nostres usuaris beta i fomentarem la seva participació activa mitjançant workshops, entrevistes a usuaris i enquestes. Els usuaris beta formaran part de la nostra comunitat de Slack per mantenir-nos connectats fàcilment."
+        "answer": "Sí, valorarem molt els comentaris dels nostres usuaris beta i fomentarem la seva participació activa mitjançant workshops, entrevistes a usuaris i enquestes. Els usuaris beta formaran part de la nostra comunitat a Slack per mantenir-nos connectats."
     },
     {
         "question": "Puc involucrar-me d'altres maneres a més de convertir-me en usuari beta?",
-        "answer": "Sí, estem buscant socis estratègics que ens ajudin a créixer i escalar, així com a lampistes associats per a la instal·lació dels sensors. També estem interessats a donar suport a estudiants amb els seus projectes de recerca si volen fer-ho amb nosaltres."
+        "answer": "Sí, estem buscant socis estratègics que ens ajudin a créixer i escalar, així com a lampistes associats per a la instal·lació dels sensors. També estem interessats a donar suport a estudiants amb els seus projectes de recerca si volen fer-lo amb nosaltres."
     }
     ]
   },
