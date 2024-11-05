@@ -147,7 +147,7 @@
         },
         "step3": {
           "title": "Our app displays your usage data and creates a personalized plan",
-          "text": "Through their smartphone, ehe user monitors their consumption data by device, receives personalised tips and leak alerts, views savings, earns incentives, and compares their usage with the average or the recommended limits. They can also provide feedback to the AI algorithm. This helps them optimise their water consumption and adopt more sustainable practices."
+          "text": "Through their smartphone, the user monitors their consumption data by device, receives personalized tips and leak alerts, views savings, earns incentives, and compares their usage with the average or the recommended limits. They can also provide feedback to the AI algorithm. This helps them optimise their water consumption and adopt more sustainable practices."
         }
       },
       "cta": "I want one!"
@@ -207,7 +207,7 @@
       "text": "Join MICA's beta program today and start making a difference in your home's and the city's water consumption.",
       "cta1": "Demo app",
       "cta2": "Register",
-      "note": "We have a limited number of slots for beta users. Don't miss your opportunity!"
+      "note": "We have a limited number of slots. Don't miss your opportunity!"
     }
   },
   "about": {
