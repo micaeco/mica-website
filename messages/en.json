@@ -95,7 +95,7 @@
         },
         "benefit3": {
           "title": "Receive recommendations",
-          "text": "Receive personalized, actionable recommendations in real time to save water and money."
+          "text": "Get personalized and actionable tips in real time to save water and money."
         }
       },
       "cta": "How does it work?"
@@ -159,7 +159,7 @@
     "description": "Be among the first to try MICA! Register for our beta program and get a free smart sensor to control and optimize your water consumption.",
     "hero": {
       "title": "Join the beta program!",
-      "text": "We're still in the design phase. However, you can sign up today for our beta program to have the chance to be selected and get the sensor and installation for free. Just leave us your email and we'll keep you informed about updates."
+      "text": "We are in the midst of the development phase, and with the support of the Barcelona City Council, we are working hard to make MICA a reality. Sign up today to receive the sensor and installation for free and be the first to try the system. Just leave us your email, and we will keep you updated."
     },
     "benefits": {
       "title": "Discover the advantages...",
@@ -178,7 +178,7 @@
         },
         "benefit4": {
           "title": "Exclusive Offer",
-          "text": "Get the sensor and its installation free of charge – you'll only pay a small annual subscription."
+          "text": "Get the sensor and its installation free of charge – you'll only pay a small annual subscription. Limited slots"
         }
       }
     },
@@ -207,7 +207,7 @@
       "text": "Join MICA's beta program today and start making a difference in your home's and the city's water consumption.",
       "cta1": "Demo app",
       "cta2": "Register",
-      "note": "We have a limited number of slots. Don't miss your opportunity!"
+      "note": "The first 50 beta users will get the sensor and installation free of charge. Don't miss your opportunity!"
     }
   },
   "about": {
@@ -297,7 +297,7 @@
       },
       {
         "question": "What happens if there is an issue with the sensor?",
-        "answer": "If any issue arises, our multi-channel support team will be available to assist you, and a technician can be sent if necessary to resolve it."
+        "answer": "Our system will undergo rigorous testing to ensure a smooth and reliable experience. However, if any issue arises, our multi-channel support team will be available to assist you, and a technician can be sent if necessary to resolve it."
       },
       {
         "question": "How is my data protected?",
@@ -309,23 +309,31 @@
       },
       {
         "question": "Is the sensor certified?",
-        "answer": "We are still in the design phase, but we are working with certified providers for all the components that make up our sensor and gateway. Sustainability is top of mind for us: we carefully select materials with minimal environmental impact and plan to design components for durability and easy recycling at end of life."
+        "answer": "We are still in the development phase, but we are working with certified providers for all the components that make up our sensor and gateway. Sustainability is top of mind for us: we carefully select materials with minimal environmental impact and plan to design components for durability and easy recycling at end of life."
       },
       {
         "question": "What’s the price of MICA?",
-        "answer": "We are a non-profit organization, so we will keep prices to the minimum necessary to cover production, distribution, installation, and maintenance costs. We are still in the design phase, but we will announce prices soon; we expect they will be ~100 euros for the sensor and its installation, as well as an annual subscription of ~10 euros/year. Beta users will receive the sensor and installation for free, and will only pay the annual subscription."
+        "answer": "We are a non-profit organization, so we will keep prices to the minimum necessary to cover production, distribution, installation, and maintenance costs. We are still in the development phase, but we will announce prices soon; we expect they will be ~100 euros for the sensor and its installation, as well as an annual subscription of ~10 euros/year. The first 50 beta users will receive the sensor and installation for free, and will only pay the annual subscription."
       },
       {
-        "question": "How are you financing the development of MICA and the beta program?",
+        "question": "How are you financing the development of MICA?",
         "answer": "We’ve gained support and funding from the Barcelona City Council to complete our beta program in 2025 through BIT Habitat's call for innovative urban projects."
+      },
+        {
+        "question": "When will the system be available?",
+        "answer": "We expect to launch the beta programme in June 2025 and deploy the system across Barcelona in November 2025."
+      },
+        {
+        "question": "Will several users from one same household be able to access the app?",
+        "answer": "Yes, the household admin will be able to invite other users to join the household in the app so they can also track water usage, receive alerts and tips, and compare their consumption against the average or recommended limits."
       },
        {
         "question": "How can I join the beta program?",
-        "answer": "Fill out the registration form on the 'I want one' page. We'll stay in touch with you via email, and once we’re ready, we’ll send you a questionnaire to complete your application."
+        "answer": "Fill out the registration form on the 'I want one' page. We'll stay in touch with you via email, and once we’re ready, we’ll send you a questionnaire for you to complete your application."
       },
       {
         "question": "Will I be able to participate in the development of MICA during the beta program?",
-        "answer": "Yes, we will greatly value the feedback from our beta users and will encourage active participation through focus groups, user interviews, and surveys. Beta users will be part of our Slack community so we can stay connected easily."
+        "answer": "Yes, we will greatly value the feedback from our beta users and will encourage active participation through focus groups, user interviews, and surveys. Beta users will be part of our Slack community so we can stay connected."
       },
       {
         "question": "Can I get involved in ways other than becoming a beta user?",
