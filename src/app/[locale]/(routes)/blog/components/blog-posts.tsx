@@ -5,8 +5,9 @@ import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
 
-import { IPost } from '@/types';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { IPost } from '@/types';
 
 type Props = {
   posts: IPost[];
@@ -55,12 +56,7 @@ export default function BlogPosts({ posts }: Props) {
       </div>
       {visiblePosts < posts.length && (
         <div className="mt-8 text-center">
-          <button
-            onClick={loadMore}
-            className="hover:bg-brand-primary-700 rounded bg-brand-primary px-4 py-2 font-bold text-white"
-          >
-            {common('load') + ' ' + common('more')}
-          </button>
+          <Button onClick={loadMore}>{common('load') + ' ' + common('more')}</Button>
         </div>
       )}
       {posts.length == 0 && (

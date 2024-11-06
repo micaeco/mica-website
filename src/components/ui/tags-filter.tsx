@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
-
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { TPostTag, PostTags } from '@/types';
 
 type Props = {
@@ -12,20 +12,18 @@ export default function TagFilter({ selectedTag, setSelectedTag }: Props) {
   const t = useTranslations('blog');
 
   return (
-    <div className="flex flex-wrap gap-2">
-      {PostTags.map((tag) => (
-        <button
-          key={tag}
-          onClick={() => setSelectedTag(tag)}
-          className={`rounded-full px-3 py-1 text-sm capitalize ${
-            selectedTag === tag
-              ? 'bg-primary text-primary-foreground'
-              : 'bg-muted text-muted-foreground hover:bg-accent'
-          }`}
-        >
-          {t(`tags.${tag}`)}
-        </button>
-      ))}
-    </div>
+    <Tabs
+      value={selectedTag}
+      onValueChange={(value: string) => setSelectedTag(value as TPostTag)}
+      className="w-fit"
+    >
+      <TabsList className="flex h-auto flex-wrap gap-2 bg-muted p-1">
+        {PostTags.map((tag) => (
+          <TabsTrigger key={tag} value={tag} className="capitalize">
+            {t(`tags.${tag}`)}
+          </TabsTrigger>
+        ))}
+      </TabsList>
+    </Tabs>
   );
 }

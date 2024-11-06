@@ -88,13 +88,15 @@ export default function Header() {
             </div>
             <div className="space-x-4">
               {navCta.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  target={isExternalLink(item.href) ? '_blank' : '_self'}
-                >
-                  <Button variant="outline">{item.label}</Button>
-                </Link>
+                <Button variant="outline">
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    target={isExternalLink(item.href) ? '_blank' : '_self'}
+                  >
+                    {item.label}
+                  </Link>
+                </Button>
               ))}
             </div>
             <LanguageSwitcher />

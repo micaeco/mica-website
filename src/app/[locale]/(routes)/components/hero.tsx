@@ -10,7 +10,7 @@ export default function Hero() {
   const t = useTranslations('home.hero');
 
   return (
-    <section className="flex flex-col items-center bg-white px-8 pb-4 pt-20">
+    <section className="flex flex-col items-center bg-white px-8 py-16">
       <div className="relative flex w-full max-w-6xl flex-col gap-16 text-left 2xl:h-[650px]">
         <div className="pointer-events-none absolute right-5 top-4 hidden 2xl:block">
           <Image

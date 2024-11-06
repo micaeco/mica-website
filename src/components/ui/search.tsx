@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Search } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 
 interface Props {
   searchTerm: string;
@@ -10,26 +11,32 @@ interface Props {
 }
 
 export default function SearchBar({ searchTerm, setSearchTerm }: Props) {
+  const [tempSearchTerm, setTempSearchTerm] = useState('');
+
   const common = useTranslations('common');
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    setSearchTerm(tempSearchTerm);
   };
 
   return (
-    <form onSubmit={handleSearch} className="relative w-64">
+    <form onSubmit={handleSubmit} className="relative w-64">
       <Input
         type="text"
         placeholder={common('search').charAt(0).toUpperCase() + common('search').slice(1) + '...'}
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
+        value={tempSearchTerm}
+        onChange={(e) => setTempSearchTerm(e.target.value)}
+        className="pr-12"
       />
-      <button
+      <Button
         type="submit"
-        className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 transition hover:text-brand-primary"
+        variant="ghost"
+        size="icon"
+        className="absolute right-0 top-0 h-full px-3"
       >
-        <Search size={20} />
-      </button>
+        <Search className="text-gray-400" size={20} />
+      </Button>
     </form>
   );
 }

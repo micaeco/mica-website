@@ -12,12 +12,12 @@ export default function VideoSection() {
 
   return (
     <section className="bg-white px-8 py-16">
-      <div className="mx-auto grid max-w-3xl grid-cols-1 gap-4 2xl:max-w-7xl 2xl:grid-cols-12">
+      <div className="mx-auto grid max-w-3xl grid-cols-1 gap-4 2xl:max-w-6xl 2xl:grid-cols-12">
         <Video
           src="/videos/mica-2.mp4"
           subtitles={subtitles}
           autoPlayWhenVisible
-          className="2xl:col-span-8 2xl:mx-16"
+          className="2xl:col-span-8 2xl:mr-12"
         />
         <div className="text-pretty 2xl:col-span-4 2xl:text-right">
           <h2 className="font-bold">{t('title')}</h2>
