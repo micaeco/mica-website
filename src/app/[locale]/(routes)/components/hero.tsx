@@ -5,16 +5,9 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
-import Video from '@/components/ui/video';
 
 export default function Hero() {
   const t = useTranslations('home.hero');
-
-  const subtitles = [
-    { src: '/locales/ca/subtitles.vtt', srcLang: 'ca', label: 'Català' },
-    { src: '/locales/es/subtitles.vtt', srcLang: 'es', label: 'Español' },
-    { src: '/locales/en/subtitles.vtt', srcLang: 'en', label: 'English' },
-  ];
 
   return (
     <section className="flex flex-col items-center bg-white px-8 pb-4 pt-20">
@@ -38,11 +31,9 @@ export default function Hero() {
           <div className="relative">
             <h1 className="max-w-[500px] text-pretty font-bold leading-tight">{t('title')}</h1>
             <p className="mt-4 max-w-[350px] text-pretty font-light">{t('text')}</p>
-            <Link href="/beta">
-              <Button className="mb-4 mt-10 2xl:mb-24" size="lg">
-                {t('cta')}
-              </Button>
-            </Link>
+            <Button className="mb-4 mt-10 2xl:mb-24" size="lg">
+              <Link href="/beta">{t('cta')}</Link>
+            </Button>
             <div className="space-y-2">
               <p className="text-xs font-light">{t('with-the-support')}</p>
               <Image
@@ -54,14 +45,6 @@ export default function Hero() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="flex justify-center py-16">
-        <Video
-          src="/videos/mica-2.mp4"
-          subtitles={subtitles}
-          autoPlayWhenVisible
-          className="max-w-6xl"
-        />
       </div>
     </section>
   );

@@ -7,6 +7,7 @@ import Problem from './components/problem';
 import Solution from './components/solution';
 import Testimonials from './components/testimonials';
 import WaveSeparator from '@/components/wave-separator';
+import Video from './components/video';
 
 export async function generateMetadata(): Promise<Metadata> {
   const messages = await getMessages();
@@ -22,6 +23,7 @@ export default function Home() {
   return (
     <main className="flex flex-col justify-center text-brand-primary">
       <Hero />
+      <Video />
       <WaveSeparator topColor="white" bottomColor="#00f2dd" />
       <Solution />
       <WaveSeparator topColor="brand-tertiary" bottomColor="#ffffff" />
