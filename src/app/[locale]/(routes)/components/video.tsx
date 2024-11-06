@@ -5,9 +5,9 @@ export default function VideoSection() {
   const t = useTranslations('home.video');
 
   const subtitles = [
-    { src: '/locales/ca/subtitles.vtt', srcLang: 'ca', label: 'Català' },
-    { src: '/locales/es/subtitles.vtt', srcLang: 'es', label: 'Español' },
-    { src: '/locales/en/subtitles.vtt', srcLang: 'en', label: 'English' },
+    { src: '/subtitles/ca.vtt', srcLang: 'ca', label: 'Català' },
+    { src: '/subtitles/es.vtt', srcLang: 'es', label: 'Español' },
+    { src: '/subtitles/en.vtt', srcLang: 'en', label: 'English' },
   ];
 
   return (
