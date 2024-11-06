@@ -11,7 +11,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardContent, CardTitle, CardFooter } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
-import { IFormData } from '@/types';
+import { FormData } from '@/types';
 import { getRegisterFormCheckboxes, getRegisterFormFields } from '@/lib/constants';
 import { useRegisterLeads } from '@/hooks';
 
@@ -54,7 +54,7 @@ export default function RegisterForm() {
                       placeholder={field.placeholder}
                       value={formData[field.name] as string}
                       onChange={(e) =>
-                        handleInputChange(field.name as keyof IFormData, e.target.value)
+                        handleInputChange(field.name as keyof FormData, e.target.value)
                       }
                       required={field.required}
                     />
@@ -69,7 +69,7 @@ export default function RegisterForm() {
                       id={field.name}
                       checked={formData[field.name] as boolean}
                       onCheckedChange={(checked) => {
-                        handleInputChange(field.name as keyof IFormData, checked);
+                        handleInputChange(field.name as keyof FormData, checked);
                         if (field.onChange) {
                           field.onChange(checked);
                         }

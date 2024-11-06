@@ -22,7 +22,7 @@ import {
   Database
 } from 'lucide-react';
 
-import { IInputField } from '@/types';
+import { FormInputField } from '@/types';
 
 export const languageMap: { [key: string]: string } = {
   ca: 'Català',
@@ -211,7 +211,7 @@ export function getTeamMembers(t: (key: string) => string) {
   ]
 }
 
-export function getRegisterFormFields(t: (key: string) => string, common: (key: string) => string): IInputField[] {
+export function getRegisterFormFields(t: (key: string) => string, common: (key: string) => string): FormInputField[] {
   return [
     {
       type: 'input',
@@ -261,7 +261,7 @@ export function getRegisterFormFields(t: (key: string) => string, common: (key: 
   ];
 }
 
-export function getRegisterFormCheckboxes(t: (key: string) => string): IInputField[] {
+export function getRegisterFormCheckboxes(t: (key: string) => string): FormInputField[] {
   return [
     {
       type: 'input',

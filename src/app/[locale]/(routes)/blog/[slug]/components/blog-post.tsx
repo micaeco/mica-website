@@ -7,7 +7,7 @@ import { Clock, User, Tag, Book } from 'lucide-react';
 import Loading from '@/components/loading';
 import MarkdownRenderer from '@/components/ui/markdown';
 import GoBack from '@/components/ui/go-back';
-import { IPost } from '@/types';
+import { BlogPost } from '@/types';
 import { languageMap } from '@/lib/constants';
 
 type Props = {
@@ -18,7 +18,7 @@ type Props = {
 
 export default function BlogPostPage({ params }: Props) {
   const { slug } = params;
-  const [posts, setPosts] = useState<IPost[]>([]);
+  const [posts, setPosts] = useState<BlogPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 

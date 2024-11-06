@@ -7,10 +7,10 @@ import { useTranslations } from 'next-intl';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { IPost } from '@/types';
+import { BlogPost } from '@/types';
 
 type Props = {
-  posts: IPost[];
+  posts: BlogPost[];
 };
 
 export default function BlogPosts({ posts }: Props) {

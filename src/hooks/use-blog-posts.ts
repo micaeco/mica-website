@@ -4,13 +4,13 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useTranslations } from 'next-intl';
 import { useLocale } from "next-intl";
 
-import { IPost, TPostTag } from '@/types';
+import { BlogPost, BlogPostTag } from '@/types';
 
 export function useBlogPosts() {
-  const [posts, setPosts] = useState<IPost[]>([]);
+  const [posts, setPosts] = useState<BlogPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedTag, setSelectedTag] = useState<TPostTag>('all');
+  const [selectedTag, setSelectedTag] = useState<BlogPostTag>('all');
 
   const locale = useLocale();
   const errors = useTranslations("errors");

@@ -3,12 +3,12 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useLocale, useTranslations } from 'next-intl';
 
-import { IFormData } from '@/types';
+import { FormData } from '@/types';
 
 const STORAGE_KEY = 'formData';
 
 export function useRegisterLeads() {
-  const [formData, setFormData] = useState<IFormData>(getInitialFormData());
+  const [formData, setFormData] = useState<FormData>(getInitialFormData());
   const [isSubmitting, setIsSubmitting] = useState(false);
   const locale = useLocale();
 
@@ -32,7 +32,7 @@ export function useRegisterLeads() {
     }
   }, [formData]);
 
-  const handleInputChange = (name: keyof IFormData, value: string | boolean) => {
+  const handleInputChange = (name: keyof FormData, value: string | boolean) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -78,7 +78,7 @@ export function useRegisterLeads() {
   return { formData, isSubmitting, handleInputChange, handleSubmit };
 }
 
-function getInitialFormData(): IFormData {
+function getInitialFormData(): FormData {
   return {
     name: '',
     surname: '',

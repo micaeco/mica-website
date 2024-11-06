@@ -1,7 +1,7 @@
-export const PostTags = ['all', 'article', 'manual', 'others'] as const;
-export type TPostTag = typeof PostTags[number];
+export const BlogPostTags = ['all', 'article', 'manual', 'others'] as const;
+export type BlogPostTag = typeof BlogPostTags[number];
 
-export interface IPost {
+export interface BlogPost {
   lang: string;
   slug: string;
   title: string;
@@ -13,7 +13,7 @@ export interface IPost {
   tag: TPostTag;
 }
 
-export interface IComment {
+export interface BlogComment {
   id: string;
   postId: string;
   author: string;

@@ -4,13 +4,13 @@ import React from 'react';
 
 import SearchBar from '@/components/ui/search';
 import TagFilter from '@/components/ui/tags-filter';
-import { TPostTag } from '@/types';
+import { BlogPostTag } from '@/types';
 
 type Props = {
   searchTerm: string;
   setSearchTerm: (term: string) => void;
-  selectedTag: TPostTag;
-  setSelectedTag: (tag: TPostTag) => void;
+  selectedTag: BlogPostTag;
+  setSelectedTag: (tag: BlogPostTag) => void;
 };
 
 export default function Blog({ searchTerm, setSearchTerm, selectedTag, setSelectedTag }: Props) {

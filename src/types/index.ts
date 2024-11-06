@@ -1,4 +1,22 @@
-export * from './blog';
-export * from './form';
-export * from './faqs';
-export * from './team';
+export type {
+  BlogPost,
+  BlogComment,
+  BlogPostTag
+} from './blog.d';
+
+export { BlogPostTags } from './blog.d';
+
+export type {
+  FormInputField,
+  FormSelectField,
+  FormField,
+  FormData
+} from './form.d';
+
+export type {
+  Faq,
+} from './faqs.d';
+
+export type {
+  TeamMember,
+} from './team.d';

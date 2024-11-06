@@ -1,8 +1,7 @@
 import { LucideIcon } from 'lucide-react';
 import { ReactNode } from 'react';
 
-// Common properties
-interface IBaseFormField {
+interface BaseFormField {
   label: string;
   link?: string;
   name: string;
@@ -13,8 +12,7 @@ interface IBaseFormField {
   error?: string;
 }
 
-// Input-specific properties
-export interface IInputField extends IBaseFormField {
+export interface FormInputField extends BaseFormField {
   description?: string;
   type: 'input';
   icon?: LucideIcon;
@@ -22,14 +20,13 @@ export interface IInputField extends IBaseFormField {
   placeholder?: string;
 }
 
-// Select-specific properties
-export interface ISelectField extends IBaseFormField {
+export interface FormSelectField extends BaseFormField {
   type: 'select';
   options: Array<{ value: string; label: string }>;
 }
 
-export type IFormField = IInputField | ISelectField;
+export type FormField = InputField | SelectField;
 
-export interface IFormData {
+export interface FormData {
   [key: string]: string | boolean;
 }

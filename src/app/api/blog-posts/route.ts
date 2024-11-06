@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getBlogPosts } from '@/lib/github';
 import { parseReadme } from '@/lib/utils';
-import { IPost, TPostTag } from '@/types';
+import { BlogPost, BlogPostTag } from '@/types';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -17,7 +17,7 @@ export async function GET() {
       );
     }
 
-    const posts: IPost[] = Object.entries(rawPosts).map(([filename, content]) => {
+    const posts: BlogPost[] = Object.entries(rawPosts).map(([filename, content]) => {
       const { metadata, content: postContent } = parseReadme(content);
 
       return {
@@ -26,7 +26,7 @@ export async function GET() {
         title: metadata.title || filename.replace(/\.md$/, ''),
         cover: metadata.cover || '',
         summary: metadata.summary || '',
-        tag: (metadata.tag?.toLowerCase() as TPostTag) || 'others',
+        tag: (metadata.tag?.toLowerCase() as BlogPostTag) || 'others',
         date: metadata.date || new Date().toISOString(),
         author: metadata.author || '',
         content: postContent,
