@@ -104,7 +104,7 @@
         },
         "benefit3": {
           "title": "Recibe recomendaciones",
-          "text": "Recibe recomendaciones personalizadas y fáciles de accionar que te ayudarán a ahorrar agua y dinero."
+          "text": "Consigue consejos personalizados y fáciles de accionar cuando más los necesitas para ahorrar agua y dinero."
         }
       },
       "cta": "Cómo funciona?"
@@ -168,7 +168,7 @@
     "description": "Sé de los primeros en probar MICA. Regístrate en nuestro programa beta y consigue un sensor inteligente gratuito para controlar y optimizar tu consumo de agua.",
     "hero": {
       "title": "¡Únete al programa beta!",
-      "text": "Aún estamos en fase de diseño, pero puedes apuntarte desde hoy mismo al programa beta para tener la opción de ser seleccionado y obtener el sensor y la instalación de forma gratuita. Solo debes dejarnos tu correo electrónico y te mantendremos informado sobre las novedades."
+      "text": "Estamos en plena fase de desarrollo, y con el apoyo del Ayuntamiento de Barcelona, estamos trabajando intensamente para convertir MICA en una realidad. Apúntate hoy mismo a nuestro programa beta para obtener el sensor y la instalación de forma gratuita y ser el primero en probar el sistema. Déjanos tu correo electrónico y te mantendremos informado."
     },
     "benefits": {
       "title": "Descubre las ventajas...",
@@ -186,8 +186,8 @@
           "text": "Forma parte de una comunidad comprometida con la sostenibilidad."
         },
         "benefit4": {
-          "title": "Oferta Exclusiva",
-          "text": "Consigue el sensor y la instalación de forma gratuita -solo pagarás una pequeña suscripción anual."
+          "title": "Oferta exclusiva",
+          "text": "Consigue el sensor y la instalación de forma gratuita -solo pagarás una pequeña suscripción anual. Plazas limitadas."
         }
       }
     },
@@ -216,7 +216,7 @@
       "text": "Únete al programa beta de MICA hoy y empieza a marcar la diferencia en el consumo de agua de tu hogar y de la ciudad.",
       "cta1": "Demo app",
       "cta2": "Regístrate",
-      "note": "Tenemos plazas limitadas para el programa beta. ¡No pierdas tu oportunidad!"
+      "note": "Los primeros 50 usuarios beta conseguirán el sensor y la instalación gratis. ¡No pierdas tu oportunidad!"
     }
   },
   "about": {
@@ -249,7 +249,7 @@
         },
         "irene": {
           "role": "Experiencia del Usuario y Marketing",
-          "studies": "Física y Manager de Formación en Datos e IA"
+          "studies": "Física y Formación en Datos e IA"
         },
         "gabriel": {
           "role": "Desarrollo de software",
@@ -291,7 +291,7 @@
         "title": "Lanzamiento y expansión",
         "items": [
           "· Despliegue de la plataforma en el mercado",
-          "· Evaluaciones continuas del funcionamiento del sistema"
+          "· Evaluaciones contínuas del funcionamiento del sistema"
         ]
       }
     }
@@ -309,7 +309,7 @@
       },
       {
         "question": "¿Qué ocurre si hay un problema con el sensor?",
-        "answer": "Si surge algún problema, nuestro equipo de soporte multicanal estará disponible para ayudarte, y si es necesario, un técnico podrá acudir a resolverlo."
+        "answer": "Nuestro sistema se someterá a rigurosas pruebas para garantizar una experiencia fluida y confiable a nuestros usuarios. Sin embargo, si surgiera cualquier problema, nuestro equipo de soporte multicanal estará disponible para ayudarte, y un técnico podrá acudir si es necesario para resolverlo."
       },
       {
         "question": "¿Cómo se protege mi información?",
@@ -321,7 +321,7 @@
       },
       {
         "question": "¿El sensor está certificado?",
-        "answer": "Todavía estamos en la fase de diseño, pero estamos trabajando con proveedores certificados para todos los componentes que conforman nuestro sensor y puerta de enlace. La sostenibilidad es una prioridad para nosotros: seleccionamos cuidadosamente materiales con un mínimo impacto ambiental y consideramos la durabilidad y el fácil reciclaje de los componentes al final de su vida útil."
+        "answer": "Todavía estamos en la fase de desarrollo, pero estamos trabajando con proveedores certificados para todos los componentes que conforman nuestro sensor y puerta de enlace. La sostenibilidad es una prioridad para nosotros: seleccionamos cuidadosamente materiales con un mínimo impacto ambiental y consideramos la durabilidad y el fácil reciclaje de los componentes al final de su vida útil."
       },
       {
         "question": "¿Cuál es el precio de MICA?",
@@ -333,11 +333,11 @@
       },
       {
         "question": "¿Cómo puedo unirme al programa beta?",
-        "answer": "Llena el formulario de registro que se encuentra en la página 'Quiero uno'. Nos mantendremos en contacto contigo por correo electrónico y, una vez listos, te enviaremos un cuestionario para completar tu solicitud."
+        "answer": "Rellena el formulario de registro que se encuentra en la página 'Quiero uno'. Nos mantendremos en contacto contigo por correo electrónico y, una vez listos, te enviaremos un cuestionario para que completes tu solicitud."
       },
       {
         "question": "¿Podré participar en el desarrollo de MICA durante el programa beta?",
-        "answer": "Sí, valoraremos mucho la retroalimentación de nuestros usuarios beta y fomentaremos la participación activa a través de workshops, entrevistas a usuarios y encuestas. Los usuarios beta formarán parte de nuestra comunidad en Slack para que podamos estar conectados fácilmente."
+        "answer": "Sí, valoraremos mucho la retroalimentación de nuestros usuarios beta y fomentaremos la participación activa a través de workshops, entrevistas a usuarios y encuestas. Los usuarios beta formarán parte de nuestra comunidad de Slack para estar conectados."
       },
       {
         "question": "¿Puedo involucrarme de otras maneras además de convertirme en un usuario beta?",
