@@ -24,13 +24,13 @@ export default function BlogPosts({ posts }: Props) {
   };
 
   return (
-    <section className="container mx-auto">
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+    <section className="mx-auto">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
         {posts.slice(0, visiblePosts).map((post) => (
           <Card key={post.slug} className="shadow-sm transition-shadow hover:shadow-lg">
             <Link href={`/blog/${post.slug}`}>
               {post.cover ? (
-                <div className="relative aspect-video w-full overflow-hidden">
+                <div className="relative aspect-video w-full overflow-hidden rounded-t-lg">
                   <Image
                     src={post.cover}
                     alt={post.title}

@@ -17,7 +17,7 @@ export default function BlogContent() {
 
   return (
     <main className="bg-gray-50 px-4 py-16">
-      <div className="container mx-auto max-w-7xl">
+      <div className="mx-auto max-w-7xl">
         <h2 className="mb-8 text-center font-bold capitalize">{common('blog')}</h2>
         <SearchBar
           searchTerm={searchTerm}

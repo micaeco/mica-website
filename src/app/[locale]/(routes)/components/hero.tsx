@@ -20,13 +20,16 @@ export default function Hero() {
             height={720}
           />
         </div>
-        <div className="z-10 mx-auto justify-center space-y-4 text-left 2xl:mx-0 2xl:justify-start">
+        <div className="pointer-events-none absolute right-5 top-24 hidden xl:block 2xl:hidden">
+          <Image src="/images/hero-graphic-mobile.webp" alt="Background" width={900} height={600} />
+        </div>
+        <div className="z-10 mx-auto justify-center space-y-4 text-left xl:mx-0 xl:justify-start">
           <Image
             src="/images/hero-graphic-mobile.webp"
             alt="Logo"
             width={475}
             height={300}
-            className="block 2xl:hidden"
+            className="block xl:hidden"
           />
           <div className="relative">
             <h1 className="max-w-[500px] text-pretty font-bold leading-tight">{t('title')}</h1>

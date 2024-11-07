@@ -46,7 +46,7 @@ export default function Solution() {
             </div>
           </div>
 
-          <div className="col-span-0 flex justify-end 2xl:col-span-5">
+          <div className="hidden justify-end 2xl:col-span-5 2xl:block">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
