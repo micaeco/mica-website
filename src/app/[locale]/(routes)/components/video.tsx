@@ -11,7 +11,7 @@ export default function VideoSection() {
   ];
 
   return (
-    <section className="bg-white px-8 py-16">
+    <section className="bg-white px-8 pb-32">
       <div className="mx-auto grid max-w-3xl grid-cols-1 gap-4 xl:max-w-6xl xl:grid-cols-12">
         <Video
           src="/videos/mica-2.mp4"
