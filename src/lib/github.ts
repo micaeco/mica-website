@@ -1,4 +1,5 @@
 import { Octokit } from "@octokit/rest";
+import { locales, defaultLocale } from "@/i18n/routing";
 
 class Github {
   private octokit: Octokit;
@@ -9,7 +10,6 @@ class Github {
     this.octokit = new Octokit({
       auth: process.env.GITHUB_TOKEN,
       request: {
-        // Disable caching in Octokit
         cache: 'no-store'
       }
     });
@@ -19,14 +19,13 @@ class Github {
 
   async getFile(path: string): Promise<string> {
     try {
-      // Add ref parameter to get the latest commit
       const response = await this.octokit.repos.getContent({
         owner: this.owner,
         repo: this.repo,
         path,
-        ref: 'main', // or 'master' depending on your default branch
+        ref: 'main',
         headers: {
-          'If-None-Match': '', // Bypass GitHub's caching
+          'If-None-Match': '',
         }
       });
 
@@ -46,9 +45,9 @@ class Github {
         owner: this.owner,
         repo: this.repo,
         path,
-        ref: 'main', // or 'master' depending on your default branch
+        ref: 'main',
         headers: {
-          'If-None-Match': '', // Bypass GitHub's caching
+          'If-None-Match': '',
         }
       });
 
@@ -79,4 +78,8 @@ export async function getFAQs(): Promise<{ [filename: string]: string }> {
 
 export async function getBlogPosts(): Promise<{ [filename: string]: string }> {
   return github.getFilesFromDirectory('Software/Web/Blog/published');
+}
+
+export async function getPrivacyPolicy(locale: string): Promise<string> {
+  return github.getFile(`Operations/Legal/privacy-policy-${locales.includes(locale as any) ? locale : defaultLocale}.md`);
 }

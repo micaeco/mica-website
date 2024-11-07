@@ -24,7 +24,7 @@ export default function BlogPosts({ posts }: Props) {
   };
 
   return (
-    <div className="container mx-auto">
+    <section className="container mx-auto">
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         {posts.slice(0, visiblePosts).map((post) => (
           <Card key={post.slug} className="shadow-sm transition-shadow hover:shadow-lg">
@@ -64,6 +64,6 @@ export default function BlogPosts({ posts }: Props) {
           <p className="first-letter:capitalize">{common('no-articles-found')}.</p>
         </div>
       )}
-    </div>
+    </section>
   );
 }
