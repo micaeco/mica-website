@@ -15,6 +15,7 @@ export default function VideoSection() {
       playerVars: {
         cc_load_policy: 1,
         cc_lang_pref: locale,
+        hd: 1,
       },
     },
   };
