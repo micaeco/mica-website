@@ -17,11 +17,9 @@ const MOBILE_BREAKPOINT = 1400;
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(true);
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
   const pathname = usePathname();
-
   const t = useTranslations();
-
   const navLinks = getNavLinks(t);
   const navCta = getNavCta(t);
 
@@ -33,10 +31,8 @@ export default function Header() {
     const handleResize = () => {
       setIsMobile(checkIsMobile());
     };
-
     handleResize();
     window.addEventListener('resize', handleResize);
-
     return () => window.removeEventListener('resize', handleResize);
   }, [checkIsMobile]);
 
@@ -46,17 +42,20 @@ export default function Header() {
     } else {
       document.body.style.overflow = 'unset';
     }
-
     return () => {
       document.body.style.overflow = 'unset';
     };
   }, [isMenuOpen]);
 
   useEffect(() => {
-    if (!isMobile) {
+    if (isMobile === false) {
       setIsMenuOpen(false);
     }
   }, [isMobile]);
+
+  if (isMobile === null) {
+    return null;
+  }
 
   return (
     <header className="sticky top-0 z-20 border-b border-gray-200 bg-white transition-shadow duration-300 hover:shadow-md">

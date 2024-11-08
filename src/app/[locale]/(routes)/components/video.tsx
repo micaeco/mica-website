@@ -1,24 +1,61 @@
-import Video from '@/components/ui/video';
-import { useTranslations } from 'next-intl';
+'use client';
+
+import ReactPlayer from 'react-player/lazy';
+import { useLocale, useTranslations } from 'next-intl';
+import { useEffect, useRef, useState } from 'react';
 
 export default function VideoSection() {
   const t = useTranslations('home.video');
+  const locale = useLocale();
+  const containerRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
-  const subtitles = [
-    { src: '/subtitles/ca.vtt', srcLang: 'ca', label: 'Català' },
-    { src: '/subtitles/es.vtt', srcLang: 'es', label: 'Español' },
-    { src: '/subtitles/en.vtt', srcLang: 'en', label: 'English' },
-  ];
+  const config = {
+    youtube: {
+      playerVars: {
+        cc_load_policy: 1,
+        cc_lang_pref: locale,
+      },
+    },
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries;
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.5 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
 
   return (
     <section className="bg-white px-8 pb-32">
       <div className="mx-auto grid max-w-3xl grid-cols-1 gap-4 xl:max-w-6xl xl:grid-cols-12">
-        <Video
-          src="/videos/mica-2.mp4"
-          subtitles={subtitles}
-          autoPlayWhenVisible
-          className="xl:col-span-8 xl:mr-12"
-        />
+        <div
+          ref={containerRef}
+          className="aspect-video overflow-hidden rounded-lg xl:col-span-8 xl:mr-12"
+        >
+          <ReactPlayer
+            url="https://www.youtube.com/watch?v=KMmJsk4eba4"
+            playing={isVisible}
+            width="100%"
+            height="100%"
+            controls
+            muted
+            config={config}
+          />
+        </div>
         <div className="text-pretty xl:col-span-4 xl:text-right">
           <h2 className="font-bold">{t('title')}</h2>
           <p>{t('text')}</p>

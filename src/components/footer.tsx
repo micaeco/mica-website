@@ -20,6 +20,7 @@ export default function Footer() {
     { platform: 'x', url: 'https://x.com/micaeco_bcn' },
     { platform: 'linkedin', url: 'https://linkedin.com/company/micaeco' },
     { platform: 'github', url: 'https://github.com/micaeco' },
+    { platform: 'youtube', url: 'https://www.youtube.com/@micaeco_bcn/videos' },
   ];
 
   return (

@@ -72,10 +72,6 @@ class Github {
 
 const github = new Github('micaeco', 'mica-documentation');
 
-export async function getFAQs(): Promise<{ [filename: string]: string }> {
-  return github.getFilesFromDirectory('Software/Web/Faqs');
-}
-
 export async function getBlogPosts(): Promise<{ [filename: string]: string }> {
   return github.getFilesFromDirectory('Software/Web/Blog/published');
 }

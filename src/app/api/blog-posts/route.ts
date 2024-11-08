@@ -17,8 +17,8 @@ export async function GET() {
       );
     }
 
-    const posts: BlogPost[] = Object.entries(rawPosts).map(([filename, content]) => {
-      const { metadata, content: postContent } = parseReadme(content);
+    const posts: BlogPost[] = Object.entries(rawPosts).map(([filename, body]) => {
+      const { metadata, content } = parseReadme(body);
 
       return {
         lang: (metadata.lang || 'ca').toLowerCase(),
@@ -29,7 +29,7 @@ export async function GET() {
         tag: (metadata.tag?.toLowerCase() as BlogPostTag) || 'others',
         date: metadata.date || new Date().toISOString(),
         author: metadata.author || '',
-        content: postContent,
+        content,
       };
     });
 
@@ -45,7 +45,6 @@ export async function GET() {
       }
     );
   } catch (error) {
-    console.error('Blog posts error:', error);
     return NextResponse.json(
       { error: 'INTERNAL_ERROR' },
       { status: 500 }
