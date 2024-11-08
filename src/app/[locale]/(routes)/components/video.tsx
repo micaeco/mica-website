@@ -16,21 +16,9 @@ export default function VideoSection() {
       playerVars: {
         cc_load_policy: 1,
         cc_lang_pref: locale,
-        hd: 1,
       },
     },
   };
-
-  const handleReady = useCallback((player: ReactPlayerProps) => {
-    if (player && player.getInternalPlayer()) {
-      const internalPlayer = player.getInternalPlayer();
-      const availableQualities = internalPlayer.getAvailableQualityLevels();
-
-      if (availableQualities.length > 0) {
-        internalPlayer.setPlaybackQuality(availableQualities[0]);
-      }
-    }
-  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -67,7 +55,6 @@ export default function VideoSection() {
             controls
             muted
             config={config}
-            onReady={handleReady}
           />
         </div>
         <div className="text-pretty xl:col-span-4 xl:text-right">
