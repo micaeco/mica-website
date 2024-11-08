@@ -1,25 +1,25 @@
 'use client';
 
-import { Link, usePathname } from '@/i18n/routing';
+import { usePathname, useRouter } from 'next/navigation';
 import { ArrowLeft } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
-type Props = {
-  text: string;
-  link?: string;
-};
+import { Button } from '@/components/ui/button';
 
-export default function GoBack({ text, link }: Props) {
+export default function GoBack() {
+  const router = useRouter();
   const pathname = usePathname();
-  const pathWithoutLocale = pathname.substring(pathname.indexOf('/'));
-  const href = pathWithoutLocale + '/..';
+  const common = useTranslations('common');
+
+  if (pathname === '/') return null;
 
   return (
-    <Link
-      href={link ? link : href}
-      className="mb-6 inline-flex items-center text-blue-600 hover:text-blue-800"
+    <div
+      onClick={() => router.back()}
+      className="group mb-6 inline-flex items-center gap-2 text-blue-600 hover:cursor-pointer hover:text-blue-800"
     >
-      <ArrowLeft className="mr-2 size-4" />
-      <span className="capitalize">{text}</span>
-    </Link>
+      <ArrowLeft size={20} className="transition-transform group-hover:-translate-x-1" />
+      <span className="text-lg capitalize">{common('go-back')}</span>
+    </div>
   );
 }

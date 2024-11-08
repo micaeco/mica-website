@@ -295,7 +295,7 @@ export function getTimelineItems(t: {
     step2: {
       date: 'JUN 24',
       icon: Settings,
-      color: 'bg-brand-tertiary'
+      color: 'bg-gray-300'
     },
     step3: {
       date: 'OCT 24',

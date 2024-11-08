@@ -41,15 +41,19 @@ export default function Latest() {
   }, [locale]);
 
   return (
-    <section className="mx-auto max-w-7xl space-y-8 px-8 py-8">
-      {error ? (
-        <p className="text-destructive">{error}</p>
-      ) : content ? (
-        <Markdown content={content} />
-      ) : (
-        <Loading />
-      )}
-      <GoBack text={common('go-back')} link="/register" />
+    <section className="bg-white px-8 py-8">
+      <div className="mx-auto max-w-6xl space-y-8">
+        <div>
+          {error ? (
+            <p className="text-destructive">{error}</p>
+          ) : content ? (
+            <Markdown content={content} />
+          ) : (
+            <Loading />
+          )}
+        </div>
+        <GoBack />
+      </div>
     </section>
   );
 }

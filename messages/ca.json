@@ -39,7 +39,9 @@
     "blog": "blog",
     "load": "carregar",
     "more": "més",
-    "verification": "verificació"
+    "verification": "verificació",
+    "legal": "legal",
+    "company": "empresa"
   },
   "errors": {
     "DEFAULT": "S'ha produït un error. Si us plau, torna-ho a provar més tard.",
@@ -158,10 +160,12 @@
           "title": "La nostra aplicació visualitza el teu consum i crea un pla personalitzat",
           "text": "A través del seu mòbil, l’usuari monitoritza les seves dades de consum per dispositiu, rep consells personalitzats i alertes sobre fugues, visualitza l’estalvi, guanya incentius i es compara amb la mitjana o els límits recomanats. També pot retroalimentar l’algoritme d’IA. Això li permet optimitzar el seu consum d’aigua i adoptar pràctiques més sostenibles."
         }
-      },
-      "cta": "En vull un!"
+      }
     },
-    "cta": "En vull un!"
+    "cta": {
+      "cta1": "Prova l'app",
+      "cta2": "En vull un!"
+    }
   },
   "beta": {
     "title": "Programa Beta per Estalviar Aigua",

@@ -3,26 +3,34 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { ExternalLink } from 'lucide-react';
 
 export default function CallToAction() {
   const t = useTranslations('beta.cta');
 
   return (
-    <section className="bg-secondary py-16 text-secondary-foreground">
-      <div className="container mx-auto px-8 text-center">
-        <h6 className="mx-auto mb-8 max-w-2xl">{t('text')}</h6>
-        <div className="space-x-3">
-          <Button variant="outline" size="lg">
-            <Link href="https://app.mica.eco" target="_blank">
-              {t('cta1')}
-            </Link>
-          </Button>
-
-          <Button size="lg">
-            <Link href="/register"> {t('cta2')} </Link>
-          </Button>
-        </div>
-        <p className="mt-6 text-sm text-secondary-foreground/80">{t('note')}</p>
+    <section className="bg-secondary pt-16 text-secondary-foreground">
+      <div className="flex justify-center">
+        <Card className="mx-8 max-w-4xl p-8">
+          <CardHeader>
+            <CardTitle>{t('text')}</CardTitle>
+          </CardHeader>
+          <CardContent className="flex flex-col justify-center gap-2 sm:flex-row">
+            <Button variant="outline" size="lg">
+              <Link href="https://app.mica.eco" target="_blank">
+                {t('cta1')}
+                <ExternalLink size={20} className="ml-1 inline-flex" />
+              </Link>
+            </Button>
+            <Button size="lg">
+              <Link href="/register"> {t('cta2')} </Link>
+            </Button>
+          </CardContent>
+          <CardFooter>
+            <p className="text-sm text-muted-foreground">{t('note')}</p>
+          </CardFooter>
+        </Card>
       </div>
     </section>
   );

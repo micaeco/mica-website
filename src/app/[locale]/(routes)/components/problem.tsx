@@ -11,7 +11,7 @@ export default function Problem() {
   const t = useTranslations('home.problem');
 
   return (
-    <section className="bg-white px-8 py-20">
+    <section className="bg-white px-8 py-24">
       <div className="mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

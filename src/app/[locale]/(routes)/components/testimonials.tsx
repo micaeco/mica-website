@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 
 import StarRating from '@/components/ui/star-rating';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 
 export default function TestimonialCarousel() {
   const [current, setCurrent] = useState(0);
@@ -20,7 +21,7 @@ export default function TestimonialCarousel() {
   }, [current]);
 
   return (
-    <section className="bg-gray-100 px-6 py-32">
+    <section className="bg-muted px-6 pb-16 pt-24">
       <div className="mx-auto max-w-4xl">
         <div className="relative h-48">
           <AnimatePresence mode="wait">
@@ -32,12 +33,18 @@ export default function TestimonialCarousel() {
               transition={{ duration: 0.5 }}
               className="text-center"
             >
-              <StarRating rating={Number(testimonials[current].rating)} />
-              <p className="mb-4 mt-2 text-2xl italic text-brand-primary">
-                &ldquo;{testimonials[current].quote}&rdquo;
-              </p>
-              <p className="font-semibold text-brand-primary">{testimonials[current].author}</p>
-              <p className="text-sm text-brand-primary/60">{testimonials[current].role}</p>
+              <Card>
+                <CardHeader>
+                  <StarRating rating={Number(testimonials[current].rating)} />
+                </CardHeader>
+                <CardContent>
+                  <p className="mb-4 mt-2 text-2xl italic text-brand-primary">
+                    &ldquo;{testimonials[current].quote}&rdquo;
+                  </p>
+                  <p className="font-semibold text-brand-primary">{testimonials[current].author}</p>
+                  <p className="text-sm text-brand-primary/60">{testimonials[current].role}</p>
+                </CardContent>
+              </Card>
             </motion.div>
           </AnimatePresence>
         </div>

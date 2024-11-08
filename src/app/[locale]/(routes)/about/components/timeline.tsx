@@ -8,7 +8,7 @@ export default function Timeline() {
   const timelineItems = getTimelineItems(t);
 
   return (
-    <section className="flex justify-center bg-white px-8 py-8">
+    <section className="flex justify-center bg-brand-tertiary px-8 py-16">
       <div>
         {timelineItems.map((item, index) => (
           <div key={index} className="flex">

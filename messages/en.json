@@ -39,7 +39,9 @@
     "blog": "blog",
     "load": "load",
     "more": "more",
-    "verification": "verification"
+    "verification": "verification",
+    "legal": "legal",
+    "company": "empresa"
   },
   "errors": {
     "DEFAULT": "An error has occurred. Please try again later.",
@@ -153,10 +155,12 @@
           "title": "Our app displays your usage data and creates a personalized plan",
           "text": "Through their smartphone, the user monitors their consumption data by device, receives personalized tips and leak alerts, views savings, earns incentives, and compares their usage with the average or the recommended limits. They can also provide feedback to the AI algorithm. This helps them optimise their water consumption and adopt more sustainable practices."
         }
-      },
-      "cta": "I want one!"
+      }
     },
-    "cta": "I want one!"
+    "cta": {
+      "cta1": "Try the app",
+      "cta2": "I want one!"
+    }
   },
   "beta": {
     "title": "Beta Program for Water Saving",

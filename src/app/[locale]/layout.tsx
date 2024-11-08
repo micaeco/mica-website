@@ -63,7 +63,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} className={montserrat.className}>
       <NextIntlClientProvider messages={messages}>
-        <body className="bg-white">{children}</body>
+        <body>{children}</body>
       </NextIntlClientProvider>
     </html>
   );

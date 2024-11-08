@@ -6,7 +6,7 @@ export default function Hero() {
   const t = useTranslations('beta.hero');
 
   return (
-    <section className="bg-brand-primary py-8 text-white">
+    <section className="bg-white py-8 text-primary">
       <div className="container mx-auto max-w-7xl px-8">
         <div className="flex flex-col items-center 2xl:flex-row 2xl:justify-between">
           <div className="max-w-xl space-y-4 text-center 2xl:text-left">

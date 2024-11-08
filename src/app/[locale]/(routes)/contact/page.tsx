@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { getMessages } from 'next-intl/server';
 
 import Contact from './components/contact';
+import LookingFor from './components/looking-for';
 
 export async function generateMetadata(): Promise<Metadata> {
   const messages = await getMessages();
@@ -13,5 +14,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function ContactPage() {
-  return <Contact />;
+  return (
+    <main className="bg-gradient-to-b from-white to-muted">
+      <LookingFor />
+      <Contact />
+    </main>
+  );
 }

@@ -39,7 +39,9 @@
     "blog": "blog",
     "load": "cargar",
     "more": "más",
-    "verification": "verificación"
+    "verification": "verificación",
+    "legal": "legal",
+    "company": "empresa"
   },
   "errors": {
     "DEFAULT": "Se ha producido un error. Por favor, inténtalo de nuevo más tarde.",
@@ -158,10 +160,12 @@
           "title": "Nuestra aplicación visualiza tu consumo y crea un plan personalizado",
           "text": "A través de su móvil, el usuario monitoriza sus datos de consumo por dispositivo, recibe consejos personalizados y alertas sobre fugas, visualiza el ahorro, gana incentivos y se compara con la media o los límites recomendados. También puede retroalimentar el algoritmo de IA. Esto le permite optimizar su consumo de agua y adoptar prácticas más sostenibles."
         }
-      },
-      "cta": "¡Quiero uno!"
+      }
     },
-    "cta": "¡Quiero uno!"
+    "cta": {
+      "cta1": "Prueba la app",
+      "cta2": "¡Quiero uno!"
+    }
   },
   "beta": {
     "title": "Programa Beta para Ahorrar Agua",

@@ -20,8 +20,9 @@ export default function About() {
   return (
     <main>
       <History />
-      <Timeline />
       <WaveSeparator topColor="white" bottomColor="#d5fff3" />
+      <Timeline />
+      <WaveSeparator topColor="brand-tertiary" bottomColor="#ffffff" />
       <OurTeam />
     </main>
   );

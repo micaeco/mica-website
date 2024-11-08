@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
-import { LucideIcon } from 'lucide-react';
+import { ExternalLink, LucideIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 import { Button } from '@/components/ui/button';
@@ -27,54 +27,61 @@ const StepContent = ({ title, text }: { title: string; text: string }) => (
 );
 
 export default function HowItWorks() {
-  const t = useTranslations('product.howItWorks');
+  const t = useTranslations('product');
   const tSteps = useTranslations('product.howItWorks.steps');
 
   const steps = getHowItWorksSteps(tSteps);
 
   return (
-    <section className="relative mx-auto flex max-w-6xl flex-col px-8">
-      <div className="absolute inset-0 hidden xl:block">
-        <Image
-          src="/images/howItWorks-desktop.webp"
-          alt="HowItWorks"
-          className="w-full"
-          width={3000}
-          height={3000}
-          priority
-        />
-      </div>
+    <section className="bg-white px-8">
+      <div className="relative mx-auto max-w-6xl">
+        <div className="absolute inset-0 hidden xl:block">
+          <Image
+            src="/images/howItWorks-desktop.webp"
+            alt="HowItWorks"
+            className="w-full"
+            width={3000}
+            height={3000}
+            priority
+          />
+        </div>
 
-      <div className="relative flex flex-col space-y-16 py-10 sm:space-y-28">
-        {steps.map((step, index) => (
-          <div
-            key={index}
-            className={`flex items-center sm:grid sm:grid-cols-10 ${step.isReversed ? 'flex-col-reverse text-right' : 'flex-col'}`}
-          >
-            {step.isReversed && (
-              <div className="block sm:col-span-6 xl:hidden">
-                <Image src={`/images/${step.image}`} alt="AI cloud" width={1024} height={1024} />
-              </div>
-            )}
+        <div className="relative flex flex-col space-y-16 py-12 sm:space-y-28">
+          {steps.map((step, index) => (
             <div
-              className={`flex flex-col items-${step.isReversed ? 'end' : 'start'} gap-4 ${step.containerClass} ${step.isReversed ? 'col-span-full sm:col-start-7 sm:col-end-11 xl:flex-row-reverse' : 'sm:col-span-5 xl:flex-row'} xl:items-center`}
+              key={index}
+              className={`flex items-center sm:grid sm:grid-cols-10 ${step.isReversed ? 'flex-col-reverse text-right' : 'flex-col'}`}
             >
-              <StepIcon number={index + 1} icon={step.icon} />
-              <StepContent title={steps[index].title} text={steps[index].text} />
-            </div>
-            {!step.isReversed && (
-              <div className="block sm:col-span-5 xl:hidden">
-                <Image src={`/images/${step.image}`} alt="AI cloud" width={1024} height={1024} />
+              {step.isReversed && (
+                <div className="block sm:col-span-6 xl:hidden">
+                  <Image src={`/images/${step.image}`} alt="AI cloud" width={1024} height={1024} />
+                </div>
+              )}
+              <div
+                className={`flex flex-col items-${step.isReversed ? 'end' : 'start'} gap-4 ${step.containerClass} ${step.isReversed ? 'col-span-full sm:col-start-7 sm:col-end-11 xl:flex-row-reverse' : 'sm:col-span-5 xl:flex-row'} xl:items-center`}
+              >
+                <StepIcon number={index + 1} icon={step.icon} />
+                <StepContent title={steps[index].title} text={steps[index].text} />
               </div>
-            )}
-          </div>
-        ))}
-      </div>
+              {!step.isReversed && (
+                <div className="block sm:col-span-5 xl:hidden">
+                  <Image src={`/images/${step.image}`} alt="AI cloud" width={1024} height={1024} />
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
 
-      <div className="relative flex justify-center py-16">
-        <Button className="w-fit" size="lg">
-          <Link href="/beta">{t('cta')}</Link>
-        </Button>
+        <div className="relative flex justify-center space-x-4 py-16">
+          <Button className="w-fit" variant="outline" size="lg">
+            <Link href="https://app.mica.eco" className="flex items-center gap-2" target="_blank">
+              {t('cta.cta1')} <ExternalLink size={16} />
+            </Link>
+          </Button>
+          <Button className="w-fit" size="lg">
+            <Link href="/beta">{t('cta.cta2')}</Link>
+          </Button>
+        </div>
       </div>
     </section>
   );

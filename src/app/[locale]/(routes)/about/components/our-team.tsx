@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { getTeamMembers } from '@/lib/constants';
+import Link from 'next/link';
 
 export default function OurTeam() {
   const t = useTranslations('about.our-team');
@@ -12,7 +13,7 @@ export default function OurTeam() {
   const teamMembers = getTeamMembers(tMembers);
 
   return (
-    <section className="w-full bg-brand-tertiary px-8 py-16">
+    <section className="w-full bg-white px-8 py-16">
       <div className="mx-auto max-w-6xl">
         <h2 className="mb-12 text-left font-bold">{t('title')}</h2>
         <div className="flex flex-wrap justify-center gap-8">
@@ -37,21 +38,18 @@ export default function OurTeam() {
                     {member.role}
                   </CardDescription>
                 </CardHeader>
-                <CardFooter>
-                  {member.socials.map((social, index) => (
-                    <a
-                      key={index}
-                      href={social.url}
-                      target="_blank"
-                      aria-label={`${member.name}'s ${social.platform}`}
-                    >
+                <CardFooter className="space-x-2">
+                  {member.socials.map(({ platform, url }, index) => (
+                    <Link key={index} href={url} target="_blank" rel="noopener noreferrer">
                       <Image
-                        src={`/icons/${social.platform}-icon.svg`}
-                        alt={social.platform}
-                        width={20}
-                        height={20}
+                        src={`/icons/${platform}-icon.svg`}
+                        alt={`${platform} icon`}
+                        width={15}
+                        height={15}
+                        className="opacity-50 transition-opacity hover:opacity-100"
                       />
-                    </a>
+                      <span className="sr-only">MICA on {platform}</span>
+                    </Link>
                   ))}
                 </CardFooter>
               </Card>

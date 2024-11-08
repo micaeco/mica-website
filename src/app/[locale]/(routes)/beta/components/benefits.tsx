@@ -19,19 +19,26 @@ export default function BetaBenefits() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="container mx-auto px-8"
+        className="mx-auto max-w-7xl px-8"
       >
         <h3 className="mb-10 text-center font-bold text-brand-primary">{t('title')}</h3>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
           {benefits.map((benefit, index) => (
-            <Card key={index} className="shadow-sm transition-shadow hover:shadow-lg">
-              <CardHeader>
-                <benefit.icon className="mb-4 size-12 text-brand-accent" />
+            <Card
+              key={index}
+              className="relative overflow-hidden shadow-sm transition-shadow hover:shadow-lg"
+            >
+              <CardHeader className="space-y-4">
+                <benefit.icon className="text-brand-accent" size={50} />
                 <CardTitle>{benefit.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p>{benefit.description}</p>
               </CardContent>
+              <benefit.icon
+                className="absolute -bottom-5 -right-5 text-brand-accent opacity-5"
+                size={200}
+              />
             </Card>
           ))}
         </div>

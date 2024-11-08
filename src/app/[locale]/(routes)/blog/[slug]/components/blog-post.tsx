@@ -57,39 +57,41 @@ export default function BlogPostPage({ params }: Props) {
     return (
       <div className="flex h-screen flex-col items-center justify-center">
         {errors('POST_NOT_FOUND')}
-        <GoBack text={common('go-back')} />
+        <GoBack />
       </div>
     );
 
   return (
-    <article className="mx-auto max-w-3xl px-4 py-8">
-      <GoBack text={common('go-back')} />
+    <article className="bg-white p-8">
+      <div className="mx-auto max-w-3xl">
+        <GoBack />
 
-      <h3 className="font-bold">{post.title}</h3>
-      <div className="mb-8 flex flex-wrap items-center gap-4 text-sm font-light">
-        <div className="flex items-center gap-1">
-          <Clock size={15} />
-          {post.date?.toString() || common('unknown-date')}
+        <h3 className="font-bold">{post.title}</h3>
+        <div className="mb-8 flex flex-wrap items-center gap-4 text-sm font-light">
+          <div className="flex items-center gap-1">
+            <Clock size={15} />
+            {post.date?.toString() || common('unknown-date')}
+          </div>
+          <div className="flex items-center gap-1 capitalize">
+            <User size={15} />
+            {post.author || common('unknown-author')}
+          </div>
+          <div className="flex items-center gap-1 capitalize">
+            <Tag size={15} />
+            {tTags(post.tag) || common('unknown-tag')}
+          </div>
+          <div className="flex items-center gap-1 capitalize">
+            <Book size={15} />
+            {languageMap[post.lang]}
+          </div>
         </div>
-        <div className="flex items-center gap-1 capitalize">
-          <User size={15} />
-          {post.author || common('unknown-author')}
-        </div>
-        <div className="flex items-center gap-1 capitalize">
-          <Tag size={15} />
-          {tTags(post.tag) || common('unknown-tag')}
-        </div>
-        <div className="flex items-center gap-1 capitalize">
-          <Book size={15} />
-          {languageMap[post.lang]}
-        </div>
+
+        {post.content ? (
+          <MarkdownRenderer content={post.content} />
+        ) : (
+          <p className="capitalize">{common('no-content-available')}</p>
+        )}
       </div>
-
-      {post.content ? (
-        <MarkdownRenderer content={post.content} />
-      ) : (
-        <p className="capitalize">{common('no-content-available')}</p>
-      )}
     </article>
   );
 }
