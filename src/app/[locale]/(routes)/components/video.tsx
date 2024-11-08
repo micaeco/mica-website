@@ -1,8 +1,9 @@
 'use client';
 
 import ReactPlayer from 'react-player/lazy';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { ReactPlayerProps } from 'react-player';
 import { useLocale, useTranslations } from 'next-intl';
-import { useEffect, useRef, useState } from 'react';
 
 export default function VideoSection() {
   const t = useTranslations('home.video');
@@ -19,6 +20,17 @@ export default function VideoSection() {
       },
     },
   };
+
+  const handleReady = useCallback((player: ReactPlayerProps) => {
+    if (player && player.getInternalPlayer()) {
+      const internalPlayer = player.getInternalPlayer();
+      const availableQualities = internalPlayer.getAvailableQualityLevels();
+
+      if (availableQualities.length > 0) {
+        internalPlayer.setPlaybackQuality(availableQualities[0]);
+      }
+    }
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -55,6 +67,7 @@ export default function VideoSection() {
             controls
             muted
             config={config}
+            onReady={handleReady}
           />
         </div>
         <div className="text-pretty xl:col-span-4 xl:text-right">
