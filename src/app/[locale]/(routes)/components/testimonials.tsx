@@ -10,7 +10,7 @@ import StarRating from '@/components/ui/star-rating';
 
 export default function TestimonialCarousel() {
   const t = useTranslations();
-  const testimonials: { rating: number; quote: string; author: string }[] =
+  const testimonials: { rating: number; quote: string; author: string; role: string }[] =
     t.raw('home.testimonials');
   const [api, setApi] = useState<EmblaCarouselType | null>(null);
   const [current, setCurrent] = useState(0);
@@ -56,7 +56,12 @@ export default function TestimonialCarousel() {
                   <CardContent className="text-center italic">
                     <h5>"{testimonial.quote}"</h5>
                   </CardContent>
-                  <CardFooter className="flex justify-center">{testimonial.author}</CardFooter>
+                  <CardFooter className="flex flex-col justify-center">
+                    <p className="font-bold capitalize">{testimonial.author}</p>
+                    <span className="text-sm font-extralight text-muted-foreground">
+                      {testimonial.role}
+                    </span>
+                  </CardFooter>
                 </Card>
               </CarouselItem>
             ))}
