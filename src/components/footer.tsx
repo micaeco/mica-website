@@ -29,8 +29,9 @@ export default function Footer() {
           <div>
             <h2 className="mb-4 text-xs font-bold uppercase text-primary">{common('company')}</h2>
             <nav className="flex flex-col gap-4">
-              {navLinks.map((item) => (
+              {navLinks.map((item, index) => (
                 <Link
+                  key={index}
                   href={item.href}
                   target={isExternalLink(item.href) ? '_blank' : undefined}
                   rel={isExternalLink(item.href) ? 'noopener noreferrer' : undefined}
@@ -48,8 +49,9 @@ export default function Footer() {
               {common('quick-links')}
             </h2>
             <nav className="flex flex-col gap-4">
-              {navCta.map((item) => (
+              {navCta.map((item, index) => (
                 <Link
+                  key={index}
                   href={item.href}
                   target={isExternalLink(item.href) ? '_blank' : undefined}
                   rel={isExternalLink(item.href) ? 'noopener noreferrer' : undefined}
@@ -95,8 +97,8 @@ export default function Footer() {
           </div>
 
           <nav className="flex gap-4">
-            {socialLinks.map(({ platform, url }) => (
-              <Button key={platform} size="icon" variant="ghost" className="group" asChild>
+            {socialLinks.map(({ platform, url }, index) => (
+              <Button key={index} size="icon" variant="ghost" className="group" asChild>
                 <Link href={url} target="_blank" rel="noopener noreferrer">
                   <Image
                     src={`/icons/${platform}-icon.svg`}

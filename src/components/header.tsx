@@ -73,9 +73,9 @@ export default function Header() {
         {!isMobile ? (
           <nav className="flex items-center space-x-4">
             <div className="flex items-center space-x-6">
-              {navLinks.map((item) => (
+              {navLinks.map((item, index) => (
                 <Link
-                  key={item.href}
+                  key={index}
                   href={item.href}
                   className={cn(
                     'flex items-center text-sm text-muted-foreground transition-colors hover:text-primary',
@@ -87,8 +87,8 @@ export default function Header() {
               ))}
             </div>
             <div className="space-x-4">
-              {navCta.map((item) => (
-                <Button variant="outline">
+              {navCta.map((item, index) => (
+                <Button key={index} variant="outline">
                   <Link
                     key={item.href}
                     href={item.href}
