@@ -2,6 +2,7 @@ import { useState, FormEvent } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useTranslations } from 'next-intl';
+import { contactSubmission } from '@/lib/gas';
 
 export function useContactSubmission() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -17,20 +18,14 @@ export function useContactSubmission() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, message }),
-      });
+      const response = await contactSubmission(name, email, message);
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        toast.error(errors(data.error) || errors('DEFAULT'), { autoClose: 5000 });
+      if (errors.has(response)) {
+        toast.error(errors(response), { autoClose: 5000 });
         return;
       }
 
-      toast.success(success(data.message), { autoClose: 5000 });
+      toast.success(success(response), { autoClose: 5000 });
       setName('');
       setEmail('');
       setMessage('');

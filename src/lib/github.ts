@@ -1,3 +1,5 @@
+"use server";
+
 import { Octokit } from "@octokit/rest";
 import { locales, defaultLocale } from "@/i18n/routing";
 

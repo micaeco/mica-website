@@ -19,6 +19,7 @@
     "unknown-date": "unknown date",
     "unknown-author": "unknown author",
     "unknown-tag": "unknown category",
+    "unknown-language": "unknown language",
     "go-back": "go back",
     "contact": "contact",
     "general-questions": "general questions",
@@ -52,8 +53,7 @@
     "VERIFICATION_REQUIRED": "A verification token is required.",
     "VERIFICATION_EXPIRED": "The verification token has expired.",
     "VERIFICATION_INVALID": "The verification token is not valid.",
-    "POSTS_NOT_FOUND": "No posts found.",
-    "POST_NOT_FOUND": "The requested post was not found.",
+    "NOT_FOUND": "The requested resource was not found.",
     "INTERNAL_ERROR": "An internal error has occurred. Please try again later."
   },
   "success": {
@@ -293,61 +293,7 @@
     }
   },
   "faqs": {
-    "title": "Frequently Asked Questions",
-    "questions": [
-      {
-        "question": "How can I contact you?",
-        "answer": "You can contact us via the contact form or by sending an email to info@mica.eco."
-      },
-      {
-        "question": "How is the sensor installed?",
-        "answer": "A qualified plumber will install the sensor on your home’s water meter. There is also a self-installation option with detailed instructions if you prefer. The sensor and installation will not impact water flow."
-      },
-      {
-        "question": "What happens if there is an issue with the sensor?",
-        "answer": "Our system will undergo rigorous testing to ensure a smooth and reliable experience. However, if any issue arises, our multi-channel support team will be available to assist you, and a technician can be sent if necessary to resolve it."
-      },
-      {
-        "question": "How is my data protected?",
-        "answer": "We only collect strictly necessary data, and we follow strict data protection protocols, ensuring that all your information is securely stored and only used for the operation of MICA."
-      },
-      {
-        "question": "What systems does the MICA app support?",
-        "answer": "The app will be available on both Apple and Android devices."
-      },
-      {
-        "question": "Is the sensor certified?",
-        "answer": "We are still in the development phase, but we are working with certified providers for all the components that make up our sensor and gateway. Sustainability is top of mind for us: we carefully select materials with minimal environmental impact and plan to design components for durability and easy recycling at end of life."
-      },
-      {
-        "question": "What’s the price of MICA?",
-        "answer": "We are a non-profit organization, so we will keep prices to the minimum necessary to cover production, distribution, installation, and maintenance costs. We are still in the development phase, but we will announce prices soon; we expect they will be ~100 euros for the sensor and its installation, as well as an annual subscription of ~10 euros/year. The first 50 beta users will receive the sensor and installation for free, and will only pay the annual subscription."
-      },
-      {
-        "question": "How are you financing the development of MICA?",
-        "answer": "We’ve gained support and funding from the Barcelona City Council to complete our beta program in 2025 through BIT Habitat's call for innovative urban projects."
-      },
-      {
-        "question": "When will the system be available?",
-        "answer": "We expect to launch the beta programme in June 2025 and deploy the system across Barcelona in November 2025."
-      },
-      {
-        "question": "Will several users from one same household be able to access the app?",
-        "answer": "Yes, the household admin will be able to invite other users to join the household in the app so they can also track water usage, receive alerts and tips, and compare their consumption against the average or recommended limits."
-      },
-      {
-        "question": "How can I join the beta program?",
-        "answer": "Fill out the registration form on the 'I want one' page. We'll stay in touch with you via email, and once we’re ready, we’ll send you a questionnaire for you to complete your application."
-      },
-      {
-        "question": "Will I be able to participate in the development of MICA during the beta program?",
-        "answer": "Yes, we will greatly value the feedback from our beta users and will encourage active participation through focus groups, user interviews, and surveys. Beta users will be part of our Slack community so we can stay connected."
-      },
-      {
-        "question": "Can I get involved in ways other than becoming a beta user?",
-        "answer": "Yes, we are looking for strategic partners to help us grow and scale, as well as associated plumbers for the installation of sensors. We are also keen to support students with their research projects if they wish to do them with us."
-      }
-    ]
+    "title": "Frequently asked questions"
   },
   "blog": {
     "tags": {

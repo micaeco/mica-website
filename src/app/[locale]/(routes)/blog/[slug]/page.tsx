@@ -7,5 +7,6 @@ type Props = {
 };
 
 export default function BlogPostContent({ params }: Props) {
-  return <BlogPost params={params} />;
+  const { slug } = params;
+  return <BlogPost slug={slug} />;
 }

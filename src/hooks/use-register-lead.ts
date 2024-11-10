@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useLocale, useTranslations } from 'next-intl';
 
 import { FormData } from '@/types';
+import { registerLead } from '@/lib/gas';
 
 const STORAGE_KEY = 'formData';
 
@@ -41,35 +42,26 @@ export function useRegisterLeads() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(`/api/lead/register`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: formData.name,
-          surname: formData.surname,
-          email: formData.email,
-          phone: formData.phone,
-          interestInBeta: formData.interestInBeta,
-          referralSource: formData.referralSource,
-          locale,
-        }),
+      const response = await registerLead({
+        name: formData.name,
+        surname: formData.surname,
+        email: formData.email,
+        phone: formData.phone,
+        interestInBeta: formData.interestInBeta,
+        referralSource: formData.referralSource,
+        locale,
       });
 
-      const data = await response.json();
-
-      if (!response.ok) {
-        toast.error(errors(data.error) || errors('DEFAULT'), { autoClose: 5000 });
+      if (errors.has(response)) {
+        toast.error(errors(response), { autoClose: 5000 });
         return;
       }
 
-      toast.success(success(data.message), { autoClose: 5000 });
+      toast.success(success(response), { autoClose: 5000 });
       localStorage.removeItem(STORAGE_KEY);
       setFormData(getInitialFormData());
     } catch (error) {
-      toast.error(
-        errors((error as Error).message) || errors('DEFAULT'),
-        { autoClose: 5000 }
-      );
+      toast.error(errors('DEFAULT'), { autoClose: 5000 });
     } finally {
       setIsSubmitting(false);
     }

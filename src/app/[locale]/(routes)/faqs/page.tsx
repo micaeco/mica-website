@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function FAQs() {
+export default async function FAQs() {
   return (
     <main>
       <Faqs />

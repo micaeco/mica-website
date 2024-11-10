@@ -1,3 +1,5 @@
+"use server";
+
 const GOOGLE_APPS_SCRIPT_URL_LEADS = process.env.GOOGLE_APPS_SCRIPT_URL_LEADS;
 const GOOGLE_APPS_SCRIPT_URL_CONTACT = process.env.GOOGLE_APPS_SCRIPT_URL_CONTACT;
 
@@ -13,40 +15,74 @@ export async function registerLead(leadData: {
   interestInBeta: boolean;
   referralSource: string;
   locale: string;
-}) {
-  const response = await fetch(GOOGLE_APPS_SCRIPT_URL_LEADS as string, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(leadData),
-  });
+}): Promise<void> {
+  try {
+    const response = await fetch(GOOGLE_APPS_SCRIPT_URL_LEADS as string, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(leadData),
+    });
 
-  return await response;
+    if (!response.ok) {
+      throw new Error('Failed to submit contact form');
+    }
+
+    const data = await response.json();
+
+    if (data.error) {
+      return data.error;
+    }
+
+    return data.message;
+  } catch (error) {
+    throw error;
+  }
 }
 
 export async function verifyLead(token: string) {
-  const response = await fetch(`${GOOGLE_APPS_SCRIPT_URL_LEADS}?token=${token}`);
+  try {
+    const response = await fetch(`${GOOGLE_APPS_SCRIPT_URL_LEADS}?token=${token}`);
 
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+    if (!response.ok) {
+      throw new Error('Failed to submit contact form');
+    }
+
+    const data = await response.json();
+
+    if (data.error) {
+      return data.error;
+    }
+
+    return data.message;
+  } catch (error) {
+    throw error;
   }
-
-  return await response;
 }
 
 export async function contactSubmission(name: string, email: string, message: string) {
-  const response = await fetch(GOOGLE_APPS_SCRIPT_URL_CONTACT as string, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ name, email, message }),
-  });
+  try {
+    const response = await fetch(GOOGLE_APPS_SCRIPT_URL_CONTACT as string, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, email, message }),
+    });
 
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+    if (!response.ok) {
+      throw new Error('Failed to submit contact form');
+    }
+
+    const data = await response.json();
+
+    if (data.error) {
+      return data.error;
+    }
+
+    return data.message;
+  } catch (error) {
+    throw error;
   }
-
-  return await response;
 }

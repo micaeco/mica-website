@@ -1,43 +1,37 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Clock, User, Tag, Book } from 'lucide-react';
 
 import Loading from '@/components/loading';
-import MarkdownRenderer from '@/components/ui/markdown';
 import GoBack from '@/components/ui/go-back';
 import { BlogPost } from '@/types';
 import { languageMap } from '@/lib/constants';
+import { getBlogPost, portableTextComponents } from '@/lib/sanity';
+import { PortableText } from 'next-sanity';
 
-type Props = {
-  params: {
-    slug: string;
-  };
-};
-
-export default function BlogPostPage({ params }: Props) {
-  const { slug } = params;
-  const [posts, setPosts] = useState<BlogPost[]>([]);
+export default function BlogPostPage({ slug }: { slug: string }) {
+  const [post, setPost] = useState<BlogPost>();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   const errors = useTranslations('errors');
   const common = useTranslations('common');
   const tTags = useTranslations('blog.tags');
+  const locale = useLocale();
 
   useEffect(() => {
-    const fetchPosts = async () => {
+    const fetchPost = async () => {
       try {
-        const response = await fetch('/api/blog-posts');
-        const data = await response.json();
+        const post = await getBlogPost(slug, locale);
 
-        if (!response.ok) {
-          setError(errors(data.error));
+        if (!post) {
+          setError('NOT_FOUND');
+          return;
         }
 
-        const fetchedPosts = data.posts;
-        setPosts(fetchedPosts);
+        setPost(post);
       } catch (error) {
         setError(error as string);
       } finally {
@@ -45,21 +39,19 @@ export default function BlogPostPage({ params }: Props) {
       }
     };
 
-    fetchPosts();
+    fetchPost();
   }, []);
 
   if (isLoading) return <Loading />;
-  if (error) return <div>{errors(error)}</div>;
 
-  const post = posts.find((post) => post.slug === slug);
-
-  if (!post)
+  if (!post || error) {
     return (
-      <div className="flex h-screen flex-col items-center justify-center">
-        {errors('POST_NOT_FOUND')}
+      <div className="flex h-screen flex-col items-center justify-center bg-white">
+        {errors('NOT_FOUND')}
         <GoBack />
       </div>
     );
+  }
 
   return (
     <article className="bg-white p-8">
@@ -82,12 +74,12 @@ export default function BlogPostPage({ params }: Props) {
           </div>
           <div className="flex items-center gap-1 capitalize">
             <Book size={15} />
-            {languageMap[post.lang]}
+            {languageMap[post.lang] || common('unknown-language')}
           </div>
         </div>
 
         {post.content ? (
-          <MarkdownRenderer content={post.content} />
+          <PortableText value={post.content} components={portableTextComponents} />
         ) : (
           <p className="capitalize">{common('no-content-available')}</p>
         )}

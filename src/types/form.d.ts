@@ -28,5 +28,11 @@ export interface FormSelectField extends BaseFormField {
 export type FormField = InputField | SelectField;
 
 export interface FormData {
-  [key: string]: string | boolean;
+  name: string;
+  surname: string;
+  email: string;
+  phone: string;
+  referralSource: string;
+  interestInBeta: boolean;
+  privacyPolicy: boolean;
 }

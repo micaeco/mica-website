@@ -19,6 +19,7 @@
     "unknown-date": "fecha desconocida",
     "unknown-author": "autor desconocido",
     "unknown-tag": "categoría desconocida",
+    "unknown-language": "idioma desconocido",
     "go-back": "volver atrás",
     "contact": "contacto",
     "general-questions": "preguntas generales",
@@ -56,8 +57,7 @@
     "VERIFICATION_EXPIRED": "El token de verificación ha caducado.",
     "VERIFICATION_INVALID": "El token de verificación no es válido.",
 
-    "POSTS_NOT_FOUND": "No se ha encontrado ninguna entrada.",
-    "POST_NOT_FOUND": "No se ha encontrado la entrada solicitada.",
+    "NOT_FOUND": "No se ha encontrado la entrada solicitada.",
 
     "INTERNAL_ERROR": "Se ha producido un error interno. Por favor, inténtalo de nuevo más tarde."
   },
@@ -301,53 +301,7 @@
     }
   },
   "faqs": {
-    "title": "Preguntas frecuentes",
-    "questions": [
-      {
-        "question": "¿Cómo puedo contactarlos?",
-        "answer": "Puedes contactarnos a través del formulario de contacto o enviando un correo a info@mica.eco."
-      },
-      {
-        "question": "¿Cómo se instala el sensor?",
-        "answer": "Un fontanero cualificado instalará el sensor en el medidor de agua de tu hogar. También tienes la opción de instalarlo tú mismo con nuestras instrucciones detalladas. El sensor y la instalación no afectarán el flujo de agua."
-      },
-      {
-        "question": "¿Qué ocurre si hay un problema con el sensor?",
-        "answer": "Nuestro sistema se someterá a rigurosas pruebas para garantizar una experiencia fluida y confiable a nuestros usuarios. Sin embargo, si surgiera cualquier problema, nuestro equipo de soporte multicanal estará disponible para ayudarte, y un técnico podrá acudir si es necesario para resolverlo."
-      },
-      {
-        "question": "¿Cómo se protege mi información?",
-        "answer": "Solo recopilamos los datos estrictamente necesarios, y seguimos estrictos protocolos de protección de datos, asegurando que toda tu información se almacene de manera segura y solo se utilice para el funcionamiento de MICA."
-      },
-      {
-        "question": "¿Con qué sistemas operativos es compatible la app de MICA?",
-        "answer": "La aplicación estará disponible tanto en dispositivos Apple como Android."
-      },
-      {
-        "question": "¿El sensor está certificado?",
-        "answer": "Todavía estamos en la fase de desarrollo, pero estamos trabajando con proveedores certificados para todos los componentes que conforman nuestro sensor y puerta de enlace. La sostenibilidad es una prioridad para nosotros: seleccionamos cuidadosamente materiales con un mínimo impacto ambiental y consideramos la durabilidad y el fácil reciclaje de los componentes al final de su vida útil."
-      },
-      {
-        "question": "¿Cuál es el precio de MICA?",
-        "answer": "Somos una organización sin ánimo de lucro, por lo que mantendremos los precios al mínimo necesario para cubrir los costos de producción, distribución, instalación y mantenimiento. Aún estamos en fase de diseño, pero anunciaremos los precios pronto; esperamos que estén en torno a los ~100 euros por el sensor y la instalación. y una suscripción anual de ~10 euros al año. Los usuarios que participen en el programa beta obtendrán el sensor y la instalación de forma gratuita, y solo pagarán la suscripción anual."
-      },
-      {
-        "question": "¿Cómo estáis financiando el desarrollo de MICA y el programa beta?",
-        "answer": "Hemos recibido apoyo y financiación del Ayuntamiento de Barcelona para completar nuestro programa beta en 2025 a través de la convocatoria BIT Habitat para proyectos urbanos innovadores."
-      },
-      {
-        "question": "¿Cómo puedo unirme al programa beta?",
-        "answer": "Rellena el formulario de registro que se encuentra en la página 'Quiero uno'. Nos mantendremos en contacto contigo por correo electrónico y, una vez listos, te enviaremos un cuestionario para que completes tu solicitud."
-      },
-      {
-        "question": "¿Podré participar en el desarrollo de MICA durante el programa beta?",
-        "answer": "Sí, valoraremos mucho la retroalimentación de nuestros usuarios beta y fomentaremos la participación activa a través de workshops, entrevistas a usuarios y encuestas. Los usuarios beta formarán parte de nuestra comunidad de Slack para estar conectados."
-      },
-      {
-        "question": "¿Puedo involucrarme de otras maneras además de convertirme en un usuario beta?",
-        "answer": "Sí, estamos buscando socios estratégicos para ayudarnos a crecer y escalar, así como fontaneros asociados para la instalación de sensores. También estamos interesados en apoyar a estudiantes con sus proyectos de investigación si desean hacerlo con nosotros."
-      }
-    ]
+    "title": "Preguntas frecuentes"
   },
   "blog": {
     "tags": {

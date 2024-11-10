@@ -19,6 +19,7 @@
     "unknown-date": "data desconeguda",
     "unknown-author": "autor desconegut",
     "unknown-tag": "categoria desconeguda",
+    "unknown-language": "idioma desconegut",
     "go-back": "tornar enrere",
     "contact": "contacte",
     "general-questions": "preguntes generals",
@@ -56,8 +57,7 @@
     "VERIFICATION_EXPIRED": "El token de verificació ha caducat.",
     "VERIFICATION_INVALID": "El token de verificació no és vàlid.",
 
-    "POSTS_NOT_FOUND": "No s'ha trobat cap entrada.",
-    "POST_NOT_FOUND": "No s'ha trobat l'entrada sol·licitada.",
+    "NOT_FOUND": "No s'ha trobat l'entrada solicitada",
 
     "INTERNAL_ERROR": "S'ha produït un error intern. Si us plau, torna-ho a provar més tard."
   },
@@ -301,53 +301,7 @@
     }
   },
   "faqs": {
-    "title": "Preguntes freqüents",
-    "questions": [
-      {
-        "question": "Com puc contactar amb vosaltres?",
-        "answer": "Pots contactar amb nosaltres a través del formulari de contacte o enviant un correu a info@mica.eco."
-      },
-      {
-        "question": "Com s'instal·la el sensor?",
-        "answer": "Un lampista qualificat instal·larà el sensor al comptador d'aigua de casa teva. També hi haurà l'opció d'instal·lar-lo tu mateix si així ho prefereixes, mitjançant les nostres instruccions detallades. El sensor i la instal·lació no tindran cap impacte en el cabal d'aigua."
-      },
-      {
-        "question": "Què passa si hi ha un problema amb el sensor?",
-        "answer": "El nostre sistema passarà tests rigorosos per garantir una experiència fluida i fiable als nostres usuaris. Tanmateix, si sorgís algun problema, el nostre equip de suport multicanal estarà disponible per ajudar-te, i un tècnic podrà acudir, si cal, per resoldre’l."
-      },
-      {
-        "question": "Amb quins sistemes operatius és compatible l'app de MICA?",
-        "answer": "L'aplicació estarà disponible tant per a dispositius Apple com Android."
-      },
-      {
-        "question": "El sensor MICA està certificat?",
-        "answer": "Encara estem en la fase de desenvolupament, però estem treballant amb proveïdors certificats per a tots els components que componen el nostre sensor i gateway. La sostenibilitat és una prioritat per a nosaltres: seleccionem materials amb un mínim impacte ambiental i considerem la durabilitat i el reciclatge dels components al final de la seva vida útil."
-      },
-      {
-        "question": "Quin és el preu de MICA?",
-        "answer": "Som una organització sense ànim de lucre, així que mantindrem els preus al mínim necessari per cobrir els costos de producció, distribució, instal·lació i manteniment. Encara estem en fase de desenvolupament, però aviat anunciarem els preus; esperem que siguin al voltant de ~100 euros per al sensor, i una subscripció anual d'uns ~10 euros a l'any. Els primers 50 usuaris que participin en el progrma beta aconseguiran el sensor i la instal·lació de manera gratuïta, i només pagaran la subscripció anual."
-      },
-      {
-        "question": "Com esteu finançant el desenvolupament de MICA?",
-        "answer": "Hem obtingut suport i finançament de l'Ajuntament de Barcelona per completar el nostre programa beta el 2025 a través de la convocatòria de BIT Habitat per a projectes urbans innovadors."
-      },
-      {
-        "question": "Com es protegeixen les meves dades?",
-        "answer": "Només recollim les dades estrictament necessàries, i seguim estrictes protocols de protecció de dades, assegurant que tota la teva informació s’emmagatzemi de manera segura i només s’utilitzi per al funcionament de MICA. "
-      },
-      {
-        "question": "Com puc unir-me al programa beta?",
-        "answer": "Omple el formulari de registre que trobaràs a la pàgina 'En vull un'. Ens mantindrem en contacte amb tu per correu electrònic, i, un cop estiguem a punt, t'enviarem un qüestionari perquè completis la teva sol·licitud."
-      },
-      {
-        "question": "Podré participar en el desenvolupament de MICA durant el programa beta?",
-        "answer": "Sí, valorarem molt els comentaris dels nostres usuaris beta i fomentarem la seva participació activa mitjançant workshops, entrevistes a usuaris i enquestes. Els usuaris beta formaran part de la nostra comunitat a Slack per mantenir-nos connectats."
-      },
-      {
-        "question": "Puc involucrar-me d'altres maneres a més de convertir-me en usuari beta?",
-        "answer": "Sí, estem buscant socis estratègics que ens ajudin a créixer i escalar, així com a lampistes associats per a la instal·lació dels sensors. També estem interessats a donar suport a estudiants amb els seus projectes de recerca si volen fer-lo amb nosaltres."
-      }
-    ]
+    "title": "Preguntes freqüents"
   },
   "blog": {
     "tags": {
@@ -397,8 +351,6 @@
     }
   },
   "verification": {
-    "title": "Verificació del correu",
-    "success": "El teu correu ha estat verificat amb èxit!",
-    "error": "Hi ha hagut un problema en verificar el teu correu. Si us plau, torna-ho a intentar o contacta amb suport."
+    "title": "Verificació del correu"
   }
 }

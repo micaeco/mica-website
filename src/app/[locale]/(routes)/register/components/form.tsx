@@ -52,7 +52,7 @@ export default function RegisterForm() {
                       id={field.name}
                       type={field.inputType}
                       placeholder={field.placeholder}
-                      value={formData[field.name] as string}
+                      value={formData[field.name as keyof FormData] as string}
                       onChange={(e) =>
                         handleInputChange(field.name as keyof FormData, e.target.value)
                       }
@@ -67,7 +67,7 @@ export default function RegisterForm() {
                   <Label key={field.name} className="flex items-center space-x-2">
                     <Checkbox
                       id={field.name}
-                      checked={formData[field.name] as boolean}
+                      checked={formData[field.name as keyof FormData] as boolean}
                       onCheckedChange={(checked) => {
                         handleInputChange(field.name as keyof FormData, checked);
                         if (field.onChange) {
