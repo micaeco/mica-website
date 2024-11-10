@@ -25,7 +25,7 @@ export default function Verification() {
       try {
         const response = await verifyLead(token);
 
-        if (errors(response)) {
+        if (errors.has(response)) {
           setError(errors(response));
           return;
         }
