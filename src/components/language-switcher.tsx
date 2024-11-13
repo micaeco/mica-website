@@ -30,7 +30,7 @@ export default function LanguageSwitcher({ className }: { className?: string }) 
 
   return (
     <Select onValueChange={handleLanguageChange} defaultValue={locale}>
-      <SelectTrigger className="bg-brand-primary w-[150px] text-white">
+      <SelectTrigger className="w-[150px]">
         <SelectValue placeholder="Select language" />
       </SelectTrigger>
       <SelectContent>

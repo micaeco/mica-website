@@ -310,7 +310,7 @@ export function getTimelineItems(t: {
     step5: {
       date: 'OCT 25',
       icon: Maximize,
-      color: 'bg-brand-accent'
+      color: 'bg-brand-quaternary'
     }
   };
 

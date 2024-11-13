@@ -13,7 +13,7 @@ export default function BetaBenefits() {
   const benefits = getBetaBenefits(tBenefits);
 
   return (
-    <section className="bg-gray-50 py-20">
+    <section className="bg-muted py-20">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -21,22 +21,24 @@ export default function BetaBenefits() {
         viewport={{ once: true }}
         className="mx-auto max-w-7xl px-8"
       >
-        <h3 className="mb-10 text-center font-bold text-brand-primary">{t('title')}</h3>
+        <h3 className="mb-10 text-center font-bold">{t('title')}</h3>
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
           {benefits.map((benefit, index) => (
             <Card
               key={index}
               className="relative overflow-hidden shadow-sm transition-shadow hover:shadow-lg"
             >
-              <CardHeader className="space-y-4">
-                <benefit.icon className="text-brand-accent" size={50} />
-                <CardTitle>{benefit.title}</CardTitle>
+              <CardHeader>
+                <benefit.icon className="text-brand-quaternary" size={50} />
+                <CardTitle>
+                  <h5 className="font-medium">{benefit.title}</h5>
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <p>{benefit.description}</p>
+                <p className="font-light">{benefit.description}</p>
               </CardContent>
               <benefit.icon
-                className="absolute -bottom-5 -right-5 text-brand-accent opacity-5"
+                className="text-brand-quaternary absolute -bottom-5 -right-5 opacity-5"
                 size={200}
               />
             </Card>

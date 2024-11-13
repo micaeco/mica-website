@@ -30,7 +30,7 @@ export default function Problem() {
           </motion.div>
           <div className="space-y-6">
             <h2 className="font-bold">{t('title')}</h2>
-            <p className="mt-4 font-light">
+            <p className="mt-4">
               {t('text')}{' '}
               <Link
                 href="https://docs.amb.cat/alfresco/api/-default-/public/alfresco/versions/1/nodes/059eb8bc-f3f0-4cf2-b60d-bbd639344706/content/EAU-AMB%202020_IERMB_Informe_resum.pdf?attachment=false&mimeType=application/pdf&sizeInBytes=996300"

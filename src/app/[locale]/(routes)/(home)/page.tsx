@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function Home() {
   return (
-    <main className="flex flex-col justify-center text-brand-primary">
+    <main className="flex flex-col justify-center">
       <Hero />
       <Video />
       <WaveSeparator topColor="white" bottomColor="#00f2dd" />

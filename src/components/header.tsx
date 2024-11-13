@@ -4,106 +4,125 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 import { Link } from '@/i18n/routing';
 import Image from 'next/image';
-import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, ExternalLink } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-
 import LanguageSwitcher from '@/components/language-switcher';
 import { Button } from '@/components/ui/button';
-import { getNavLinks, getNavCta } from '@/lib/constants';
 import { cn, isExternalLink } from '@/lib/utils';
-
-const MOBILE_BREAKPOINT = 1400;
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState<boolean | null>(null);
   const pathname = usePathname();
-  const t = useTranslations();
-  const navLinks = getNavLinks(t);
-  const navCta = getNavCta(t);
+  const tNavLinks = useTranslations('navLinks');
+  const tNavCta = useTranslations('navCta');
 
-  const checkIsMobile = useCallback(() => {
-    return window.innerWidth < MOBILE_BREAKPOINT;
-  }, []);
+  const navLinks = [
+    { href: '/product', page: 'product' },
+    { href: '/beta', page: 'beta' },
+    { href: '/about', page: 'about' },
+    { href: '/blog', page: 'blog' },
+  ];
+
+  const navCta = [
+    { href: '/contact', page: 'contact' },
+    { href: 'https://app.mica.eco', page: 'demo' },
+    { href: '/register', page: 'register' },
+  ];
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(checkIsMobile());
-    };
+    const checkIsMobile = () => window.innerWidth < 1400;
+    const handleResize = () => setIsMobile(checkIsMobile());
+
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [checkIsMobile]);
+  }, []);
 
   useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
+    document.body.style.overflow = isMenuOpen ? 'hidden' : 'unset';
     return () => {
       document.body.style.overflow = 'unset';
     };
   }, [isMenuOpen]);
 
   useEffect(() => {
-    if (isMobile === false) {
-      setIsMenuOpen(false);
-    }
+    if (isMobile === false) setIsMenuOpen(false);
   }, [isMobile]);
 
-  if (isMobile === null) {
-    return null;
-  }
+  if (isMobile === null) return null;
+
+  const Logo = () => (
+    <Link
+      href="/"
+      className="z-30 mr-4 flex items-center space-x-2 font-semibold"
+      onClick={() => setIsMenuOpen(false)}
+    >
+      <Image src="/logos/logo.webp" alt="Logo" width={35} height={35} />
+      <h5 className="font-semibold">MICA</h5>
+    </Link>
+  );
+
+  const NavLink = ({
+    href,
+    page,
+    onClick,
+    className,
+  }: {
+    href: string;
+    page: string;
+    onClick?: () => void;
+    className?: string;
+  }) => (
+    <Link
+      href={href}
+      target={isExternalLink(href) ? '_blank' : '_self'}
+      onClick={onClick}
+      className={cn(
+        'flex items-center transition-colors',
+        className,
+        !className && [
+          'text-muted-foreground hover:text-foreground',
+          pathname.replace(/\/[^/]*\/|\/[^/]*$/, '/') === href ? 'text-foreground' : '',
+          isMobile ? 'text-md' : 'text-sm',
+        ]
+      )}
+    >
+      {tNavLinks.has(page) ? tNavLinks(page) : tNavCta(page)}
+      {isExternalLink(href) && <ExternalLink size={16} className="ml-1 inline" />}
+    </Link>
+  );
 
   return (
     <header className="sticky top-0 z-20 border-b border-gray-200 bg-white transition-shadow duration-300 hover:shadow-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-3">
-        <Link
-          href="/"
-          className="z-30 mr-6 flex items-center space-x-2 font-bold"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          <Image src="/logos/logo.webp" alt="Logo" width={35} height={35} />
-          <h5>MICA</h5>
-        </Link>
+        {isMobile && <Logo />}
 
         {!isMobile ? (
-          <nav className="flex items-center space-x-4">
+          <nav className="flex w-full items-center justify-between">
             <div className="flex items-center space-x-6">
-              {navLinks.map((item, index) => (
-                <Link
-                  key={index}
-                  href={item.href}
-                  className={cn(
-                    'flex items-center text-sm text-muted-foreground transition-colors hover:text-primary',
-                    pathname.replace(/\/[^/]*\/|\/[^/]*$/, '/') == item.href ? 'text-primary' : ''
-                  )}
-                >
-                  {item.label}
-                </Link>
+              <Logo />
+              {navLinks.map((link, index) => (
+                <NavLink key={index} {...link} />
               ))}
             </div>
-            <div className="space-x-4">
-              {navCta.map((item, index) => (
-                <Button key={index} variant="outline">
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    target={isExternalLink(item.href) ? '_blank' : '_self'}
-                  >
-                    {item.label}
+            <div className="flex space-x-4">
+              <LanguageSwitcher />
+              {navCta.map(({ href, page }, index) => (
+                <Button key={index} variant={page === 'register' ? 'default' : 'secondary'}>
+                  <Link href={href} target={isExternalLink(href) ? '_blank' : '_self'}>
+                    {tNavCta(page)}
+                    {isExternalLink(href) && <ExternalLink size={16} className="ml-1 inline" />}
                   </Link>
                 </Button>
               ))}
             </div>
-            <LanguageSwitcher />
           </nav>
         ) : (
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="relative z-30 h-6 w-6 text-gray-500 transition-colors duration-300 hover:text-gray-900"
+            className="relative z-30 h-6 w-6 text-muted-foreground transition-colors duration-300 hover:text-foreground"
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           >
             <AnimatePresence>{isMenuOpen ? <X size={24} /> : <Menu size={24} />}</AnimatePresence>
@@ -123,19 +142,8 @@ export default function Header() {
           >
             <div className="flex min-h-full flex-col justify-between space-y-6 p-8 text-lg">
               <div className="flex flex-col items-start justify-start space-y-6">
-                {[...navLinks, ...navCta].map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    target={isExternalLink(item.href) ? '_blank' : '_self'}
-                    onClick={() => setIsMenuOpen(false)}
-                    className={cn(
-                      'text-md flex items-center text-muted-foreground transition-colors hover:text-primary',
-                      pathname.replace(/\/[^/]*\/|\/[^/]*$/, '/') == item.href ? 'text-primary' : ''
-                    )}
-                  >
-                    {item.label}
-                  </Link>
+                {[...navLinks, ...navCta].map((link, index) => (
+                  <NavLink key={index} {...link} onClick={() => setIsMenuOpen(false)} />
                 ))}
               </div>
               <div className="flex justify-end">

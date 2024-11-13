@@ -16,7 +16,7 @@ export default function BlogContent() {
   if (isLoading) return <Loading />;
 
   return (
-    <main className="bg-white px-4 py-16">
+    <main className="bg-white px-4 py-8">
       <div className="mx-auto max-w-7xl">
         <h2 className="mb-8 text-center font-bold capitalize">{common('blog')}</h2>
         <SearchBar

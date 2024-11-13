@@ -7,7 +7,10 @@ import { routing } from '@/i18n/routing';
 
 import './globals.css';
 
-const montserrat = Montserrat({ subsets: ['latin'], weight: '400' });
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+});
 
 export async function generateMetadata({
   params: { locale },

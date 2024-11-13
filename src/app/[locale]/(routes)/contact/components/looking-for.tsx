@@ -21,15 +21,13 @@ export default function LookingFor() {
             <Card key={text} className="shadow-sm transition-shadow hover:shadow-lg">
               <CardHeader>
                 <div className="flex justify-center">
-                  <Icon className="text-primary" size={40} />
+                  <Icon size={40} />
                 </div>
               </CardHeader>
               <CardContent className="flex flex-col items-center space-y-2">
                 <p>
                   {t.rich(text, {
-                    strong: (chunks) => (
-                      <strong className="font-bold text-primary">{chunks}</strong>
-                    ),
+                    strong: (chunks) => <strong className="font-bold">{chunks}</strong>,
                   })}
                 </p>
               </CardContent>

@@ -49,7 +49,7 @@ export default function Faqs() {
   return (
     <section className="bg-white px-8 py-16">
       <div className="mx-auto max-w-2xl">
-        <h3 className="mb-4 font-bold">{t('title')}</h3>
+        <h2 className="mb-4 font-bold">{t('title')}</h2>
         <Accordion type="single" collapsible>
           {error ? (
             <p>{error}</p>

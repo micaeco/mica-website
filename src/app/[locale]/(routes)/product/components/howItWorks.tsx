@@ -10,7 +10,7 @@ import { getHowItWorksSteps } from '@/lib/constants';
 
 const StepIcon = ({ number, icon: Icon }: { number: number; icon: LucideIcon }) => (
   <div className="relative flex items-end">
-    <h2 className="text-stroke-2 absolute -top-6 left-2 flex items-center justify-center font-black text-primary">
+    <h2 className="absolute -top-6 left-2 flex items-center justify-center font-bold text-primary">
       {number}
     </h2>
     <div className="flex h-28 w-28 shrink-0 items-center justify-center rounded-full bg-brand-secondary">
@@ -21,8 +21,8 @@ const StepIcon = ({ number, icon: Icon }: { number: number; icon: LucideIcon }) 
 
 const StepContent = ({ title, text }: { title: string; text: string }) => (
   <div className="flex-1">
-    <h5 className="mb-2 font-extrabold">{title}</h5>
-    <p>{text}</p>
+    <h5 className="mb-2 font-bold">{title}</h5>
+    <p className="font-light">{text}</p>
   </div>
 );
 
@@ -46,7 +46,7 @@ export default function HowItWorks() {
           />
         </div>
 
-        <div className="relative flex flex-col space-y-16 py-12 sm:space-y-28">
+        <div className="relative flex flex-col space-y-16 py-12 sm:space-y-32">
           {steps.map((step, index) => (
             <div
               key={index}

@@ -58,9 +58,7 @@ export default function ContactForm({
                   },
                 ].map((field) => (
                   <div key={field.id}>
-                    <Label className="mb-2 block font-medium capitalize text-gray-700">
-                      {field.label}
-                    </Label>
+                    <Label className="mb-2 block font-medium capitalize">{field.label}</Label>
                     <Input
                       type={field.type}
                       id={field.id}
@@ -73,9 +71,7 @@ export default function ContactForm({
                 ))}
               </div>
               <div>
-                <Label className="mb-2 block font-medium capitalize text-gray-700">
-                  {common('message')}
-                </Label>
+                <Label className="mb-2 block font-medium capitalize">{common('message')}</Label>
                 <Textarea
                   id="message"
                   value={message}

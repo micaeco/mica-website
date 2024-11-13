@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { locales } from '@/i18n/routing'
-import { getBlogPosts } from '@/lib/github'
-import { parseReadme } from '@/lib/utils'
+import { getLocale } from 'next-intl/server'
+import { getBlogPosts } from '@/lib/sanity'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL
@@ -15,8 +15,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/product'
   ] as const
 
-  const blogPosts = await getBlogPosts();
-
   const staticPages = pages.map(page => ({
     url: `${baseUrl}${page ? `${page}` : ''}`,
     lastModified: new Date(),
@@ -28,17 +26,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }))
 
-  const blogPages = Object.entries(blogPosts).map(([filename, content]) => {
-    const { metadata } = parseReadme(content)
-    const slug = filename.replace(/\.md$/, '')
+  const blogPosts = await getBlogPosts();
 
+  const blogPages = blogPosts.map((post) => {
     return {
-      url: `${baseUrl}/blog/${slug}`,
-      lastModified: new Date(...(metadata.date.split('/').reverse().map(Number) as [number, number, number])).toISOString() || new Date(),
+      url: `${baseUrl}/${post.lang}/blog/${post.slug}`,
+      lastModified: post.date || new Date(),
       alternates: {
         languages: locales.reduce((acc, lang) => ({
           ...acc,
-          ...(metadata.lang === lang ? { [lang]: `${baseUrl}/${lang}/blog/${slug}` } : {})
+          ...(post.lang === lang ? { [lang]: `${baseUrl}/${lang}/blog/${post.slug}` } : {})
         }), {} as Record<typeof locales[number], string>)
       }
     }

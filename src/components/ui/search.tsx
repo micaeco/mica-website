@@ -35,7 +35,7 @@ export default function SearchBar({ searchTerm, setSearchTerm }: Props) {
         size="icon"
         className="absolute right-0 top-0 h-full px-3"
       >
-        <Search className="text-gray-400" size={20} />
+        <Search className="text-muted-foreground" size={20} />
       </Button>
     </form>
   );

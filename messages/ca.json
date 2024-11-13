@@ -228,7 +228,7 @@
     "description": "Coneix l'equip darrere MICA i la nostra missió per combatre la sequera a Barcelona mitjançant tecnologia innovadora i solucions intel·ligents per l'estalvi d'aigua.",
     "history": {
       "title": "La nostra història",
-      "subtitle": "Innovant per combatre la sequera a Barcelona.",
+      "subtitle": "Innovant per combatre la sequera a Barcelona",
       "paragraph1": "L'estiu de 2022, Barcelona va patir una de les pitjors sequeres de la seva història. Mentre la ciutat entrava en fase d'alerta, un grup d'enginyers locals va tenir una idea revolucionària.",
       "paragraph2": "Així va néixer MICA, amb la missió de transformar com entenem i conservem l'aigua. La nostra tecnologia permet als barcelonins enfrontar-se a cada nova crisi hídrica amb dades precises i eines innovadores."
     },
@@ -265,37 +265,37 @@
       "step1": {
         "title": "Idea",
         "items": [
-          "· Barcelona entra en fase d'alerta per sequera",
-          "· Neix la idea d'una tecnologia innovadora que permeti als barcelonins enfrontar-se a la crisi hídrica"
+          "Barcelona entra en fase d'alerta per sequera",
+          "Neix la idea d'una tecnologia innovadora que permeti als barcelonins enfrontar-se a la crisi hídrica"
         ]
       },
       "step2": {
         "title": "Disseny",
         "items": [
-          "· Definició del pla estratègic de negoci i operatiu",
-          "· Finalització dels dissenys tècnics del hardware i software"
+          "Definició del pla estratègic de negoci i operatiu",
+          "Finalització dels dissenys tècnics del hardware i software"
         ]
       },
       "step3": {
         "title": "Desenvolupament",
         "items": [
-          "· Desenvolupament del hardware, software i la plataforma de dades",
-          "· Implementació de la primera versió de l'aplicatiu web i mòbil"
+          "Desenvolupament del hardware, software i la plataforma de dades",
+          "Implementació de la primera versió de l'aplicatiu web i mòbil"
         ]
       },
       "step4": {
         "title": "Prova pilot",
         "items": [
-          "· Instal·lació dels dispositius en una mostra de vivendes a Barcelona",
-          "· Validació de la tecnologia amb els usuaris i entrenament dels algoritmes d'intel·ligència artificial",
-          "· Implementació dels canvis necessaris"
+          "Instal·lació dels dispositius en una mostra de vivendes a Barcelona",
+          "Validació de la tecnologia amb els usuaris i entrenament dels algoritmes d'intel·ligència artificial",
+          "Implementació dels canvis necessaris"
         ]
       },
       "step5": {
         "title": "Llançament i expansió",
         "items": [
-          "· Desplegament de la plataforma al mercat",
-          "· Avaluacions contínues del funcionament del sistema"
+          "Desplegament de la plataforma al mercat",
+          "Avaluacions contínues del funcionament del sistema"
         ]
       }
     }

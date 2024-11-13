@@ -42,11 +42,8 @@ export default function VideoSection() {
 
   return (
     <section className="bg-white px-8 pb-32">
-      <div className="mx-auto grid max-w-3xl grid-cols-1 gap-4 xl:max-w-6xl xl:grid-cols-12">
-        <div
-          ref={containerRef}
-          className="aspect-video overflow-hidden rounded-lg xl:col-span-8 xl:mr-12"
-        >
+      <div className="mx-auto grid max-w-3xl grid-cols-1 gap-6 xl:max-w-6xl xl:grid-cols-12">
+        <div ref={containerRef} className="aspect-video overflow-hidden rounded-lg xl:col-span-7">
           <ReactPlayer
             url="https://www.youtube.com/watch?v=KMmJsk4eba4"
             playing={isVisible}
@@ -57,7 +54,7 @@ export default function VideoSection() {
             config={config}
           />
         </div>
-        <div className="text-pretty xl:col-span-4 xl:text-right">
+        <div className="xl:col-span-5 xl:text-right">
           <h2 className="font-bold">{t('title')}</h2>
           <p>{t('text')}</p>
         </div>

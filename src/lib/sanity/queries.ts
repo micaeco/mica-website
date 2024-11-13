@@ -3,8 +3,9 @@
 import { client } from './config'
 import { BlogPost, Faq } from '@/types'
 
-export async function getBlogPosts(locale: string): Promise<BlogPost[]> {
-  return client.fetch(`
+export async function getBlogPosts(locale?: string): Promise<BlogPost[]> {
+  if (locale) {
+    return client.fetch(`
     *[_type == "blogPost" && lang == $locale] | order(date desc) {
       lang,
       "slug": slug.current,
@@ -17,6 +18,21 @@ export async function getBlogPosts(locale: string): Promise<BlogPost[]> {
       tag
     }
   `, { locale })
+  }
+
+  return client.fetch(`
+    *[_type == "blogPost"] | order(date desc) {
+      lang,
+      "slug": slug.current,
+      title,
+      summary,
+      "cover": cover.asset->url,
+      content,
+      author,
+      date,
+      tag
+    }
+  `)
 }
 
 export async function getBlogPost(slug: string, locale: string): Promise<BlogPost | null> {

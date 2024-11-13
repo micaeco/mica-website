@@ -228,7 +228,7 @@
     "description": "Conoce al equipo detrás de MICA y nuestra misión para combatir la sequía en Barcelona mediante tecnología innovadora y soluciones inteligentes para el ahorro de agua.",
     "history": {
       "title": "Nuestra historia",
-      "subtitle": "Innovando para combatir la sequía en Barcelona.",
+      "subtitle": "Innovando para combatir la sequía en Barcelona",
       "paragraph1": "El verano de 2022, Barcelona sufrió una de las peores sequías de su historia. Mientras la ciudad entraba en fase de alerta, un grupo de ingenieros locales tuvo una idea revolucionaria.",
       "paragraph2": "Así nació MICA, con la misión de transformar cómo entendemos y conservamos el agua. Nuestra tecnología permite a los barceloneses enfrentarse a cada nueva crisis hídrica con datos precisos y herramientas innovadoras."
     },
@@ -265,37 +265,37 @@
       "step1": {
         "title": "Idea",
         "items": [
-          "· Barcelona entra en fase de alerta por sequía",
-          "· Nace la idea de una tecnología innovadora que permita a los barceloneses enfrentarse a la crisis hídrica"
+          "Barcelona entra en fase de alerta por sequía",
+          "Nace la idea de una tecnología innovadora que permita a los barceloneses enfrentarse a la crisis hídrica"
         ]
       },
       "step2": {
         "title": "Diseño",
         "items": [
-          "· Definición del plan estratégico de negocio y operativo",
-          "· Finalización de los diseños técnicos de hardware y software"
+          "Definición del plan estratégico de negocio y operativo",
+          "Finalización de los diseños técnicos de hardware y software"
         ]
       },
       "step3": {
         "title": "Desarrollo",
         "items": [
-          "· Desarrollo del hardware, software y la plataforma de datos",
-          "· Implementación de la primera versión de la aplicación web y móvil"
+          "Desarrollo del hardware, software y la plataforma de datos",
+          "Implementación de la primera versión de la aplicación web y móvil"
         ]
       },
       "step4": {
         "title": "Prueba piloto",
         "items": [
-          "· Instalación de dispositivos en una muestra de viviendas en Barcelona",
-          "· Validación de la tecnología con los usuarios y entrenamiento de los algoritmos de inteligencia artificial",
-          "· Implementación de los cambios necesarios"
+          "Instalación de dispositivos en una muestra de viviendas en Barcelona",
+          "Validación de la tecnología con los usuarios y entrenamiento de los algoritmos de inteligencia artificial",
+          "Implementación de los cambios necesarios"
         ]
       },
       "step5": {
         "title": "Lanzamiento y expansión",
         "items": [
-          "· Despliegue de la plataforma en el mercado",
-          "· Evaluaciones contínuas del funcionamiento del sistema"
+          "Despliegue de la plataforma en el mercado",
+          "Evaluaciones contínuas del funcionamiento del sistema"
         ]
       }
     }

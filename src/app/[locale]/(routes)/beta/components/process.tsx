@@ -30,7 +30,7 @@ function ProcessStep({ icon: Icon, title, description, isLast = false }: Props) 
         )}
       </div>
       <div className="grow">
-        <h6 className="mb-2 text-gray-800">{title}</h6>
+        <h5 className="font-medium">{title}</h5>
         <p className="font-light">{description}</p>
       </div>
     </div>
@@ -47,9 +47,7 @@ export default function Process() {
       <div className="mx-auto max-w-7xl">
         <div className="grid justify-center 2xl:grid-cols-10">
           <div className="col-span-6 px-8">
-            <h3 className="justify-left mb-10 flex text-center font-bold text-brand-primary">
-              {t('title')}
-            </h3>
+            <h3 className="justify-left mb-10 flex font-bold">{t('title')}</h3>
             {steps.map((step, index) => (
               <ProcessStep key={index} {...step} isLast={index === steps.length - 1} />
             ))}

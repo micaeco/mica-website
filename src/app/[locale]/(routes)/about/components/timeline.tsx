@@ -23,11 +23,11 @@ export default function Timeline() {
               >
                 {React.createElement(item.icon, { className: 'h-7 w-7 text-white' })}
               </div>
-              <div className="flex-grow pb-6">
-                <p className="mb-2 font-bold">{item.title}</p>
+              <div className="flex-grow space-y-2 pb-12">
+                <h5 className="font-bold">{item.title}</h5>
                 <ul className="space-y-1">
                   {item.items.map((text, index) => (
-                    <li key={index}>
+                    <li className="ml-5 list-disc" key={index}>
                       <p>{text}</p>
                     </li>
                   ))}

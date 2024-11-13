@@ -58,7 +58,7 @@ export default function BlogPostPage({ slug }: { slug: string }) {
       <div className="mx-auto max-w-3xl">
         <GoBack />
 
-        <h3 className="font-bold">{post.title}</h3>
+        <h3 className="mb-4 font-bold">{post.title}</h3>
         <div className="mb-8 flex flex-wrap items-center gap-4 text-sm font-light">
           <div className="flex items-center gap-1">
             <Clock size={15} />

@@ -223,7 +223,7 @@
     "description": "Meet the team behind MICA and our mission to combat drought in Barcelona through innovative technology and intelligent solutions for water saving.",
     "history": {
       "title": "Our history",
-      "subtitle": "Innovating to combat drought in Barcelona.",
+      "subtitle": "Innovating to combat drought in Barcelona",
       "paragraph1": "In the summer of 2022, Barcelona suffered one of the worst droughts in its history. While the city entered drought alert status, a group of local engineers had a revolutionary idea.",
       "paragraph2": "Thus MICA was born, with the mission of transforming how we understand and conserve water. Our technology allows Barcelona residents to face each new water crisis with precise data and innovative tools."
     },
@@ -260,35 +260,35 @@
       "step1": {
         "title": "Idea",
         "items": [
-          "· Barcelona enters drought alert phase",
-          "· Birth of the idea for innovative technology allowing Barcelona residents to face the water crisis"
+          "Barcelona enters drought alert phase",
+          "Birth of the idea for innovative technology allowing Barcelona residents to face the water crisis"
         ]
       },
       "step2": {
         "title": "Design",
         "items": [
-          "· Definition of strategic business and operational plan",
-          "· Completion of technical hardware and software designs"
+          "Definition of strategic business and operational plan",
+          "Completion of technical hardware and software designs"
         ]
       },
       "step3": {
         "title": "Development",
         "items": [
-          "· Development of hardware, software, and data platform",
-          "· Implementation of the first version of web and mobile application"
+          "Development of hardware, software, and data platform",
+          "Implementation of the first version of web and mobile application"
         ]
       },
       "step4": {
         "title": "Pilot test",
         "items": [
-          "· Installation of devices in a sample of homes in Barcelona",
-          "· Technology validation with users and training of artificial intelligence algorithms",
-          "· Implementation of necessary changes"
+          "Installation of devices in a sample of homes in Barcelona",
+          "Technology validation with users and training of artificial intelligence algorithms",
+          "Implementation of necessary changes"
         ]
       },
       "step5": {
         "title": "Launch and expansion",
-        "items": ["· Platform deployment", "· Continuous system evaluations"]
+        "items": ["Platform deployment", "Continuous system evaluations"]
       }
     }
   },

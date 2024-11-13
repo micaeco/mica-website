@@ -44,7 +44,8 @@ const config: Config = {
           primary: 'hsl(var(--brand-primary))',
           secondary: 'hsl(var(--brand-secondary))',
           tertiary: 'hsl(var(--brand-tertiary))',
-          accent: 'hsl(var(--brand-accent))'
+          quaternary: 'hsl(var(--brand-quaternary))',
+          quinary: 'hsl(var(--brand-quintary))'
         },
         borderRadius: {
           lg: 'var(--radius)',

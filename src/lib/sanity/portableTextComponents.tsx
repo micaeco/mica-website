@@ -11,9 +11,9 @@ export const portableTextComponents: PortableTextComponents = {
     h4: ({ children }) => <h4 className="font-bold">{children}</h4>,
     h5: ({ children }) => <h5 className="font-bold">{children}</h5>,
     h6: ({ children }) => <h6 className="font-bold">{children}</h6>,
-    normal: ({ children }) => <p className="mb-4">{children}</p>,
+    normal: ({ children }) => <p className="mb-8">{children}</p>,
     blockquote: ({ children }) => (
-      <blockquote className="my-6 border-l-4 border-gray-200 pl-4 italic text-gray-700">
+      <blockquote className="my-6 border-l-4 border-gray-200 pl-4 italic text-muted-foreground">
         {children}
       </blockquote>
     ),
@@ -31,8 +31,8 @@ export const portableTextComponents: PortableTextComponents = {
     ),
   },
   list: {
-    bullet: ({ children }) => <ul className="mb-4 list-disc space-y-4 pl-4">{children}</ul>,
-    number: ({ children }) => <ol className="mb-4 list-decimal space-y-4 pl-4">{children}</ol>,
+    bullet: ({ children }) => <ul className="mb-8 list-disc space-y-4 pl-4">{children}</ul>,
+    number: ({ children }) => <ol className="mb-8 list-decimal space-y-4 pl-4">{children}</ol>,
   },
   types: {
     image: ({ value }) => (

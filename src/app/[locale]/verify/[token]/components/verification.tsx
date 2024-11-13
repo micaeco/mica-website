@@ -48,7 +48,7 @@ export default function Verification() {
   if (error) {
     return (
       <div className="flex min-h-screen flex-col items-center justify-center">
-        <h2 className="text-xl font-semibold text-gray-900">{t('title')}</h2>
+        <h5 className="font-semibold">{t('title')}</h5>
         <div className="mt-8 flex flex-col items-center justify-center space-y-4">
           <div>
             <XCircle className="mx-auto h-16 w-16 text-destructive" />
@@ -61,7 +61,7 @@ export default function Verification() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center">
-      <h2 className="text-xl font-semibold text-gray-900">{t('title')}</h2>
+      <h5 className="font-semibold">{t('title')}</h5>
       <div className="mt-8 flex flex-col items-center justify-center space-y-4">
         <div>
           <CheckCircle className="mx-auto h-16 w-16 text-green-500" />

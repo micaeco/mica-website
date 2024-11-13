@@ -28,7 +28,7 @@ export default function Solution() {
               {t('title')}
             </motion.h2>
 
-            <div className="mb-8 grid grid-cols-1 gap-8 lg:grid-cols-3">
+            <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-3">
               {benefits.map((card, index) => (
                 <motion.div
                   key={index}
@@ -36,11 +36,9 @@ export default function Solution() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.2 }}
                 >
-                  <div>
-                    <card.icon className="mb-4 size-20 rounded-full bg-brand-primary p-4 text-white" />
-                    <h4 className="mb-2 font-bold">{card.title}</h4>
-                    <p>{card.description}</p>
-                  </div>
+                  <card.icon className="mb-4 size-20 rounded-full bg-brand-primary p-4 text-white" />
+                  <h4 className="mb-2 font-bold">{card.title}</h4>
+                  <p className="">{card.description}</p>
                 </motion.div>
               ))}
             </div>
