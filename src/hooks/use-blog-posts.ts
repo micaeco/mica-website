@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 import { useTranslations } from 'next-intl';
 import { useLocale } from "next-intl";
 import type { BlogPost, BlogPostTag } from '@/types';
-import { getBlogPost, getBlogPosts } from '@/lib/sanity';
+import { getBlogPosts } from '@/lib/sanity';
 
 function extractTextFromPortableText(blocks: any[]): string {
   return blocks.reduce((text, block) => {

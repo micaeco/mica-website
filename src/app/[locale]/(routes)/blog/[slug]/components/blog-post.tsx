@@ -74,7 +74,7 @@ export default function BlogPostPage({ slug }: { slug: string }) {
           </div>
           <div className="flex items-center gap-1 capitalize">
             <Book size={15} />
-            {languageMap[post.lang] || common('unknown-language')}
+            {languageMap[locale] || common('unknown-language')}
           </div>
         </div>
 

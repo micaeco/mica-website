@@ -96,7 +96,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-20 border-b border-gray-200 bg-white transition-shadow duration-300 hover:shadow-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-3">
+      <div className="mx-auto flex max-w-[1700px] items-center justify-between px-8 py-3">
         {isMobile && <Logo />}
 
         {!isMobile ? (

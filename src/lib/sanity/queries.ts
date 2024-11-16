@@ -3,60 +3,43 @@
 import { client } from './config'
 import { BlogPost, Faq } from '@/types'
 
-export async function getBlogPosts(locale?: string): Promise<BlogPost[]> {
-  if (locale) {
-    return client.fetch(`
-    *[_type == "blogPost" && lang == $locale] | order(date desc) {
-      lang,
+export async function getBlogPosts(locale: string) {
+  return client.fetch(
+    `*[_type == "blogPost"] | order(date desc) {
       "slug": slug.current,
-      title,
-      summary,
+      "title": title[$locale],
+      "summary": summary[$locale],
+      "content": content[$locale],
       "cover": cover.asset->url,
-      content,
       author,
       date,
       tag
-    }
-  `, { locale })
-  }
-
-  return client.fetch(`
-    *[_type == "blogPost"] | order(date desc) {
-      lang,
-      "slug": slug.current,
-      title,
-      summary,
-      "cover": cover.asset->url,
-      content,
-      author,
-      date,
-      tag
-    }
-  `)
+    }`,
+    { locale }
+  );
 }
 
 export async function getBlogPost(slug: string, locale: string): Promise<BlogPost | null> {
-  return client.fetch(`
-    *[_type == "blogPost" && slug.current == $slug && lang == $locale][0] {
-      lang,
+  return client.fetch(
+    `*[_type == "blogPost" && slug.current == $slug][0] {
       "slug": slug.current,
-      title,
-      summary,
+      "title": title[$locale],
+      "summary": summary[$locale],
+      "content": content[$locale],
       "cover": cover.asset->url,
-      content,
       author,
       date,
       tag
-    }
-  `, { slug, locale })
+    }`,
+    { slug, locale }
+  )
 }
 
 export async function getFaqs(locale: string): Promise<Faq[]> {
   return client.fetch(`
-    *[_type == "faq" && lang == $locale] | order(_createdAt asc) {
-      lang,
-      question,
-      answer,
+    *[_type == "faq"] {
+      "question": question[$locale],
+      "answer": answer[$locale],
       lastUpdated
     }
   `, { locale })
