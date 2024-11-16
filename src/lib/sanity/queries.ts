@@ -3,44 +3,61 @@
 import { client } from './config'
 import { BlogPost, Faq } from '@/types'
 
-export async function getBlogPosts(locale: string) {
+export async function getBlogPosts(locale?: string) {
   return client.fetch(
     `*[_type == "blogPost"] | order(date desc) {
       "slug": slug.current,
-      "title": title[$locale],
-      "summary": summary[$locale],
-      "content": content[$locale],
+      ${locale ? `
+        "title": title[$locale],
+        "summary": summary[$locale],
+        "content": content[$locale],
+      ` : `
+        "title": title,
+        "summary": summary,
+        "content": content,
+      `}
       "cover": cover.asset->url,
       author,
       date,
       tag
     }`,
-    { locale }
+    locale ? { locale } : undefined
   );
 }
 
-export async function getBlogPost(slug: string, locale: string): Promise<BlogPost | null> {
+export async function getBlogPost(slug: string, locale?: string): Promise<BlogPost | null> {
   return client.fetch(
     `*[_type == "blogPost" && slug.current == $slug][0] {
       "slug": slug.current,
-      "title": title[$locale],
-      "summary": summary[$locale],
-      "content": content[$locale],
+      ${locale ? `
+        "title": title[$locale],
+        "summary": summary[$locale],
+        "content": content[$locale],
+      ` : `
+        "title": title,
+        "summary": summary,
+        "content": content,
+      `}
       "cover": cover.asset->url,
       author,
       date,
       tag
     }`,
-    { slug, locale }
+    locale ? { slug, locale } : { slug }
   )
 }
 
-export async function getFaqs(locale: string): Promise<Faq[]> {
+export async function getFaqs(locale?: string): Promise<Faq[]> {
   return client.fetch(`
     *[_type == "faq"] {
-      "question": question[$locale],
-      "answer": answer[$locale],
+      ${locale ? `
+        "question": question[$locale],
+        "answer": answer[$locale],
+      ` : `
+        "question": question,
+        "answer": answer,
+      `}
       lastUpdated
     }
-  `, { locale })
+  `, locale ? { locale } : undefined)
 }

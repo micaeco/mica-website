@@ -1,6 +1,5 @@
 import type { MetadataRoute } from 'next'
 import { locales } from '@/i18n/routing'
-import { getLocale } from 'next-intl/server'
 import { getBlogPosts } from '@/lib/sanity'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -28,14 +27,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const blogPosts = await getBlogPosts();
 
-  const blogPages = blogPosts.map((post) => {
+  const blogPages = blogPosts.map((post: { slug: any; date: any }) => {
     return {
-      url: `${baseUrl}/${post.lang}/blog/${post.slug}`,
+      url: `${baseUrl}/en/blog/${post.slug}`,
       lastModified: post.date || new Date(),
       alternates: {
         languages: locales.reduce((acc, lang) => ({
           ...acc,
-          ...(post.lang === lang ? { [lang]: `${baseUrl}/${lang}/blog/${post.slug}` } : {})
+          [lang]: `${baseUrl}/${lang}/blog/${post.slug}`
         }), {} as Record<typeof locales[number], string>)
       }
     }
