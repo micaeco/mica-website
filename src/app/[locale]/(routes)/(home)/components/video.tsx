@@ -42,7 +42,7 @@ export default function VideoSection() {
 
   return (
     <section className="bg-muted px-8 py-16">
-      <div className="mx-auto grid max-w-3xl grid-cols-1 items-center xl:max-w-6xl xl:grid-cols-12">
+      <div className="mx-auto grid max-w-3xl grid-cols-1 items-center space-y-6 xl:max-w-6xl xl:grid-cols-12">
         <div ref={containerRef} className="aspect-video overflow-hidden rounded-lg xl:col-span-7">
           <ReactPlayer
             url="https://www.youtube.com/watch?v=KMmJsk4eba4"
