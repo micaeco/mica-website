@@ -10,6 +10,7 @@ import { BlogPost } from '@/types';
 import { languageMap } from '@/lib/constants';
 import { getBlogPost, portableTextComponents } from '@/lib/sanity';
 import { PortableText } from 'next-sanity';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 export default function BlogPostPage({ slug }: { slug: string }) {
   const [post, setPost] = useState<BlogPost>();
@@ -60,13 +61,21 @@ export default function BlogPostPage({ slug }: { slug: string }) {
 
         <h3 className="mb-4 font-bold">{post.title}</h3>
         <div className="mb-8 flex flex-wrap items-center gap-4 text-sm font-light">
+          <div className="flex items-center gap-2">
+            <Avatar className="h-6 w-6">
+              <AvatarImage
+                src={post.author?.profilePicture}
+                alt={post.author?.name || common('unknown-author')}
+              />
+              <AvatarFallback>
+                {post.author?.name.slice(0, 2) || common('unkown-author').slice(0, 2)}
+              </AvatarFallback>
+            </Avatar>
+            <span className="text-xs">{post.author?.name || common('unknown-author')}</span>
+          </div>
           <div className="flex items-center gap-1">
             <Clock size={15} />
             {post.date?.toString() || common('unknown-date')}
-          </div>
-          <div className="flex items-center gap-1 capitalize">
-            <User size={15} />
-            {post.author || common('unknown-author')}
           </div>
           <div className="flex items-center gap-1 capitalize">
             <Tag size={15} />

@@ -3,6 +3,11 @@ import { Locale } from '@/i18n/routing'
 export const BlogPostTags = ['all', 'article', 'manual', 'others'] as const;
 export type BlogPostTag = typeof BlogPostTags[number];
 
+export interface BlogAuthor {
+  name: string
+  profilePicture: string
+}
+
 export interface BlogPost {
   lang: Locale
   slug: string
@@ -10,7 +15,7 @@ export interface BlogPost {
   summary: string
   cover: string
   content: any[]
-  author?: string
+  author?: BlogAuthor
   date?: string
   tag: PostTag
 }

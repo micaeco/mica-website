@@ -17,7 +17,10 @@ export async function getBlogPosts(locale?: string) {
         "content": content,
       `}
       "cover": cover.asset->url,
-      author,
+      "author": author->{
+        name,
+        "profilePicture": profilePicture.asset->url
+      },
       date,
       tag
     }`,
@@ -39,7 +42,10 @@ export async function getBlogPost(slug: string, locale?: string): Promise<BlogPo
         "content": content,
       `}
       "cover": cover.asset->url,
-      author,
+      "author": author->{
+        name,
+        "profilePicture": profilePicture.asset->url
+      },
       date,
       tag
     }`,
