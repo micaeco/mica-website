@@ -36,14 +36,8 @@ export const portableTextComponents: PortableTextComponents = {
   },
   types: {
     image: ({ value }) => (
-      <div className="my-8 flex aspect-video justify-center overflow-hidden">
-        <Image
-          src={urlFor(value).width(800).url()}
-          alt={value.alt || ''}
-          width={3000}
-          height={3000}
-          className="rounded-lg"
-        />
+      <div className="relative my-8 aspect-video w-full overflow-hidden rounded-lg">
+        <Image src={urlFor(value).url()} alt={value.alt || ''} fill className="object-cover" />
       </div>
     ),
   },

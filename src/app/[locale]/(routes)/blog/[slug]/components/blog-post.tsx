@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
-import { Clock, User, Tag, Book } from 'lucide-react';
+import { Clock, Tag, Book } from 'lucide-react';
 
 import Loading from '@/components/loading';
 import GoBack from '@/components/ui/go-back';
