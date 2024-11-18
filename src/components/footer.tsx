@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from '@/i18n/routing';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Separator } from '@/components/ui/separator';
 import { getNavCta, getNavLinks } from '@/lib/constants';
 import { isExternalLink } from '@/lib/utils';
@@ -11,9 +11,10 @@ import { Button } from './ui/button';
 export default function Footer() {
   const common = useTranslations('common');
   const t = useTranslations();
+  const locale = useLocale();
 
   const navLinks = getNavLinks(t);
-  const navCta = getNavCta(t);
+  const navCta = getNavCta(t, locale);
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [

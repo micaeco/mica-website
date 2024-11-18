@@ -6,7 +6,7 @@ import { Link } from '@/i18n/routing';
 import Image from 'next/image';
 import { Menu, X, ExternalLink } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import LanguageSwitcher from '@/components/language-switcher';
 import { Button } from '@/components/ui/button';
 import { cn, isExternalLink } from '@/lib/utils';
@@ -17,6 +17,7 @@ export default function Header() {
   const pathname = usePathname();
   const tNavLinks = useTranslations('navLinks');
   const tNavCta = useTranslations('navCta');
+  const locale = useLocale();
 
   const navLinks = [
     { href: '/product', page: 'product' },
@@ -28,7 +29,7 @@ export default function Header() {
 
   const navCta = [
     { href: '/contact', page: 'contact' },
-    { href: 'https://app.mica.eco', page: 'demo' },
+    { href: `https://app.mica.eco/${locale}`, page: 'demo' },
     { href: '/register', page: 'register' },
   ];
 

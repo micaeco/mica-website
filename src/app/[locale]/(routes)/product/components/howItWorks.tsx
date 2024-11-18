@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 import { ExternalLink, LucideIcon } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 import { Button } from '@/components/ui/button';
 import { getHowItWorksSteps } from '@/lib/constants';
@@ -29,6 +29,7 @@ const StepContent = ({ title, text }: { title: string; text: string }) => (
 export default function HowItWorks() {
   const t = useTranslations('product');
   const tSteps = useTranslations('product.howItWorks.steps');
+  const locale = useLocale();
 
   const steps = getHowItWorksSteps(tSteps);
 
@@ -74,7 +75,11 @@ export default function HowItWorks() {
 
         <div className="relative flex justify-center space-x-4 py-16">
           <Button className="w-fit" variant="outline" size="lg">
-            <Link href="https://app.mica.eco" className="flex items-center gap-2" target="_blank">
+            <Link
+              href={`https://app.mica.eco/${locale}`}
+              className="flex items-center gap-2"
+              target="_blank"
+            >
               {t('cta.cta1')} <ExternalLink size={16} />
             </Link>
           </Button>

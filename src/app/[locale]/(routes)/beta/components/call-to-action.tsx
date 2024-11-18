@@ -2,12 +2,13 @@ import React from 'react';
 
 import { Button } from '@/components/ui/button';
 import { Link } from '@/i18n/routing';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { ExternalLink } from 'lucide-react';
 
 export default function CallToAction() {
   const t = useTranslations('beta.cta');
+  const locale = useLocale();
 
   return (
     <section className="bg-secondary pt-16 text-secondary-foreground">
@@ -18,7 +19,7 @@ export default function CallToAction() {
           </CardHeader>
           <CardContent className="flex flex-col justify-center gap-2 sm:flex-row">
             <Button variant="outline" size="lg">
-              <Link href="https://app.mica.eco" target="_blank">
+              <Link href={`https://app.mica.eco/${locale}`} target="_blank">
                 {t('cta1')}
                 <ExternalLink size={20} className="ml-1 inline-flex" />
               </Link>

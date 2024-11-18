@@ -60,10 +60,10 @@ export function getNavLinks(t: (key: string) => string) {
   ];
 }
 
-export function getNavCta(t: (key: string) => string) {
+export function getNavCta(t: (key: string) => string, locale: string) {
   return [
     { href: '/contact', label: t('navCta.contact') },
-    { href: 'https://app.mica.eco', label: t('navCta.demo') },
+    { href: `https://app.mica.eco/${locale}`, label: t('navCta.demo') },
     { href: '/register', label: t('navCta.register') },
   ];
 }
