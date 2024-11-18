@@ -90,10 +90,10 @@ export default function Footer() {
                 height={30}
                 className="opacity-70"
               />
-              <span className="text-lg font-black">MICA</span>
+              <span className="text-lg font-bold">MICA</span>
             </Link>
             <p className="text-xs">
-              &copy; {currentYear} MICA.ECO. {common('all-rights-reserved')}
+              &copy; {currentYear} MICA ECO. {common('all-rights-reserved')}
             </p>
           </div>
 

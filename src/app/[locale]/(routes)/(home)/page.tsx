@@ -24,7 +24,7 @@ export default function Home() {
     <main className="flex flex-col justify-center">
       <Hero />
       <Video />
-      <WaveSeparator topColor="white" bottomColor="#00f2dd" />
+      <WaveSeparator topColor="muted" bottomColor="#00f2dd" />
       <Solution />
       <WaveSeparator topColor="brand-tertiary" bottomColor="#ffffff" />
       <Problem />

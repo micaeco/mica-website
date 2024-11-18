@@ -23,6 +23,7 @@ export default function Header() {
     { href: '/beta', page: 'beta' },
     { href: '/about', page: 'about' },
     { href: '/blog', page: 'blog' },
+    { href: '/faqs', page: 'faqs' },
   ];
 
   const navCta = [
@@ -108,7 +109,7 @@ export default function Header() {
               ))}
             </div>
             <div className="flex space-x-4">
-              <LanguageSwitcher />
+              <LanguageSwitcher shortened />
               {navCta.map(({ href, page }, index) => (
                 <Button key={index} variant={page === 'register' ? 'default' : 'secondary'}>
                   <Link href={href} target={isExternalLink(href) ? '_blank' : '_self'}>
@@ -146,9 +147,7 @@ export default function Header() {
                   <NavLink key={index} {...link} onClick={() => setIsMenuOpen(false)} />
                 ))}
               </div>
-              <div className="flex justify-end">
-                <LanguageSwitcher className="text-lg" />
-              </div>
+              <LanguageSwitcher className="text-lg" />
             </div>
           </motion.div>
         )}

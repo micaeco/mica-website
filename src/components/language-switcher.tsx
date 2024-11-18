@@ -10,6 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { cn } from '@/lib/utils';
 
 type Locale = 'en' | 'es' | 'ca';
 
@@ -19,7 +20,13 @@ const languages: { code: Locale; name: string; flag: string }[] = [
   { code: 'ca', name: 'Català', flag: 'CAT' },
 ];
 
-export default function LanguageSwitcher({ className }: { className?: string }) {
+export default function LanguageSwitcher({
+  className,
+  shortened,
+}: {
+  className?: string;
+  shortened?: boolean;
+}) {
   const router = useRouter();
   const locale = useLocale() as Locale;
   const pathname = usePathname();
@@ -28,16 +35,25 @@ export default function LanguageSwitcher({ className }: { className?: string }) 
     router.push(pathname, { locale: newLocale });
   };
 
+  const getCurrentLanguage = (code: Locale) => {
+    return languages.find((lang) => lang.code === code);
+  };
+
   return (
     <Select onValueChange={handleLanguageChange} defaultValue={locale}>
-      <SelectTrigger className="w-[150px]">
-        <SelectValue placeholder="Select language" />
+      <SelectTrigger className={cn('w-fit', className)}>
+        <SelectValue>
+          <div className="flex items-center gap-2">
+            <Globe className="h-4 w-4" />
+            {shortened ? locale.toUpperCase() : getCurrentLanguage(locale)?.name}
+          </div>
+        </SelectValue>
       </SelectTrigger>
       <SelectContent>
         {languages.map((lang) => (
           <SelectItem key={lang.code} value={lang.code}>
-            <div className={`${className} flex flex-row items-center gap-2`}>
-              <Globe />
+            <div className={cn('flex items-center gap-2', className)}>
+              <Globe className="h-4 w-4" />
               {lang.name}
             </div>
           </SelectItem>

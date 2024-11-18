@@ -10,7 +10,7 @@ export default function Hero() {
   const t = useTranslations('home.hero');
 
   return (
-    <section className="px-8 py-16 xl:py-32">
+    <section className="px-8 py-20">
       <div className="relative mx-auto max-w-6xl 2xl:h-[650px]">
         {/* Desktop background (2XL) */}
         <div className="pointer-events-none absolute right-5 top-4 hidden 2xl:block">
@@ -19,12 +19,19 @@ export default function Hero() {
             alt="Background"
             width={1050}
             height={720}
+            priority
           />
         </div>
 
         {/* Tablet background (XL) */}
         <div className="pointer-events-none absolute right-5 top-24 hidden xl:block 2xl:hidden">
-          <Image src="/images/hero-graphic-mobile.webp" alt="Background" width={900} height={600} />
+          <Image
+            src="/images/hero-graphic-mobile.webp"
+            alt="Background"
+            width={900}
+            height={600}
+            priority
+          />
         </div>
 
         <div className="flex justify-center xl:justify-start">
@@ -32,10 +39,11 @@ export default function Hero() {
             {/* Mobile image */}
             <Image
               src="/images/hero-graphic-mobile.webp"
-              alt="Logo"
+              alt="Background"
               width={475}
               height={300}
               className="block xl:hidden"
+              priority
             />
             <div>
               <h1 className="mx-auto max-w-[540px] bg-gradient-to-b from-primary/85 to-primary bg-clip-text font-bold leading-tight text-transparent">
