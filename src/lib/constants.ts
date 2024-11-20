@@ -24,6 +24,8 @@ import {
 
 import { FormInputField } from '@/types';
 
+export const maxCommentaryDepth = 10;
+
 export const languageMap: { [key: string]: string } = {
   ca: 'Català',
   en: 'English',

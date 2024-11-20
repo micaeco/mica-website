@@ -9,11 +9,26 @@ import SearchBar from './search-bar';
 import Loading from '@/components/loading';
 
 export default function BlogContent() {
-  const { filteredPosts, searchTerm, isLoading, setSearchTerm, selectedTag, setSelectedTag } =
-    useBlogPosts();
+  const {
+    filteredPosts,
+    searchTerm,
+    isLoading,
+    error,
+    setSearchTerm,
+    selectedTag,
+    setSelectedTag,
+  } = useBlogPosts();
   const common = useTranslations('common');
 
   if (isLoading) return <Loading />;
+
+  if (error) {
+    return (
+      <div className="flex w-full items-center justify-center py-32">
+        <p className="text-destructive">{error}</p>
+      </div>
+    );
+  }
 
   return (
     <main className="bg-white px-4 py-8">

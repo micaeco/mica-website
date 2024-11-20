@@ -21,16 +21,16 @@ export function useContactSubmission() {
       const response = await contactSubmission(name, email, message);
 
       if (errors.has(response)) {
-        toast.error(errors(response), { autoClose: 5000 });
+        toast.error(errors(response));
         return;
       }
 
-      toast.success(success(response), { autoClose: 5000 });
+      toast.success(success(response));
       setName('');
       setEmail('');
       setMessage('');
     } catch (error) {
-      toast.error(errors('DEFAULT'), { autoClose: 5000 });
+      toast.error(errors('DEFAULT'));
     } finally {
       setIsSubmitting(false);
     }

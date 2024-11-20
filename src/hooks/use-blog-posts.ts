@@ -1,7 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
-import { toast } from 'react-toastify';
-import { useTranslations } from 'next-intl';
-import { useLocale } from "next-intl";
+import { useTranslations, useLocale } from 'next-intl';
+
 import type { BlogPost, BlogPostTag } from '@/types';
 import { getBlogPosts } from '@/lib/sanity';
 
@@ -24,6 +23,7 @@ function extractTextFromPortableText(blocks: any[]): string {
 export function useBlogPosts() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTag, setSelectedTag] = useState<BlogPostTag | 'all'>('all');
 
@@ -35,14 +35,9 @@ export function useBlogPosts() {
       try {
         const posts = await getBlogPosts(locale);
 
-        if (!posts) {
-          toast.error(errors('NOT_FOUND'), { autoClose: 5000 });
-          return;
-        }
-
         setPosts(posts);
       } catch (error) {
-        toast.error(errors('DEFAULT'), { autoClose: 5000 });
+        setError(errors('DEFAULT'));
       } finally {
         setIsLoading(false);
       }
@@ -51,34 +46,34 @@ export function useBlogPosts() {
     fetchPosts();
   }, [errors, locale]);
 
-  const postsContent = useMemo(() => {
-    return posts.map(post => ({
-      id: post.slug,
-      text: extractTextFromPortableText(post.content)
-    }));
-  }, [posts]);
+  const normalizeText = (text: string) => {
+    return text
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '');
+  };
 
   const filteredPosts = useMemo(() => {
-    const searchTermLower = searchTerm.toLowerCase();
+    const normalizedSearchTerm = normalizeText(searchTerm);
 
     return posts.filter((post) => {
-      const postContent = postsContent.find(p => p.id === post.slug)?.text || '';
-
       const matchesSearchTerm =
-        post.title.toLowerCase().includes(searchTermLower) ||
-        post.summary.toLowerCase().includes(searchTermLower) ||
-        postContent.includes(searchTermLower);
+        normalizeText(post.title).includes(normalizedSearchTerm) ||
+        normalizeText(post.summary).includes(normalizedSearchTerm) ||
+        normalizeText(post.author?.name || '').includes(normalizedSearchTerm) ||
+        normalizeText(extractTextFromPortableText(post.content)).includes(normalizedSearchTerm);
 
       const matchesTag = selectedTag === 'all' || post.tag === selectedTag;
 
       return matchesSearchTerm && matchesTag;
     });
-  }, [searchTerm, selectedTag, posts, postsContent]);
+  }, [searchTerm, selectedTag, posts]);
 
   return {
     posts,
     filteredPosts,
     isLoading,
+    error,
     searchTerm,
     setSearchTerm,
     selectedTag,

@@ -9,7 +9,7 @@ export interface BlogAuthor {
 }
 
 export interface BlogPost {
-  lang: Locale
+  id: string
   slug: string
   title: string
   summary: string
@@ -22,8 +22,10 @@ export interface BlogPost {
 
 export interface BlogComment {
   id: string;
+  name: string;
+  comment: string;
   postId: string;
-  author: string;
-  content: string;
-  date: Date;
+  replies: BlogComment[];
+  parentId?: string;
+  createdAt: datetime;
 }

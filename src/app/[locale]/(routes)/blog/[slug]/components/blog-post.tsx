@@ -11,6 +11,7 @@ import { languageMap } from '@/lib/constants';
 import { getBlogPost, portableTextComponents } from '@/lib/sanity';
 import { PortableText } from 'next-sanity';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import Comments from './comments';
 
 export default function BlogPostPage({ slug }: { slug: string }) {
   const [post, setPost] = useState<BlogPost>();
@@ -55,7 +56,7 @@ export default function BlogPostPage({ slug }: { slug: string }) {
   }
 
   return (
-    <article className="bg-white p-8">
+    <article className="space-y-32 bg-white p-8">
       <div className="mx-auto max-w-3xl">
         <GoBack />
 
@@ -93,6 +94,7 @@ export default function BlogPostPage({ slug }: { slug: string }) {
           <p className="capitalize">{common('no-content-available')}</p>
         )}
       </div>
+      <Comments postId={post.id} />
     </article>
   );
 }
