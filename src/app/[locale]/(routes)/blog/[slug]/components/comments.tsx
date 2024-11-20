@@ -13,14 +13,16 @@ interface Props {
 
 export default function Comments({ postId }: Props) {
   const { comments, isLoading, error, addComment } = useComments({ postId });
+
   const common = useTranslations('common');
+  const t = useTranslations('blog.comments');
 
   if (isLoading) return <Loading />;
 
   return (
     <section className="mx-auto max-w-3xl space-y-4">
       <h3 className="font-bold capitalize">
-        {common('comments')} ({getTotalComments(comments)})
+        {t('title')} ({getTotalComments(comments)})
       </h3>
 
       <CommentForm postId={postId} addComment={addComment} onSuccess={() => {}} isReply={false} />

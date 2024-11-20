@@ -392,6 +392,14 @@
     "title": "Preguntes freqüents"
   },
   "blog": {
+    "comments": {
+      "title": "Comentaris",
+      "no-comments": "Encara no hi ha cap comentari. Sigues el primer a deixar-ne un!",
+      "info": {
+        "title": "Informació del comentari",
+        "text": "El correu electrònic no es publicarà. Només el nom i el comentari seran visibles."
+      }
+    },
     "tags": {
       "article": "article",
       "manual": "manual",

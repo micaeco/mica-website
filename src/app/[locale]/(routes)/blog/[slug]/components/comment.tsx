@@ -84,19 +84,19 @@ export default function Comment({ comment, addComment, depth = 0, parentName }: 
             <Button
               variant="ghost"
               onClick={() => setShowReplies(!showReplies)}
-              className="self-start text-sm capitalize"
+              className="self-start text-sm"
             >
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
                 {showReplies ? (
-                  <>
+                  <span className="flex items-center gap-1 capitalize">
                     <ChevronUp size={16} /> {common('hide')}
-                  </>
+                  </span>
                 ) : (
-                  <>
+                  <span className="flex items-center gap-1 capitalize">
                     <ChevronDown size={16} /> {common('show')}
-                  </>
+                  </span>
                 )}{' '}
-                <span className="hidden sm:block">{common('replies')}</span> (
+                <span className="hidden lowercase sm:block">{common('replies')}</span> (
                 {getTotalReplies(comment)})
               </div>
             </Button>

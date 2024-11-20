@@ -383,6 +383,14 @@
     "title": "Frequently asked questions"
   },
   "blog": {
+    "comments": {
+      "title": "Comments",
+      "no-comments": "No comments yet. Be the first to comment!",
+      "info": {
+        "title": "Commentary info",
+        "text": "Your email address will not be published. Only the name and commentary will be made public."
+      }
+    },
     "tags": {
       "article": "article",
       "manual": "manual",

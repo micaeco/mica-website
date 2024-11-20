@@ -392,6 +392,14 @@
     "title": "Preguntas frecuentes"
   },
   "blog": {
+    "comments": {
+      "title": "Comentarios",
+      "no-comments": "No hay comentarios aún, ¡se el primero en comentar!",
+      "info": {
+        "title": "Información del comentario",
+        "text": "Tu correo electrónico no será publicado. Únicamente se publicarán el nombre y el comentario."
+      }
+    },
     "tags": {
       "article": "artículo",
       "manual": "manual",
