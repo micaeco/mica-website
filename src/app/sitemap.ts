@@ -1,9 +1,11 @@
 import type { MetadataRoute } from 'next'
 import { locales } from '@/i18n/routing'
+
 import { getBlogPosts } from '@/lib/sanity'
+import { environment } from '@/lib/environment'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL
+  const baseUrl = environment.appUrl
 
   const pages = [
     '/',
