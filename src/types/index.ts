@@ -10,7 +10,7 @@ export type {
   FormInputField,
   FormSelectField,
   FormField,
-  FormData
+  LeadData
 } from './form.d';
 
 export type {

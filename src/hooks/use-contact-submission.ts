@@ -1,8 +1,9 @@
 import { useState, FormEvent } from 'react';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { useTranslations } from 'next-intl';
-import { contactSubmission } from '@/lib/gas';
+
+import { storeContactSubmission } from '@/lib/google/sheets';
+import { validateEmail } from '@/lib/utils';
 
 export function useContactSubmission() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -10,39 +11,40 @@ export function useContactSubmission() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const success = useTranslations("success");
-  const errors = useTranslations("errors");
+  const success = useTranslations('success');
+  const errors = useTranslations('errors');
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (event: FormEvent) => {
+    event.preventDefault();
     setIsSubmitting(true);
 
     try {
-      const response = await contactSubmission(name, email, message);
-
-      if (errors.has(response)) {
-        toast.error(errors(response));
-        return;
+      if (!name || !email || !message) {
+        throw new Error('MISSING_FIELDS');
       }
 
-      toast.success(success(response));
+      if (!validateEmail(email)) {
+        throw new Error('INVALID_EMAIL');
+      }
+
+      await storeContactSubmission(name, email, message);
+
+      toast.success(success("CONTACT_FORM_SENT"));
       setName('');
       setEmail('');
       setMessage('');
     } catch (error) {
-      toast.error(errors('DEFAULT'));
+      const message = error instanceof Error ? error.message : "DEFAULT";
+      toast.error(errors.has(message) ? errors(message) : errors("DEFAULT"));
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return {
-    name,
-    setName,
-    email,
-    setEmail,
-    message,
-    setMessage,
+    name, setName,
+    email, setEmail,
+    message, setMessage,
     isSubmitting,
     handleSubmit,
   };

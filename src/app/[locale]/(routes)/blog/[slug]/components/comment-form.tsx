@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { useTranslations } from 'next-intl';
 
 import { Button } from '@/components/ui/button';

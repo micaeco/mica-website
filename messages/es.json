@@ -137,11 +137,10 @@
     "INVALID_EMAIL": "El correo electrónico no es válido.",
     "INVALID_PHONE": "El teléfono no es válido.",
 
-    "ALREADY_REGISTERED": "Este correo electrónico ya está registrado.",
+    "ALREADY_VERIFIED": "Este correo electrónico ya se ha registrado y ha sido verificado.",
 
-    "VERIFICATION_REQUIRED": "Se requiere un token de verificación.",
-    "VERIFICATION_EXPIRED": "El token de verificación ha caducado.",
-    "VERIFICATION_INVALID": "El token de verificación no es válido.",
+    "TOKEN_EXPIRED": "El token de verificación ha caducado. Por favor, pruebe a regístrarse de nuevo.",
+    "TOKEN_INVALID": "El token de verificación no es válido. Por favor, pruebe a regístrarse de nuevo.",
 
     "NOT_FOUND": "No se ha encontrado la entrada solicitada.",
 
@@ -150,9 +149,26 @@
     "INTERNAL_ERROR": "Se ha producido un error interno. Por favor, inténtalo de nuevo más tarde."
   },
   "success": {
+    "DEFAULT": "Operación completada con éxito.",
     "CONTACT_FORM_SENT": "Formulario de contacto enviado correctamente.",
     "LEAD_REGISTERED": "Registro completado con éxito. Por favor, revisa tu correo electrónico para la verificación.",
     "LEAD_VERIFIED": "Verificación completada con éxito."
+  },
+  "emails": {
+    "verification": {
+      "title": "Verifica tu correo electrónico",
+      "greeting": "Hola,",
+      "thankYou": "Gracias por registrarte en MICA. ¡Estamos encantados de tenerte con nosotros!",
+      "instruction": "Para completar tu registro y verificar tu dirección de correo electrónico, por favor haz clic en el siguiente botón:",
+      "button": "Verificar mi correo",
+      "important": "Importante: Si no has solicitado este correo o no te has registrado en MICA, por favor ignora este mensaje.",
+      "fallback": "Si el botón no funciona, puedes hacer clic en este enlace:",
+      "expiryNote": "Este enlace caducará en {days} días.",
+      "help": "Si tienes alguna pregunta o necesitas ayuda, no dudes en contactarnos.",
+      "regards": "Saludos,",
+      "teamSignature": "El equipo de MICA",
+      "automaticNote": "Este es un correo automático. Por favor, no respondas a este mensaje."
+    }
   },
   "navLinks": {
     "home": "Inicio",
@@ -318,7 +334,7 @@
       "title": "Nuestra historia",
       "subtitle": "Innovando para combatir la sequía en Barcelona",
       "paragraph1": "El verano de 2022, Barcelona sufrió una de las peores sequías de su historia. Mientras la ciudad entraba en fase de alerta, un grupo de ingenieros locales tuvo una idea revolucionaria.",
-      "paragraph2": "Así nació MICA, con la misión de transformar cómo entendemos y conservamos el agua. Nuestra tecnología permite a los barceloneses enfrentarse a cada nueva crisis hídrica con datos precisos y herramientas innovadoras."
+      "paragraph2": "Así nació MICA, una asociación sin animo de lucro con la misión de transformar cómo entendemos y conservamos el agua. Nuestra tecnología permite a los barceloneses enfrentarse a cada nueva crisis hídrica con datos precisos y herramientas innovadoras."
     },
     "our-team": {
       "title": "Nuestro equipo",

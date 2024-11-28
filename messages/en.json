@@ -132,21 +132,43 @@
   },
   "errors": {
     "DEFAULT": "An error has occurred. Please try again later.",
+
     "MISSING_FIELDS": "Required fields are missing.",
     "INVALID_EMAIL": "The email is not valid.",
     "INVALID_PHONE": "The phone number is not valid.",
-    "ALREADY_REGISTERED": "This email is already registered.",
-    "VERIFICATION_REQUIRED": "A verification token is required.",
-    "VERIFICATION_EXPIRED": "The verification token has expired.",
-    "VERIFICATION_INVALID": "The verification token is not valid.",
+
+    "ALREADY_VERIFIED": "This email has already been registered and verified.",
+
+    "TOKEN_EXPIRED": "The verification token has expired. Please try to register again.",
+    "TOKEN_INVALID": "The verification token is invalid. Please try to register again.",
+
     "NOT_FOUND": "The requested resource was not found.",
+
     "RATE_LIMIT_EXCEEDED": "Too many requests. Please try again later.",
+
     "INTERNAL_ERROR": "An internal error has occurred. Please try again later."
   },
   "success": {
+    "DEFAULT": "Operation completed successfully.",
     "CONTACT_FORM_SENT": "Contact form sent successfully.",
     "LEAD_REGISTERED": "Registration completed successfully. Please check your email for verification.",
     "LEAD_VERIFIED": "Verification completed successfully."
+  },
+  "emails": {
+    "verification": {
+      "title": "Verify your email address",
+      "greeting": "Hello,",
+      "thankYou": "Thank you for registering with MICA. We're delighted to have you with us!",
+      "instruction": "To complete your registration and verify your email address, please click the button below:",
+      "button": "Verify my email",
+      "important": "Important: If you didn't request this email or haven't registered with MICA, please ignore this message.",
+      "fallback": "If the button doesn't work, you can click on this link:",
+      "expiryNote": "This link will expire in {days} days.",
+      "help": "If you have any questions or need help, don't hesitate to contact us.",
+      "regards": "Best regards,",
+      "teamSignature": "The MICA Team",
+      "automaticNote": "This is an automated email. Please do not reply to this message."
+    }
   },
   "navLinks": {
     "home": "Home",
@@ -312,7 +334,7 @@
       "title": "Our history",
       "subtitle": "Innovating to combat drought in Barcelona",
       "paragraph1": "In the summer of 2022, Barcelona suffered one of the worst droughts in its history. While the city entered drought alert status, a group of local engineers had a revolutionary idea.",
-      "paragraph2": "Thus MICA was born, with the mission of transforming how we understand and conserve water. Our technology allows Barcelona residents to face each new water crisis with precise data and innovative tools."
+      "paragraph2": "Thus MICA was born, a non profit organization with the mission of transforming how we understand and conserve water. Our technology allows Barcelona residents to face each new water crisis with precise data and innovative tools."
     },
     "our-team": {
       "title": "Our team",

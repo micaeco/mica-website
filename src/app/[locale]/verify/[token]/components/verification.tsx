@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 import { CheckCircle, XCircle } from 'lucide-react';
 
 import Loading from '@/components/loading';
-import { verifyLead } from '@/lib/gas';
+import { verifyLead } from '@/lib/google/sheets';
 
 export default function Verification() {
   const params = useParams();
@@ -23,16 +23,11 @@ export default function Verification() {
   useEffect(() => {
     const verifyToken = async () => {
       try {
-        const response = await verifyLead(token);
-
-        if (errors.has(response)) {
-          setError(errors(response));
-          return;
-        }
-
-        setSuccess(successes(response));
+        await verifyLead(token);
+        setSuccess(successes('LEAD_VERIFIED'));
       } catch (error) {
-        setError(errors('DEFAULT'));
+        const message = error instanceof Error ? error.message : 'DEFAULT';
+        setError(errors.has(message) ? errors(message) : errors('DEFAULT'));
       } finally {
         setIsLoading(false);
       }

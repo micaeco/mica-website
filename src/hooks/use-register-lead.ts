@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React, { useState, useEffect, FormEvent } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
+import { toast } from 'react-toastify';
 
-import { FormData } from '@/types';
-import { registerLead } from '@/lib/gas';
-
-const STORAGE_KEY = 'formData';
+import { LeadData } from '@/types';
+import { sendVerificationEmail } from '@/lib/google/gmail';
+import { storeUnverifiedLead } from '@/lib/google/sheets';
+import { validateEmail, validatePhone } from '@/lib/utils';
 
 export function useRegisterLeads() {
-  const [formData, setFormData] = useState<FormData>(getInitialFormData());
+  const [leadData, setLeadData] = useState(getInitialLeadData());
   const [isSubmitting, setIsSubmitting] = useState(false);
   const locale = useLocale();
 
@@ -17,60 +16,71 @@ export function useRegisterLeads() {
   const errors = useTranslations('errors');
 
   useEffect(() => {
-    const savedData = localStorage.getItem(STORAGE_KEY);
+    const savedData = localStorage.getItem("leadData");
     if (savedData) {
-      setFormData(JSON.parse(savedData));
+      setLeadData(JSON.parse(savedData));
     }
   }, []);
 
   useEffect(() => {
-    const hasValue = Object.values(formData).some(value =>
+    const hasValue = Object.values(leadData).some(value =>
       typeof value === 'string' ? value.trim() !== '' : value === true
     );
 
     if (hasValue) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
+      localStorage.setItem("leadData", JSON.stringify(leadData));
     }
-  }, [formData]);
+  }, [leadData]);
 
-  const handleInputChange = (name: keyof FormData, value: string | boolean) => {
-    setFormData((prev) => ({ ...prev, [name]: value }));
+  const handleInputChange = (name: keyof LeadData, value: string | boolean) => {
+    setLeadData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (event: React.FormEvent) => {
+  const registerLead = async (leadData: LeadData) => {
+    try {
+      if (!validateEmail(leadData.email)) {
+        throw new Error('INVALID_EMAIL');
+      }
+
+      else if (leadData.phone && !validatePhone(leadData.phone)) {
+        throw new Error('INVALID_PHONE');
+      }
+
+      const token = await storeUnverifiedLead({
+        ...leadData,
+        locale
+      });
+
+      await sendVerificationEmail(leadData.email, locale, token);
+
+      return { success: true };
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     setIsSubmitting(true);
 
     try {
-      const response = await registerLead({
-        name: formData.name,
-        surname: formData.surname,
-        email: formData.email,
-        phone: formData.phone,
-        interestInBeta: formData.interestInBeta,
-        referralSource: formData.referralSource,
-        locale,
-      });
+      await registerLead(leadData);
 
-      if (errors.has(response)) {
-        toast.error(errors(response));
-        return;
-      }
-
-      toast.success(success(response));
-      localStorage.removeItem(STORAGE_KEY);
-      setFormData(getInitialFormData());
+      toast.success(success("LEAD_REGISTERED"));
+      setLeadData(getInitialLeadData());
+      localStorage.removeItem("leadData");
     } catch (error) {
-      toast.error(errors('DEFAULT'));
+      const message = error instanceof Error ? error.message : "DEFAULT";
+      toast.error(errors.has(message) ? errors(message) : errors("DEFAULT"));
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  return { formData, isSubmitting, handleInputChange, handleSubmit };
+  return { leadData, isSubmitting, handleInputChange, handleSubmit };
 }
 
-function getInitialFormData(): FormData {
+function getInitialLeadData(): LeadData {
   return {
     name: '',
     surname: '',

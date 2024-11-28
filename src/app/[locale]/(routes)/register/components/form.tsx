@@ -1,38 +1,100 @@
 'use client';
 
-import { ToastContainer } from 'react-toastify';
-import { Link } from '@/i18n/routing';
-import { Loader2 } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
+import { ToastContainer } from 'react-toastify';
+import { Info, Loader2, Mail, Phone, User } from 'lucide-react';
 
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardContent, CardTitle, CardFooter } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
-import { FormData } from '@/types';
-import { getRegisterFormCheckboxes, getRegisterFormFields } from '@/lib/constants';
+import { LeadData } from '@/types';
 import { useRegisterLeads } from '@/hooks';
 
 export default function RegisterForm() {
-  const { formData, isSubmitting, handleSubmit, handleInputChange } = useRegisterLeads();
+  const { leadData, isSubmitting, handleSubmit, handleInputChange } = useRegisterLeads();
 
   const [isValid, setIsValid] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
   const t = useTranslations('register');
   const common = useTranslations('common');
-  const tForm = useTranslations('register.form');
+  const form = useTranslations('register.form');
 
-  const formFields = getRegisterFormFields(tForm, common);
-  const formCheckboxes = getRegisterFormCheckboxes(tForm);
+  const formFields = [
+    {
+      type: 'input',
+      icon: User,
+      label: form('name.label'),
+      inputType: 'text',
+      name: 'name',
+      placeholder: form('name.placeholder'),
+      required: true,
+    },
+    {
+      type: 'input',
+      icon: User,
+      label: form('surname.label'),
+      inputType: 'text',
+      name: 'surname',
+      placeholder: form('surname.placeholder'),
+      required: true,
+    },
+    {
+      type: 'input',
+      icon: Mail,
+      label: form('email.label'),
+      inputType: 'email',
+      name: 'email',
+      placeholder: form('email.placeholder'),
+      required: true,
+    },
+    {
+      type: 'input',
+      icon: Phone,
+      label: form('phone.label') + ` (${common('optional')})`,
+      inputType: 'tel',
+      name: 'phone',
+      placeholder: form('phone.placeholder'),
+      required: false,
+    },
+    {
+      type: 'input',
+      icon: Info,
+      label: form('referralSource.label') + ` (${common('optional')})`,
+      inputType: 'text',
+      name: 'referralSource',
+      placeholder: form('referralSource.placeholder'),
+      required: false,
+    },
+  ];
+  const formCheckboxes = [
+    {
+      type: 'input',
+      label: form('interestInBeta.label'),
+      link: '/beta',
+      inputType: 'checkbox',
+      name: 'interestInBeta',
+      required: false,
+    },
+    {
+      type: 'input',
+      label: form('privacyPolicy.label'),
+      link: '/privacy-policy',
+      inputType: 'checkbox',
+      name: 'privacyPolicy',
+      required: true,
+    },
+  ];
 
   useEffect(() => {
     if (formRef.current) {
       setIsValid(formRef.current.checkValidity());
     }
-  }, [formData]);
+  }, [leadData]);
 
   return (
     <section className="bg-gray-50 px-4 py-8">
@@ -52,9 +114,9 @@ export default function RegisterForm() {
                       id={field.name}
                       type={field.inputType}
                       placeholder={field.placeholder}
-                      value={formData[field.name as keyof FormData] as string}
+                      value={leadData[field.name as keyof LeadData] as string}
                       onChange={(e) =>
-                        handleInputChange(field.name as keyof FormData, e.target.value)
+                        handleInputChange(field.name as keyof LeadData, e.target.value)
                       }
                       required={field.required}
                     />
@@ -67,12 +129,9 @@ export default function RegisterForm() {
                   <Label key={field.name} className="flex items-center space-x-2">
                     <Checkbox
                       id={field.name}
-                      checked={formData[field.name as keyof FormData] as boolean}
+                      checked={leadData[field.name as keyof LeadData] as boolean}
                       onCheckedChange={(checked) => {
-                        handleInputChange(field.name as keyof FormData, checked);
-                        if (field.onChange) {
-                          field.onChange(checked);
-                        }
+                        handleInputChange(field.name as keyof LeadData, checked);
                       }}
                       required={field.required}
                     />

@@ -137,11 +137,10 @@
     "INVALID_EMAIL": "El correu electrònic no és vàlid.",
     "INVALID_PHONE": "El telèfon no és vàlid.",
 
-    "ALREADY_REGISTERED": "Aquest correu electrònic ja està registrat.",
+    "ALREADY_VERIFIED": "Aquest correu electrònic ja s'ha registrat i ha estat verificat.",
 
-    "VERIFICATION_REQUIRED": "Es requereix un token de verificació.",
-    "VERIFICATION_EXPIRED": "El token de verificació ha caducat.",
-    "VERIFICATION_INVALID": "El token de verificació no és vàlid.",
+    "TOKEN_EXPIRED": "El token de verificació ha caducat. Si us plau, proba a tornar-te a registrar.",
+    "TOKEN_INVALID": "El token de verificació no és vàlid. Si us plau, proba a tornar-te a registrar.",
 
     "NOT_FOUND": "No s'ha trobat l'entrada solicitada",
 
@@ -150,9 +149,26 @@
     "INTERNAL_ERROR": "S'ha produït un error intern. Si us plau, torna-ho a provar més tard."
   },
   "success": {
+    "DEFAULT": "Operació completada amb èxit.",
     "CONTACT_FORM_SENT": "Formulari de contacte enviat correctament.",
     "LEAD_REGISTERED": "Registre completat amb èxit. Si us plau, comprova el teu correu electrònic per a la verificació.",
     "LEAD_VERIFIED": "Verificació completada amb èxit."
+  },
+  "emails": {
+    "verification": {
+      "title": "Verifica la teva adreça de correu electrònic",
+      "greeting": "Hola,",
+      "thankYou": "Gracies per registrar-te a MICA! Estem encantants de tenir-te a bord.",
+      "instruction": "Per completar el procés de registre, si us plau, verifica la teva adreça de correu electrònic fent clic al botó de sota.",
+      "button": "Verifica el meu correu electrònic",
+      "important": "Important: Si no has sol·licitat aquest registre, si us plau, ignora aquest correu electrònic.",
+      "fallback": "Si tens problemes amb el botó de verificació, copia i enganxa la següent URL al teu navegador:",
+      "expiryNote": "Aquest enllaç expirarà en {days} dies.",
+      "help": "Si tens qualsevol dubte, si us plau, contacta'ns.",
+      "regards": "Salutacions,",
+      "teamSignature": "L'equip de MICA",
+      "automaticNote": "Aquest correu electrònic s'ha generat automàticament. Si us plau, no responguis."
+    }
   },
   "navLinks": {
     "home": "Inici",
@@ -318,7 +334,7 @@
       "title": "La nostra història",
       "subtitle": "Innovant per combatre la sequera a Barcelona",
       "paragraph1": "L'estiu de 2022, Barcelona va patir una de les pitjors sequeres de la seva història. Mentre la ciutat entrava en fase d'alerta, un grup d'enginyers locals va tenir una idea revolucionària.",
-      "paragraph2": "Així va néixer MICA, amb la missió de transformar com entenem i conservem l'aigua. La nostra tecnologia permet als barcelonins enfrontar-se a cada nova crisi hídrica amb dades precises i eines innovadores."
+      "paragraph2": "Així va néixer MICA, una associació sense ànim de lucre amb la missió de transformar com entenem i conservem l'aigua. La nostra tecnologia permet als barcelonins enfrontar-se a cada nova crisi hídrica amb dades precises i eines innovadores."
     },
     "our-team": {
       "title": "El nostre equip",

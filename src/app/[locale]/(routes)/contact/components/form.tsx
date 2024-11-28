@@ -7,28 +7,12 @@ import { cn } from '@/lib/utils';
 import { Loader2, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardContent } from '@/components/ui/card';
+import { useContactSubmission } from '@/hooks/use-contact-submission';
 
-type Props = {
-  name: string;
-  setName: (name: string) => void;
-  email: string;
-  setEmail: (email: string) => void;
-  message: string;
-  setMessage: (message: string) => void;
-  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-  isSubmitting: boolean;
-};
+export default function ContactForm() {
+  const { name, setName, email, setEmail, message, setMessage, handleSubmit, isSubmitting } =
+    useContactSubmission();
 
-export default function ContactForm({
-  name,
-  setName,
-  email,
-  setEmail,
-  message,
-  setMessage,
-  handleSubmit,
-  isSubmitting,
-}: Props) {
   const t = useTranslations('contact');
   const common = useTranslations('common');
 
@@ -41,41 +25,33 @@ export default function ContactForm({
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid gap-6 md:grid-cols-2">
-                {[
-                  {
-                    id: 'name',
-                    label: common('name'),
-                    type: 'text',
-                    value: name,
-                    onChange: setName,
-                  },
-                  {
-                    id: 'email',
-                    label: common('email'),
-                    type: 'email',
-                    value: email,
-                    onChange: setEmail,
-                  },
-                ].map((field) => (
-                  <div key={field.id}>
-                    <Label className="mb-2 block font-medium capitalize">{field.label}</Label>
-                    <Input
-                      type={field.type}
-                      id={field.id}
-                      value={field.value}
-                      onChange={(e) => field.onChange(e.target.value)}
-                      required
-                      className="w-full"
-                    />
-                  </div>
-                ))}
+                <div>
+                  <Label className="mb-2 block font-medium capitalize">{common('name')}</Label>
+                  <Input
+                    type={'text'}
+                    value={name}
+                    onChange={(event) => setName(event.target.value)}
+                    required
+                    className="w-full"
+                  />
+                </div>
+                <div>
+                  <Label className="mb-2 block font-medium capitalize">{common('email')}</Label>
+                  <Input
+                    type={'email'}
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
+                    required
+                    className="w-full"
+                  />
+                </div>
               </div>
               <div>
                 <Label className="mb-2 block font-medium capitalize">{common('message')}</Label>
                 <Textarea
                   id="message"
                   value={message}
-                  onChange={(e) => setMessage(e.target.value)}
+                  onChange={(event) => setMessage(event.target.value)}
                   required
                   rows={4}
                   className="w-full resize-none"

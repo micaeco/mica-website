@@ -132,3 +132,11 @@ export async function createComment(postId: string, name: string, email: string,
     throw new Error('Failed to create comment');
   }
 }
+
+export async function getPrivacyPolicy(locale: string) {
+  return writeClient.fetch(`
+    *[_type == "privacyPolicy"][0] {
+      "content": content[$locale],
+    }
+  `, { locale });
+}

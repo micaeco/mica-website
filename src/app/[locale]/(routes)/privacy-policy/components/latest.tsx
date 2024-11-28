@@ -4,37 +4,43 @@ import { useEffect, useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 
 import GoBack from '@/components/ui/go-back';
-import Markdown from '@/components/ui/markdown';
 import Loading from '@/components/loading';
-import { getPrivacyPolicy } from '@/lib/github';
+import { getPrivacyPolicy } from '@/lib/sanity';
+import Markdown from '@/components/ui/markdown';
+
+interface PrivacyPolicy {
+  content: string;
+}
 
 export default function Latest() {
-  const [content, setContent] = useState<string>('');
+  const [privacyPolicy, setPrivacyPolicy] = useState<PrivacyPolicy>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>('');
 
+  const common = useTranslations('common');
   const errors = useTranslations('errors');
   const locale = useLocale();
 
   useEffect(() => {
     const fetchPrivacyPolicy = async () => {
       try {
-        const data = await getPrivacyPolicy(locale);
+        const privacyPolicy = await getPrivacyPolicy(locale);
 
-        if (!data) {
-          setError(errors('DEFAULT'));
+        if (!privacyPolicy) {
+          setError('NOT_FOUND');
+          return;
         }
 
-        setContent(data);
+        setPrivacyPolicy(privacyPolicy);
       } catch (error) {
-        setError(typeof error === 'string' && error in errors ? errors(error) : errors('DEFAULT'));
+        setError(error as string);
       } finally {
         setIsLoading(false);
       }
     };
 
     fetchPrivacyPolicy();
-  }, [locale]);
+  }, []);
 
   if (isLoading) {
     return <Loading />;
@@ -43,7 +49,7 @@ export default function Latest() {
   if (error) {
     return (
       <div className="flex h-96 w-full flex-col items-center justify-center space-y-2 bg-white">
-        <p className="text-destructive">{error}</p>
+        <p className="text-destructive">{errors(error)}</p>
         <GoBack />
       </div>
     );
@@ -53,7 +59,11 @@ export default function Latest() {
     <section className="bg-white px-8 py-8">
       <div className="mx-auto max-w-6xl space-y-8">
         <div>
-          <Markdown content={content} />
+          {privacyPolicy ? (
+            <Markdown content={privacyPolicy.content} />
+          ) : (
+            <p className="capitalize">{common('no-content-available')}</p>
+          )}
         </div>
         <GoBack />
       </div>

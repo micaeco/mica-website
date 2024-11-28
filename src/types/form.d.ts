@@ -27,7 +27,7 @@ export interface FormSelectField extends BaseFormField {
 
 export type FormField = InputField | SelectField;
 
-export interface FormData {
+export interface LeadData {
   name: string;
   surname: string;
   email: string;

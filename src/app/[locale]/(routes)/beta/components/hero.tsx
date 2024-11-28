@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { GiCargoCrane } from 'react-icons/gi';
+import { Construction } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 
 export default function Hero() {
@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="container mx-auto max-w-7xl px-8">
         <div className="flex flex-col items-center 2xl:flex-row 2xl:justify-between">
           <div className="max-w-xl space-y-4 text-center 2xl:text-left">
-            <GiCargoCrane className="text-brand-quaternary mx-auto size-16 2xl:mx-0" />
+            <Construction size={60} className="mx-auto text-brand-quaternary 2xl:mx-0" />
             <h3 className="font-bold">{t('title')}</h3>
             <p className="font-light">{t('text')}</p>
           </div>

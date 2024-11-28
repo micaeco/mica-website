@@ -10,10 +10,6 @@ import {
   FileQuestion,
   UserCheck,
   Cpu,
-  User,
-  Mail,
-  Phone,
-  Info,
   Settings,
   Wrench,
   CheckCircle,
@@ -211,77 +207,6 @@ export function getTeamMembers(t: (key: string) => string) {
       ],
     }
   ]
-}
-
-export function getRegisterFormFields(t: (key: string) => string, common: (key: string) => string): FormInputField[] {
-  return [
-    {
-      type: 'input',
-      icon: User,
-      label: t('name.label'),
-      inputType: 'text',
-      name: 'name',
-      placeholder: t('name.placeholder'),
-      required: true,
-    },
-    {
-      type: 'input',
-      icon: User,
-      label: t('surname.label'),
-      inputType: 'text',
-      name: 'surname',
-      placeholder: t('surname.placeholder'),
-      required: true,
-    },
-    {
-      type: 'input',
-      icon: Mail,
-      label: t('email.label'),
-      inputType: 'email',
-      name: 'email',
-      placeholder: t('email.placeholder'),
-      required: true,
-    },
-    {
-      type: 'input',
-      icon: Phone,
-      label: t('phone.label') + ` (${common('optional')})`,
-      inputType: 'tel',
-      name: 'phone',
-      placeholder: t('phone.placeholder'),
-      required: false,
-    },
-    {
-      type: 'input',
-      icon: Info,
-      label: t('referralSource.label') + ` (${common('optional')})`,
-      inputType: 'text',
-      name: 'referralSource',
-      placeholder: t('referralSource.placeholder'),
-      required: false,
-    }
-  ];
-}
-
-export function getRegisterFormCheckboxes(t: (key: string) => string): FormInputField[] {
-  return [
-    {
-      type: 'input',
-      label: t('interestInBeta.label'),
-      link: '/beta',
-      inputType: 'checkbox',
-      name: 'interestInBeta',
-      required: false,
-    },
-    {
-      type: 'input',
-      label: t('privacyPolicy.label'),
-      link: '/privacy-policy',
-      inputType: 'checkbox',
-      name: 'privacyPolicy',
-      required: true,
-    },
-  ];
 }
 
 export function getTimelineItems(t: {

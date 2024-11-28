@@ -42,7 +42,7 @@ export default function BlogPosts({ posts }: Props) {
   return (
     <section className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
       {posts.slice(0, visiblePosts).map((post) => (
-        <Card key={post.slug} className="shadow-sm transition-shadow hover:shadow-lg">
+        <Card key={post.slug} className="group shadow-sm transition-shadow hover:shadow-lg">
           <Link href={`/blog/${post.slug}`}>
             {post.cover ? (
               <div className="relative aspect-video w-full overflow-hidden rounded-t-lg">
@@ -50,7 +50,7 @@ export default function BlogPosts({ posts }: Props) {
                   src={post.cover}
                   alt={post.title}
                   fill
-                  className="object-cover transition duration-300 hover:scale-105 hover:opacity-80"
+                  className="object-cover transition duration-300 group-hover:scale-105 group-hover:opacity-80"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   priority={false}
                 />

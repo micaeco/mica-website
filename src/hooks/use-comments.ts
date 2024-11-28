@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { useTranslations } from 'next-intl';
 
 import { getComments, createComment } from '@/lib/sanity';
