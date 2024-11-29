@@ -34,7 +34,7 @@ export default function BlogPosts({ posts }: Props) {
   if (!posts.length) {
     return (
       <div className="py-16 text-center">
-        <p className="first-letter:capitalize">{common('no-articles-found')}.</p>
+        <p className="first-letter:capitalize">{common('no-entries-found')}</p>
       </div>
     );
   }
