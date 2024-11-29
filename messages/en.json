@@ -80,6 +80,7 @@
     "open": "open",
     "opening": "opening",
     "optional": "optional",
+    "partners": "partners",
     "pending": "pending",
     "phone": "phone",
     "post": "post",
@@ -191,7 +192,7 @@
       "title": "The new way to save water",
       "text": "We empower Barcelona to conserve water with artificial intelligence-powered sensors.",
       "with-the-support": "With the support of:",
-      "cta": "I want one!"
+      "cta": "Want to join?"
     },
     "video": {
       "title": "Small Steps. Big Impact",

@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import { getMessages } from 'next-intl/server';
 
 import Hero from './components/hero';
+import Partners from './components/partners';
 import Problem from './components/problem';
 import Solution from './components/solution';
 import Testimonials from './components/testimonials';
@@ -23,6 +24,7 @@ export default function Home() {
   return (
     <main className="flex flex-col justify-center">
       <Hero />
+      <Partners />
       <Video />
       <WaveSeparator topColor="muted" bottomColor="#00f2dd" />
       <Solution />

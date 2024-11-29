@@ -80,6 +80,7 @@
     "open": "abrir",
     "opening": "abriendo",
     "optional": "opcional",
+    "partners": "colaboradores",
     "pending": "pendiente",
     "phone": "teléfono",
     "post": "publicar",
@@ -191,7 +192,7 @@
       "title": "La nueva forma de ahorrar agua",
       "text": "Empoderamos a Barcelona para conservar agua con sensores impulsados por inteligencia artificial.",
       "with-the-support": "Con el apoyo de:",
-      "cta": "¡Quiero uno!"
+      "cta": "¿Te apuntas?"
     },
     "video": {
       "title": "Pequeños Pasos. Gran Impacto",

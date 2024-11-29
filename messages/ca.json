@@ -80,6 +80,7 @@
     "open": "obrir",
     "opening": "obrint",
     "optional": "opcional",
+    "partners": "col·laboradors",
     "pending": "pendent",
     "phone": "telèfon",
     "post": "publica",
@@ -191,7 +192,7 @@
       "title": "La nova manera d'estalviar aigua",
       "text": "Empoderem Barcelona per conservar aigua amb sensors impulsats per intel·ligència artificial.",
       "with-the-support": "Amb el suport de:",
-      "cta": "En vull un!"
+      "cta": "T'hi apuntes?"
     },
     "video": {
       "title": "De MICA en MICA, s'omple la pica",
