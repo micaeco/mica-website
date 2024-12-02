@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
-import { getComments, createComment } from '@/lib/sanity';
+import { getComments, createComment, getBlogPostTitle } from '@/services/sanity';
 import { BlogComment } from '@/types';
+import { sendBlogPostComment } from '@/services/slack';
 
 export function useComments({ postId }: { postId: string }) {
   const [comments, setComments] = useState<BlogComment[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  const locale = useLocale();
   const errors = useTranslations('errors');
 
   const fetchComments = async () => {
@@ -33,6 +35,8 @@ export function useComments({ postId }: { postId: string }) {
     try {
       await createComment(postId, name, email, comment, parentId);
       await fetchComments();
+      const postTitle = await getBlogPostTitle(postId, locale);
+      await sendBlogPostComment(postTitle, name, email, comment);
     } catch (error) {
       toast.error(errors('DEFAULT'));
     } finally {

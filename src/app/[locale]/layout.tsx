@@ -5,7 +5,6 @@ import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 
-import { environment } from '@/lib/environment';
 import '@/styles/globals.css';
 
 const montserrat = Montserrat({
@@ -27,7 +26,7 @@ export async function generateMetadata({
     };
 
     return {
-      metadataBase: new URL(environment.appUrl!),
+      metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
       title: {
         default: metadata.title,
         template: '%s - MICA',

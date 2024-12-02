@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from 'next-intl';
 
 import GoBack from '@/components/ui/go-back';
 import Loading from '@/components/loading';
-import { getPrivacyPolicy } from '@/lib/sanity';
+import { getPrivacyPolicy } from '@/services/sanity';
 import Markdown from '@/components/ui/markdown';
 
 interface PrivacyPolicy {

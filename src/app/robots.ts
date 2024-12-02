@@ -1,9 +1,7 @@
 import type { MetadataRoute } from 'next'
 
-import { environment } from '@/lib/environment';
-
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = environment.appUrl;
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL;
 
   const pages = [
     '/',

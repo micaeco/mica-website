@@ -1,20 +1,44 @@
-import { ToastContainer } from 'react-toastify';
+'use client';
+
 import { useTranslations } from 'next-intl';
+import { useRef, useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import { Loader2, Send } from 'lucide-react';
+
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
-import { cn } from '@/lib/utils';
-import { Loader2, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardContent } from '@/components/ui/card';
-import { useContactSubmission } from '@/hooks/use-contact-submission';
+import { cn } from '@/lib/utils';
+import { submitContactForm } from './actions';
 
 export default function ContactForm() {
-  const { name, setName, email, setEmail, message, setMessage, handleSubmit, isSubmitting } =
-    useContactSubmission();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const t = useTranslations('contact');
   const common = useTranslations('common');
+  const success = useTranslations('success');
+  const errors = useTranslations('errors');
+
+  const handleSubmit = async (formData: FormData) => {
+    setIsSubmitting(true);
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const message = formData.get('message') as string;
+
+    try {
+      await submitContactForm(name, email, message);
+      toast.success(success('CONTACT_FORM_SENT'));
+      formRef.current?.reset();
+    } catch (error) {
+      const errorMessage = error instanceof Error ? error.message : 'DEFAULT';
+      toast.error(errors.has(errorMessage) ? errors(errorMessage) : errors('DEFAULT'));
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section className="px-8 py-16">
@@ -23,35 +47,22 @@ export default function ContactForm() {
         <Card>
           <CardHeader />
           <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef} action={handleSubmit} className="space-y-6">
               <div className="grid gap-6 md:grid-cols-2">
                 <div>
                   <Label className="mb-2 block font-medium capitalize">{common('name')}</Label>
-                  <Input
-                    type={'text'}
-                    value={name}
-                    onChange={(event) => setName(event.target.value)}
-                    required
-                    className="w-full"
-                  />
+                  <Input type={'text'} name="name" required className="w-full" />
                 </div>
                 <div>
                   <Label className="mb-2 block font-medium capitalize">{common('email')}</Label>
-                  <Input
-                    type={'email'}
-                    value={email}
-                    onChange={(event) => setEmail(event.target.value)}
-                    required
-                    className="w-full"
-                  />
+                  <Input type={'email'} name="email" required className="w-full" />
                 </div>
               </div>
               <div>
                 <Label className="mb-2 block font-medium capitalize">{common('message')}</Label>
                 <Textarea
                   id="message"
-                  value={message}
-                  onChange={(event) => setMessage(event.target.value)}
+                  name="message"
                   required
                   rows={4}
                   className="w-full resize-none"

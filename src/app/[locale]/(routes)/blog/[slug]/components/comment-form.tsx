@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { useTranslations } from 'next-intl';
 
@@ -35,8 +35,8 @@ export default function CommentForm({ postId, addComment, parentId, onSuccess, i
     }
   }, [isSubmitting]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (event: FormEvent) => {
+    event.preventDefault();
     if (!name.trim() || !email.trim() || !comment.trim()) return;
 
     setIsSubmitting(true);

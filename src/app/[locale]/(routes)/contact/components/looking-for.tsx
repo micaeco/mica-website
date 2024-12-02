@@ -1,3 +1,5 @@
+'use client';
+
 import { Handshake, Users, Wrench } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 

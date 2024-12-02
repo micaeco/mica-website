@@ -9,7 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { getFaqs } from '@/lib/sanity';
+import { getFaqs } from '@/services/sanity';
 import { Faq } from '@/types';
 import Loading from '@/components/loading';
 

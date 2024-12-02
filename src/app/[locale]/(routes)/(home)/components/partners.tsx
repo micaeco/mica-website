@@ -2,8 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { Separator } from '@/components/ui/separator';
+import { cn } from '@/lib/utils';
 
-export default function Partners() {
+export default function Partners({ className }: { className?: string }) {
   const partners = [
     {
       name: 'BitHabitat',
@@ -15,11 +16,11 @@ export default function Partners() {
       link: 'https://ajuntament.barcelona.cat/',
       logo: '/logos/ajuntament.webp',
     },
-    {
-      name: 'Universidad de Málaga',
-      link: 'https://www.uma.es/',
-      logo: '/logos/uma.webp',
-    },
+    // {
+    //   name: 'Universidad de Málaga',
+    //   link: 'https://www.uma.es/',
+    //   logo: '/logos/uma.webp',
+    // },
     {
       name: 'Fundesplai',
       link: 'https://fundesplai.org',
@@ -30,19 +31,21 @@ export default function Partners() {
   const common = useTranslations('common');
 
   return (
-    <section className="bg-white px-8 pb-16">
+    <section
+      className={cn(
+        className,
+        'bg-gradient-to-r from-brand-quaternary to-brand-secondary px-8 py-8'
+      )}
+    >
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col items-center lg:flex-row lg:items-center lg:justify-center">
-          <h5 className="whitespace-nowrap font-light capitalize italic">{common('partners')}</h5>
-          <Separator
-            orientation="vertical"
-            className="mx-8 hidden h-8 text-muted-foreground lg:block"
-          />
+          <h5 className="whitespace-nowrap capitalize italic">{common('partners')}</h5>
+          <Separator orientation="vertical" className="mx-8 hidden h-8 bg-brand-primary lg:block" />
           <Separator
             orientation="horizontal"
-            className="my-4 block w-20 text-muted-foreground lg:hidden"
+            className="my-4 block w-20 bg-brand-primary lg:hidden"
           />
-          <div className="grid grid-cols-2 gap-4 xl:grid-cols-4">
+          <div className="grid grid-cols-3 gap-2">
             {partners.map((partner, index) => (
               <Link
                 key={index}

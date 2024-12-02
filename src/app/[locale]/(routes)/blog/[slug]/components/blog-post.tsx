@@ -3,16 +3,17 @@
 import { useState, useEffect } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { Clock, Tag, Book } from 'lucide-react';
+import { PortableText } from 'next-sanity';
 
+import Comments from './comments';
 import Loading from '@/components/loading';
 import GoBack from '@/components/ui/go-back';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Separator } from '@/components/ui/separator';
 import { BlogPost } from '@/types';
 import { languageMap } from '@/lib/constants';
-import { getBlogPost, portableTextComponents } from '@/lib/sanity';
-import { PortableText } from 'next-sanity';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import Comments from './comments';
-import { Separator } from '@/components/ui/separator';
+import { getBlogPost } from '@/services/sanity';
+import { portableTextComponents } from '@/services/sanity/portable-text-components';
 
 export default function BlogPostPage({ slug }: { slug: string }) {
   const [post, setPost] = useState<BlogPost>();

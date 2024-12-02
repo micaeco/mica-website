@@ -18,8 +18,6 @@ import {
   Database
 } from 'lucide-react';
 
-import { FormInputField } from '@/types';
-
 export const maxCommentaryDepth = 10;
 
 export const languageMap: { [key: string]: string } = {

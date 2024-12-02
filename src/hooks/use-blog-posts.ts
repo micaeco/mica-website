@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 
 import type { BlogPost, BlogPostTag } from '@/types';
-import { getBlogPosts } from '@/lib/sanity';
+import { getBlogPosts } from '@/services/sanity';
 
 function extractTextFromPortableText(blocks: any[]): string {
   return blocks.reduce((text, block) => {

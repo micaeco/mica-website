@@ -13,8 +13,6 @@ interface Props {
 
 export default function Comments({ postId }: Props) {
   const { comments, isLoading, error, addComment } = useComments({ postId });
-
-  const common = useTranslations('common');
   const t = useTranslations('blog.comments');
 
   if (isLoading) return <Loading />;

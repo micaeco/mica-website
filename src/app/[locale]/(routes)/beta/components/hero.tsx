@@ -15,7 +15,7 @@ export default function Hero() {
             <p className="font-light">{t('text')}</p>
           </div>
           <Image
-            src="/images/design-process.png"
+            src="/images/design-process.webp"
             alt="MICA Sensor Sketch"
             width={850}
             height={850}

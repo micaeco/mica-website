@@ -1,94 +1,89 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { FormEvent, useEffect, useRef, useState } from 'react';
 import { Link } from '@/i18n/routing';
-import { useTranslations } from 'next-intl';
-import { ToastContainer } from 'react-toastify';
-import { Info, Loader2, Mail, Phone, User } from 'lucide-react';
+import { useLocale, useTranslations } from 'next-intl';
+import { toast, ToastContainer } from 'react-toastify';
+import { Loader2 } from 'lucide-react';
 
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardContent, CardTitle, CardFooter } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
-import { LeadData } from '@/types';
-import { useRegisterLeads } from '@/hooks';
+import { registerLead } from './actions';
+
+function getInitialLeadData() {
+  return {
+    name: '',
+    surname: '',
+    email: '',
+    phone: '',
+    referralSource: '',
+    interestInBeta: false,
+    privacyPolicy: false,
+  };
+}
 
 export default function RegisterForm() {
-  const { leadData, isSubmitting, handleSubmit, handleInputChange } = useRegisterLeads();
-
+  const [leadData, setLeadData] = useState(getInitialLeadData());
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isValid, setIsValid] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
   const t = useTranslations('register');
   const common = useTranslations('common');
   const form = useTranslations('register.form');
+  const success = useTranslations('success');
+  const errors = useTranslations('errors');
+  const locale = useLocale();
 
-  const formFields = [
-    {
-      type: 'input',
-      icon: User,
-      label: form('name.label'),
-      inputType: 'text',
-      name: 'name',
-      placeholder: form('name.placeholder'),
-      required: true,
-    },
-    {
-      type: 'input',
-      icon: User,
-      label: form('surname.label'),
-      inputType: 'text',
-      name: 'surname',
-      placeholder: form('surname.placeholder'),
-      required: true,
-    },
-    {
-      type: 'input',
-      icon: Mail,
-      label: form('email.label'),
-      inputType: 'email',
-      name: 'email',
-      placeholder: form('email.placeholder'),
-      required: true,
-    },
-    {
-      type: 'input',
-      icon: Phone,
-      label: form('phone.label') + ` (${common('optional')})`,
-      inputType: 'tel',
-      name: 'phone',
-      placeholder: form('phone.placeholder'),
-      required: false,
-    },
-    {
-      type: 'input',
-      icon: Info,
-      label: form('referralSource.label') + ` (${common('optional')})`,
-      inputType: 'text',
-      name: 'referralSource',
-      placeholder: form('referralSource.placeholder'),
-      required: false,
-    },
-  ];
-  const formCheckboxes = [
-    {
-      type: 'input',
-      label: form('interestInBeta.label'),
-      link: '/beta',
-      inputType: 'checkbox',
-      name: 'interestInBeta',
-      required: false,
-    },
-    {
-      type: 'input',
-      label: form('privacyPolicy.label'),
-      link: '/privacy-policy',
-      inputType: 'checkbox',
-      name: 'privacyPolicy',
-      required: true,
-    },
-  ];
+  const handleInputChange = (name: string, value: string | boolean) => {
+    setLeadData((prev: any) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (event: FormEvent) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      await registerLead(
+        leadData.name,
+        leadData.surname,
+        leadData.email,
+        leadData.phone,
+        leadData.referralSource,
+        leadData.interestInBeta,
+        locale
+      );
+
+      toast.success(success('LEAD_REGISTERED'));
+      setLeadData(getInitialLeadData());
+      localStorage.removeItem('leadData');
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'DEFAULT';
+      toast.error(errors.has(message) ? errors(message) : errors('DEFAULT'));
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  useEffect(() => {
+    const savedData = localStorage.getItem('leadData');
+    if (savedData) {
+      setLeadData(JSON.parse(savedData));
+    }
+  }, []);
+
+  useEffect(() => {
+    const hasValue = Object.values(leadData).some((value) =>
+      typeof value === 'string' ? value.trim() !== '' : value === true
+    );
+
+    if (hasValue) {
+      localStorage.setItem('leadData', JSON.stringify(leadData));
+    }
+  }, [leadData]);
 
   useEffect(() => {
     if (formRef.current) {
@@ -106,41 +101,102 @@ export default function RegisterForm() {
 
           <CardContent>
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
-              {formFields.map((field) => (
-                <div key={field.name} className="space-y-2">
-                  <Label>
-                    {field.label} {field.required && <span className="text-destructive">*</span>}
-                    <Input
-                      id={field.name}
-                      type={field.inputType}
-                      placeholder={field.placeholder}
-                      value={leadData[field.name as keyof LeadData] as string}
-                      onChange={(e) =>
-                        handleInputChange(field.name as keyof LeadData, e.target.value)
-                      }
-                      required={field.required}
-                    />
-                  </Label>
-                </div>
-              ))}
+              <div className="space-y-2">
+                <Label>
+                  {form('name.label')} <span className="text-destructive">*</span>
+                  <Input
+                    id="name"
+                    type="text"
+                    placeholder={form('name.placeholder')}
+                    value={leadData.name}
+                    onChange={(e) => handleInputChange('name', e.target.value)}
+                    required
+                  />
+                </Label>
+              </div>
+
+              <div className="space-y-2">
+                <Label>
+                  {form('surname.label')} <span className="text-destructive">*</span>
+                  <Input
+                    id="surname"
+                    type="text"
+                    placeholder={form('surname.placeholder')}
+                    value={leadData.surname}
+                    onChange={(e) => handleInputChange('surname', e.target.value)}
+                    required
+                  />
+                </Label>
+              </div>
+
+              <div className="space-y-2">
+                <Label>
+                  {form('email.label')} <span className="text-destructive">*</span>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder={form('email.placeholder')}
+                    value={leadData.email}
+                    onChange={(e) => handleInputChange('email', e.target.value)}
+                    required
+                  />
+                </Label>
+              </div>
+
+              <div className="space-y-2">
+                <Label>
+                  {form('phone.label')} {`(${common('optional')})`}
+                  <Input
+                    id="phone"
+                    type="tel"
+                    placeholder={form('phone.placeholder')}
+                    value={leadData.phone}
+                    onChange={(e) => handleInputChange('phone', e.target.value)}
+                  />
+                </Label>
+              </div>
+
+              <div className="space-y-2">
+                <Label>
+                  {form('referralSource.label')} {`(${common('optional')})`}
+                  <Input
+                    id="referralSource"
+                    type="text"
+                    placeholder={form('referralSource.placeholder')}
+                    value={leadData.referralSource}
+                    onChange={(e) => handleInputChange('referralSource', e.target.value)}
+                  />
+                </Label>
+              </div>
 
               <div className="space-y-4 pb-4 pt-8">
-                {formCheckboxes.map((field) => (
-                  <Label key={field.name} className="flex items-center space-x-2">
-                    <Checkbox
-                      id={field.name}
-                      checked={leadData[field.name as keyof LeadData] as boolean}
-                      onCheckedChange={(checked) => {
-                        handleInputChange(field.name as keyof LeadData, checked);
-                      }}
-                      required={field.required}
-                    />
-                    <Link href={field.link!} className="text-sm text-blue-500 underline">
-                      {field.label}{' '}
-                    </Link>
-                    {field.required && <span className="text-destructive">*</span>}
-                  </Label>
-                ))}
+                <Label className="flex items-center space-x-2">
+                  <Checkbox
+                    id="interestInBeta"
+                    checked={leadData.interestInBeta}
+                    onCheckedChange={(checked) => {
+                      handleInputChange('interestInBeta', checked);
+                    }}
+                  />
+                  <Link href="/beta" className="text-sm text-blue-500 underline">
+                    {form('interestInBeta.label')}
+                  </Link>
+                </Label>
+
+                <Label className="flex items-center space-x-2">
+                  <Checkbox
+                    id="privacyPolicy"
+                    checked={leadData.privacyPolicy}
+                    onCheckedChange={(checked) => {
+                      handleInputChange('privacyPolicy', checked);
+                    }}
+                    required
+                  />
+                  <Link href="/privacy-policy" className="text-sm text-blue-500 underline">
+                    {form('privacyPolicy.label')}
+                  </Link>
+                  <span className="text-destructive">*</span>
+                </Label>
               </div>
 
               <CardFooter className="px-0">

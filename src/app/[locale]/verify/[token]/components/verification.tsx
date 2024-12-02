@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 import { CheckCircle, XCircle } from 'lucide-react';
 
 import Loading from '@/components/loading';
-import { verifyLead } from '@/lib/google/sheets';
+import { verifyLead } from '@/services/google/sheets';
 
 export default function Verification() {
   const params = useParams();
@@ -39,6 +39,8 @@ export default function Verification() {
   if (isLoading) {
     return <Loading />;
   }
+
+  console.log('here is the error blud:', error);
 
   if (error) {
     return (
