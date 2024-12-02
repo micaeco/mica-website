@@ -157,7 +157,7 @@
   "navLinks": {
     "home": "Inicio",
     "product": "Cómo funciona",
-    "beta": "¡Quiero uno!",
+    "beta": "¿Te apuntas?",
     "about": "¿Quiénes somos?",
     "faqs": "FAQs",
     "blog": "Blog",
@@ -175,7 +175,7 @@
       "title": "La nueva forma de ahorrar agua",
       "text": "Empoderamos a Barcelona para conservar agua con sensores impulsados por inteligencia artificial.",
       "with-the-support": "Con el apoyo de:",
-      "cta": "¡Quiero uno!"
+      "cta": "Te apuntas?"
     },
     "video": {
       "title": "Pequeños Pasos. Gran Impacto",
@@ -252,7 +252,7 @@
     },
     "cta": {
       "cta1": "Prueba la app",
-      "cta2": "¡Quiero uno!"
+      "cta2": "¿Te apuntas?"
     }
   },
   "beta": {
@@ -260,7 +260,8 @@
     "description": "Sé de los primeros en probar MICA. Regístrate en nuestro programa beta y consigue un sensor inteligente gratuito para controlar y optimizar tu consumo de agua.",
     "hero": {
       "title": "¡Únete al programa beta!",
-      "text": "Estamos en plena fase de desarrollo, y con el apoyo del Ayuntamiento de Barcelona, estamos trabajando intensamente para convertir MICA en una realidad. Apúntate hoy mismo a nuestro programa beta para obtener el sensor y la instalación de forma gratuita y ser el primero en probar el sistema. Déjanos tu correo electrónico y te mantendremos informado."
+      "text": "Estamos en plena fase de desarrollo, y con el apoyo del Ayuntamiento de Barcelona, estamos trabajando intensamente para convertir MICA en una realidad. Apúntate hoy mismo a nuestro programa beta para obtener el sensor y la instalación de forma gratuita y ser el primero en probar el sistema. Déjanos tu correo electrónico y te mantendremos informado.",
+      "cta": "Registrate"
     },
     "benefits": {
       "title": "Descubre las ventajas...",
