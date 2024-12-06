@@ -2,13 +2,12 @@
 
 import { config } from './config';
 import { gmail } from './clients';
-import { getVerificationEmail } from '@/lib/emails';
+import { getVerificationEmail } from '@/emails';
 import { encodeMIMEWords } from './utils';
 
-export async function sendVerificationEmail(email: string, locale: string, token: string) {
+export async function sendVerificationEmail(locale: string, email: string, token: string) {
   try {
-    const verificationLink = `${process.env.NEXT_PUBLIC_APP_URL}/${locale}/verify/${token}`;
-    const template = await getVerificationEmail(verificationLink, config.tokenExpirationDays);
+    const template = await getVerificationEmail(locale, token, config.tokenExpirationDays);
 
     const emailLines = [
       `To: ${email}`,

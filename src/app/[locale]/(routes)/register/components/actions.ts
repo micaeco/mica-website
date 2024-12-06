@@ -25,7 +25,7 @@ export async function registerLead(name: string, surname: string, email: string,
       locale
     });
 
-    await sendVerificationEmail(email, locale, token);
+    await sendVerificationEmail(locale, email, token);
 
     await sendRegisteredLead(
       name,
