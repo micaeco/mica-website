@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Link } from '@/i18n/routing';
+import { Link } from '@/lib/i18n/routing';
 import { useTranslations } from 'next-intl';
 
 import {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '@/i18n/routing';
+import { Link } from '@/lib/i18n/routing';
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { Separator } from '@/components/ui/separator';

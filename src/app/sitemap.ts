@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { locales } from '@/i18n/routing'
+import { locales } from '@/lib/i18n/routing'
 
 import { getBlogPosts } from '@/services/sanity'
 

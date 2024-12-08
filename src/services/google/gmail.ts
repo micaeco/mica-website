@@ -2,7 +2,7 @@
 
 import { config } from './config';
 import { gmail } from './clients';
-import { getVerificationEmail } from '@/emails';
+import { getVerificationEmail } from '@/lib/emails';
 import { encodeMIMEWords } from './utils';
 
 export async function sendVerificationEmail(locale: string, email: string, token: string) {

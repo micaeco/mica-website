@@ -1,4 +1,4 @@
-import { Locale } from '@/i18n/routing'
+import { Locale } from '@/lib/i18n/routing'
 
 export const BlogPostTags = ['all', 'article', 'manual', 'others'] as const;
 export type BlogPostTag = typeof BlogPostTags[number];

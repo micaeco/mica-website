@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 
 import { Button } from '@/components/ui/button';
-import { Link } from '@/i18n/routing';
+import { Link } from '@/lib/i18n/routing';
 import { getSolutionBenefits } from '@/lib/constants';
 
 export default function Solution() {

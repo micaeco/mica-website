@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Button } from '@/components/ui/button';
-import { Link } from '@/i18n/routing';
+import { Link } from '@/lib/i18n/routing';
 import { useLocale, useTranslations } from 'next-intl';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { ExternalLink } from 'lucide-react';

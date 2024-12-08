@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
-import { Link } from '@/i18n/routing';
+import { Link } from '@/lib/i18n/routing';
 import Image from 'next/image';
 import { Menu, X, ExternalLink } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';

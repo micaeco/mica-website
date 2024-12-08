@@ -1,7 +1,7 @@
 'use client';
 
 import { FormEvent, useEffect, useRef, useState } from 'react';
-import { Link } from '@/i18n/routing';
+import { Link } from '@/lib/i18n/routing';
 import { useLocale, useTranslations } from 'next-intl';
 import { toast, ToastContainer } from 'react-toastify';
 import { Loader2 } from 'lucide-react';

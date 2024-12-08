@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { Link } from '@/i18n/routing';
+import { Link } from '@/lib/i18n/routing';
 import { ExternalLink, LucideIcon } from 'lucide-react';
 import { useLocale, useTranslations } from 'next-intl';
 

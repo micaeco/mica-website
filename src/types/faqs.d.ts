@@ -1,4 +1,4 @@
-import { Locale } from '@/i18n/routing';
+import { Locale } from '@/lib/i18n/routing';
 
 export interface Faq {
   lang: Locale;
