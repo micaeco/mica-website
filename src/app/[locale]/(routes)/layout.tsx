@@ -1,5 +1,5 @@
-import Header from '@/components/header';
-import Footer from '@/components/footer';
+import Header from "./_components/header";
+import Footer from "./_components/footer";
 
 export default function RoutesLayout({ children }: { children: React.ReactNode }) {
   return (

@@ -1,14 +1,14 @@
-import React from 'react';
-import { Metadata } from 'next';
-import { getMessages } from 'next-intl/server';
+import React from "react";
+import { Metadata } from "next";
+import { getMessages } from "next-intl/server";
 
-import Hero from './components/hero';
-import Partners from './components/partners';
-import Problem from './components/problem';
-import Solution from './components/solution';
-import Testimonials from './components/testimonials';
-import WaveSeparator from '@/components/wave-separator';
-import Video from './components/video';
+import Hero from "./_components/hero";
+import Partners from "./_components/partners";
+import Problem from "./_components/problem";
+import Solution from "./_components/solution";
+import Testimonials from "./_components/testimonials";
+import Video from "./_components/video";
+import WaveSeparator from "@/components/wave-separator";
 
 export async function generateMetadata(): Promise<Metadata> {
   const messages = await getMessages();

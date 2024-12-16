@@ -132,28 +132,38 @@
     "yesterday": "yesterday"
   },
   "errors": {
-    "DEFAULT": "An error has occurred. Please try again later.",
-
+    "UNKNOWN_ERROR": "An error has occurred. Please try again later.",
     "MISSING_FIELDS": "Required fields are missing.",
     "INVALID_EMAIL": "The email is not valid.",
     "INVALID_PHONE": "The phone number is not valid.",
-
     "ALREADY_VERIFIED": "This email has already been registered and verified.",
-
     "TOKEN_EXPIRED": "The verification token has expired. Please try to register again.",
     "TOKEN_INVALID": "The verification token is invalid. Please try to register again.",
-
     "NOT_FOUND": "The requested resource was not found.",
-
     "RATE_LIMIT_EXCEEDED": "Too many requests. Please try again later.",
-
-    "INTERNAL_ERROR": "An internal error has occurred. Please try again later."
+    "SERVER_ERROR": "An internal error has occurred. Please try again later."
   },
   "success": {
     "DEFAULT": "Operation completed successfully.",
     "CONTACT_FORM_SENT": "Contact form sent successfully.",
     "LEAD_REGISTERED": "Registration completed successfully. Please check your email for verification.",
     "LEAD_VERIFIED": "Verification completed successfully."
+  },
+  "validation": {
+    "invalid-type": "Invalid type, expected {expected}",
+    "required": "Required",
+    "string": {
+      "min": "Must contain at least {min} character{min, plural, =1{} other{s}}",
+      "max": "Must contain at most {max} character{min, plural, =1{} other{s}}",
+      "email": "Invalid email address",
+      "phone": "Invalid phone number",
+      "url": "Invalid URL"
+    },
+    "number": {
+      "min": "Must be greater than or equal to {min}",
+      "max": "Must be less than or equal to {max}",
+      "integer": "Must be an integer"
+    }
   },
   "emails": {
     "verification": {
@@ -171,7 +181,7 @@
       "automaticNote": "This is an automated email. Please do not reply to this message."
     }
   },
-  "navLinks": {
+  "nav-links": {
     "home": "Home",
     "product": "How it works",
     "beta": "I want one!",
@@ -180,7 +190,7 @@
     "blog": "Blog",
     "privacy-policy": "Privacy Policy"
   },
-  "navCta": {
+  "nav-cta": {
     "contact": "Contact",
     "demo": "Demo app",
     "register": "Register"
@@ -251,7 +261,7 @@
   "product": {
     "title": "Water Monitoring System",
     "description": "Explore the technology behind MICA: an IoT sensor and AI that analyzes your water consumption, detects leaks, and provides detailed reports to optimize water usage.",
-    "howItWorks": {
+    "how-it-works": {
       "steps": {
         "step1": {
           "title": "A single-point sensor at the water meter captures precise data",

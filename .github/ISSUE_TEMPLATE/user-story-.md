@@ -1,9 +1,9 @@
 ---
-name: 'User Story '
+name: "User Story "
 about: Describe a user story to be implemented on the web
 title: Default user story
-labels: ''
-assignees: ''
+labels: ""
+assignees: ""
 ---
 
 # User Story

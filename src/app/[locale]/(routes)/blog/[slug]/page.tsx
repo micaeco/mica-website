@@ -1,4 +1,4 @@
-import BlogPost from './components/blog-post';
+import BlogPost from "./_components/blog-post";
 
 type Props = {
   params: {

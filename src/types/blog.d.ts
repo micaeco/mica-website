@@ -1,23 +1,25 @@
-import { Locale } from '@/lib/i18n/routing'
+import { TypedObject } from "@portabletext/types";
 
-export const BlogPostTags = ['all', 'article', 'manual', 'others'] as const;
-export type BlogPostTag = typeof BlogPostTags[number];
+import { BlogPostTags } from "@/lib/constants";
+import { CommentFormSchema } from "@/schemas/blog";
+
+export type BlogPostTag = (typeof BlogPostTags)[number];
 
 export interface BlogAuthor {
-  name: string
-  profilePicture: string
+  name: string;
+  profilePicture: string;
 }
 
 export interface BlogPost {
-  id: string
-  slug: string
-  title: string
-  summary: string
-  cover: string
-  content: any[]
-  author?: BlogAuthor
-  date?: string
-  tag: PostTag
+  id: string;
+  slug: string;
+  title: string;
+  summary: string;
+  cover: string;
+  content: TypedObject | TypedObject[];
+  author?: BlogAuthor;
+  date?: string;
+  tag: BlogPostTag;
 }
 
 export interface BlogComment {
@@ -27,5 +29,7 @@ export interface BlogComment {
   postId: string;
   replies: BlogComment[];
   parentId?: string;
-  createdAt: datetime;
+  createdAt: Date;
 }
+
+export type BlogCommentForm = z.infer<typeof CommentFormSchema>;

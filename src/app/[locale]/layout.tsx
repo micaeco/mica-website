@@ -1,15 +1,16 @@
-import { Montserrat } from 'next/font/google';
-import { Metadata } from 'next';
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
-import { notFound } from 'next/navigation';
-import { routing } from '@/lib/i18n/routing';
+import { Montserrat } from "next/font/google";
+import { Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { routing, Locale } from "@/i18n/routing";
 
-import '@/styles/globals.css';
+import "@/styles/globals.css";
+import { cn } from "@/lib/utils";
 
 const montserrat = Montserrat({
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export async function generateMetadata({
@@ -17,36 +18,32 @@ export async function generateMetadata({
 }: {
   params: { locale: string };
 }): Promise<Metadata> {
-  try {
-    const messages = await getMessages();
-    const metadata = messages.metadata as unknown as {
-      title: string;
-      description: string;
-      keywords: string[];
-    };
+  const messages = await getMessages();
+  const metadata = messages.metadata as unknown as {
+    title: string;
+    description: string;
+    keywords: string[];
+  };
 
-    return {
-      metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
-      title: {
-        default: metadata.title,
-        template: '%s - MICA',
-      },
+  return {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
+    title: {
+      default: metadata.title,
+      template: "%s - MICA",
+    },
+    description: metadata.description,
+    keywords: metadata.keywords,
+    openGraph: {
+      title: metadata.title,
       description: metadata.description,
-      keywords: metadata.keywords,
-      openGraph: {
-        title: metadata.title,
-        description: metadata.description,
-        locale,
-        type: 'website',
-      },
-      alternates: {
-        canonical: `/${locale}`,
-        languages: Object.fromEntries(routing.locales.map((loc) => [loc, `/${loc}`])),
-      },
-    };
-  } catch (error) {
-    notFound();
-  }
+      locale,
+      type: "website",
+    },
+    alternates: {
+      canonical: `/${locale}`,
+      languages: Object.fromEntries(routing.locales.map((loc) => [loc, `/${loc}`])),
+    },
+  };
 }
 
 export default async function RootLayout({
@@ -56,14 +53,14 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
 
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={montserrat.className}>
+    <html lang={locale} className={cn(montserrat.className, "antialiased")}>
       <NextIntlClientProvider messages={messages}>
         <body>{children}</body>
       </NextIntlClientProvider>

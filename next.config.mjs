@@ -1,4 +1,4 @@
-import createNextIntlPlugin from 'next-intl/plugin';
+import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin();
 
@@ -8,14 +8,14 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'cdn.sanity.io',
-        pathname: '/images/67r06dt3/production/**',
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+        pathname: "/images/67r06dt3/production/**",
       },
       {
-        protocol: 'https',
-        hostname: 'cdn.sanity.io',
-        pathname: '/images/67r06dt3/development/**',
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+        pathname: "/images/67r06dt3/development/**",
       },
     ],
   },

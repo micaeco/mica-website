@@ -1,10 +1,10 @@
-import { getMessages } from 'next-intl/server';
-import { Metadata } from 'next';
+import { getMessages } from "next-intl/server";
+import { Metadata } from "next";
 
-import OurTeam from './components/our-team';
-import History from './components/history';
-import Timeline from './components/timeline';
-import WaveSeparator from '@/components/wave-separator';
+import OurTeam from "./_components/our-team";
+import History from "./_components/history";
+import Timeline from "./_components/timeline";
+import WaveSeparator from "@/components/wave-separator";
 
 export async function generateMetadata(): Promise<Metadata> {
   const messages = await getMessages();

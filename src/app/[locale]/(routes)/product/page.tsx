@@ -1,7 +1,7 @@
-import { Metadata } from 'next';
-import { getMessages } from 'next-intl/server';
+import { Metadata } from "next";
+import { getMessages } from "next-intl/server";
 
-import HowItWorks from './components/howItWorks';
+import HowItWorks from "./_components/how-it-works";
 
 export async function generateMetadata(): Promise<Metadata> {
   const messages = await getMessages();

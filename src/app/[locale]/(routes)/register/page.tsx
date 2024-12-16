@@ -1,10 +1,11 @@
-import RegisterForm from './components/form';
-import { Metadata } from 'next';
-import { getMessages } from 'next-intl/server';
+import { Metadata } from "next";
+import { getMessages } from "next-intl/server";
+
+import RegisterForm from "./_components/register-form";
 
 export async function generateMetadata(): Promise<Metadata> {
   const messages = await getMessages();
-  const navCta = messages.navCta as { register: string };
+  const navCta = messages["nav-cta"] as { register: string };
 
   return {
     title: navCta.register,

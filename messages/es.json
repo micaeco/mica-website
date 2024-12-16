@@ -132,28 +132,38 @@
     "yesterday": "ayer"
   },
   "errors": {
-    "DEFAULT": "Se ha producido un error. Por favor, inténtalo de nuevo más tarde.",
-
+    "UNKNOWN_ERROR": "Se ha producido un error. Por favor, inténtalo de nuevo más tarde.",
     "MISSING_FIELDS": "Faltan campos obligatorios.",
     "INVALID_EMAIL": "El correo electrónico no es válido.",
     "INVALID_PHONE": "El teléfono no es válido.",
-
     "ALREADY_VERIFIED": "Este correo electrónico ya se ha registrado y ha sido verificado.",
-
     "TOKEN_EXPIRED": "El token de verificación ha caducado. Por favor, pruebe a regístrarse de nuevo.",
     "TOKEN_INVALID": "El token de verificación no es válido. Por favor, pruebe a regístrarse de nuevo.",
-
     "NOT_FOUND": "No se ha encontrado la entrada solicitada.",
-
     "RATE_LIMIT_EXCEEDED": "Se ha superado el límite de intentos. Por favor, inténtalo de nuevo más tarde.",
-
-    "INTERNAL_ERROR": "Se ha producido un error interno. Por favor, inténtalo de nuevo más tarde."
+    "SERVER_ERROR": "Se ha producido un error interno. Por favor, inténtalo de nuevo más tarde."
   },
   "success": {
     "DEFAULT": "Operación completada con éxito.",
     "CONTACT_FORM_SENT": "Formulario de contacto enviado correctamente.",
     "LEAD_REGISTERED": "Registro completado con éxito. Por favor, revisa tu correo electrónico para la verificación.",
     "LEAD_VERIFIED": "Verificación completada con éxito."
+  },
+  "validation": {
+    "invalid-type": "Tipo inválido, se esperaba {expected}",
+    "required": "Obligatorio",
+    "string": {
+      "min": "Debe contener al menos {min} caracter{min, plural, =1{} other{es}}",
+      "max": "Debe contener como máximo {max} caracter{min, plural, =1{} other{es}}",
+      "email": "Dirección de correo electrónico inválida",
+      "phone": "Número de teléfono inválido",
+      "url": "URL inválida"
+    },
+    "number": {
+      "min": "Debe ser mayor o igual a {min}",
+      "max": "Debe ser menor o igual a {max}",
+      "integer": "Debe ser un número entero"
+    }
   },
   "emails": {
     "verification": {
@@ -171,7 +181,7 @@
       "automaticNote": "Este es un correo automático. Por favor, no respondas a este mensaje."
     }
   },
-  "navLinks": {
+  "nav-links": {
     "home": "Inicio",
     "product": "Cómo funciona",
     "beta": "¡Quiero uno!",
@@ -180,7 +190,7 @@
     "blog": "Blog",
     "privacy-policy": "Política de privacidad"
   },
-  "navCta": {
+  "nav-cta": {
     "contact": "Contacto",
     "demo": "Demo app",
     "register": "Regístrate"
@@ -251,7 +261,7 @@
   "product": {
     "title": "Sistema de Monitoreo de Agua",
     "description": "Explora la tecnología detrás de MICA: un sensor IoT y IA que analiza tu consumo de agua, detecta fugas y proporciona informes detallados para optimizar el uso del agua.",
-    "howItWorks": {
+    "how-it-works": {
       "steps": {
         "step1": {
           "title": "Un único sensor en la entrada de agua captura datos precisos",

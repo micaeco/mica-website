@@ -132,28 +132,38 @@
     "yesterday": "ahir"
   },
   "errors": {
-    "DEFAULT": "S'ha produït un error. Si us plau, torna-ho a provar més tard.",
-
+    "UNKNOWN_ERROR": "S'ha produït un error. Si us plau, torna-ho a provar més tard.",
     "MISSING_FIELDS": "Falten camps obligatoris.",
     "INVALID_EMAIL": "El correu electrònic no és vàlid.",
     "INVALID_PHONE": "El telèfon no és vàlid.",
-
     "ALREADY_VERIFIED": "Aquest correu electrònic ja s'ha registrat i ha estat verificat.",
-
     "TOKEN_EXPIRED": "El token de verificació ha caducat. Si us plau, proba a tornar-te a registrar.",
     "TOKEN_INVALID": "El token de verificació no és vàlid. Si us plau, proba a tornar-te a registrar.",
-
     "NOT_FOUND": "No s'ha trobat l'entrada solicitada",
-
     "RATE_LIMIT_EXCEEDED": "Has superat el límit de peticions. Si us plau, torna-ho a provar més tard.",
-
-    "INTERNAL_ERROR": "S'ha produït un error intern. Si us plau, torna-ho a provar més tard."
+    "SERVER_ERROR": "S'ha produït un error intern. Si us plau, torna-ho a provar més tard."
   },
   "success": {
     "DEFAULT": "Operació completada amb èxit.",
     "CONTACT_FORM_SENT": "Formulari de contacte enviat correctament.",
     "LEAD_REGISTERED": "Registre completat amb èxit. Si us plau, comprova el teu correu electrònic per a la verificació.",
     "LEAD_VERIFIED": "Verificació completada amb èxit."
+  },
+  "validation": {
+    "invalid-type": "Tipus invàlid, s'esperava {expected}",
+    "required": "Obligatori",
+    "string": {
+      "min": "Ha de contenir almenys {min} caràcter{min, plural, =1{} other{s}}",
+      "max": "Ha de contenir com a màxim {max} caràcter{min, plural, =1{} other{s}}",
+      "email": "Adreça de correu electrònic invàlida",
+      "phone": "Número de telèfon invàlid",
+      "url": "URL invàlida"
+    },
+    "number": {
+      "min": "Ha de ser més gran o igual a {min}",
+      "max": "Ha de ser menor o igual a {max}",
+      "integer": "Ha de ser un nombre enter"
+    }
   },
   "emails": {
     "verification": {
@@ -171,7 +181,7 @@
       "automaticNote": "Aquest correu electrònic s'ha generat automàticament. Si us plau, no responguis."
     }
   },
-  "navLinks": {
+  "nav-links": {
     "home": "Inici",
     "product": "Com funciona",
     "beta": "En vull un!",
@@ -180,7 +190,7 @@
     "blog": "Blog",
     "privacy-policy": "Política de privacitat"
   },
-  "navCta": {
+  "nav-cta": {
     "contact": "Contacte",
     "demo": "Demo app",
     "register": "Registra't"
@@ -251,7 +261,7 @@
   "product": {
     "title": "Sistema de Monitorització d'Aigua",
     "description": "Explorem la tecnologia darrere MICA: un sensor IoT i IA que analitza el teu consum d'aigua, detecta fugues i proporciona informes detallats per optimitzar l'ús d'aigua.",
-    "howItWorks": {
+    "how-it-works": {
       "steps": {
         "step1": {
           "title": "Un únic sensor a l'entrada d'aigua captura dades precises",
