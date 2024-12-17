@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
 import { locales } from "@/i18n/routing";
 
+import { env } from "@/lib/env";
 import { SanityCmsService } from "@/services/cms.sanity";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL;
+  const baseUrl = env.appUrl;
 
   const pages = ["/", "/about", "/beta", "/contact", "/faqs", "/product"] as const;
 

@@ -27,7 +27,7 @@ export class SlackNotificationService implements NotificationService {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.SLACK_BOT_TOKEN}`,
+        Authorization: `Bearer ${env.slack.botToken}`,
       },
       body: JSON.stringify({
         channel: channelId,

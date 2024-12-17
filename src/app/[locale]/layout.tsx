@@ -7,6 +7,7 @@ import { routing, Locale } from "@/i18n/routing";
 
 import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
+import { env } from "@/lib/env";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -26,7 +27,7 @@ export async function generateMetadata({
   };
 
   return {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
+    metadataBase: new URL(env.appUrl),
     title: {
       default: metadata.title,
       template: "%s - MICA",

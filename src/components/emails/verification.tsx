@@ -2,6 +2,7 @@ import { Button, Container, Hr, Link, Section, Text } from "@react-email/compone
 import defaultContent from "#/messages/en.json";
 
 import Layout from "./layout";
+import { env } from "@/lib/env";
 
 interface Props {
   content: IntlMessages["emails"]["verification"];
@@ -16,8 +17,7 @@ export default function Verification({
   token = "1234",
   tokenExpirationDays = 30,
 }: Props) {
-  const baseUrl =
-    process.env.NODE_ENV === "production" ? "https://mica.eco" : "http://localhost:3000";
+  const baseUrl = env.appUrl;
 
   const verificationLink = `${baseUrl}/${locale}/verify/${token}`;
 
