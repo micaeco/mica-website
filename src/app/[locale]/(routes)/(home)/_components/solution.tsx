@@ -32,7 +32,7 @@ export default function Solution() {
                 transition={{ duration: 0.5, delay: 0 }}
               >
                 <Droplet className="mb-4 size-20 rounded-full bg-brand-primary p-4 text-white" />
-                <h4 className="mb-2 font-bold">{t("benefits.benefit1.title")}</h4>
+                <h4 className="mb-2 font-bold">{t("solution.benefits.benefit1.title")}</h4>
                 <p>{t("solution.benefits.benefit1.text")}</p>
               </motion.div>
 
@@ -42,7 +42,7 @@ export default function Solution() {
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <CircleAlert className="mb-4 size-20 rounded-full bg-brand-primary p-4 text-white" />
-                <h4 className="mb-2 font-bold">{t("benefits.benefit2.title")}</h4>
+                <h4 className="mb-2 font-bold">{t("solution.benefits.benefit2.title")}</h4>
                 <p>{t("solution.benefits.benefit2.text")}</p>
               </motion.div>
 
@@ -52,7 +52,7 @@ export default function Solution() {
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
                 <TrendingUp className="mb-4 size-20 rounded-full bg-brand-primary p-4 text-white" />
-                <h4 className="mb-2 font-bold">{t("benefits.benefit3.title")}</h4>
+                <h4 className="mb-2 font-bold">{t("solution.benefits.benefit3.title")}</h4>
                 <p>{t("solution.benefits.benefit3.text")}</p>
               </motion.div>
             </div>

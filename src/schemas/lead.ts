@@ -1,8 +1,10 @@
 import { createTranslator } from "next-intl";
 import { z } from "zod";
 
-export const LeadFormSchema = (messages: IntlMessages, locale: string) => {
-  const t = createTranslator({ locale, messages });
+import en from "#/messages/en.json";
+
+export const LeadFormSchema = (messages?: IntlMessages, locale?: string) => {
+  const t = createTranslator({ locale: locale || "en", messages: messages || en });
 
   return z.object({
     name: z.string().min(2, {
@@ -16,8 +18,13 @@ export const LeadFormSchema = (messages: IntlMessages, locale: string) => {
     }),
     phone: z
       .string()
-      .regex(/^\+?[\d\s-()]{7,}$/, {
-        message: t("validation.string.phone"),
+      .superRefine((val, ctx) => {
+        if (val.length > 0 && !/^\+?[\d\s-()]{7,}$/.test(val)) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: t("validation.string.phone"),
+          });
+        }
       })
       .transform((val) => val.replace(/[\s()-]/g, ""))
       .optional(),

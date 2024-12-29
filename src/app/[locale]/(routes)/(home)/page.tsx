@@ -28,9 +28,9 @@ export default function Home() {
         <Partners />
       </div>
       <Video />
-      <WaveSeparator topColor="white" bottomColor="#00f2dd" />
+      <WaveSeparator bgColor="bg-white" waveColor="text-brand-secondary" />
       <Solution />
-      <WaveSeparator topColor="brand-tertiary" bottomColor="#ffffff" />
+      <WaveSeparator bgColor="bg-brand-tertiary" waveColor="text-white" />
       <Problem />
       <Testimonials />
     </main>

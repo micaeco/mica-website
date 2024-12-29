@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import { Lightbulb, Settings, Wrench, CheckCircle, Maximize } from "lucide-react";
 import { LucideIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 type TimelineItemProps = {
   children: ReactNode;
@@ -15,9 +16,9 @@ function TimelineItem({ children, date, bgColor, Icon }: TimelineItemProps) {
     <div className="flex">
       <div className="flex flex-row items-start justify-center space-x-4">
         <div className="max-w-8 text-right text-sm font-light">{date}</div>
-        <div className={`h-full min-w-4 rounded-full ${bgColor}`} />
+        <div className={cn("h-full min-w-4 rounded-full", bgColor)} />
         <div
-          className={`z-10 flex min-h-10 min-w-10 items-center justify-center rounded-full ${bgColor}`}
+          className={cn("z-10 flex min-h-10 min-w-10 items-center justify-center rounded-full", bgColor)}
         >
           <Icon className="h-7 w-7 text-white" />
         </div>

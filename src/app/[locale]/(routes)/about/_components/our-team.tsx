@@ -98,7 +98,7 @@ export default function OurTeam() {
 
           <TeamMember
             name="Miquel"
-            src="/images/miki.webp"
+            src="/images/miquel.webp"
             role={members("miquel.role")}
             studies={members("miquel.studies")}
             socials={[

@@ -1,102 +1,30 @@
 "use client";
 
-import { FormEvent, useEffect, useRef, useState } from "react";
 import { Link } from "@/i18n/routing";
-import { useLocale, useTranslations } from "next-intl";
-import { toast, ToastContainer } from "react-toastify";
+import { useTranslations } from "next-intl";
+import { ToastContainer } from "react-toastify";
 import { Loader2 } from "lucide-react";
 
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardContent, CardTitle, CardFooter } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
-import { Lead } from "@/types/lead";
-import { storeLead } from "../actions";
-import { ErrorKey, SuccessKey } from "@/types/errors";
-
-type LeadData = Omit<Lead, "isVerified"> & { privacyPolicy: boolean };
-
-function getInitialLeadData(locale: string): LeadData {
-  return {
-    name: "",
-    surname: "",
-    email: "",
-    phone: "",
-    referralSource: "",
-    interestInBeta: false,
-    privacyPolicy: false,
-    locale,
-  };
-}
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { useRegisterForm } from "../_hooks/use-register-lead";
 
 export default function RegisterForm() {
-  const locale = useLocale();
-
-  const [leadData, setLeadData] = useState(getInitialLeadData(locale));
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isValid, setIsValid] = useState(false);
-  const formRef = useRef<HTMLFormElement>(null);
-
   const t = useTranslations("register");
-  const common = useTranslations("common");
-  const form = useTranslations("register.form");
-  const tSuccess = useTranslations("success");
-  const tErrors = useTranslations("errors");
+  const tCommon = useTranslations("common");
+  const tForm = useTranslations("register.form");
 
-  const handleInputChange = (name: string, value: string | boolean) => {
-    setLeadData((prev: LeadData) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (event: FormEvent) => {
-    event.preventDefault();
-    setIsSubmitting(true);
-
-    const { success, code } = await storeLead({
-      email: leadData.email,
-      name: leadData.name,
-      surname: leadData.surname,
-      phone: leadData.phone,
-      referralSource: leadData.referralSource,
-      interestInBeta: leadData.interestInBeta,
-      locale,
-      isVerified: false,
-    });
-
-    if (!success) {
-      toast.error(tErrors(code as ErrorKey));
-      setIsSubmitting(false);
-      return;
-    }
-
-    toast.success(tSuccess(code as SuccessKey));
-    setLeadData(getInitialLeadData(locale));
-    localStorage.removeItem("leadData");
-    setIsSubmitting(false);
-  };
-
-  useEffect(() => {
-    const savedData = localStorage.getItem("leadData");
-    if (savedData) {
-      setLeadData(JSON.parse(savedData));
-    }
-  }, []);
-
-  useEffect(() => {
-    const hasValue = Object.values(leadData).some((value) =>
-      typeof value === "string" ? value.trim() !== "" : value === true
-    );
-
-    if (hasValue) {
-      localStorage.setItem("leadData", JSON.stringify(leadData));
-    }
-  }, [leadData]);
-
-  useEffect(() => {
-    if (formRef.current) {
-      setIsValid(formRef.current.checkValidity());
-    }
-  }, [leadData]);
+  const { form, onSubmit, isSubmitting } = useRegisterForm();
 
   return (
     <section className="bg-gray-50 px-4 py-8">
@@ -107,117 +35,139 @@ export default function RegisterForm() {
           </CardHeader>
 
           <CardContent>
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <Label>
-                  {form("name.label")} <span className="text-destructive">*</span>
-                  <Input
-                    id="name"
-                    type="text"
-                    placeholder={form("name.placeholder")}
-                    value={leadData.name}
-                    onChange={(e) => handleInputChange("name", e.target.value)}
-                    required
-                  />
-                </Label>
-              </div>
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>
+                        {tForm("name.label")} <span className="text-destructive">*</span>
+                      </FormLabel>
+                      <FormControl>
+                        <Input {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
-              <div className="space-y-2">
-                <Label>
-                  {form("surname.label")} <span className="text-destructive">*</span>
-                  <Input
-                    id="surname"
-                    type="text"
-                    placeholder={form("surname.placeholder")}
-                    value={leadData.surname}
-                    onChange={(e) => handleInputChange("surname", e.target.value)}
-                    required
-                  />
-                </Label>
-              </div>
+                <FormField
+                  control={form.control}
+                  name="surname"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>
+                        {tForm("surname.label")} <span className="text-destructive">*</span>
+                      </FormLabel>
+                      <FormControl>
+                        <Input {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
-              <div className="space-y-2">
-                <Label>
-                  {form("email.label")} <span className="text-destructive">*</span>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder={form("email.placeholder")}
-                    value={leadData.email}
-                    onChange={(e) => handleInputChange("email", e.target.value)}
-                    required
-                  />
-                </Label>
-              </div>
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>
+                        {tForm("email.label")} <span className="text-destructive">*</span>
+                      </FormLabel>
+                      <FormControl>
+                        <Input type="email" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
-              <div className="space-y-2">
-                <Label>
-                  {form("phone.label")} {`(${common("optional")})`}
-                  <Input
-                    id="phone"
-                    type="tel"
-                    placeholder={form("phone.placeholder")}
-                    value={leadData.phone}
-                    onChange={(e) => handleInputChange("phone", e.target.value)}
-                  />
-                </Label>
-              </div>
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>
+                        {tForm("phone.label")} {`(${tCommon("optional")})`}
+                      </FormLabel>
+                      <FormControl>
+                        <Input type="tel" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
-              <div className="space-y-2">
-                <Label>
-                  {form("referralSource.label")} {`(${common("optional")})`}
-                  <Input
-                    id="referralSource"
-                    type="text"
-                    placeholder={form("referralSource.placeholder")}
-                    value={leadData.referralSource}
-                    onChange={(e) => handleInputChange("referralSource", e.target.value)}
-                  />
-                </Label>
-              </div>
+                <FormField
+                  control={form.control}
+                  name="referralSource"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>
+                        {tForm("referralSource.label")} {`(${tCommon("optional")})`}
+                      </FormLabel>
+                      <FormControl>
+                        <Input placeholder={tForm("referralSource.placeholder")} {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
-              <div className="space-y-4 pb-4 pt-8">
-                <Label className="flex items-center space-x-2">
-                  <Checkbox
-                    id="interestInBeta"
-                    checked={leadData.interestInBeta}
-                    onCheckedChange={(checked) => {
-                      handleInputChange("interestInBeta", checked);
-                    }}
+                <div className="space-y-4 pb-4 pt-8">
+                  <FormField
+                    control={form.control}
+                    name="interestInBeta"
+                    render={({ field }) => (
+                      <FormItem className="flex flex-row items-center space-x-2">
+                        <FormControl>
+                          <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                        </FormControl>
+                        <FormLabel className="text-sm">
+                          <Link href="/beta" className="text-blue-500 underline">
+                            {tForm("interestInBeta.label")}
+                          </Link>
+                        </FormLabel>
+                      </FormItem>
+                    )}
                   />
-                  <Link href="/beta" className="text-sm text-blue-500 underline">
-                    {form("interestInBeta.label")}
-                  </Link>
-                </Label>
 
-                <Label className="flex items-center space-x-2">
-                  <Checkbox
-                    id="privacyPolicy"
-                    checked={leadData.privacyPolicy}
-                    onCheckedChange={(checked) => {
-                      handleInputChange("privacyPolicy", checked);
-                    }}
-                    required
+                  <FormField
+                    control={form.control}
+                    name="privacyPolicy"
+                    render={({ field }) => (
+                      <FormItem className="flex flex-row items-center space-x-2">
+                        <FormControl>
+                          <Checkbox checked={field.value} onCheckedChange={field.onChange} />
+                        </FormControl>
+                        <FormLabel className="text-sm">
+                          <Link href="/privacy-policy" className="text-blue-500 underline">
+                            {tForm("privacyPolicy.label")}
+                          </Link>{" "}
+                          <span className="text-destructive">*</span>
+                        </FormLabel>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                  <Link href="/privacy-policy" className="text-sm text-blue-500 underline">
-                    {form("privacyPolicy.label")}
-                  </Link>
-                  <span className="text-destructive">*</span>
-                </Label>
-              </div>
+                </div>
 
-              <CardFooter className="px-0">
-                <Button
-                  type="submit"
-                  size="lg"
-                  disabled={isSubmitting || !isValid}
-                  className="w-full capitalize"
-                >
-                  {isSubmitting && <Loader2 className="mr-2 animate-spin" />}
-                  {isSubmitting ? common("sending") + "..." : common("send")}
-                </Button>
-              </CardFooter>
-            </form>
+                <CardFooter className="px-0">
+                  <Button
+                    type="submit"
+                    size="lg"
+                    disabled={isSubmitting}
+                    className="w-full capitalize"
+                  >
+                    {isSubmitting && <Loader2 className="mr-2 animate-spin" />}
+                    {isSubmitting ? tCommon("sending") + "..." : tCommon("send")}
+                  </Button>
+                </CardFooter>
+              </form>
+            </Form>
           </CardContent>
         </Card>
       </div>

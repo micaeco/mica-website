@@ -1,8 +1,10 @@
 import { createTranslator } from "next-intl";
 import { z } from "zod";
 
+import en from "#/messages/en.json";
+
 export const ContactFormSchema = (messages: IntlMessages, locale: string) => {
-  const t = createTranslator({ locale, messages });
+  const t = createTranslator({ locale: locale || "en", messages: messages || en });
 
   return z.object({
     name: z.string().min(2, {

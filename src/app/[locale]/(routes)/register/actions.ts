@@ -1,17 +1,19 @@
 "use server";
 
 import { randomUUID } from "crypto";
+import { render } from "@react-email/render";
 
 import { env } from "@/lib/env";
-import { tokenExpirationDays, AppError, AlreadyVerifiedError } from "@/lib/constants";
+import { AppError, AlreadyVerifiedError } from "@/lib/constants";
 import { GmailEmailService } from "@/services/email.gmail";
 import { SheetsTableService } from "@/services/database.sheets";
 import { SlackNotificationService } from "@/services/notifications.slack";
 import { ErrorKey, SuccessKey } from "@/types/errors";
 import { Lead, Token } from "@/types/lead";
-import { getVerificationEmail } from "@/components/emails";
+import VerificationEmail from "@/components/emails/verification";
+import { getMessages } from "next-intl/server";
 
-export async function storeLead(
+export async function registerLead(
   lead: Lead
 ): Promise<{ success: boolean; code: ErrorKey | SuccessKey }> {
   try {
@@ -72,8 +74,16 @@ export async function storeLead(
       });
     }
 
-    const template = await getVerificationEmail(lead.locale, token, tokenExpirationDays);
-    await emailService.send(lead.email, template.subject, template.text, template.html);
+    const messages = (await getMessages()) as unknown as IntlMessages;
+    await emailService.send(
+      lead.email,
+      await render(VerificationEmail({ messages, locale: lead.locale, token }), {
+        pretty: true,
+      }),
+      await render(VerificationEmail({ messages, locale: lead.locale, token }), {
+        plainText: true,
+      })
+    );
 
     await notificationService.notifyWebsiteTeam({
       title: ":tada: New lead registered!",

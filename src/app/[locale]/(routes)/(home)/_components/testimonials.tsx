@@ -8,6 +8,7 @@ import type { EmblaCarouselType } from "embla-carousel";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import StarRating from "@/components/ui/star-rating";
+import { cn } from "@/lib/utils";
 
 export default function TestimonialCarousel() {
   const t = useTranslations();
@@ -76,9 +77,10 @@ export default function TestimonialCarousel() {
               <button
                 key={index}
                 onClick={() => scrollTo(index)}
-                className={`h-1 w-8 rounded-full transition-all md:w-16 ${
+                className={cn(
+                  "h-1 w-8 rounded-full transition-all md:w-16",
                   current === index ? "bg-primary" : "bg-primary/30 hover:bg-primary/50"
-                }`}
+                )}
                 aria-label={`${index + 1}`}
               />
             ))}

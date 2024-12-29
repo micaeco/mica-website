@@ -6,6 +6,7 @@ import { ExternalLink, LucideIcon, ChevronsRight, Database, TrendingUp } from "l
 import { useLocale, useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface StepIconProps {
   number: number;
@@ -70,17 +71,20 @@ function Step({ number, icon, title, text, image, isReversed, containerClass }: 
 
   return (
     <div
-      className={`flex items-center sm:grid sm:grid-cols-10 ${
+      className={cn(
+        "flex items-center sm:grid sm:grid-cols-10",
         isReversed ? "flex-col-reverse text-right" : "flex-col"
-      }`}
+      )}
     >
       {reversedImage}
       <div
-        className={`flex flex-col items-${isReversed ? "end" : "start"} gap-4 ${containerClass} ${
+        className={cn(
+          "flex flex-col gap-4 xl:items-center",
           isReversed
-            ? "col-span-full sm:col-start-7 sm:col-end-11 xl:flex-row-reverse"
-            : "sm:col-span-5 xl:flex-row"
-        } xl:items-center`}
+            ? "col-span-full items-end sm:col-start-7 sm:col-end-11 xl:flex-row-reverse"
+            : "items-start sm:col-span-5 xl:flex-row",
+          containerClass
+        )}
       >
         <StepIcon number={number} icon={icon} />
         <StepContent title={title} text={text} />

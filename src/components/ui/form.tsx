@@ -11,6 +11,7 @@ import {
   FormProvider,
   useFormContext,
 } from "react-hook-form";
+import { CircleAlert } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Label } from "@/components/ui/label";
@@ -85,16 +86,9 @@ const FormLabel = React.forwardRef<
   React.ElementRef<typeof LabelPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
 >(({ className, ...props }, ref) => {
-  const { error, formItemId } = useFormField();
+  const { formItemId } = useFormField();
 
-  return (
-    <Label
-      ref={ref}
-      className={cn(error && "text-destructive dark:text-red-900", className)}
-      htmlFor={formItemId}
-      {...props}
-    />
-  );
+  return <Label ref={ref} className={className} htmlFor={formItemId} {...props} />;
 });
 FormLabel.displayName = "FormLabel";
 
@@ -148,10 +142,13 @@ const FormMessage = React.forwardRef<
     <p
       ref={ref}
       id={formMessageId}
-      className={cn("text-sm font-medium text-destructive dark:text-red-900", className)}
+      className={cn(
+        "flex items-center gap-2 text-sm font-medium text-destructive dark:text-red-900",
+        className
+      )}
       {...props}
     >
-      {body}
+      <CircleAlert /> {body}
     </p>
   );
 });
