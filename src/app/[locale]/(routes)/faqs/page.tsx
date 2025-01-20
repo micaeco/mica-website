@@ -1,14 +1,17 @@
 import { Metadata } from "next";
-import { getMessages } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 import Faqs from "./_components/faqs";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const messages = await getMessages();
-  const navLinks = messages["nav-links"] as { faqs: string };
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const navLinks = await getTranslations({ locale, namespace: "nav-links" });
 
   return {
-    title: navLinks.faqs,
+    title: navLinks("faqs"),
   };
 }
 

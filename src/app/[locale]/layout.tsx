@@ -1,7 +1,7 @@
 import { Montserrat } from "next/font/google";
 import { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing, Locale } from "@/i18n/routing";
 
@@ -19,24 +19,19 @@ export async function generateMetadata({
 }: {
   params: { locale: string };
 }): Promise<Metadata> {
-  const messages = await getMessages();
-  const metadata = messages.metadata as unknown as {
-    title: string;
-    description: string;
-    keywords: string[];
-  };
+  const metadata = await getTranslations({ locale, namespace: "metadata" });
 
   return {
     metadataBase: new URL(env.appUrl),
     title: {
-      default: metadata.title,
+      default: metadata("title"),
       template: "%s - MICA",
     },
-    description: metadata.description,
-    keywords: metadata.keywords,
+    description: metadata("description"),
+    keywords: metadata("keywords"),
     openGraph: {
-      title: metadata.title,
-      description: metadata.description,
+      title: metadata("title"),
+      description: metadata("description"),
       locale,
       type: "website",
     },
@@ -62,9 +57,9 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className={cn(montserrat.className, "antialiased")}>
-      <NextIntlClientProvider messages={messages}>
-        <body>{children}</body>
-      </NextIntlClientProvider>
+      <body suppressHydrationWarning>
+        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+      </body>
     </html>
   );
 }

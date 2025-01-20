@@ -1,22 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
 import { PortableTextComponents } from "@portabletext/react";
-import imageUrlBuilder from "@sanity/image-url";
-import { createClient } from "next-sanity";
+import urlBuilder from "@sanity/image-url";
 import { env } from "@/lib/env";
+import { createClient } from "next-sanity";
 
-const readClient = createClient({
-  projectId: env.sanity.projectId,
-  dataset: env.sanity.dataset,
-  apiVersion: env.sanity.apiVersion,
-  useCdn: true,
-});
+const sanityClient = () => {
+  console.log(env);
 
-const builder = imageUrlBuilder(readClient);
-
-export function urlFor(source: string) {
-  return builder.image(source);
-}
+  return createClient({
+    projectId: env.sanity.projectId,
+    dataset: env.sanity.dataset,
+    apiVersion: env.sanity.apiVersion,
+    useCdn: true,
+  });
+};
 
 export const portableTextComponents: PortableTextComponents = {
   block: {
@@ -53,7 +51,7 @@ export const portableTextComponents: PortableTextComponents = {
     image: ({ value }) => (
       <div className="relative my-8 aspect-video w-full overflow-hidden rounded-lg">
         <Image
-          src={urlFor(value).url()}
+          src={urlBuilder(sanityClient()).image(value).url()}
           alt={value.alt || ""}
           priority
           fill

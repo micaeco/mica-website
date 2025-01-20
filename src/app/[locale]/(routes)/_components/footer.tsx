@@ -74,7 +74,8 @@ function FooterBottom({ currentYear, copyright, socialLinks }: FooterBottomProps
           <span className="text-lg font-bold">MICA</span>
         </Link>
         <p className="text-xs">
-          &copy; {currentYear} MICA ECO. {copyright}
+          &copy; {currentYear} MICA ECO.{" "}
+          <span className="first-letter:capitalize">{copyright}</span>
         </p>
       </div>
 

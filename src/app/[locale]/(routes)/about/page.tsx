@@ -1,4 +1,4 @@
-import { getMessages } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 
 import OurTeam from "./_components/our-team";
@@ -6,13 +6,16 @@ import History from "./_components/history";
 import Timeline from "./_components/timeline";
 import WaveSeparator from "@/components/wave-separator";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const messages = await getMessages();
-  const about = messages.about as { title: string; description: string };
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const about = await getTranslations({ locale, namespace: "about" });
 
   return {
-    title: about.title,
-    description: about.description,
+    title: about("title"),
+    description: about("description"),
   };
 }
 

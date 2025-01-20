@@ -14,11 +14,12 @@ import { portableTextComponents } from "@/components/ui/portable-text-components
 import { BlogPost } from "@/types/blog";
 import { languageMap } from "@/lib/constants";
 import { getBlogPost } from "../actions";
+import { ErrorKey } from "@/types/errors";
 
 export default function BlogPostPage({ slug }: { slug: string }) {
   const [post, setPost] = useState<BlogPost>();
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<ErrorKey | null>(null);
 
   const tErrors = useTranslations("errors");
   const common = useTranslations("common");
@@ -27,10 +28,12 @@ export default function BlogPostPage({ slug }: { slug: string }) {
 
   useEffect(() => {
     const fetchPost = async () => {
+      console.log("fetching post");
       const { success, code, post } = await getBlogPost(slug, locale);
+      console.log("post", post);
 
       if (!success) {
-        setError(code);
+        setError(code as ErrorKey);
         setIsLoading(false);
       }
 
@@ -46,7 +49,7 @@ export default function BlogPostPage({ slug }: { slug: string }) {
   if (!post || error) {
     return (
       <div className="flex h-screen flex-col items-center justify-center bg-white">
-        {tErrors("NOT_FOUND")}
+        {tErrors(error || "NOT_FOUND")}
         <GoBack />
       </div>
     );

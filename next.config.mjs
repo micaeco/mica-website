@@ -10,12 +10,7 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "cdn.sanity.io",
-        pathname: "/images/67r06dt3/production/**",
-      },
-      {
-        protocol: "https",
-        hostname: "cdn.sanity.io",
-        pathname: "/images/67r06dt3/development/**",
+        pathname: "/images/**",
       },
     ],
   },

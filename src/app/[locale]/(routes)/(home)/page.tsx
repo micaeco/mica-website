@@ -1,6 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
-import { getMessages } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 import Hero from "./_components/hero";
 import Partners from "./_components/partners";
@@ -10,13 +10,16 @@ import Testimonials from "./_components/testimonials";
 import Video from "./_components/video";
 import WaveSeparator from "@/components/wave-separator";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const messages = await getMessages();
-  const home = messages.home as { title: string; description: string };
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const home = await getTranslations({ locale, namespace: "home" });
 
   return {
-    title: home.title,
-    description: home.description,
+    title: home("title"),
+    description: home("description"),
   };
 }
 

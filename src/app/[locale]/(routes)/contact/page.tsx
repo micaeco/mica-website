@@ -1,15 +1,18 @@
 import { Metadata } from "next";
-import { getMessages } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 import ContactForm from "./_components/contact-form";
 import LookingFor from "./_components/looking-for";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const messages = await getMessages();
-  const navCta = messages["nav-cta"] as { contact: string };
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const navCta = await getTranslations({ locale, namespace: "nav-cta" });
 
   return {
-    title: navCta.contact,
+    title: navCta("contact"),
   };
 }
 

@@ -1,14 +1,17 @@
 import { Metadata } from "next";
-import { getMessages } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 
 import Verification from "./_components/verification";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const messages = await getMessages();
-  const verification = messages.verification as { title: string };
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const verification = await getTranslations({ locale, namespace: "verification" });
 
   return {
-    title: verification.title,
+    title: verification("title"),
   };
 }
 
