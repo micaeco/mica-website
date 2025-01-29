@@ -12,9 +12,9 @@ import {
   AppError,
 } from "@/lib/constants";
 import { SheetsTableService } from "@/services/db/database.sheets";
-import { SESEmailService } from "@/services/email/email.ses";
 import { ErrorKey, SuccessKey } from "@/types/errors";
 import { Lead, Token } from "@/types/lead";
+// import { SESEmailService } from "@/services/email/email.ses";
 // import WelcomeEmail from "@/components/emails/welcome";
 
 export async function verifyLead(
@@ -35,7 +35,7 @@ export async function verifyLead(
       "locale",
       "isVerified",
     ]);
-    const emailService = new SESEmailService();
+    // const emailService = new SESEmailService();
 
     // Find token
     const tokens = await tokensTable.query({
