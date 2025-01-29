@@ -39,6 +39,7 @@ Note: While `package.json` specifies the Node.js version for the project, you ne
 - TypeScript
 - Tailwind CSS
 - Prettier
+- Eslint
 
 ## Project Structure
 
