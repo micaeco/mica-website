@@ -1,14 +1,11 @@
-import { ExternalLink } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
 
-import { Button } from '@/components/ui/button';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
+} from "@/components/ui/accordion";
 
 export function Hero() {
   return (
@@ -19,7 +16,7 @@ export function Hero() {
           {/* Content side - spans 7 columns on desktop */}
           <div className="space-y-8 lg:col-span-7">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl lg:text-5xl">
-              Les úniques cookies que utilitzem...{' '}
+              Les úniques cookies que utilitzem...{" "}
               <span className="text-brand-quaternary">són per menjar!</span>
             </h1>
 
