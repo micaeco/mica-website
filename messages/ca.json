@@ -224,7 +224,7 @@
   "nav-links": {
     "home": "Inici",
     "product": "Com funciona",
-    "beta": "En vull un!",
+    "beta": "T'hi apuntes?",
     "about": "Qui som?",
     "faqs": "FAQs",
     "blog": "Blog",
@@ -319,7 +319,7 @@
     },
     "cta": {
       "cta1": "Prova l'app",
-      "cta2": "En vull un!"
+      "cta2": "T'hi apuntes?"
     }
   },
   "beta": {
@@ -327,7 +327,8 @@
     "description": "Sigues dels primers en provar MICA! Registra't al nostre programa beta i aconsegueix un sensor intel·ligent gratuït per controlar i optimitzar el teu consum d'aigua.",
     "hero": {
       "title": "Uneix-te al programa beta!",
-      "text": "Estem en plena fase de desenvolupament, i, amb el suport de l’Ajuntament de Barcelona, estem treballant intensament per convertir MICA en una realitat. Apunta't avui mateix per obtenir el sensor i la instal·lació de forma gratuïta i ser el primer en provar el sistema. Només cal que ens deixis el teu correu electrònic i et mantindrem informat."
+      "text": "Estem en plena fase de desenvolupament, i, amb el suport de l’Ajuntament de Barcelona, estem treballant intensament per convertir MICA en una realitat. Apunta't avui mateix per obtenir el sensor i la instal·lació de forma gratuïta i ser el primer en provar el sistema. Només cal que ens deixis el teu correu electrònic i et mantindrem informat.",
+      "cta": "Registra't"
     },
     "benefits": {
       "title": "Descobreix els avantatges...",

@@ -224,7 +224,7 @@
   "nav-links": {
     "home": "Home",
     "product": "How it works",
-    "beta": "I want one!",
+    "beta": "Want to join?",
     "about": "Who are we?",
     "faqs": "FAQs",
     "blog": "Blog",
@@ -319,7 +319,7 @@
     },
     "cta": {
       "cta1": "Try the app",
-      "cta2": "I want one!"
+      "cta2": "Want to join?"
     }
   },
   "beta": {
@@ -327,7 +327,8 @@
     "description": "Be among the first to try MICA! Register for our beta program and get a free smart sensor to control and optimize your water consumption.",
     "hero": {
       "title": "Join the beta program!",
-      "text": "We are in the midst of the development phase, and with the support of the Barcelona City Council, we are working hard to make MICA a reality. Sign up today to receive the sensor and installation for free and be the first to try the system. Just leave us your email, and we will keep you updated."
+      "text": "We are in the midst of the development phase, and with the support of the Barcelona City Council, we are working hard to make MICA a reality. Sign up today to receive the sensor and installation for free and be the first to try the system. Just leave us your email, and we will keep you updated.",
+      "cta": "Register"
     },
     "benefits": {
       "title": "Discover the advantages...",
