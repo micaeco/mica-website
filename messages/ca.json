@@ -36,6 +36,7 @@
     "days-ago": "fa {days} dies",
     "delete": "eliminar",
     "deleting": "eliminant",
+    "documents": "documents",
     "edit": "editar",
     "editing": "editant",
     "email": "correu electrònic",
@@ -527,5 +528,23 @@
   },
   "verification": {
     "title": "Verificació del correu"
+  },
+  "cookies": {
+    "hero": {
+      "title": "Les úniques cookies que utilitzem... <orange>són per menjar!</orange>",
+      "description": "Benvinguts a cookies.mica.eco, un projecte creatiu i solidari vinculat a l'associació MICA ECO, que promou la gestió sostenible de l'aigua i la consciència ambiental.",
+      "faq1": {
+        "question": "Que oferiu?",
+        "answer": "Oferim galetes artesanals i personalitzades per regals, empreses i esdeveniments. Cada galeta és única, decorada amb cura i pensada per gaudir en ocasions especials."
+      },
+      "faq2": {
+        "question": "A on van els beneficis",
+        "answer": "Els beneficis de la venda de les nostres galetes es destinen íntegrament a l’associació. Gràcies a la nostra app, els usuaris de MICA ECO podran convertir els punts obtinguts amb l’estalvi d’aigua en donacions a les ONGs que més els inspirin."
+      },
+      "faq3": {
+        "question": "Feu servir cookies?",
+        "answer": "La política de privacitat de MICA ECO garanteix que no fem servir cookies digitals per rastrejar-te. En canvi, les úniques cookies que trobaràs són les que pots tastar!"
+      }
+    }
   }
 }

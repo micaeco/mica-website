@@ -36,6 +36,7 @@
     "days-ago": "{days} days ago",
     "delete": "delete",
     "deleting": "deleting",
+    "documents": "documents",
     "edit": "edit",
     "editing": "editing",
     "email": "email",
@@ -526,5 +527,23 @@
     "title": "Email verification",
     "success": "Your email has been successfully verified!",
     "error": "There was a problem verifying your email. Please try again or contact support."
+  },
+  "cookies": {
+    "hero": {
+      "title": "The only cookies we use... <orange>are for eating!</orange>",
+      "description": "Welcome to cookies.mica.eco, a creative and solidarity project linked to MICA ECO association, which promotes sustainable water management and environmental awareness.",
+      "faq1": {
+        "question": "What do you offer?",
+        "answer": "We offer artisanal and customized cookies for gifts, companies and events. Each cookie is unique, carefully decorated and designed to be enjoyed on special occasions."
+      },
+      "faq2": {
+        "question": "Where do the profits go?",
+        "answer": "The profits from the sale of our cookies go entirely to the association. Thanks to our app, MICA ECO users will be able to convert points earned from water savings into donations to the NGOs that inspire them the most."
+      },
+      "faq3": {
+        "question": "Do you use cookies?",
+        "answer": "MICA ECO's privacy policy ensures that we don't use digital cookies to track you. Instead, the only cookies you'll find are the ones you can taste!"
+      }
+    }
   }
 }

@@ -36,6 +36,7 @@
     "days-ago": "hace {days} días",
     "delete": "eliminar",
     "deleting": "eliminando",
+    "documents": "documentos",
     "edit": "editar",
     "editing": "editando",
     "email": "correo electrónico",
@@ -264,7 +265,7 @@
           "text": "Consigue consejos personalizados y fáciles de accionar cuando más los necesitas para ahorrar agua y dinero."
         }
       },
-      "cta": "Cómo funciona?"
+      "cta": "¿Cómo funciona?"
     },
     "problem": {
       "title": "¿Sabías que...",
@@ -529,5 +530,23 @@
     "title": "Verificación del correo",
     "success": "¡Tu correo ha sido verificado con éxito!",
     "error": "Hubo un problema al verificar tu correo. Por favor, inténtalo de nuevo o contacta con soporte."
+  },
+  "cookies": {
+    "hero": {
+      "title": "Las únicas cookies que usamos... <orange>¡son para comer!</orange>",
+      "description": "Bienvenido a cookies.mica.eco, un proyecto creativo y solidario vinculado a la asociación MICA ECO, que promueve la gestión sostenible del agua y la conciencia medioambiental.",
+      "faq1": {
+        "question": "¿Qué ofrecéis?",
+        "answer": "Ofrecemos galletas artesanales y personalizadas para regalos, empresas y eventos. Cada galleta es única, cuidadosamente decorada y diseñada para ser disfrutada en ocasiones especiales."
+      },
+      "faq2": {
+        "question": "¿A dónde van los beneficios?",
+        "answer": "Los beneficios de la venta de nuestras galletas van íntegramente a la asociación. Gracias a nuestra app, los usuarios de MICA ECO podrán convertir los puntos ganados por el ahorro de agua en donaciones a las ONGs que más les inspiren."
+      },
+      "faq3": {
+        "question": "¿Usáis cookies?",
+        "answer": "La política de privacidad de MICA ECO garantiza que no utilizamos cookies digitales para rastrearte. ¡En cambio, las únicas cookies que encontrarás son las que puedes saborear!"
+      }
+    }
   }
 }
