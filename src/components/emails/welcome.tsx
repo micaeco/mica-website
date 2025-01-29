@@ -28,19 +28,7 @@ export default function WelcomeEmail({ messages = en, locale = "en", name = "Ana
 
   return (
     <Layout lang={locale} className="mx-auto max-w-5xl rounded-lg p-4">
-      <Section className="relative overflow-hidden rounded-lg p-8">
-        <Img
-          src={`${baseUrl}/images/welcome-hero.webp`}
-          alt="MICA App and Sensor"
-          className="desktop absolute inset-0 -z-10 h-full w-full object-cover object-center"
-        />
-
-        <Img
-          src={`${baseUrl}/images/welcome-hero-mobile.webp`}
-          alt="MICA Gradient"
-          className="mobile absolute inset-0 -z-10 h-full w-full object-cover object-center"
-        />
-
+      <Section className="rounded-lg bg-slate-200 p-8">
         <Img src={`${baseUrl}/logos/logo-dark.webp`} width="60" alt="MICA" className="mb-6" />
         <Text className="mb-4 text-2xl font-bold">{t("emails.welcome.title", { name })}</Text>
 

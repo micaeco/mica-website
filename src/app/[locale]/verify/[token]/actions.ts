@@ -1,7 +1,7 @@
 "use server";
 
-import { getMessages } from "next-intl/server";
-import { render } from "@react-email/render";
+// import { getMessages } from "next-intl/server";
+// import { render } from "@react-email/render";
 
 import { env } from "@/lib/env";
 import {
@@ -15,7 +15,7 @@ import { SheetsTableService } from "@/services/db/database.sheets";
 import { SESEmailService } from "@/services/email/email.ses";
 import { ErrorKey, SuccessKey } from "@/types/errors";
 import { Lead, Token } from "@/types/lead";
-import WelcomeEmail from "@/components/emails/welcome";
+// import WelcomeEmail from "@/components/emails/welcome";
 
 export async function verifyLead(
   token: string
@@ -83,18 +83,18 @@ export async function verifyLead(
 
     await leadsTable.update(lead.id, { isVerified: true });
 
-    const messages = (await getMessages()) as unknown as IntlMessages;
-    await emailService.send(
-      lead.email,
-      "noreply@mica.eco",
-      messages.emails.welcome.subject,
-      await render(WelcomeEmail({ messages, locale: lead.locale, name: lead.name }), {
-        plainText: true,
-      }),
-      await render(WelcomeEmail({ messages, locale: lead.locale, name: lead.name }), {
-        pretty: true,
-      })
-    );
+    // const messages = (await getMessages()) as unknown as IntlMessages;
+    // await emailService.send(
+    //   lead.email,
+    //   "noreply@mica.eco",
+    //   messages.emails.welcome.subject,
+    //   await render(WelcomeEmail({ messages, locale: lead.locale, name: lead.name }), {
+    //     plainText: true,
+    //   }),
+    //   await render(WelcomeEmail({ messages, locale: lead.locale, name: lead.name }), {
+    //     pretty: true,
+    //   })
+    // );
 
     return { success: true, code: "LEAD_VERIFIED" };
   } catch (error) {
