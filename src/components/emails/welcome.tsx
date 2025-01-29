@@ -8,54 +8,48 @@ import { env } from "@/lib/env";
 interface Props {
   messages: IntlMessages;
   locale: string;
+  name: string;
 }
 
-export default function WelcomeEmail({ messages = en, locale = "en" }: Props) {
-  const t = createTranslator({ messages, locale });
-  console.log(t);
-
+export default function WelcomeEmail({ messages = en, locale = "en", name = "Ana" }: Props) {
   const baseUrl = env.appUrl;
 
+  const t = createTranslator({ messages, locale });
+
   const team = [
-    { src: "marta", name: "Marta", role: "Producte" },
-    { src: "miquel", name: "Miquel", role: "Dades" },
-    { src: "irene", name: "Irene", role: "Marquèting" },
-    { src: "jaime", name: "Jaime", role: "Operacions" },
-    { src: "lucia", name: "Lucía", role: "Hardware" },
-    { src: "gabi", name: "Gabriel", role: "Software" },
-    { src: "gael", name: "Gael", role: "Legal" },
+    { src: "marta", name: "Marta", department: t("about.our-team.members.marta.department") },
+    { src: "miquel", name: "Miquel", department: t("about.our-team.members.miquel.department") },
+    { src: "irene", name: "Irene", department: t("about.our-team.members.irene.department") },
+    { src: "jaime", name: "Jaime", department: t("about.our-team.members.jaime.department") },
+    { src: "lucia", name: "Lucía", department: t("about.our-team.members.lucia.department") },
+    { src: "gabi", name: "Gabriel", department: t("about.our-team.members.gabriel.department") },
+    { src: "gael", name: "Gael", department: t("about.our-team.members.gael.department") },
   ];
 
   return (
     <Layout lang={locale} className="mx-auto max-w-5xl rounded-lg p-4">
       <Section className="relative overflow-hidden rounded-lg p-8">
         <Img
-          src={`${baseUrl}/images/welcome-hero.png`}
+          src={`${baseUrl}/images/welcome-hero.webp`}
           alt="MICA App and Sensor"
           className="desktop absolute inset-0 -z-10 h-full w-full object-cover object-center"
         />
 
         <Img
-          src={`${baseUrl}/images/welcome-hero-mobile.png`}
+          src={`${baseUrl}/images/welcome-hero-mobile.webp`}
           alt="MICA Gradient"
           className="mobile absolute inset-0 -z-10 h-full w-full object-cover object-center"
         />
 
-        <Img src={`${baseUrl}/logos/logo-dark.png`} width="60" alt="MICA" className="mb-6" />
-        <Text className="mb-4 text-2xl font-bold">Gràcies per unir-te a MICA, Ana!</Text>
+        <Img src={`${baseUrl}/logos/logo-dark.webp`} width="60" alt="MICA" className="mb-6" />
+        <Text className="mb-4 text-2xl font-bold">{t("emails.welcome.title", { name })}</Text>
 
         <Row>
           <Column>
-            <Text className="mb-4 max-w-[400px]">
-              Ens fa molta il·lusió comptar amb el teu interès i compartir la nostra visió amb tu:
-              una ciutat empoderada amb eines intel·ligents per millorar la gestió de l&apos;aigua a
-              les llars.
-            </Text>
-            <Text className="mb-6 max-w-[400px]">
-              Amb la teva MICA, estem un pas més a prop d&apos;un futur més sostenible.
-            </Text>
+            <Text className="mb-4 max-w-[400px]">{t("emails.welcome.vision.description")}</Text>
+            <Text className="mb-6 max-w-[400px]">{t("emails.welcome.vision.impact")}</Text>
             <Button className="rounded-md bg-brand-primary px-6 py-2 text-white" href={baseUrl}>
-              Descobreix MICA
+              {t("emails.welcome.vision.cta")}
             </Button>
           </Column>
         </Row>
@@ -63,67 +57,71 @@ export default function WelcomeEmail({ messages = en, locale = "en" }: Props) {
 
       {/* Introduction */}
       <Section className="py-8">
-        <Text className="mb-4 text-center text-2xl font-bold">Encantats de conèixer-te!</Text>
-        <Text className="mb-8 text-center">
-          Som un grup d&apos;enginyers barcelonins compromesos amb fer front al repte de
-          l&apos;escassetat d&apos;aigua a la ciutat. Volem maximitzar el potencial de les noves
-          tecnologies per oferir als residents urbans dades detallades, accionables i
-          personalitzades que els ajudin a optimitzar el seu consum d&apos;aigua.
+        <Text className="mb-4 text-center text-2xl font-bold">
+          {t("emails.welcome.intro.title")}
         </Text>
+        <Text className="mb-8 text-center">{t("emails.welcome.intro.description")}</Text>
       </Section>
 
       {/* Team */}
       <Section className="mb-8">
         <Row className="desktop w-full">
-          {team.map(({ src, name, role }) => (
+          {team.map(({ src, name, department }) => (
             <Column key={src} className="px-1">
               <Img
-                src={`${baseUrl}/images/${src}.png`}
+                src={`${baseUrl}/images/${src}.webp`}
                 width="135"
                 alt={name}
                 className="rounded-lg"
               />
-              <Text className="text-center font-bold">{name}</Text>
-              <Text className="text-center">{role}</Text>
+              <Text className="text-center font-bold leading-none">{name}</Text>
+              <Text className="text-center leading-none">{department}</Text>
             </Column>
           ))}
         </Row>
         <Column className="mobile">
-          {team.map(({ src, name, role }) => (
-            <Row key={src} className="p-1">
-              <Img
-                src={`${baseUrl}/images/${src}.png`}
-                width="200"
-                alt={name}
-                className="mx-auto rounded-lg"
-              />
-              <Text className="text-center font-bold">{name}</Text>
-              <Text className="text-center">{role}</Text>
-            </Row>
-          ))}
+          {(() => {
+            const rows = [];
+            for (let i = 0; i < team.length; i += 3) {
+              const rowMembers = team.slice(i, i + 3);
+              rows.push(
+                <Row key={i}>
+                  {rowMembers.map(({ src, name, department }) => (
+                    <Column key={src} className="p-1">
+                      <Img
+                        src={`${baseUrl}/images/${src}.webp`}
+                        width="100"
+                        alt={name}
+                        className="mx-auto rounded-lg"
+                      />
+                      <Text className="text-center font-bold leading-none">{name}</Text>
+                      <Text className="text-center leading-none">{department}</Text>
+                    </Column>
+                  ))}
+                  {[...Array(3 - rowMembers.length)].map((_, index) => (
+                    <Column key={`empty-${i}-${index}`} className="p-1">
+                      {/* Empty column for grid alignment */}
+                    </Column>
+                  ))}
+                </Row>
+              );
+            }
+            return rows;
+          })()}
         </Column>
       </Section>
 
       {/* Development Status */}
-      <Section className="mb-8 rounded-lg p-8">
+      <Section className="mb-8 rounded-lg bg-gray-100 p-8">
         <Section className="desktop">
           <Column>
-            <Text className="mb-4 text-xl font-bold">
-              De moment, estem en fase de desenvolupament...
-            </Text>
-            <Text className="mb-4">
-              Actualment, estem en plena fase de desenvolupament del projecte, i amb el suport
-              potencial d&apos;una subvenció de l&apos;Ajuntament de Barcelona, estem treballant
-              intensament per fer-lo realitat.
-            </Text>
-            <Text>
-              Sabem que amb la teva ajuda, podem aconseguir-ho! Busquem socis estratègics, lampistes
-              associats per a la instal·lació del sensor i usuaris beta compromesos.
-            </Text>
+            <Text className="mb-4 text-xl font-bold">{t("emails.welcome.development.title")}</Text>
+            <Text className="mb-4">{t("emails.welcome.development.status")}</Text>
+            <Text>{t("emails.welcome.development.collaboration")}</Text>
           </Column>
           <Column>
             <Img
-              src={`${baseUrl}/images/design-process-circle.png`}
+              src={`${baseUrl}/images/design-process-circle.webp`}
               alt="Development Status"
               width="400"
             />
@@ -132,22 +130,13 @@ export default function WelcomeEmail({ messages = en, locale = "en" }: Props) {
 
         <Section className="mobile">
           <Row>
-            <Text className="mb-4 text-xl font-bold">
-              De moment, estem en fase de desenvolupament...
-            </Text>
-            <Text className="mb-4">
-              Actualment, estem en plena fase de desenvolupament del projecte, i amb el suport
-              potencial d&apos;una subvenció de l&apos;Ajuntament de Barcelona, estem treballant
-              intensament per fer-lo realitat.
-            </Text>
-            <Text>
-              Sabem que amb la teva ajuda, podem aconseguir-ho! Busquem socis estratègics, lampistes
-              associats per a la instal·lació del sensor i usuaris beta compromesos.
-            </Text>
+            <Text className="mb-4 text-xl font-bold">{t("emails.welcome.development.title")}</Text>
+            <Text className="mb-4">{t("emails.welcome.development.status")}</Text>
+            <Text>{t("emails.welcome.development.collaboration")}</Text>
           </Row>
           <Row>
             <Img
-              src={`${baseUrl}/images/design-process-circle.png`}
+              src={`${baseUrl}/images/design-process-circle.webp`}
               alt="Development Status"
               width="250"
             />
@@ -156,53 +145,61 @@ export default function WelcomeEmail({ messages = en, locale = "en" }: Props) {
 
         <Section className="text-center">
           <Button
-            className="mt-6 rounded-md bg-brand-secondary px-6 py-2 font-bold"
+            className="mt-6 rounded-md bg-brand-secondary px-6 py-2 font-bold text-brand-primary"
             href={`${baseUrl}/contact`}
           >
-            Contacta&apos;ns
+            {t("emails.welcome.development.cta")}
           </Button>
         </Section>
       </Section>
 
       {/* What to Expect */}
       <Section className="mb-8">
-        <Text className="mb-8 text-center text-xl font-bold">Mentrestant, què pots esperar?</Text>
+        <Text className="mb-8 text-center text-xl font-bold">
+          {t("emails.welcome.expectations.title")}
+        </Text>
         <Section className="desktop">
           <Row>
             <Column className="px-4 text-center">
               <Img
-                src={`${baseUrl}/icons/data-analysis.png`}
+                src={`${baseUrl}/icons/data-analysis.webp`}
                 width="70"
                 alt="Updates"
                 className="mx-auto mb-4"
               />
-              <Text className="mb-2 font-bold">Actualitzacions regulars</Text>
+              <Text className="mb-2 font-bold">
+                {t("emails.welcome.expectations.updates.title")}
+              </Text>
               <Text className="text-sm">
-                T&apos;anirem informant sobre el progrés del projecte i com pots participar-hi.
+                {t("emails.welcome.expectations.updates.description")}
               </Text>
             </Column>
             <Column className="px-4 text-center">
               <Img
-                src={`${baseUrl}/icons/water-meter.png`}
+                src={`${baseUrl}/icons/water-meter.webp`}
                 width="70"
                 alt="Early access"
                 className="mx-auto mb-4"
               />
-              <Text className="mb-2 font-bold">Accés anticipat</Text>
+              <Text className="mb-2 font-bold">
+                {t("emails.welcome.expectations.earlyAccess.title")}
+              </Text>
               <Text className="text-sm">
-                Quan estiguem llestos per llançar MICA, seràs el primer en saber-ho.
+                {t("emails.welcome.expectations.earlyAccess.description")}
               </Text>
             </Column>
             <Column className="px-4 text-center">
               <Img
-                src={`${baseUrl}/icons/users.png`}
+                src={`${baseUrl}/icons/users.webp`}
                 width="70"
                 alt="Community"
                 className="mx-auto mb-4"
               />
-              <Text className="mb-2 font-bold">Implicació de la comunitat</Text>
+              <Text className="mb-2 font-bold">
+                {t("emails.welcome.expectations.community.title")}
+              </Text>
               <Text className="text-sm">
-                Volem construir MICA amb tu al centre! T&apos;animem a connectar amb la comunitat.
+                {t("emails.welcome.expectations.community.description")}
               </Text>
             </Column>
           </Row>
@@ -211,48 +208,50 @@ export default function WelcomeEmail({ messages = en, locale = "en" }: Props) {
         <Section className="mobile text-center">
           <Row className="px-4">
             <Img
-              src={`${baseUrl}/icons/data-analysis.png`}
+              src={`${baseUrl}/icons/data-analysis.webp`}
               width="70"
               alt="Updates"
               className="mx-auto mb-4"
             />
-            <Text className="mb-2 font-bold">Actualitzacions regulars</Text>
-            <Text className="text-sm">
-              T&apos;anirem informant sobre el progrés del projecte i com pots participar-hi.
-            </Text>
+            <Text className="mb-2 font-bold">{t("emails.welcome.expectations.updates.title")}</Text>
+            <Text className="text-sm">{t("emails.welcome.expectations.updates.description")}</Text>
           </Row>
           <Row className="px-4 text-center">
             <Img
-              src={`${baseUrl}/icons/water-meter.png`}
+              src={`${baseUrl}/icons/water-meter.webp`}
               width="70"
               alt="Early access"
               className="mx-auto mb-4"
             />
-            <Text className="mb-2 font-bold">Accés anticipat</Text>
+            <Text className="mb-2 font-bold">
+              {t("emails.welcome.expectations.earlyAccess.title")}
+            </Text>
             <Text className="text-sm">
-              Quan estiguem llestos per llançar MICA, seràs el primer en saber-ho.
+              {t("emails.welcome.expectations.earlyAccess.description")}
             </Text>
           </Row>
           <Row className="px-4 text-center">
             <Img
-              src={`${baseUrl}/icons/users.png`}
+              src={`${baseUrl}/icons/users.webp`}
               width="70"
               alt="Community"
               className="mx-auto mb-4"
             />
-            <Text className="mb-2 font-bold">Implicació de la comunitat</Text>
+            <Text className="mb-2 font-bold">
+              {t("emails.welcome.expectations.community.title")}
+            </Text>
             <Text className="text-sm">
-              Volem construir MICA amb tu al centre! T&apos;animem a connectar amb la comunitat.
+              {t("emails.welcome.expectations.community.description")}
             </Text>
           </Row>
         </Section>
 
         <Section className="text-center">
           <Button
-            className="mt-8 rounded-md bg-brand-secondary px-6 py-2 text-center font-bold"
+            className="mt-8 rounded-md bg-brand-secondary px-6 py-2 text-center font-bold text-brand-primary"
             href="https://app.mica.eco"
           >
-            Prova la demo
+            {t("emails.welcome.expectations.cta")}
           </Button>
         </Section>
       </Section>
@@ -261,23 +260,23 @@ export default function WelcomeEmail({ messages = en, locale = "en" }: Props) {
 
       {/* Footer */}
       <Section className="pt-8">
-        <Text className="mb-4">Gràcies per ser part d&apos;aquest projecte!</Text>
-        <Text className="mb-8 font-bold">L&apos;equip de MICA</Text>
-        <Text className="font-bold">Segueix-nos per saber-ne més:</Text>
+        <Text className="mb-4">{t("emails.welcome.footer.thanks")}</Text>
+        <Text className="mb-8 font-bold">{t("emails.welcome.footer.team")}</Text>
+        <Text className="font-bold">{t("emails.welcome.footer.social")}</Text>
         <Row className="float-left w-40">
           <Column>
             <Link href="https://x.com/micaeco_bcn" className="mx-2">
-              <Img src={`${baseUrl}/icons/twitter.png`} width="35" alt="Twitter" />
+              <Img src={`${baseUrl}/icons/twitter-circle.webp`} width="35" alt="Twitter" />
             </Link>
           </Column>
           <Column>
             <Link href="https://linkedin.com/company/micaeco" className="mx-2">
-              <Img src={`${baseUrl}/icons/linkedin.png`} width="35" alt="Linkedin" />
+              <Img src={`${baseUrl}/icons/linkedin-circle.webp`} width="35" alt="Linkedin" />
             </Link>
           </Column>
           <Column>
             <Link href="https://github.com/micaeco" className="mx-2">
-              <Img src={`${baseUrl}/icons/github.png`} width="35" alt="GitHub" />
+              <Img src={`${baseUrl}/icons/github.webp`} width="35" alt="GitHub" />
             </Link>
           </Column>
         </Row>

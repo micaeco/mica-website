@@ -27,7 +27,7 @@ function SocialLinks({ socials }: { socials: SocialLink[] }) {
       {socials[0] && (
         <Link href={socials[0].url} target="_blank" rel="noopener noreferrer">
           <Image
-            src={`/icons/${socials[0].platform}-icon.svg`}
+            src={`/icons/${socials[0].platform}.webp`}
             alt={`${socials[0].platform} icon`}
             width={15}
             height={15}
@@ -39,7 +39,7 @@ function SocialLinks({ socials }: { socials: SocialLink[] }) {
       {socials[1] && (
         <Link href={socials[1].url} target="_blank" rel="noopener noreferrer">
           <Image
-            src={`/icons/${socials[1].platform}-icon.svg`}
+            src={`/icons/${socials[1].platform}.webp`}
             alt={`${socials[1].platform} icon`}
             width={15}
             height={15}

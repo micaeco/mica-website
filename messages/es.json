@@ -179,6 +179,46 @@
       "regards": "Saludos,",
       "teamSignature": "El equipo de MICA",
       "automaticNote": "Este es un correo automático. Por favor, no respondas a este mensaje."
+    },
+    "welcome": {
+      "subject": "¡Bienvenido a MICA!",
+      "title": "¡Gracias por unir-te a MICA, {name}!",
+      "vision": {
+        "description": "Nos hace mucha ilusión contar con tu interés y compartir nuestra visión contigo: una ciudad empoderada con herramientas inteligentes para mejorar la gestión del agua en los hogares.",
+        "impact": "Con tu MICA, estamos un paso más cerca de un futuro más sostenible.",
+        "cta": "Descubre MICA"
+      },
+      "intro": {
+        "title": "¡Encantados de conocerte!",
+        "description": "Somos un grupo de ingenieros barceloneses comprometidos con hacer frente al reto de la escasez de agua en la ciudad. Queremos maximizar el potencial de las nuevas tecnologías para ofrecer a los residentes urbanos datos detallados, accionables y personalizados que les ayuden a optimizar su consumo de agua."
+      },
+      "development": {
+        "title": "De momento, estamos en fase de desarrollo...",
+        "status": "Actualmente, estamos en plena fase de desarrollo del proyecto, y con el apoyo potencial de una subvención del Ayuntamiento de Barcelona, estamos trabajando intensamente para hacerlo realidad.",
+        "collaboration": "¡Sabemos que con tu ayuda, podemos conseguirlo! Buscamos socios estratégicos, fontaneros asociados para la instalación del sensor y usuarios beta comprometidos.",
+        "cta": "Contáctanos"
+      },
+      "expectations": {
+        "title": "Mientras tanto, ¿qué puedes esperar?",
+        "updates": {
+          "title": "Actualizaciones regulares",
+          "description": "Te iremos informando sobre el progreso del proyecto y cómo puedes participar."
+        },
+        "earlyAccess": {
+          "title": "Acceso anticipado",
+          "description": "Cuando estemos listos para lanzar MICA, serás el primero en saberlo."
+        },
+        "community": {
+          "title": "Implicación de la comunidad",
+          "description": "¡Queremos construir MICA contigo en el centro! Te animamos a conectar con la comunidad."
+        },
+        "cta": "Prueba la demo"
+      },
+      "footer": {
+        "thanks": "¡Gracias por ser parte de este proyecto!",
+        "team": "El equipo de MICA",
+        "social": "Síguenos para saber más:"
+      }
     }
   },
   "nav-links": {
@@ -352,27 +392,38 @@
       "members": {
         "jaime": {
           "role": "Dirección y Operaciones",
-          "studies": "Ingeniero Industrial y MBA"
+          "studies": "Ingeniero Industrial y MBA",
+          "department": "Operaciones"
         },
         "miquel": {
           "role": "Responsable de Datos e IA",
-          "studies": "Ingeniero de Datos"
+          "studies": "Ingeniero de Datos",
+          "department": "Datos"
         },
         "lucia": {
           "role": "Responsable de Hardware",
-          "studies": "Ingeniera Electrónica"
+          "studies": "Ingeniera Electrónica",
+          "department": "Hardware"
         },
         "marta": {
           "role": "Diseño del Producto",
-          "studies": "Ingeniera de Diseño Industrial"
+          "studies": "Ingeniera de Diseño Industrial",
+          "department": "Producto"
         },
         "irene": {
           "role": "Experiencia del Usuario y Marketing",
-          "studies": "Física y Formación en Datos e IA"
+          "studies": "Física y Formación en Datos e IA",
+          "department": "Marketing"
         },
         "gabriel": {
-          "role": "Desarrollo de software",
-          "studies": "Ingeniero Informático"
+          "role": "Desarrollo de Software",
+          "studies": "Ingeniero Informático",
+          "department": "Software"
+        },
+        "gael": {
+          "role": "Soporte Legal",
+          "studies": "Derecho",
+          "department": "Legal"
         }
       }
     },

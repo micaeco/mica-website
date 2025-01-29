@@ -61,6 +61,16 @@ export default function Layout({
           fontWeight={400}
           fontStyle="normal"
         />
+        <Font
+          fontFamily="Roboto"
+          fallbackFontFamily="Arial"
+          webFont={{
+            url: "https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2",
+            format: "woff2",
+          }}
+          fontWeight={600}
+          fontStyle="normal"
+        />
       </Head>
       <Tailwind config={emailTailwindConfig}>
         <Body

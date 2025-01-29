@@ -1,7 +1,7 @@
 "use server";
 
-import { SanityCmsService } from "@/services/cms.sanity";
-import { SlackNotificationService } from "@/services/notifications.slack";
+import { SanityCmsService } from "@/services/cms/cms.sanity";
+import { SlackNotificationService } from "@/services/notification/notifications.slack";
 import { BlogComment, BlogPost } from "@/types/blog";
 import { ErrorKey, SuccessKey } from "@/types/errors";
 

@@ -1,6 +1,6 @@
 "use server";
 
-import { SanityCmsService } from "@/services/cms.sanity";
+import { SanityCmsService } from "@/services/cms/cms.sanity";
 import { PrivacyPolicy } from "@/types/privacy-policy";
 
 export async function getPrivacyPolicy(locale: string): Promise<PrivacyPolicy> {

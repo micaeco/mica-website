@@ -20,6 +20,7 @@ export async function generateMetadata({
   params: { locale: string };
 }): Promise<Metadata> {
   const metadata = await getTranslations({ locale, namespace: "metadata" });
+  const keywords = await metadata.raw("keywords");
 
   return {
     metadataBase: new URL(env.appUrl),
@@ -28,7 +29,7 @@ export async function generateMetadata({
       template: "%s - MICA",
     },
     description: metadata("description"),
-    keywords: metadata("keywords"),
+    keywords,
     openGraph: {
       title: metadata("title"),
       description: metadata("description"),
@@ -56,8 +57,12 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={cn(montserrat.className, "antialiased")}>
-      <body suppressHydrationWarning>
+    <html
+      suppressHydrationWarning
+      lang={locale}
+      className={cn(montserrat.className, "antialiased")}
+    >
+      <body>
         <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
       </body>
     </html>

@@ -19,7 +19,7 @@ export default function VerificationEmail({ messages = en, locale = "en", token 
   const t = createTranslator({ messages, locale });
 
   return (
-    <Layout lang={locale} className="py-10">
+    <Layout lang={locale} className="bg-gray-100 py-10">
       <Container className="max-w-xl rounded-md bg-white p-10 shadow-sm">
         {/* Header */}
         <Text className="mb-8 text-center text-2xl font-semibold">

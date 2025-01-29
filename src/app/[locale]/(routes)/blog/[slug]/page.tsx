@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { getLocale } from "next-intl/server";
 
-import { SanityCmsService } from "@/services/cms.sanity";
+import { SanityCmsService } from "@/services/cms/cms.sanity";
 import BlogPost from "./_components/blog-post";
 
 type Props = {

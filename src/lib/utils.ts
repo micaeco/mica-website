@@ -1,6 +1,6 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { enUS, es, fr, de, it, ja, ca } from "date-fns/locale";
+import { enUS, es, fr, de, it, ja, ca, Locale } from "date-fns/locale";
 import { BlogComment } from "@/types/blog";
 
 export const DateFnsLocale: { [key: string]: Locale } = {

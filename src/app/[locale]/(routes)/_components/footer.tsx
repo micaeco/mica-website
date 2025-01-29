@@ -65,7 +65,7 @@ function FooterBottom({ currentYear, copyright, socialLinks }: FooterBottomProps
       <div>
         <Link href="/" className="mb-2 flex items-center gap-2">
           <Image
-            src="/logos/logo-dark.svg"
+            src="/logos/logo-dark.webp"
             alt="MICA Logo"
             width={30}
             height={30}
@@ -83,7 +83,7 @@ function FooterBottom({ currentYear, copyright, socialLinks }: FooterBottomProps
         <Button size="icon" variant="ghost" className="group" asChild>
           <Link href={socialLinks[0].url} target="_blank" rel="noopener noreferrer">
             <Image
-              src="/icons/x-icon.svg"
+              src="/icons/x.webp"
               alt="x icon"
               width={20}
               height={20}
@@ -95,7 +95,7 @@ function FooterBottom({ currentYear, copyright, socialLinks }: FooterBottomProps
         <Button size="icon" variant="ghost" className="group" asChild>
           <Link href={socialLinks[1].url} target="_blank" rel="noopener noreferrer">
             <Image
-              src="/icons/linkedin-icon.svg"
+              src="/icons/linkedin.webp"
               alt="linkedin icon"
               width={20}
               height={20}
@@ -107,7 +107,7 @@ function FooterBottom({ currentYear, copyright, socialLinks }: FooterBottomProps
         <Button size="icon" variant="ghost" className="group" asChild>
           <Link href={socialLinks[2].url} target="_blank" rel="noopener noreferrer">
             <Image
-              src="/icons/github-icon.svg"
+              src="/icons/github.webp"
               alt="github icon"
               width={20}
               height={20}
@@ -119,7 +119,7 @@ function FooterBottom({ currentYear, copyright, socialLinks }: FooterBottomProps
         <Button size="icon" variant="ghost" className="group" asChild>
           <Link href={socialLinks[3].url} target="_blank" rel="noopener noreferrer">
             <Image
-              src="/icons/youtube-icon.svg"
+              src="/icons/youtube.webp"
               alt="youtube icon"
               width={20}
               height={20}

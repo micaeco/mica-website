@@ -14,7 +14,7 @@ export default function Verification() {
   const token = params.token as string;
 
   const [isLoading, setIsLoading] = useState(true);
-  const [errorCode, setErrorCode] = useState<ErrorKey>("UNKNOWN_ERROR");
+  const [errorCode, setErrorCode] = useState<ErrorKey | null>();
 
   const t = useTranslations("verification");
   const tErrors = useTranslations("errors");

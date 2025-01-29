@@ -35,4 +35,10 @@ export const env = {
         ? process.env.SLACK_TESTS_CHANNEL_ID!
         : process.env.SLACK_WEBSITE_CHANNEL_ID!,
   },
+
+  ses: {
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID!,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY!,
+    region: process.env.AWS_SES_REGION!,
+  },
 } as const;

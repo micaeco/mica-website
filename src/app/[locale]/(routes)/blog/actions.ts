@@ -1,6 +1,6 @@
 "use server";
 
-import { SanityCmsService } from "@/services/cms.sanity";
+import { SanityCmsService } from "@/services/cms/cms.sanity";
 import { BlogPost } from "@/types/blog";
 import { ErrorKey, SuccessKey } from "@/types/errors";
 

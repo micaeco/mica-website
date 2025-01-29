@@ -1,8 +1,8 @@
 "use server";
 
 import { env } from "@/lib/env";
-import { SheetsTableService } from "@/services/database.sheets";
-import { SlackNotificationService } from "@/services/notifications.slack";
+import { SheetsTableService } from "@/services/db/database.sheets";
+import { SlackNotificationService } from "@/services/notification/notifications.slack";
 import { ErrorKey, SuccessKey } from "@/types/errors";
 import { AppError } from "@/lib/constants";
 import { ContactForm, Contact } from "@/types/contact";

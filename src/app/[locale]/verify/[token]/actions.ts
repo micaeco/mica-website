@@ -1,5 +1,8 @@
 "use server";
 
+import { getMessages } from "next-intl/server";
+import { render } from "@react-email/render";
+
 import { env } from "@/lib/env";
 import {
   tokenExpirationDays,
@@ -8,9 +11,11 @@ import {
   ServerError,
   AppError,
 } from "@/lib/constants";
-import { SheetsTableService } from "@/services/database.sheets";
+import { SheetsTableService } from "@/services/db/database.sheets";
+import { SESEmailService } from "@/services/email/email.ses";
 import { ErrorKey, SuccessKey } from "@/types/errors";
 import { Lead, Token } from "@/types/lead";
+import WelcomeEmail from "@/components/emails/welcome";
 
 export async function verifyLead(
   token: string
@@ -30,6 +35,7 @@ export async function verifyLead(
       "locale",
       "isVerified",
     ]);
+    const emailService = new SESEmailService();
 
     // Find token
     const tokens = await tokensTable.query({
@@ -73,7 +79,23 @@ export async function verifyLead(
       throw new ServerError("Lead not found for token");
     }
 
-    await leadsTable.update(leads[0].id, { isVerified: true });
+    const lead = leads[0];
+
+    await leadsTable.update(lead.id, { isVerified: true });
+
+    const messages = (await getMessages()) as unknown as IntlMessages;
+    await emailService.send(
+      lead.email,
+      "noreply@mica.eco",
+      messages.emails.welcome.subject,
+      await render(WelcomeEmail({ messages, locale: lead.locale, name: lead.name }), {
+        plainText: true,
+      }),
+      await render(WelcomeEmail({ messages, locale: lead.locale, name: lead.name }), {
+        pretty: true,
+      })
+    );
+
     return { success: true, code: "LEAD_VERIFIED" };
   } catch (error) {
     console.error("Failed to verify lead:", error);

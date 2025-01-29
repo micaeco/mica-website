@@ -2,16 +2,16 @@
 
 import { randomUUID } from "crypto";
 import { render } from "@react-email/render";
+import { getMessages } from "next-intl/server";
 
 import { env } from "@/lib/env";
 import { AppError, AlreadyVerifiedError } from "@/lib/constants";
-import { GmailEmailService } from "@/services/email.gmail";
-import { SheetsTableService } from "@/services/database.sheets";
-import { SlackNotificationService } from "@/services/notifications.slack";
+import { SESEmailService } from "@/services/email/email.ses";
+import { SheetsTableService } from "@/services/db/database.sheets";
+import { SlackNotificationService } from "@/services/notification/notifications.slack";
 import { ErrorKey, SuccessKey } from "@/types/errors";
 import { Lead, Token } from "@/types/lead";
 import VerificationEmail from "@/components/emails/verification";
-import { getMessages } from "next-intl/server";
 
 export async function registerLead(
   lead: Lead
@@ -31,7 +31,7 @@ export async function registerLead(
       "locale",
       "isVerified",
     ]);
-    const emailService = new GmailEmailService();
+    const emailService = new SESEmailService();
     const notificationService = new SlackNotificationService();
 
     // Check if email is already verified
@@ -43,7 +43,7 @@ export async function registerLead(
     });
 
     if (verifiedLeads.length > 0) {
-      throw new AlreadyVerifiedError(`Email  ${lead.email} is already verified`);
+      throw new AlreadyVerifiedError(`Email ${lead.email} is already verified`);
     }
 
     // Generate verification token
@@ -60,31 +60,34 @@ export async function registerLead(
       filters: [{ field: "email", operator: "=", value: lead.email }],
     });
 
+    // Create or update lead depending if lead exists
     if (existingLeads.length > 0) {
-      // Update existing lead
       await leadsTable.update(existingLeads[0].id, {
         ...lead,
         isVerified: false,
       });
     } else {
-      // Create new lead
       await leadsTable.insert({
         ...lead,
         isVerified: false,
       });
     }
 
+    // Send verification email
     const messages = (await getMessages()) as unknown as IntlMessages;
     await emailService.send(
       lead.email,
-      await render(VerificationEmail({ messages, locale: lead.locale, token }), {
-        pretty: true,
-      }),
+      "noreply@mica.eco",
+      messages.emails.verification.title,
       await render(VerificationEmail({ messages, locale: lead.locale, token }), {
         plainText: true,
+      }),
+      await render(VerificationEmail({ messages, locale: lead.locale, token }), {
+        pretty: true,
       })
     );
 
+    // Notify website team
     await notificationService.notifyWebsiteTeam({
       title: ":tada: New lead registered!",
       body: `*Name:* ${lead.name}\n*Surname:* ${lead.surname}\n*Email:* ${lead.email}\n${lead.phone && "*Phone:*" && lead.phone && "\n"}${lead.referralSource && "*Referral Src:*" && lead.referralSource && "\n"}`,

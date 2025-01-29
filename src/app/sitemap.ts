@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { locales } from "@/i18n/routing";
 
 import { env } from "@/lib/env";
-import { SanityCmsService } from "@/services/cms.sanity";
+import { SanityCmsService } from "@/services/cms/cms.sanity";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = env.appUrl;
