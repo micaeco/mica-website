@@ -18,7 +18,10 @@ function TimelineItem({ children, date, bgColor, Icon }: TimelineItemProps) {
         <div className="max-w-8 text-right text-sm font-light">{date}</div>
         <div className={cn("h-full min-w-4 rounded-full", bgColor)} />
         <div
-          className={cn("z-10 flex min-h-10 min-w-10 items-center justify-center rounded-full", bgColor)}
+          className={cn(
+            "z-10 flex min-h-10 min-w-10 items-center justify-center rounded-full",
+            bgColor
+          )}
         >
           <Icon className="h-7 w-7 text-white" />
         </div>
@@ -46,7 +49,7 @@ export default function Timeline() {
         </TimelineItem>
 
         <TimelineItem date="JUN 24" bgColor="bg-gray-300" Icon={Settings}>
-          <h5 className="font-bold">{t("step1.title")}</h5>
+          <h5 className="font-bold">{t("step2.title")}</h5>
           <ul className="space-y-1">
             {Object.keys(t.raw("step1.items")).map((key) => (
               <li className="ml-5 list-disc" key={key}>
@@ -57,7 +60,7 @@ export default function Timeline() {
         </TimelineItem>
 
         <TimelineItem date="OCT 24" bgColor="bg-brand-secondary" Icon={Wrench}>
-          <h5 className="font-bold">{t("step1.title")}</h5>
+          <h5 className="font-bold">{t("step3.title")}</h5>
           <ul className="space-y-1">
             {Object.keys(t.raw("step1.items")).map((key) => (
               <li className="ml-5 list-disc" key={key}>
@@ -68,7 +71,7 @@ export default function Timeline() {
         </TimelineItem>
 
         <TimelineItem date="ABR 25" bgColor="bg-brand-primary" Icon={CheckCircle}>
-          <h5 className="font-bold">{t("step1.title")}</h5>
+          <h5 className="font-bold">{t("step4.title")}</h5>
           <ul className="space-y-1">
             {Object.keys(t.raw("step1.items")).map((key) => (
               <li className="ml-5 list-disc" key={key}>
@@ -79,7 +82,7 @@ export default function Timeline() {
         </TimelineItem>
 
         <TimelineItem date="OCT 25" bgColor="bg-brand-quaternary" Icon={Maximize}>
-          <h5 className="font-bold">{t("step1.title")}</h5>
+          <h5 className="font-bold">{t("step5.title")}</h5>
           <ul className="space-y-1">
             {Object.keys(t.raw("step1.items")).map((key) => (
               <li className="ml-5 list-disc" key={key}>
