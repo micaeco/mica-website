@@ -26,8 +26,8 @@ export async function generateMetadata({
 export default function Home() {
   return (
     <main>
-      <div className="flex flex-col md:h-[calc(100vh-69px)]">
-        <Hero className="h-[calc(100vh-69px)] md:flex-grow" />
+      <div className="flex min-h-[calc(100vh-64px)] flex-col">
+        <Hero className="flex-grow" />
         <Partners />
       </div>
       <Video />
