@@ -9,7 +9,7 @@ export default function Partners({ className }: { className?: string }) {
     {
       name: "BitHabitat",
       link: "https://bithabitat.barcelona/",
-      logo: "/logos/bithabitat.webp",
+      logo: "/logos/barcelona-innova.webp",
     },
     {
       name: "Ajuntament de Barcelona",
@@ -40,7 +40,10 @@ export default function Partners({ className }: { className?: string }) {
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col items-center lg:flex-row lg:items-center lg:justify-center">
           <h5 className="whitespace-nowrap capitalize italic">{common("partners")}</h5>
-          <Separator orientation="vertical" className="mx-8 hidden h-8 bg-brand-primary lg:block" />
+          <Separator
+            orientation="vertical"
+            className="mx-8 hidden h-8 bg-muted-foreground lg:block"
+          />
           <Separator
             orientation="horizontal"
             className="my-4 block w-20 bg-brand-primary lg:hidden"
@@ -57,9 +60,9 @@ export default function Partners({ className }: { className?: string }) {
                 <Image
                   src={partner.logo}
                   alt={partner.name}
-                  width={200}
-                  height={500}
-                  className="opacity-70 transition-opacity hover:opacity-100"
+                  width={180}
+                  height={100}
+                  className="px-2 opacity-70 transition-opacity hover:opacity-100 lg:px-4"
                 />
               </Link>
             ))}
