@@ -51,9 +51,9 @@ export default function Timeline() {
         <TimelineItem date="JUN 24" bgColor="bg-gray-300" Icon={Settings}>
           <h5 className="font-bold">{t("step2.title")}</h5>
           <ul className="space-y-1">
-            {Object.keys(t.raw("step1.items")).map((key) => (
+            {Object.keys(t.raw("step2.items")).map((key) => (
               <li className="ml-5 list-disc" key={key}>
-                <p>{t(`step1.items.${key}`)}</p>
+                <p>{t(`step2.items.${key}`)}</p>
               </li>
             ))}
           </ul>
@@ -62,9 +62,9 @@ export default function Timeline() {
         <TimelineItem date="OCT 24" bgColor="bg-brand-secondary" Icon={Wrench}>
           <h5 className="font-bold">{t("step3.title")}</h5>
           <ul className="space-y-1">
-            {Object.keys(t.raw("step1.items")).map((key) => (
+            {Object.keys(t.raw("step3.items")).map((key) => (
               <li className="ml-5 list-disc" key={key}>
-                <p>{t(`step1.items.${key}`)}</p>
+                <p>{t(`step3.items.${key}`)}</p>
               </li>
             ))}
           </ul>
@@ -73,9 +73,9 @@ export default function Timeline() {
         <TimelineItem date="ABR 25" bgColor="bg-brand-primary" Icon={CheckCircle}>
           <h5 className="font-bold">{t("step4.title")}</h5>
           <ul className="space-y-1">
-            {Object.keys(t.raw("step1.items")).map((key) => (
+            {Object.keys(t.raw("step4.items")).map((key) => (
               <li className="ml-5 list-disc" key={key}>
-                <p>{t(`step1.items.${key}`)}</p>
+                <p>{t(`step4.items.${key}`)}</p>
               </li>
             ))}
           </ul>
@@ -84,9 +84,9 @@ export default function Timeline() {
         <TimelineItem date="OCT 25" bgColor="bg-brand-quaternary" Icon={Maximize}>
           <h5 className="font-bold">{t("step5.title")}</h5>
           <ul className="space-y-1">
-            {Object.keys(t.raw("step1.items")).map((key) => (
+            {Object.keys(t.raw("step5.items")).map((key) => (
               <li className="ml-5 list-disc" key={key}>
-                <p>{t(`step1.items.${key}`)}</p>
+                <p>{t(`step5.items.${key}`)}</p>
               </li>
             ))}
           </ul>
