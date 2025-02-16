@@ -1,6 +1,9 @@
 import Image from "next/image";
-import { Construction } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
+import { Construction, ArrowRight } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   const t = useTranslations("beta.hero");
@@ -13,6 +16,12 @@ export default function Hero() {
             <Construction size={60} className="mx-auto text-brand-quaternary 2xl:mx-0" />
             <h3 className="font-bold">{t("title")}</h3>
             <p className="font-light">{t("text")}</p>
+
+            <Button className="group">
+              <Link href="/register" className="flex items-center gap-1">
+                {t("cta")} <ArrowRight className="transition-transform group-hover:translate-x-1" />{" "}
+              </Link>
+            </Button>
           </div>
           <Image
             src="/images/design-process.webp"
