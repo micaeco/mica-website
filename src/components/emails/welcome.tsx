@@ -3,7 +3,6 @@ import { createTranslator } from "next-intl";
 
 import en from "#/messages/en.json";
 import Layout from "./layout";
-import { env } from "@/lib/env";
 
 interface Props {
   messages: IntlMessages;
@@ -12,7 +11,7 @@ interface Props {
 }
 
 export default function WelcomeEmail({ messages = en, locale = "en", name = "Ana" }: Props) {
-  const baseUrl = env.appUrl;
+  const baseUrl = "https://mica.eco";
 
   const t = createTranslator({ messages, locale });
 
