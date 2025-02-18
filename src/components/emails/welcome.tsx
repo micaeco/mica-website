@@ -28,7 +28,7 @@ export default function WelcomeEmail({ messages = en, locale = "en", name = "Ana
   return (
     <Layout lang={locale} className="mx-auto max-w-5xl rounded-lg p-4">
       <Section className="rounded-lg bg-slate-200 p-8">
-        <Img src={`${baseUrl}/logos/logo-dark.webp`} width="60" alt="MICA" className="mb-6" />
+        <Img src={`${baseUrl}/logos/logo-dark.png`} width="60" alt="MICA" className="mb-6" />
         <Text className="mb-4 text-2xl font-bold">{t("emails.welcome.title", { name })}</Text>
 
         <Row>
@@ -56,7 +56,7 @@ export default function WelcomeEmail({ messages = en, locale = "en", name = "Ana
           {team.map(({ src, name, department }) => (
             <Column key={src} className="px-1">
               <Img
-                src={`${baseUrl}/images/${src}.webp`}
+                src={`${baseUrl}/images/${src}.png`}
                 width="135"
                 alt={name}
                 className="rounded-lg"
@@ -76,7 +76,7 @@ export default function WelcomeEmail({ messages = en, locale = "en", name = "Ana
                   {rowMembers.map(({ src, name, department }) => (
                     <Column key={src} className="p-1">
                       <Img
-                        src={`${baseUrl}/images/${src}.webp`}
+                        src={`${baseUrl}/images/${src}.png`}
                         width="100"
                         alt={name}
                         className="mx-auto rounded-lg"
@@ -108,7 +108,7 @@ export default function WelcomeEmail({ messages = en, locale = "en", name = "Ana
           </Column>
           <Column>
             <Img
-              src={`${baseUrl}/images/design-process-circle.webp`}
+              src={`${baseUrl}/images/design-process-circle.png`}
               alt="Development Status"
               width="400"
             />
@@ -123,7 +123,7 @@ export default function WelcomeEmail({ messages = en, locale = "en", name = "Ana
           </Row>
           <Row>
             <Img
-              src={`${baseUrl}/images/design-process-circle.webp`}
+              src={`${baseUrl}/images/design-process-circle.png`}
               alt="Development Status"
               width="250"
             />
@@ -149,7 +149,7 @@ export default function WelcomeEmail({ messages = en, locale = "en", name = "Ana
           <Row>
             <Column className="px-4 text-center">
               <Img
-                src={`${baseUrl}/icons/data-analysis.webp`}
+                src={`${baseUrl}/icons/data-analysis.png`}
                 width="70"
                 alt="Updates"
                 className="mx-auto mb-4"
@@ -163,7 +163,7 @@ export default function WelcomeEmail({ messages = en, locale = "en", name = "Ana
             </Column>
             <Column className="px-4 text-center">
               <Img
-                src={`${baseUrl}/icons/water-meter.webp`}
+                src={`${baseUrl}/icons/water-meter.png`}
                 width="70"
                 alt="Early access"
                 className="mx-auto mb-4"
@@ -177,7 +177,7 @@ export default function WelcomeEmail({ messages = en, locale = "en", name = "Ana
             </Column>
             <Column className="px-4 text-center">
               <Img
-                src={`${baseUrl}/icons/users.webp`}
+                src={`${baseUrl}/icons/users.png`}
                 width="70"
                 alt="Community"
                 className="mx-auto mb-4"
@@ -195,7 +195,7 @@ export default function WelcomeEmail({ messages = en, locale = "en", name = "Ana
         <Section className="mobile text-center">
           <Row className="px-4">
             <Img
-              src={`${baseUrl}/icons/data-analysis.webp`}
+              src={`${baseUrl}/icons/data-analysis.png`}
               width="70"
               alt="Updates"
               className="mx-auto mb-4"
@@ -205,7 +205,7 @@ export default function WelcomeEmail({ messages = en, locale = "en", name = "Ana
           </Row>
           <Row className="px-4 text-center">
             <Img
-              src={`${baseUrl}/icons/water-meter.webp`}
+              src={`${baseUrl}/icons/water-meter.png`}
               width="70"
               alt="Early access"
               className="mx-auto mb-4"
@@ -219,7 +219,7 @@ export default function WelcomeEmail({ messages = en, locale = "en", name = "Ana
           </Row>
           <Row className="px-4 text-center">
             <Img
-              src={`${baseUrl}/icons/users.webp`}
+              src={`${baseUrl}/icons/users.png`}
               width="70"
               alt="Community"
               className="mx-auto mb-4"
@@ -253,17 +253,17 @@ export default function WelcomeEmail({ messages = en, locale = "en", name = "Ana
         <Row className="float-left w-40">
           <Column>
             <Link href="https://x.com/micaeco_bcn" className="mx-2">
-              <Img src={`${baseUrl}/icons/twitter-circle.webp`} width="35" alt="Twitter" />
+              <Img src={`${baseUrl}/icons/twitter-circle.png`} width="35" alt="Twitter" />
             </Link>
           </Column>
           <Column>
             <Link href="https://linkedin.com/company/micaeco" className="mx-2">
-              <Img src={`${baseUrl}/icons/linkedin-circle.webp`} width="35" alt="Linkedin" />
+              <Img src={`${baseUrl}/icons/linkedin-circle.png`} width="35" alt="Linkedin" />
             </Link>
           </Column>
           <Column>
             <Link href="https://github.com/micaeco" className="mx-2">
-              <Img src={`${baseUrl}/icons/github.webp`} width="35" alt="GitHub" />
+              <Img src={`${baseUrl}/icons/github.png`} width="35" alt="GitHub" />
             </Link>
           </Column>
         </Row>
