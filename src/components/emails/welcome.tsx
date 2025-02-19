@@ -27,28 +27,24 @@ export default function WelcomeEmail({ messages = en, locale = "en", name = "Ana
 
   return (
     <Layout lang={locale} className="mx-auto max-w-5xl rounded-lg p-4">
-      <Section className="relative overflow-hidden rounded-lg p-8">
-        <Img
-          src={`${baseUrl}/images/welcome-hero.png`}
-          alt="MICA App and Sensor"
-          className="desktop absolute inset-0 -z-10 h-full w-full object-cover object-center"
-        />
-        <Img
-          src={`${baseUrl}/images/welcome-hero-mobile.png`}
-          alt="MICA Gradient"
-          className="mobile absolute inset-0 -z-10 h-full w-full object-cover object-center"
-        />
-
-        <Img src={`${baseUrl}/logos/logo-dark.png`} width="60" alt="MICA" className="mb-6" />
-        <Text className="mb-4 text-2xl font-bold">{t("emails.welcome.title", { name })}</Text>
-
+      <Section className="rounded-lg bg-gray-100 p-8">
         <Row>
           <Column>
+            <Img src={`${baseUrl}/logos/logo-dark.png`} width="60" alt="MICA" className="mb-6" />
+            <Text className="mb-4 text-2xl font-bold">{t("emails.welcome.title", { name })}</Text>
             <Text className="mb-4 max-w-[400px]">{t("emails.welcome.vision.description")}</Text>
             <Text className="mb-6 max-w-[400px]">{t("emails.welcome.vision.impact")}</Text>
             <Button className="rounded-md bg-brand-primary px-6 py-2 text-white" href={baseUrl}>
               {t("emails.welcome.vision.cta")}
             </Button>
+          </Column>
+          <Column>
+            <Img
+              src={`${baseUrl}/images/hero-image-no-cut.png`}
+              alt="MICA App and Sensor"
+              className="desktop"
+              width={300}
+            />
           </Column>
         </Row>
       </Section>
