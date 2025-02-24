@@ -3,6 +3,7 @@ import { createTranslator } from "next-intl";
 
 import en from "#/messages/en.json";
 import Layout from "./layout";
+import { env } from "@/lib/env";
 
 interface Props {
   messages: IntlMessages;
@@ -11,7 +12,7 @@ interface Props {
 }
 
 export default function WelcomeEmail({ messages = en, locale = "en", name = "Ana" }: Props) {
-  const baseUrl = "https://mica.eco";
+  const baseUrl = env.appUrl;
 
   const t = createTranslator({ messages, locale });
 
@@ -40,7 +41,7 @@ export default function WelcomeEmail({ messages = en, locale = "en", name = "Ana
           </Column>
           <Column>
             <Img
-              src={`${baseUrl}/images/hero-image-no-cut.png`}
+              src={`${baseUrl}/images/app-mockup-no-bg.png`}
               alt="MICA App and Sensor"
               className="desktop"
               width={300}
