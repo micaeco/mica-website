@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
 
@@ -16,11 +17,6 @@ export default function Partners({ className }: { className?: string }) {
       link: "https://ajuntament.barcelona.cat/",
       logo: "/logos/ajuntament.webp",
     },
-    // {
-    //   name: 'Universidad de Málaga',
-    //   link: 'https://www.uma.es/',
-    //   logo: '/logos/uma.webp',
-    // },
     {
       name: "Fundesplai",
       link: "https://fundesplai.org",
@@ -34,12 +30,12 @@ export default function Partners({ className }: { className?: string }) {
     <section
       className={cn(
         className,
-        "bg-gradient-to-r from-brand-quaternary to-brand-secondary px-8 py-8"
+        "bg-gradient-to-r from-brand-quaternary to-brand-secondary px-4 py-8"
       )}
     >
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col items-center lg:flex-row lg:items-center lg:justify-center">
-          <h5 className="whitespace-nowrap capitalize italic">{common("partners")}</h5>
+          <h5 className="whitespace-nowrap italic">{common("partners")}:</h5>
           <Separator
             orientation="vertical"
             className="mx-8 hidden h-8 bg-muted-foreground lg:block"
