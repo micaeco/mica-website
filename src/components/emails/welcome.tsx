@@ -1,7 +1,7 @@
 import { Button, Column, Hr, Img, Link, Row, Section, Text } from "@react-email/components";
 import { createTranslator } from "next-intl";
 
-import en from "#/messages/en.json";
+import ca from "#/messages/ca.json";
 import Layout from "./layout";
 import { env } from "@/lib/env";
 
@@ -11,7 +11,7 @@ interface Props {
   name: string;
 }
 
-export default function WelcomeEmail({ messages = en, locale = "en", name = "Ana" }: Props) {
+export default function WelcomeEmail({ messages = ca, locale = "ca", name = "Ana" }: Props) {
   const baseUrl = env.appUrl;
 
   const t = createTranslator({ messages, locale });

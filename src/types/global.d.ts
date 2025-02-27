@@ -1,6 +1,6 @@
-import en from "#/messages/en.json";
+import ca from "#/messages/ca.json";
 
-type Messages = typeof en;
+type Messages = typeof ca;
 
 declare global {
   type IntlMessages = Messages;

@@ -195,7 +195,7 @@
       },
       "development": {
         "title": "De moment, estem en fase de desenvolupament...",
-        "status": "Actualment, estem en plena fase de desenvolupament del projecte, i amb el suport potencial d'una subvenció de l'Ajuntament de Barcelona, estem treballant intensament per fer-lo realitat.",
+        "status": "Actualment estem en procés de prototipatge i certificació del sistema MICA. Amb el suport de l'Ajuntament de Barcelona, subvencionarem la instal·lació del sistema a un centenar de vivendes pilot a la ciutat durant el 2025. La teva participació en aquesta fase ens ajudarà a perfeccionar i validar el sistema.",
         "collaboration": "Sabem que amb la teva ajuda, podem aconseguir-ho! Busquem socis estratègics, lampistes associats per a la instal·lació del sensor i usuaris beta compromesos.",
         "cta": "Contacta'ns"
       },
@@ -218,7 +218,7 @@
       "footer": {
         "thanks": "Gràcies per ser part d'aquest projecte!",
         "team": "L'equip de MICA",
-        "social": "Segueix-nos per saber-ne més:"
+        "social": "T'animen a connectar amb la comunitat MICA a través de les nostres xarxes socials"
       }
     }
   },
@@ -527,7 +527,9 @@
     }
   },
   "verification": {
-    "title": "Verificació del correu"
+    "title": "Verificació del correu",
+    "success": "El teu correu electrònic ha estat verificat correctament.",
+    "error": "S'ha produït un error en verificar el teu correu electrònic. Si us plau, torna-ho a provar més tard."
   },
   "cookies": {
     "hero": {
