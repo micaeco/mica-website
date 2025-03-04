@@ -229,7 +229,8 @@
     "about": "Who are we?",
     "faqs": "FAQs",
     "blog": "Blog",
-    "privacy-policy": "Privacy Policy"
+    "privacy-policy": "Privacy Policy",
+    "legal-disclaimer": "Legal Disclaimer"
   },
   "nav-cta": {
     "contact": "Contact",
@@ -518,8 +519,8 @@
       "interestInBeta": {
         "label": "I want to be part of the beta program"
       },
-      "privacyPolicy": {
-        "label": "I have read and accept the privacy policy"
+      "terms": {
+        "label": "I have read and accept the <privacy>privacy policy</privacy> and the <legal>legal disclaimer</legal>"
       }
     }
   },

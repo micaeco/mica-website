@@ -1,5 +1,6 @@
 import { BlogComment, BlogPost } from "@/types/blog";
 import { Faq } from "@/types/faqs";
+import { LegalDisclaimer } from "@/types/legal-disclaimer";
 import { PrivacyPolicy } from "@/types/privacy-policy";
 
 export interface CmsService {
@@ -9,6 +10,7 @@ export interface CmsService {
   getFaqs(locale?: string): Promise<Faq[]>;
   getComments(postId: string): Promise<BlogComment[]>;
   getPrivacyPolicy(locale: string): Promise<PrivacyPolicy>;
+  getLegalDisclaimer(locale: string): Promise<LegalDisclaimer>;
   storeComment(
     postId: string,
     name: string,

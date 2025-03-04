@@ -144,10 +144,23 @@ export default function RegisterForm() {
                           <Checkbox checked={field.value} onCheckedChange={field.onChange} />
                         </FormControl>
                         <FormLabel className="text-sm">
-                          <Link href="/privacy-policy" className="text-blue-500 underline">
-                            {tForm("privacyPolicy.label")}
-                          </Link>{" "}
-                          <span className="text-destructive">*</span>
+                          {tForm.rich("terms.label", {
+                            privacy: (chunks) => {
+                              return (
+                                <Link href="/privacy-policy" className="text-blue-500 underline">
+                                  {chunks}
+                                </Link>
+                              );
+                            },
+                            legal: (chunks) => {
+                              return (
+                                <Link href="/legal-disclaimer" className="text-blue-500 underline">
+                                  {chunks}
+                                </Link>
+                              );
+                            },
+                          })}
+                          <span className="text-destructive"> *</span>
                         </FormLabel>
                         <FormMessage />
                       </FormItem>

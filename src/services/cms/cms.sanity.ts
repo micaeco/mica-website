@@ -5,6 +5,7 @@ import { Faq } from "@/types/faqs";
 import { CmsService } from "./cms.contract";
 import { createClient } from "next-sanity";
 import { PrivacyPolicy } from "@/types/privacy-policy";
+import { LegalDisclaimer } from "@/types/legal-disclaimer";
 
 export class SanityCmsService implements CmsService {
   private readClient = createClient({
@@ -152,6 +153,19 @@ export class SanityCmsService implements CmsService {
     );
 
     return privacyPolicy;
+  }
+
+  async getLegalDisclaimer(locale: string): Promise<LegalDisclaimer> {
+    const legalDisclaimer = await this.readClient.fetch(
+      `
+      *[_type == "legalDisclaimer"][0] {
+        "content": content[$locale],
+      }
+    `,
+      { locale }
+    );
+
+    return legalDisclaimer;
   }
 
   async storeComment(
