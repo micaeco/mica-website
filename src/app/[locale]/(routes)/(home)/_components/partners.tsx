@@ -22,6 +22,11 @@ export default function Partners({ className }: { className?: string }) {
       link: "https://fundesplai.org",
       logo: "/logos/fundesplai.webp",
     },
+    {
+      name: "Barcelona Activa",
+      link: "https://www.barcelonactiva.cat/",
+      logo: "/logos/barcelona-activa.webp",
+    }
   ];
 
   const common = useTranslations("common");
@@ -44,7 +49,7 @@ export default function Partners({ className }: { className?: string }) {
             orientation="horizontal"
             className="my-4 block w-20 bg-brand-primary lg:hidden"
           />
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-4 gap-2">
             {partners.map((partner, index) => (
               <Link
                 key={index}
