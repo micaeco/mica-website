@@ -1,6 +1,6 @@
 # MICA Website
 
-This repository contains the source code for MICA's official website.
+This repository contains the source code for MICA's official landing page.
 
 ## Requirements
 
