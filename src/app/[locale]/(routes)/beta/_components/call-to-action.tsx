@@ -18,14 +18,8 @@ export default function CallToAction() {
             <CardTitle>{t("text")}</CardTitle>
           </CardHeader>
           <CardContent className="flex flex-col justify-center gap-2 sm:flex-row">
-            <Button variant="outline" size="lg">
-              <Link href={`https://app.mica.eco/${locale}`} target="_blank">
-                {t("cta1")}
-                <ExternalLink size={20} className="ml-1 inline-flex" />
-              </Link>
-            </Button>
             <Button size="lg">
-              <Link href="/register"> {t("cta2")} </Link>
+              <Link href="/register"> {t("cta")} </Link>
             </Button>
           </CardContent>
           <CardFooter>

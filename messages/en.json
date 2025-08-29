@@ -212,8 +212,7 @@
         "community": {
           "title": "Community involvement",
           "description": "We want to build MICA with you at the center! We encourage you to connect with the community."
-        },
-        "cta": "Try the demo"
+        }
       },
       "footer": {
         "thanks": "Thank you for being part of this project!",
@@ -234,7 +233,7 @@
   },
   "nav-cta": {
     "contact": "Contact",
-    "demo": "Demo app",
+    "app": "Access the app",
     "register": "Register"
   },
   "home": {
@@ -319,10 +318,7 @@
         }
       }
     },
-    "cta": {
-      "cta1": "Try the app",
-      "cta2": "Want to join?"
-    }
+    "cta": "Register"
   },
   "beta": {
     "title": "Beta Program for Water Saving",
@@ -376,8 +372,7 @@
     },
     "cta": {
       "text": "Join MICA's beta program today and start making a difference in your home's and the city's water consumption.",
-      "cta1": "Demo app",
-      "cta2": "Register",
+      "cta": "Register",
       "note": "The first 50 beta users will get the sensor and installation free of charge. Don't miss your opportunity!"
     }
   },
@@ -462,7 +457,10 @@
       },
       "step5": {
         "title": "Launch and expansion",
-        "items": ["Platform deployment", "Continuous system evaluations"]
+        "items": [
+          "Platform deployment",
+          "Continuous system evaluations"
+        ]
       }
     }
   },

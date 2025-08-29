@@ -29,8 +29,7 @@ interface StepProps {
 }
 
 interface CTAProps {
-  cta1: string;
-  cta2: string;
+  cta: string;
   locale: string;
 }
 
@@ -94,20 +93,11 @@ function Step({ number, icon, title, text, image, isReversed, containerClass }: 
   );
 }
 
-function CTA({ cta1, cta2, locale }: CTAProps) {
+function CTA({ cta, locale }: CTAProps) {
   return (
     <div className="relative flex justify-center space-x-4 py-16">
-      <Button className="w-fit" variant="outline" size="lg">
-        <Link
-          href={`https://app.mica.eco/${locale}`}
-          className="flex items-center gap-2"
-          target="_blank"
-        >
-          {cta1} <ExternalLink size={16} />
-        </Link>
-      </Button>
       <Button className="w-fit" size="lg">
-        <Link href="/beta">{cta2}</Link>
+        <Link href="/beta">{cta}</Link>
       </Button>
     </div>
   );
@@ -162,7 +152,7 @@ export default function HowItWorks() {
           />
         </div>
 
-        <CTA cta1={t("cta.cta1")} cta2={t("cta.cta2")} locale={locale} />
+        <CTA cta={t("cta")} locale={locale} />
       </div>
     </section>
   );

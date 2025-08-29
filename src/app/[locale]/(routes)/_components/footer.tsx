@@ -161,7 +161,7 @@ export default function Footer() {
           <Section title={common("quick-links")}>
             <FooterLink href="/contact">{tNavCta("contact")}</FooterLink>
             <FooterLink href="/register">{tNavCta("register")}</FooterLink>
-            <FooterLink href="https://app.mica.eco">{tNavCta("demo")}</FooterLink>
+            <FooterLink href="https://app.mica.eco">{tNavCta("app")}</FooterLink>
           </Section>
 
           <Section title={common("legal")}>

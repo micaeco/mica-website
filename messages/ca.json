@@ -212,8 +212,7 @@
         "community": {
           "title": "Implicació de la comunitat",
           "description": "Volem construir MICA amb tu al centre! T'animem a connectar amb la comunitat."
-        },
-        "cta": "Prova la demo"
+        }
       },
       "footer": {
         "thanks": "Gràcies per ser part d'aquest projecte!",
@@ -234,7 +233,7 @@
   },
   "nav-cta": {
     "contact": "Contacte",
-    "demo": "Demo app",
+    "app": "Accedeix a l'app",
     "register": "Registra't"
   },
   "home": {
@@ -319,10 +318,7 @@
         }
       }
     },
-    "cta": {
-      "cta1": "Prova l'app",
-      "cta2": "T'hi apuntes?"
-    }
+    "cta": "Registra't"
   },
   "beta": {
     "title": "Programa Beta per Estalviar Aigua",
@@ -376,8 +372,7 @@
     },
     "cta": {
       "text": "Uneix-te al programa beta de MICA avui i comença a marcar la diferència en el consum d'aigua de casa teva i de la ciutat.",
-      "cta1": "Demo app",
-      "cta2": "Registra't",
+      "cta": "Registra't",
       "note": "Els primers 50 usuaris beta aconseguiran el sensor i la instal·lació gratuïts. No perdis la teva oportunitat!"
     }
   },

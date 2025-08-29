@@ -19,7 +19,7 @@ interface Translations {
   blog: string;
   faqs: string;
   contact: string;
-  demo: string;
+  app: string;
   register: string;
 }
 
@@ -110,13 +110,13 @@ function DesktopNav({ children, locale }: DesktopNavProps) {
         <Button variant="secondary">
           <Link href="/contact">{children.contact}</Link>
         </Button>
-        <Button variant="secondary">
+        <Button className="bg-brand-primary text-white hover:bg-brand-primary/90">
           <Link href={`https://app.mica.eco/${locale}`} target="_blank">
-            {children.demo}
+            {children.app}
             <ExternalLink size={16} className="ml-1 inline" />
           </Link>
         </Button>
-        <Button>
+        <Button className="bg-brand-primary text-white hover:bg-brand-primary/90">
           <Link href="/register">{children.register}</Link>
         </Button>
       </div>
@@ -195,7 +195,7 @@ function MobileNav({ children, isMenuOpen, setIsMenuOpen }: MobileNavProps) {
                 isMobile
                 pathname={pathname}
               >
-                {children.demo}
+                {children.app}
               </NavLink>
               <NavLink
                 href="/register"
@@ -228,7 +228,7 @@ export default function Header() {
     blog: tNavLinks("blog"),
     faqs: tNavLinks("faqs"),
     contact: tNavCta("contact"),
-    demo: tNavCta("demo"),
+    app: tNavCta("app"),
     register: tNavCta("register"),
   };
 

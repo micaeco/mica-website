@@ -240,15 +240,6 @@ export default function WelcomeEmail({ messages = ca, locale = "ca", name = "Ana
             </Text>
           </Row>
         </Section>
-
-        <Section className="text-center">
-          <Button
-            className="mt-8 rounded-md bg-brand-secondary px-6 py-2 text-center font-bold text-brand-primary"
-            href="https://app.mica.eco"
-          >
-            {t("emails.welcome.expectations.cta")}
-          </Button>
-        </Section>
       </Section>
 
       <Hr />
