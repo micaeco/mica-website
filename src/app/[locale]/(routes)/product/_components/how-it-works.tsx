@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
-import { ExternalLink, LucideIcon, ChevronsRight, Database, TrendingUp } from "lucide-react";
-import { useLocale, useTranslations } from "next-intl";
+import { LucideIcon, ChevronsRight, Database, TrendingUp } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -30,7 +30,6 @@ interface StepProps {
 
 interface CTAProps {
   cta: string;
-  locale: string;
 }
 
 function StepIcon({ number, icon: Icon }: StepIconProps) {
@@ -93,7 +92,7 @@ function Step({ number, icon, title, text, image, isReversed, containerClass }: 
   );
 }
 
-function CTA({ cta, locale }: CTAProps) {
+function CTA({ cta }: CTAProps) {
   return (
     <div className="relative flex justify-center space-x-4 py-16">
       <Button className="w-fit" size="lg">
@@ -106,7 +105,6 @@ function CTA({ cta, locale }: CTAProps) {
 export default function HowItWorks() {
   const t = useTranslations("product");
   const steps = useTranslations("product.how-it-works.steps");
-  const locale = useLocale();
 
   return (
     <section className="bg-white px-8">
@@ -152,7 +150,7 @@ export default function HowItWorks() {
           />
         </div>
 
-        <CTA cta={t("cta")} locale={locale} />
+        <CTA cta={t("cta")} />
       </div>
     </section>
   );
