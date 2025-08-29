@@ -3,7 +3,7 @@ import Image from "next/image";
 import { PortableTextComponents } from "@portabletext/react";
 import urlBuilder from "@sanity/image-url";
 import { env } from "@/lib/env";
-import { createClient } from "next-sanity";
+import createClient from "@sanity/client";
 
 const sanityClient = () => {
   console.log(env);

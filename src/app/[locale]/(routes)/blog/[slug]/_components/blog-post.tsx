@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Clock, Tag, Book } from "lucide-react";
-import { PortableText } from "next-sanity";
+import { PortableText } from "@portabletext/react";
 
 import Comments from "./comments";
 import Loading from "@/components/loading";

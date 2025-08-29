@@ -3,10 +3,9 @@ import { env } from "@/lib/env";
 import { BlogPost } from "@/types/blog";
 import { Faq } from "@/types/faqs";
 import { CmsService } from "./cms.contract";
-import { createClient } from "next-sanity";
+import createClient from "@sanity/client";
 import { PrivacyPolicy } from "@/types/privacy-policy";
 import { LegalDisclaimer } from "@/types/legal-disclaimer";
-
 export class SanityCmsService implements CmsService {
   private readClient = createClient({
     projectId: env.sanity.projectId,
@@ -26,19 +25,18 @@ export class SanityCmsService implements CmsService {
     return this.readClient.fetch(
       `*[_type == "blogPost"] | order(date desc) {
         "slug": slug.current,
-        ${
-          locale
-            ? `
+        ${locale
+        ? `
           "title": title[$locale],
           "summary": summary[$locale],
           "content": content[$locale],
         `
-            : `
+        : `
           "title": title,
           "summary": summary,
           "content": content,
         `
-        }
+      }
         "cover": cover.asset->url,
         "author": author->{
           name,
@@ -56,19 +54,18 @@ export class SanityCmsService implements CmsService {
       `*[_type == "blogPost" && slug.current == $slug][0] {
         "id": _id,
         "slug": slug.current,
-        ${
-          locale
-            ? `
+        ${locale
+        ? `
           "title": title[$locale],
           "summary": summary[$locale],
           "content": content[$locale],
         `
-            : `
+        : `
           "title": title,
           "summary": summary,
           "content": content,
         `
-        }
+      }
         "cover": cover.asset->url,
         "author": author->{
           name,
@@ -92,17 +89,16 @@ export class SanityCmsService implements CmsService {
     return this.readClient.fetch(
       `
       *[_type == "faq"] {
-        ${
-          locale
-            ? `
+        ${locale
+        ? `
           "question": question[$locale],
           "answer": answer[$locale],
         `
-            : `
+        : `
           "question": question,
           "answer": answer,
         `
-        }
+      }
         lastUpdated
       }
     `,
