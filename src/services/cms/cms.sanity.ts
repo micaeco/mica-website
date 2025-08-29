@@ -45,7 +45,7 @@ export class SanityCmsService implements CmsService {
         date,
         tag
       }`,
-      locale ? { locale } : undefined
+      locale ? { locale } : {}
     );
   }
 
@@ -102,7 +102,7 @@ export class SanityCmsService implements CmsService {
         lastUpdated
       }
     `,
-      locale ? { locale } : undefined
+      locale ? { locale } : {}
     );
   }
 
